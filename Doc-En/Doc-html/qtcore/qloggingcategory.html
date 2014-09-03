@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qloggingcategory.cpp -->
+  <title>QLoggingCategory Class | QtCore 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QLoggingCategory</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#macros">Macros</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#creating-category-objects">Creating category objects</a></li>
+<li class="level2"><a href="#checking-category-configuration">Checking category configuration</a></li>
+<li class="level2"><a href="#default-category-configuration">Default category configuration</a></li>
+<li class="level2"><a href="#configuring-categories">Configuring Categories</a></li>
+<li class="level3"><a href="#logging-rules">Logging Rules</a></li>
+<li class="level3"><a href="#installing-a-custom-filter">Installing a Custom Filter</a></li>
+<li class="level2"><a href="#printing-the-category">Printing the category</a></li>
+</ul>
+</div>
+<h1 class="title">QLoggingCategory Class</h1>
+<!-- $$$QLoggingCategory-brief -->
+<p>The QLoggingCategory class represents a category, or 'area' in the logging infrastructure. <a href="#details">More...</a></p>
+<!-- @@@QLoggingCategory -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QLoggingCategory&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += core</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.2</td></tr></table><ul>
+<li><a href="qloggingcategory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#CategoryFilter-typedef">CategoryFilter</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#QLoggingCategory">QLoggingCategory</a></b>(const char *<i> category</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#dtor.QLoggingCategory">~QLoggingCategory</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const char * </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#categoryName">categoryName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#isCriticalEnabled">isCriticalEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#isDebugEnabled">isDebugEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#isEnabled">isEnabled</a></b>(QtMsgType<i> msgtype</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#isWarningEnabled">isWarningEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#setEnabled">setEnabled</a></b>(QtMsgType<i> type</i>, bool<i> enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QLoggingCategory &amp; </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#operator-28-29">operator()</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLoggingCategory &amp; </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#operator-28-29-2">operator()</a></b>() const</td></tr>
+</table>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QLoggingCategory * </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#defaultCategory">defaultCategory</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> CategoryFilter </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#installFilter">installFilter</a></b>(CategoryFilter<i> filter</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#setFilterRules">setFilterRules</a></b>(const QString &amp;<i> rules</i>)</td></tr>
+</table>
+<a name="macros"></a>
+<h2>Macros</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#Q_DECLARE_LOGGING_CATEGORY">Q_DECLARE_LOGGING_CATEGORY</a></b>(<i> name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#Q_LOGGING_CATEGORY">Q_LOGGING_CATEGORY</a></b>(<i> name</i>, <i> string</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#qCCritical">qCCritical</a></b>(<i> category</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#qCCritical-2">qCCritical</a></b>(<i> category</i>, const char *<i> message</i>, ...)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#qCDebug">qCDebug</a></b>(<i> category</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#qCDebug-2">qCDebug</a></b>(<i> category</i>, const char *<i> message</i>, ...)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#qCWarning">qCWarning</a></b>(<i> category</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qloggingcategory.html#qCWarning-2">qCWarning</a></b>(<i> category</i>, const char *<i> message</i>, ...)</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QLoggingCategory-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QLoggingCategory class represents a category, or 'area' in the logging infrastructure.</p>
+<p>QLoggingCategory represents a certain logging category - identified by a string - at runtime. Whether a category should be actually logged or not can be checked with the <a href="qloggingcategory.html#isEnabled">isEnabled</a>() methods.</p>
+<p>All objects are meant to be configured by a common registry (see also <a href="#configuring-categories">Configuring Categories</a>). Different objects can also represent the same category. It's therefore not recommended to export objects across module boundaries, nor to manipulate the objects directly, nor to inherit from QLoggingCategory.</p>
+<a name="creating-category-objects"></a>
+<h3>Creating category objects</h3>
+<p>The <a href="qloggingcategory.html#Q_LOGGING_CATEGORY">Q_LOGGING_CATEGORY</a>() and the <a href="qloggingcategory.html#Q_DECLARE_LOGGING_CATEGORY">Q_DECLARE_LOGGING_CATEGORY</a>() macros conveniently declare and create QLoggingCategory objects:</p>
+<pre class="cpp"><span class="comment">// in a header</span>
+<a href="qloggingcategory.html#Q_DECLARE_LOGGING_CATEGORY">Q_DECLARE_LOGGING_CATEGORY</a>(QT_DRIVER_USB)
+
+<span class="comment">// in one source file</span>
+<a href="qloggingcategory.html#Q_LOGGING_CATEGORY">Q_LOGGING_CATEGORY</a>(QT_DRIVER_USB<span class="operator">,</span> <span class="string">&quot;qt.driver.usb&quot;</span>)</pre>
+<a name="checking-category-configuration"></a>
+<h3>Checking category configuration</h3>
+<p>QLoggingCategory provides <a href="qloggingcategory.html#isDebugEnabled">isDebugEnabled</a>(), <a href="qloggingcategory.html#isWarningEnabled">isWarningEnabled</a>(), <a href="qloggingcategory.html#isCriticalEnabled">isCriticalEnabled</a>(), as well as <a href="qloggingcategory.html#isEnabled">isEnabled</a>() to check whether messages for the given message type should be logged.</p>
+<p><b>Note: </b>The <a href="qloggingcategory.html#qCDebug">qCDebug</a>(), <a href="qloggingcategory.html#qCWarning">qCWarning</a>(), <a href="qloggingcategory.html#qCCritical">qCCritical</a>() macros prevent arguments from being evaluated if the respective message types are not enabled for the category, so explicit checking is not needed:</p><pre class="cpp">    <span class="comment">// usbEntries() will only be called if QT_DRIVER_USB category is enabled</span>
+    qCDebug(QT_DRIVER_USB) <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;devices: &quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> usbEntries();</pre>
+<a name="default-category-configuration"></a>
+<h3>Default category configuration</h3>
+<p>In the default configuration <a href="qloggingcategory.html#isWarningEnabled">isWarningEnabled</a>() , <a href="qloggingcategory.html#isDebugEnabled">isDebugEnabled</a>() and <a href="qloggingcategory.html#isCriticalEnabled">isCriticalEnabled</a>() will return <tt>true</tt>.</p>
+<a name="configuring-categories"></a>
+<h3>Configuring Categories</h3>
+<p>Categories can be centrally configured by either setting logging rules, or by installing a custom filter.</p>
+<a name="logging-rules"></a>
+<h4>Logging Rules</h4>
+<p>Logging rules allow to enable or disable logging for categories in a flexible way. Rules are specified in text, where every line must have the format</p>
+<pre class="cpp"><span class="operator">&lt;</span>category<span class="operator">&gt;</span><span class="operator">[</span><span class="operator">.</span><span class="operator">&lt;</span>type<span class="operator">&gt;</span><span class="operator">]</span> <span class="operator">=</span> <span class="keyword">true</span><span class="operator">|</span><span class="keyword">false</span></pre>
+<p><tt>&lt;category&gt;</tt> is the name of the category, potentially with <tt>*</tt> as a wildcard symbol as the first or last character (or at both positions). The optional <tt>&lt;type&gt;</tt> must be either <tt>debug</tt>, <tt>warning</tt>, or <tt>critical</tt>. Lines that do not fit to his scheme are ignored.</p>
+<p>Rules are evaluated in text order, from first to last. That is, if two rules apply to a category/type, the rule that comes later is applied.</p>
+<p>Rules can be set via <a href="qloggingcategory.html#setFilterRules">setFilterRules</a>(). Since Qt 5.3 logging rules can also be set in the <tt>QT_LOGGING_RULES</tt> environment variable, and are automatically loaded from the <tt>[Rules]</tt> section of a logging configuration file. Such configuration files are looked up in the QtProject configuration directory, or explicitly set in a <tt>QT_LOGGING_CONF</tt> environment variable.</p>
+<p>Rules set by <a href="qloggingcategory.html#setFilterRules">setFilterRules</a>() take precedence over rules specified in the QtProject configuration directory, and can, in turn, be overwritten by rules from the configuration file specified by <tt>QT_LOGGING_CONF</tt>, and rules set by <tt>QT_LOGGING_RULES</tt>.</p>
+<p>Order of evaluation:</p>
+<ul>
+<li>Rules from QtProject/qlogging.ini</li>
+<li>Rules set by <a href="qloggingcategory.html#setFilterRules">setFilterRules</a>()</li>
+<li>Rules from file in <tt>QT_LOGGING_CONF</tt></li>
+<li>Rules from environment variable QT_LOGGING_RULES</li>
+</ul>
+<p>The <tt>QtProject/qlogging.ini</tt> file is looked up in all directories returned by <a href="qstandardpaths.html#StandardLocation-enum">QStandardPaths::GenericConfigLocation</a>, e.g&#x2e;</p>
+<ul>
+<li>on Mac OS X: <tt>~/Library/Preferences</tt></li>
+<li>on Unix: <tt>~/.config</tt>, <tt>/etc/xdg</tt></li>
+<li>on Windows: <tt>%LOCALAPPDATA%</tt>, <tt>%ProgramData%</tt>, <a href="qcoreapplication.html#applicationDirPath">QCoreApplication::applicationDirPath</a>(), <a href="qcoreapplication.html#applicationDirPath">QCoreApplication::applicationDirPath</a>() + <tt>&quot;/data&quot;</tt></li>
+</ul>
+<p>Set the <tt>QT_LOGGING_DEBUG</tt> environment variable to see from where logging rules are loaded.</p>
+<a name="installing-a-custom-filter"></a>
+<h4>Installing a Custom Filter</h4>
+<p>As a lower-level alternative to the text rules you can also implement a custom filter via <a href="qloggingcategory.html#installFilter">installFilter</a>(). All filter rules are ignored in this case.</p>
+<a name="printing-the-category"></a>
+<h3>Printing the category</h3>
+<p>Use the <tt>%{category}</tt> place holder to print the category in the default message handler:</p>
+<pre class="cpp">    <a href="qtglobal.html#qSetMessagePattern">qSetMessagePattern</a>(<span class="string">&quot;%{category} %{message}&quot;</span>);</pre>
+</div>
+<!-- @@@QLoggingCategory -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$CategoryFilter -->
+<h3 class="fn"><a name="CategoryFilter-typedef"></a>typedef QLoggingCategory::<span class="name">CategoryFilter</span></h3>
+<p>This is a typedef for a pointer to a function with the following signature:</p>
+<pre class="cpp"><span class="type">void</span> myCategoryFilter(<span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> <span class="operator">*</span>);</pre>
+<p>A function with this signature can be installed with <a href="qloggingcategory.html#installFilter">installFilter</a>().</p>
+<!-- @@@CategoryFilter -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QLoggingCategory[overload1]$$$QLoggingCategoryconstchar* -->
+<h3 class="fn"><a name="QLoggingCategory"></a>QLoggingCategory::<span class="name">QLoggingCategory</span>(const <span class="type">char</span> *<i> category</i>)</h3>
+<p>Constructs a <a href="qloggingcategory.html">QLoggingCategory</a> object with the provided <i>category</i> name. The object becomes the local identifier for the category.</p>
+<p>If <i>category</i> is <tt>0</tt>, the category name is changed to <tt>&quot;default&quot;</tt>.</p>
+<!-- @@@QLoggingCategory -->
+<!-- $$$~QLoggingCategory[overload1]$$$~QLoggingCategory -->
+<h3 class="fn"><a name="dtor.QLoggingCategory"></a>QLoggingCategory::<span class="name">~QLoggingCategory</span>()</h3>
+<p>Destructs a <a href="qloggingcategory.html">QLoggingCategory</a> object.</p>
+<!-- @@@~QLoggingCategory -->
+<!-- $$$categoryName[overload1]$$$categoryName -->
+<h3 class="fn"><a name="categoryName"></a>const <span class="type">char</span> * QLoggingCategory::<span class="name">categoryName</span>() const</h3>
+<p>Returns the name of the category.</p>
+<!-- @@@categoryName -->
+<!-- $$$defaultCategory[overload1]$$$defaultCategory -->
+<h3 class="fn"><a name="defaultCategory"></a><span class="type">QLoggingCategory</span> * QLoggingCategory::<span class="name">defaultCategory</span>()<tt> [static]</tt></h3>
+<p>Returns a pointer to the global category <tt>&quot;default&quot;</tt> that is used e.g&#x2e; by <a href="qtglobal.html#qDebug">qDebug</a>(), <a href="qtglobal.html#qWarning">qWarning</a>(), <a href="qtglobal.html#qCritical">qCritical</a>(), <a href="qtglobal.html#qFatal">qFatal</a>().</p>
+<p><b>Note: </b>The returned pointer may be null during destruction of static objects.</p><p><b>Note: </b>Ownership of the category is not transferred, do not <tt>delete</tt> the returned pointer.</p><!-- @@@defaultCategory -->
+<!-- $$$installFilter[overload1]$$$installFilterCategoryFilter -->
+<h3 class="fn"><a name="installFilter"></a><span class="type"><a href="qloggingcategory.html#CategoryFilter-typedef">CategoryFilter</a></span> QLoggingCategory::<span class="name">installFilter</span>(<span class="type"><a href="qloggingcategory.html#CategoryFilter-typedef">CategoryFilter</a></span><i> filter</i>)<tt> [static]</tt></h3>
+<p>Installs a function <i>filter</i> that is used to determine which categories and message types should be enabled. Returns a pointer to the previous installed filter.</p>
+<p>Every <a href="qloggingcategory.html">QLoggingCategory</a> object created is passed to the filter, and the filter is free to change the respective category configuration with <a href="qloggingcategory.html#setEnabled">setEnabled</a>().</p>
+<p>The filter might be called concurrently from different threads, and therefore has to be reentrant.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span><span class="operator">::</span>CategoryFilter oldCategoryFilter;
+
+<span class="type">void</span> myCategoryFilter(<span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> <span class="operator">*</span>category)
+{
+    <span class="comment">// configure qt.driver.usb category here, otherwise forward to to default filter.</span>
+    <span class="keyword">if</span> (qstrcmp(category<span class="operator">-</span><span class="operator">&gt;</span>categoryName()<span class="operator">,</span> <span class="string">&quot;qt.driver.usb&quot;</span>) <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>)
+        category<span class="operator">-</span><span class="operator">&gt;</span>setEnabled(<span class="type"><a href="qtglobal.html#QtMsgType-enum">QtDebugMsg</a></span><span class="operator">,</span> <span class="keyword">true</span>);
+    <span class="keyword">else</span>
+        oldCategoryFilter(category);
+}</pre>
+<p>An alternative way of configuring the default filter is via <a href="qloggingcategory.html#setFilterRules">setFilterRules</a>().</p>
+<!-- @@@installFilter -->
+<!-- $$$isCriticalEnabled[overload1]$$$isCriticalEnabled -->
+<h3 class="fn"><a name="isCriticalEnabled"></a><span class="type">bool</span> QLoggingCategory::<span class="name">isCriticalEnabled</span>() const</h3>
+<p>Returns <tt>true</tt> if critical messages should be shown for this category. Returns <tt>false</tt> otherwise.</p>
+<p><b>Note: </b>The <a href="qloggingcategory.html#qCCritical">qCCritical</a>() macro already does this check before executing any code. However, calling this method may be useful to avoid expensive generation of data that is only used for debug output.</p><!-- @@@isCriticalEnabled -->
+<!-- $$$isDebugEnabled[overload1]$$$isDebugEnabled -->
+<h3 class="fn"><a name="isDebugEnabled"></a><span class="type">bool</span> QLoggingCategory::<span class="name">isDebugEnabled</span>() const</h3>
+<p>Returns <tt>true</tt> if debug messages should be shown for this category. Returns <tt>false</tt> otherwise.</p>
+<p><b>Note: </b>The <a href="qloggingcategory.html#qCDebug">qCDebug</a>() macro already does this check before executing any code. However, calling this method may be useful to avoid expensive generation of data that is only used for debug output.</p><!-- @@@isDebugEnabled -->
+<!-- $$$isEnabled[overload1]$$$isEnabledQtMsgType -->
+<h3 class="fn"><a name="isEnabled"></a><span class="type">bool</span> QLoggingCategory::<span class="name">isEnabled</span>(<span class="type"><a href="qtglobal.html#QtMsgType-enum">QtMsgType</a></span><i> msgtype</i>) const</h3>
+<p>Returns <tt>true</tt> if a message of type <i>msgtype</i> for the category should be shown. Returns <tt>false</tt> otherwise.</p>
+<!-- @@@isEnabled -->
+<!-- $$$isWarningEnabled[overload1]$$$isWarningEnabled -->
+<h3 class="fn"><a name="isWarningEnabled"></a><span class="type">bool</span> QLoggingCategory::<span class="name">isWarningEnabled</span>() const</h3>
+<p>Returns <tt>true</tt> if warning messages should be shown for this category. Returns <tt>false</tt> otherwise.</p>
+<p><b>Note: </b>The <a href="qloggingcategory.html#qCWarning">qCWarning</a>() macro already does this check before executing any code. However, calling this method may be useful to avoid expensive generation of data that is only used for debug output.</p><!-- @@@isWarningEnabled -->
+<!-- $$$setEnabled[overload1]$$$setEnabledQtMsgTypebool -->
+<h3 class="fn"><a name="setEnabled"></a><span class="type">void</span> QLoggingCategory::<span class="name">setEnabled</span>(<span class="type"><a href="qtglobal.html#QtMsgType-enum">QtMsgType</a></span><i> type</i>, <span class="type">bool</span><i> enable</i>)</h3>
+<p>Changes the message type <i>type</i> for the category to <i>enable</i>.</p>
+<p><b>Note: </b>Changes only affect the current <a href="qloggingcategory.html">QLoggingCategory</a> object, and won't change the settings of other objects for the same category name. Use either <a href="qloggingcategory.html#setFilterRules">setFilterRules</a>() or <a href="qloggingcategory.html#installFilter">installFilter</a>() to change the configuration globally.</p><p><b>Note: </b><tt>QtFatalMsg</tt> cannot be changed. It will always return <tt>true</tt>.</p><p><b>See also </b><a href="qloggingcategory.html#isEnabled">isEnabled</a>().</p>
+<!-- @@@setEnabled -->
+<!-- $$$setFilterRules[overload1]$$$setFilterRulesconstQString& -->
+<h3 class="fn"><a name="setFilterRules"></a><span class="type">void</span> QLoggingCategory::<span class="name">setFilterRules</span>(const <span class="type"><a href="qstring.html">QString</a></span> &amp;<i> rules</i>)<tt> [static]</tt></h3>
+<p>Configures which categories and message types should be enabled through a a set of <i>rules</i>.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span><span class="operator">::</span>setFilterRules(<span class="type">QStringLiteral</span>(<span class="string">&quot;qt.driver.usb.debug=true&quot;</span>));</pre>
+<p><b>Note: </b>The rules might be ignored if a custom category filter is installed with <a href="qloggingcategory.html#installFilter">installFilter</a>(), or if the user defined <tt>QT_LOGGING_CONF</tt> or <tt>QT_LOGGING_RULES</tt> environment variable.</p><!-- @@@setFilterRules -->
+<!-- $$$operator()[overload1]$$$operator() -->
+<h3 class="fn"><a name="operator-28-29"></a><span class="type">QLoggingCategory</span> &amp; QLoggingCategory::<span class="name">operator()</span>()</h3>
+<p>Returns the object itself. This allows both a <a href="qloggingcategory.html">QLoggingCategory</a> variable, and a factory method returning a <a href="qloggingcategory.html">QLoggingCategory</a>, to be used in <a href="qloggingcategory.html#qCDebug">qCDebug</a>(), <a href="qloggingcategory.html#qCWarning">qCWarning</a>(), <a href="qloggingcategory.html#qCCritical">qCCritical</a>() macros.</p>
+<!-- @@@operator() -->
+<!-- $$$operator()$$$operator() -->
+<h3 class="fn"><a name="operator-28-29-2"></a>const <span class="type">QLoggingCategory</span> &amp; QLoggingCategory::<span class="name">operator()</span>() const</h3>
+<p>Returns the object itself. This allows both a <a href="qloggingcategory.html">QLoggingCategory</a> variable, and a factory method returning a <a href="qloggingcategory.html">QLoggingCategory</a>, to be used in <a href="qloggingcategory.html#qCDebug">qCDebug</a>(), <a href="qloggingcategory.html#qCWarning">qCWarning</a>(), <a href="qloggingcategory.html#qCCritical">qCCritical</a>() macros.</p>
+<!-- @@@operator() -->
+</div>
+<div class="macros">
+<h2>Macro Documentation</h2>
+<!-- $$$Q_DECLARE_LOGGING_CATEGORY[overload1]$$$Q_DECLARE_LOGGING_CATEGORY -->
+<h3 class="fn"><a name="Q_DECLARE_LOGGING_CATEGORY"></a><span class="name">Q_DECLARE_LOGGING_CATEGORY</span>(<i> name</i>)</h3>
+<p>Declares a logging category <i>name</i>. The macro can be used to declare a common logging category shared in different parts of the program.</p>
+<p>This macro must be used outside of a class or method.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<!-- @@@Q_DECLARE_LOGGING_CATEGORY -->
+<!-- $$$Q_LOGGING_CATEGORY[overload1]$$$Q_LOGGING_CATEGORY -->
+<h3 class="fn"><a name="Q_LOGGING_CATEGORY"></a><span class="name">Q_LOGGING_CATEGORY</span>(<i> name</i>, <i> string</i>)</h3>
+<p>Defines a logging category <i>name</i>, and makes it configurable under the <i>string</i> identifier.</p>
+<p>Only one translation unit in a library or executable can define a category with a specific name.</p>
+<p>This macro must be used outside of a class or method.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<!-- @@@Q_LOGGING_CATEGORY -->
+<!-- $$$qCCritical[overload1]$$$qCCritical -->
+<h3 class="fn"><a name="qCCritical"></a><span class="name">qCCritical</span>(<i> category</i>)</h3>
+<p>Returns an output stream for critical messages in the logging category <i>category</i>.</p>
+<p>The macro expands to code that checks whether <a href="qloggingcategory.html#isCriticalEnabled">QLoggingCategory::isCriticalEnabled</a>() evaluates to <tt>true</tt>. If so, the stream arguments are processed and sent to the message handler.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> category(<span class="string">&quot;qt.driver.usb&quot;</span>);
+    qCCritical(category) <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;a critical message&quot;</span>;</pre>
+<p><b>Note: </b>Arguments are not processed if critical output for the category is not enabled, so do not rely on any side effects.</p><p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="qtglobal.html#qCritical">qCritical</a>().</p>
+<!-- @@@qCCritical -->
+<!-- $$$qCCritical$$$qCCriticalconstchar*... -->
+<h3 class="fn"><a name="qCCritical-2"></a><span class="name">qCCritical</span>(<i> category</i>, const <span class="type">char</span> *<i> message</i>, ...)</h3>
+<p>Logs a critical message <i>message</i> in the logging category <i>category</i>. <i>message</i> might contain place holders that are replaced by additional arguments, similar to the C printf() function.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> category(<span class="string">&quot;qt.driver.usb&quot;</span>);
+    qCCritical(category<span class="operator">,</span> <span class="string">&quot;a critical message logged into category %s&quot;</span><span class="operator">,</span> category<span class="operator">.</span>categoryName());</pre>
+<p><b>Note: </b>Arguments might not be processed if critical output for the category is not enabled, so do not rely on any side effects.</p><p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qtglobal.html#qCritical">qCritical</a>().</p>
+<!-- @@@qCCritical -->
+<!-- $$$qCDebug[overload1]$$$qCDebug -->
+<h3 class="fn"><a name="qCDebug"></a><span class="name">qCDebug</span>(<i> category</i>)</h3>
+<p>Returns an output stream for debug messages in the logging category <i>category</i>.</p>
+<p>The macro expands to code that checks whether <a href="qloggingcategory.html#isDebugEnabled">QLoggingCategory::isDebugEnabled</a>() evaluates to <tt>true</tt>. If so, the stream arguments are processed and sent to the message handler.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> category(<span class="string">&quot;qt.driver.usb&quot;</span>);
+    qCDebug(category) <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;a debug message&quot;</span>;</pre>
+<p><b>Note: </b>Arguments are not processed if debug output for the category is not enabled, so do not rely on any side effects.</p><p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="qtglobal.html#qDebug">qDebug</a>().</p>
+<!-- @@@qCDebug -->
+<!-- $$$qCDebug$$$qCDebugconstchar*... -->
+<h3 class="fn"><a name="qCDebug-2"></a><span class="name">qCDebug</span>(<i> category</i>, const <span class="type">char</span> *<i> message</i>, ...)</h3>
+<p>Logs a debug message <i>message</i> in the logging category <i>category</i>. <i>message</i> might contain place holders that are replaced by additional arguments, similar to the C printf() function.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> category(<span class="string">&quot;qt.driver.usb&quot;</span>);
+    qCDebug(category<span class="operator">,</span> <span class="string">&quot;a debug message logged into category %s&quot;</span><span class="operator">,</span> category<span class="operator">.</span>categoryName());</pre>
+<p><b>Note: </b>Arguments might not be processed if debug output for the category is not enabled, so do not rely on any side effects.</p><p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qtglobal.html#qDebug">qDebug</a>().</p>
+<!-- @@@qCDebug -->
+<!-- $$$qCWarning[overload1]$$$qCWarning -->
+<h3 class="fn"><a name="qCWarning"></a><span class="name">qCWarning</span>(<i> category</i>)</h3>
+<p>Returns an output stream for warning messages in the logging category <i>category</i>.</p>
+<p>The macro expands to code that checks whether <a href="qloggingcategory.html#isWarningEnabled">QLoggingCategory::isWarningEnabled</a>() evaluates to <tt>true</tt>. If so, the stream arguments are processed and sent to the message handler.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> category(<span class="string">&quot;qt.driver.usb&quot;</span>);
+    qCWarning(category) <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;a warning message&quot;</span>;</pre>
+<p><b>Note: </b>Arguments are not processed if warning output for the category is not enabled, so do not rely on any side effects.</p><p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="qtglobal.html#qWarning">qWarning</a>().</p>
+<!-- @@@qCWarning -->
+<!-- $$$qCWarning$$$qCWarningconstchar*... -->
+<h3 class="fn"><a name="qCWarning-2"></a><span class="name">qCWarning</span>(<i> category</i>, const <span class="type">char</span> *<i> message</i>, ...)</h3>
+<p>Logs a warning message <i>message</i> in the logging category <i>category</i>. <i>message</i> might contain place holders that are replaced by additional arguments, similar to the C printf() function.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="qloggingcategory.html">QLoggingCategory</a></span> category(<span class="string">&quot;qt.driver.usb&quot;</span>);
+    qCWarning(category<span class="operator">,</span> <span class="string">&quot;a warning message logged into category %s&quot;</span><span class="operator">,</span> category<span class="operator">.</span>categoryName());</pre>
+<p><b>Note: </b>Arguments might not be processed if warning output for the category is not enabled, so do not rely on any side effects.</p><p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qtglobal.html#qWarning">qWarning</a>().</p>
+<!-- @@@qCWarning -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

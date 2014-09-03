@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fftreal.pro Example File | QtMultimedia 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtmultimedia-index.html">Qt Multimedia</a></li>
+<li><a href="qtmultimedia-spectrum-example.html">Spectrum Example</a></li>
+<li>fftreal.pro Example File</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">fftreal.pro Example File</h1>
+<span class="subtitle">spectrum/3rdparty/fftreal/fftreal.pro</span>
+<!-- $$$spectrum/3rdparty/fftreal/fftreal.pro-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp">include(../../spectrum.pri)
+
+static: error(This library cannot be built for static linkage)
+
+TEMPLATE = lib
+TARGET   = fftreal
+
+# FFTReal
+HEADERS  += Array.h \
+            Array.hpp \
+            DynArray.h \
+            DynArray.hpp \
+            FFTRealFixLen.h \
+            FFTRealFixLen.hpp \
+            FFTRealFixLenParam.h \
+            FFTRealPassDirect.h \
+            FFTRealPassDirect.hpp \
+            FFTRealPassInverse.h \
+            FFTRealPassInverse.hpp \
+            FFTRealSelect.h \
+            FFTRealSelect.hpp \
+            FFTRealUseTrigo.h \
+            FFTRealUseTrigo.hpp \
+            OscSinCos.h \
+            OscSinCos.hpp \
+            def.h
+
+# Wrapper used to export the required instantiation of the FFTRealFixLen template
+HEADERS  += fftreal_wrapper.h
+SOURCES  += fftreal_wrapper.cpp
+
+DEFINES  += FFTREAL_LIBRARY
+
+macx {
+    CONFIG += lib_bundle
+} else {
+    DESTDIR = ../..$${spectrum_build_dir}
+}
+
+EXAMPLE_FILES = bwins/fftreal.def eabi/fftreal.def readme.txt license.txt
+
+target.path = $$[QT_INSTALL_EXAMPLES]/multimedia/spectrum
+INSTALLS += target</pre>
+</div>
+<!-- @@@spectrum/3rdparty/fftreal/fftreal.pro -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>main.qml Example File | QtQuickControls 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtquickcontrols-index.html">Qt Quick Controls</a></li>
+<li><a href="qtquickcontrols-tableview-example.html">Qt Quick Controls - Table View Example</a></li>
+<li>main.qml Example File</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">main.qml Example File</h1>
+<span class="subtitle">tableview/main.qml</span>
+<!-- $$$tableview/main.qml-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="qml"><span class="comment">/****************************************************************************
+**
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the Qt Quick Controls module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** You may use this file under the terms of the BSD license as follows:
+**
+** &quot;Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of Digia Plc and its Subsidiary(-ies) nor the names
+**     of its contributors may be used to endorse or promote products derived
+**     from this software without specific prior written permission.
+**
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/</span>
+
+import QtQuick 2.2
+import QtQuick.Window 2.1
+import QtQuick.Controls 1.2
+import QtQuick.XmlListModel 2.0
+
+<span class="type"><a href="../qtquick/qml-qtquick-window-window.html">Window</a></span> {
+    <span class="name">visible</span>: <span class="number">true</span>
+    <span class="name">width</span>: <span class="number">538</span> <span class="operator">+</span> <span class="name">frame</span>.<span class="name">margins</span> <span class="operator">*</span> <span class="number">2</span>
+    <span class="name">height</span>: <span class="number">360</span> <span class="operator">+</span> <span class="name">frame</span>.<span class="name">margins</span> <span class="operator">*</span> <span class="number">2</span>
+
+    <span class="type"><a href="qml-qtquick-controls-toolbar.html">ToolBar</a></span> {
+        <span class="name">id</span>: <span class="name">toolbar</span>
+        <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+
+        <span class="type"><a href="../qtqml/qml-qtqml-models-listmodel.html">ListModel</a></span> {
+            <span class="name">id</span>: <span class="name">delegatemenu</span>
+            <span class="type"><a href="../qtqml/qml-qtqml-models-listelement.html">ListElement</a></span> { <span class="name">text</span>: <span class="string">&quot;Shiny delegate&quot;</span> }
+            <span class="type"><a href="../qtqml/qml-qtqml-models-listelement.html">ListElement</a></span> { <span class="name">text</span>: <span class="string">&quot;Scale selected&quot;</span> }
+            <span class="type"><a href="../qtqml/qml-qtqml-models-listelement.html">ListElement</a></span> { <span class="name">text</span>: <span class="string">&quot;Editable items&quot;</span> }
+        }
+
+        <span class="type"><a href="qml-qtquick-controls-combobox.html">ComboBox</a></span> {
+            <span class="name">id</span>: <span class="name">delegateChooser</span>
+            <span class="name">enabled</span>: <span class="name">frame</span>.<span class="name">currentIndex</span> <span class="operator">===</span> <span class="number">3</span> ? <span class="number">1</span> : <span class="number">0</span>
+            <span class="name">model</span>: <span class="name">delegatemenu</span>
+            <span class="name">width</span>: <span class="number">150</span>
+            <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+            <span class="name">anchors</span>.leftMargin: <span class="number">8</span>
+            <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+        }
+
+        <span class="type"><a href="qml-qtquick-controls-checkbox.html">CheckBox</a></span> {
+            <span class="name">id</span>: <span class="name">enabledCheck</span>
+            <span class="name">text</span>: <span class="string">&quot;Enabled&quot;</span>
+            <span class="name">checked</span>: <span class="number">true</span>
+            <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+            <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+        }
+    }
+
+    <span class="type"><a href="../qtquick/qml-qtquick-systempalette.html">SystemPalette</a></span> {<span class="name">id</span>: <span class="name">syspal</span>}
+    <span class="name">color</span>: <span class="name">syspal</span>.<span class="name">window</span>
+
+    <span class="type"><a href="../qtquick/qml-qtquick-xmllistmodel-xmllistmodel.html">XmlListModel</a></span> {
+        <span class="name">id</span>: <span class="name">flickerModel</span>
+        <span class="name">source</span>: <span class="string">&quot;http://api.flickr.com/services/feeds/photos_public.gne?format=rss2&amp;tags=&quot;</span> <span class="operator">+</span> <span class="string">&quot;Qt&quot;</span>
+        <span class="name">query</span>: <span class="string">&quot;/rss/channel/item&quot;</span>
+        <span class="name">namespaceDeclarations</span>: <span class="string">&quot;declare namespace media=\&quot;http://search.yahoo.com/mrss/\&quot;;&quot;</span>
+        <span class="type"><a href="../qtquick/qml-qtquick-xmllistmodel-xmlrole.html">XmlRole</a></span> { <span class="name">name</span>: <span class="string">&quot;title&quot;</span>; <span class="name">query</span>: <span class="string">&quot;title/string()&quot;</span> }
+        <span class="type"><a href="../qtquick/qml-qtquick-xmllistmodel-xmlrole.html">XmlRole</a></span> { <span class="name">name</span>: <span class="string">&quot;imagesource&quot;</span>; <span class="name">query</span>: <span class="string">&quot;media:thumbnail/@url/string()&quot;</span> }
+        <span class="type"><a href="../qtquick/qml-qtquick-xmllistmodel-xmlrole.html">XmlRole</a></span> { <span class="name">name</span>: <span class="string">&quot;credit&quot;</span>; <span class="name">query</span>: <span class="string">&quot;media:credit/string()&quot;</span> }
+    }
+
+    <span class="type"><a href="../qtqml/qml-qtqml-models-listmodel.html">ListModel</a></span> {
+        <span class="name">id</span>: <span class="name">nestedModel</span>
+        <span class="type"><a href="../qtqml/qml-qtqml-models-listelement.html">ListElement</a></span>{<span class="name">content</span>: <span class="name">ListElement</span> { <span class="name">description</span>: <span class="string">&quot;Core&quot;</span> ; <span class="name">color</span>:<span class="string">&quot;#ffaacc&quot;</span>}}
+        <span class="type"><a href="../qtqml/qml-qtqml-models-listelement.html">ListElement</a></span>{<span class="name">content</span>: <span class="name">ListElement</span> { <span class="name">description</span>: <span class="string">&quot;Second&quot;</span> ; <span class="name">color</span>:<span class="string">&quot;#ffccaa&quot;</span>}}
+        <span class="type"><a href="../qtqml/qml-qtqml-models-listelement.html">ListElement</a></span>{<span class="name">content</span>: <span class="name">ListElement</span> { <span class="name">description</span>: <span class="string">&quot;Third&quot;</span> ; <span class="name">color</span>:<span class="string">&quot;#ffffaa&quot;</span>}}
+    }
+
+    <span class="type"><a href="../qtqml/qml-qtqml-models-listmodel.html">ListModel</a></span> {
+        <span class="name">id</span>: <span class="name">largeModel</span>
+        <span class="name">Component</span>.onCompleted: {
+            <span class="keyword">for</span> (<span class="keyword">var</span> <span class="name">i</span>=<span class="number">0</span> ; <span class="name">i</span><span class="operator">&lt;</span> <span class="number">500</span> ; ++<span class="name">i</span>)
+                <span class="name">largeModel</span>.<span class="name">append</span>({&quot;name&quot;:<span class="string">&quot;Person &quot;</span><span class="operator">+</span><span class="name">i</span> , &quot;age&quot;: <span class="name">Math</span>.<span class="name">round</span>(<span class="name">Math</span>.<span class="name">random</span>()<span class="operator">*</span><span class="number">100</span>), &quot;gender&quot;: <span class="name">Math</span>.<span class="name">random</span>()<span class="operator">&gt;</span><span class="number">0.5</span> ? <span class="string">&quot;Male&quot;</span> : <span class="string">&quot;Female&quot;</span>})
+        }
+    }
+
+    <span class="type"><a href="../qtquick/qml-qtquick-column.html">Column</a></span> {
+        <span class="name">anchors</span>.top: <span class="name">toolbar</span>.<span class="name">bottom</span>
+        <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+        <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+        <span class="name">anchors</span>.bottom:  <span class="name">parent</span>.<span class="name">bottom</span>
+        <span class="name">anchors</span>.margins: <span class="number">8</span>
+
+        <span class="type"><a href="qml-qtquick-controls-tabview.html">TabView</a></span> {
+            <span class="name">id</span>:<span class="name">frame</span>
+            <span class="name">focus</span>:<span class="number">true</span>
+            <span class="name">enabled</span>: <span class="name">enabledCheck</span>.<span class="name">checked</span>
+
+            property <span class="type">int</span> <span class="name">margins</span>: <span class="name">Qt</span>.<span class="name">platform</span>.<span class="name">os</span> <span class="operator">===</span> <span class="string">&quot;osx&quot;</span> ? <span class="number">16</span> : <span class="number">0</span>
+
+            <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="number">34</span>
+            <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+            <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+            <span class="name">anchors</span>.margins: <span class="name">margins</span>
+
+            <span class="type"><a href="qml-qtquick-controls-tab.html">Tab</a></span> {
+                <span class="name">title</span>: <span class="string">&quot;XmlListModel&quot;</span>
+
+                <span class="type"><a href="qml-qtquick-controls-tableview.html">TableView</a></span> {
+                    <span class="name">model</span>: <span class="name">flickerModel</span>
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                    <span class="name">anchors</span>.margins: <span class="number">12</span>
+
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;title&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Title&quot;</span>
+                        <span class="name">width</span>: <span class="number">120</span>
+                    }
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;credit&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Credit&quot;</span>
+                        <span class="name">width</span>: <span class="number">120</span>
+                    }
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;imagesource&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Image source&quot;</span>
+                        <span class="name">width</span>: <span class="number">200</span>
+                        <span class="name">visible</span>: <span class="number">true</span>
+                    }
+
+                    <span class="name">frameVisible</span>: <span class="name">frameCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">headerVisible</span>: <span class="name">headerCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">sortIndicatorVisible</span>: <span class="name">sortableCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">alternatingRowColors</span>: <span class="name">alternateCheckbox</span>.<span class="name">checked</span>
+                }
+            }
+            <span class="type"><a href="qml-qtquick-controls-tab.html">Tab</a></span> {
+                <span class="name">title</span>: <span class="string">&quot;Multivalue&quot;</span>
+
+                <span class="type"><a href="qml-qtquick-controls-tableview.html">TableView</a></span> {
+                    <span class="name">model</span>: <span class="name">nestedModel</span>
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                    <span class="name">anchors</span>.margins: <span class="number">12</span>
+
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;content&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Text and Color&quot;</span>
+                        <span class="name">width</span>: <span class="number">220</span>
+                    }
+
+                    <span class="name">itemDelegate</span>: <span class="name">Item</span> {
+                        <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span>{
+                            <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">value</span>.<span class="name">get</span>(<span class="number">0</span>).<span class="name">color</span>
+                            <span class="name">anchors</span>.top:<span class="name">parent</span>.<span class="name">top</span>
+                            <span class="name">anchors</span>.right:<span class="name">parent</span>.<span class="name">right</span>
+                            <span class="name">anchors</span>.bottom:<span class="name">parent</span>.<span class="name">bottom</span>
+                            <span class="name">anchors</span>.margins: <span class="number">4</span>
+                            <span class="name">width</span>:<span class="number">32</span>
+                            <span class="name">border</span>.color:<span class="string">&quot;#666&quot;</span>
+                        }
+                        <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                            <span class="name">anchors</span>.margins: <span class="number">4</span>
+                            <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+                            <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                            <span class="name">elide</span>: <span class="name">styleData</span>.<span class="name">elideMode</span>
+                            <span class="name">text</span>: <span class="name">styleData</span>.<span class="name">value</span>.<span class="name">get</span>(<span class="number">0</span>).<span class="name">description</span>
+                            <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">textColor</span>
+                        }
+                    }
+
+                    <span class="name">frameVisible</span>: <span class="name">frameCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">headerVisible</span>: <span class="name">headerCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">sortIndicatorVisible</span>: <span class="name">sortableCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">alternatingRowColors</span>: <span class="name">alternateCheckbox</span>.<span class="name">checked</span>
+                }
+            }
+            <span class="type"><a href="qml-qtquick-controls-tab.html">Tab</a></span> {
+                <span class="name">title</span>: <span class="string">&quot;Generated&quot;</span>
+
+                <span class="type"><a href="qml-qtquick-controls-tableview.html">TableView</a></span> {
+                    <span class="name">model</span>: <span class="name">largeModel</span>
+                    <span class="name">anchors</span>.margins: <span class="number">12</span>
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;name&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Name&quot;</span>
+                        <span class="name">width</span>: <span class="number">120</span>
+                    }
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;age&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Age&quot;</span>
+                        <span class="name">width</span>: <span class="number">120</span>
+                    }
+                    <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                        <span class="name">role</span>: <span class="string">&quot;gender&quot;</span>
+                        <span class="name">title</span>: <span class="string">&quot;Gender&quot;</span>
+                        <span class="name">width</span>: <span class="number">120</span>
+                    }
+                    <span class="name">frameVisible</span>: <span class="name">frameCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">headerVisible</span>: <span class="name">headerCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">sortIndicatorVisible</span>: <span class="name">sortableCheckbox</span>.<span class="name">checked</span>
+                    <span class="name">alternatingRowColors</span>: <span class="name">alternateCheckbox</span>.<span class="name">checked</span>
+                }
+            }
+
+            <span class="type"><a href="qml-qtquick-controls-tab.html">Tab</a></span> {
+                <span class="name">title</span>: <span class="string">&quot;Delegates&quot;</span>
+                <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+
+                    <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span> {
+                        <span class="name">id</span>: <span class="name">delegate1</span>
+                        <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+                            <span class="name">clip</span>: <span class="number">true</span>
+                            <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                                <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                                <span class="name">anchors</span>.margins: <span class="number">4</span>
+                                <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+                                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                                <span class="name">elide</span>: <span class="name">styleData</span>.<span class="name">elideMode</span>
+                                <span class="name">text</span>: <span class="name">styleData</span>.<span class="name">value</span> <span class="operator">!==</span> <span class="name">undefined</span>  ? <span class="name">styleData</span>.<span class="name">value</span> : <span class="string">&quot;&quot;</span>
+                                <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">textColor</span>
+                            }
+                        }
+                    }
+
+                    <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span> {
+                        <span class="name">id</span>: <span class="name">delegate2</span>
+                        <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                            <span class="name">anchors</span>.margins: <span class="number">4</span>
+                            <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+                            <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                            <span class="name">elide</span>: <span class="name">styleData</span>.<span class="name">elideMode</span>
+                            <span class="name">text</span>: <span class="name">styleData</span>.<span class="name">value</span> <span class="operator">!==</span> <span class="name">undefined</span>  ? <span class="name">styleData</span>.<span class="name">value</span> : <span class="string">&quot;&quot;</span>
+                            <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">textColor</span>
+                        }
+                    }
+
+                    <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span> {
+                        <span class="name">id</span>: <span class="name">editableDelegate</span>
+                        <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+
+                            <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                                <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                                <span class="name">anchors</span>.margins: <span class="number">4</span>
+                                <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+                                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                                <span class="name">elide</span>: <span class="name">styleData</span>.<span class="name">elideMode</span>
+                                <span class="name">text</span>: <span class="name">styleData</span>.<span class="name">value</span> <span class="operator">!==</span> <span class="name">undefined</span> ? <span class="name">styleData</span>.<span class="name">value</span> : <span class="string">&quot;&quot;</span>
+                                <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">textColor</span>
+                                <span class="name">visible</span>: !<span class="name">styleData</span>.<span class="name">selected</span>
+                            }
+                            <span class="type"><a href="../qtquick/qml-qtquick-loader.html">Loader</a></span> { <span class="comment">// Initialize text editor lazily to improve performance</span>
+                                <span class="name">id</span>: <span class="name">loaderEditor</span>
+                                <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                                <span class="name">anchors</span>.margins: <span class="number">4</span>
+                                <span class="type"><a href="../qtqml/qml-qtqml-connections.html">Connections</a></span> {
+                                    <span class="name">target</span>: <span class="name">loaderEditor</span>.<span class="name">item</span>
+                                    <span class="name">onAccepted</span>: {
+                                        <span class="keyword">if</span> (typeof <span class="name">styleData</span>.<span class="name">value</span> <span class="operator">===</span> <span class="string">'number'</span>)
+                                            <span class="name">largeModel</span>.<span class="name">setProperty</span>(<span class="name">styleData</span>.<span class="name">row</span>, <span class="name">styleData</span>.<span class="name">role</span>, <span class="name">Number</span>(<span class="name">parseFloat</span>(<span class="name">loaderEditor</span>.<span class="name">item</span>.<span class="name">text</span>).<span class="name">toFixed</span>(<span class="number">0</span>)))
+                                        <span class="keyword">else</span>
+                                            <span class="name">largeModel</span>.<span class="name">setProperty</span>(<span class="name">styleData</span>.<span class="name">row</span>, <span class="name">styleData</span>.<span class="name">role</span>, <span class="name">loaderEditor</span>.<span class="name">item</span>.<span class="name">text</span>)
+                                    }
+                                }
+                                <span class="name">sourceComponent</span>: <span class="name">styleData</span>.<span class="name">selected</span> ? <span class="name">editor</span> : <span class="number">null</span>
+                                <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span> {
+                                    <span class="name">id</span>: <span class="name">editor</span>
+                                    <span class="type"><a href="../qtquick/qml-qtquick-textinput.html">TextInput</a></span> {
+                                        <span class="name">id</span>: <span class="name">textinput</span>
+                                        <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">textColor</span>
+                                        <span class="name">text</span>: <span class="name">styleData</span>.<span class="name">value</span>
+                                        <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+                                            <span class="name">id</span>: <span class="name">mouseArea</span>
+                                            <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                                            <span class="name">hoverEnabled</span>: <span class="number">true</span>
+                                            <span class="name">onClicked</span>: <span class="name">textinput</span>.<span class="name">forceActiveFocus</span>()
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    <span class="type"><a href="qml-qtquick-controls-tableview.html">TableView</a></span> {
+                        <span class="name">model</span>: <span class="name">largeModel</span>
+                        <span class="name">anchors</span>.margins: <span class="number">12</span>
+                        <span class="name">anchors</span>.fill:<span class="name">parent</span>
+                        <span class="name">frameVisible</span>: <span class="name">frameCheckbox</span>.<span class="name">checked</span>
+                        <span class="name">headerVisible</span>: <span class="name">headerCheckbox</span>.<span class="name">checked</span>
+                        <span class="name">sortIndicatorVisible</span>: <span class="name">sortableCheckbox</span>.<span class="name">checked</span>
+                        <span class="name">alternatingRowColors</span>: <span class="name">alternateCheckbox</span>.<span class="name">checked</span>
+
+                        <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                            <span class="name">role</span>: <span class="string">&quot;name&quot;</span>
+                            <span class="name">title</span>: <span class="string">&quot;Name&quot;</span>
+                            <span class="name">width</span>: <span class="number">120</span>
+                        }
+                        <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                            <span class="name">role</span>: <span class="string">&quot;age&quot;</span>
+                            <span class="name">title</span>: <span class="string">&quot;Age&quot;</span>
+                            <span class="name">width</span>: <span class="number">120</span>
+                        }
+                        <span class="type"><a href="qml-qtquick-controls-tableviewcolumn.html">TableViewColumn</a></span> {
+                            <span class="name">role</span>: <span class="string">&quot;gender&quot;</span>
+                            <span class="name">title</span>: <span class="string">&quot;Gender&quot;</span>
+                            <span class="name">width</span>: <span class="number">120</span>
+                        }
+
+                        <span class="name">headerDelegate</span>: <span class="name">BorderImage</span>{
+                            <span class="name">source</span>: <span class="string">&quot;images/header.png&quot;</span>
+                            <span class="type">border</span>{<span class="name">left</span>:<span class="number">2</span>;<span class="name">right</span>:<span class="number">2</span>;<span class="name">top</span>:<span class="number">2</span>;<span class="name">bottom</span>:<span class="number">2</span>}
+                            <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                                <span class="name">text</span>: <span class="name">styleData</span>.<span class="name">value</span>
+                                <span class="name">anchors</span>.centerIn:<span class="name">parent</span>
+                                <span class="name">color</span>:<span class="string">&quot;#333&quot;</span>
+                            }
+                        }
+
+                        <span class="name">rowDelegate</span>: <span class="name">Rectangle</span> {
+                            <span class="name">height</span>: (<span class="name">delegateChooser</span>.<span class="name">currentIndex</span> <span class="operator">==</span> <span class="number">1</span> <span class="operator">&amp;&amp;</span> <span class="name">styleData</span>.<span class="name">selected</span>) ? <span class="number">30</span> : <span class="number">20</span>
+                            Behavior on <span class="name">height</span>{ <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span>{} }
+
+                            <span class="name">color</span>: <span class="name">styleData</span>.<span class="name">selected</span> ? <span class="string">&quot;#448&quot;</span> : (<span class="name">styleData</span>.<span class="name">alternate</span>? <span class="string">&quot;#eee&quot;</span> : <span class="string">&quot;#fff&quot;</span>)
+                            <span class="type"><a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a></span>{
+                                <span class="name">id</span>: <span class="name">selected</span>
+                                <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                                <span class="name">source</span>: <span class="string">&quot;images/selectedrow.png&quot;</span>
+                                <span class="name">visible</span>: <span class="name">styleData</span>.<span class="name">selected</span>
+                                <span class="type">border</span>{<span class="name">left</span>:<span class="number">2</span>; <span class="name">right</span>:<span class="number">2</span>; <span class="name">top</span>:<span class="number">2</span>; <span class="name">bottom</span>:<span class="number">2</span>}
+                                <span class="type"><a href="../qtquick/qml-qtquick-sequentialanimation.html">SequentialAnimation</a></span> {
+                                    <span class="name">running</span>: <span class="number">true</span>; <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+                                    <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">target</span>:<span class="name">selected</span>; <span class="name">property</span>: <span class="string">&quot;opacity&quot;</span>; <span class="name">to</span>: <span class="number">1.0</span>; <span class="name">duration</span>: <span class="number">900</span>}
+                                    <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">target</span>:<span class="name">selected</span>; <span class="name">property</span>: <span class="string">&quot;opacity&quot;</span>; <span class="name">to</span>: <span class="number">0.5</span>; <span class="name">duration</span>: <span class="number">900</span>}
+                                }
+                            }
+                        }
+
+                        <span class="name">itemDelegate</span>: {
+                            <span class="keyword">if</span> (<span class="name">delegateChooser</span>.<span class="name">currentIndex</span> <span class="operator">==</span> <span class="number">2</span>)
+                                <span class="keyword">return</span> <span class="name">editableDelegate</span>;
+                            <span class="keyword">else</span>
+                                <span class="keyword">return</span> <span class="name">delegate1</span>;
+                        }
+                    }
+                }
+            }
+        }
+        <span class="type"><a href="../qtquick/qml-qtquick-row.html">Row</a></span>{
+            <span class="name">x</span>: <span class="number">12</span>
+            <span class="name">height</span>: <span class="number">34</span>
+            <span class="type"><a href="qml-qtquick-controls-checkbox.html">CheckBox</a></span>{
+                <span class="name">id</span>: <span class="name">alternateCheckbox</span>
+                <span class="name">checked</span>: <span class="number">true</span>
+                <span class="name">text</span>: <span class="string">&quot;Alternate&quot;</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+            }
+            <span class="type"><a href="qml-qtquick-controls-checkbox.html">CheckBox</a></span>{
+                <span class="name">id</span>: <span class="name">sortableCheckbox</span>
+                <span class="name">checked</span>: <span class="number">false</span>
+                <span class="name">text</span>: <span class="string">&quot;Sort indicator&quot;</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+            }
+            <span class="type"><a href="qml-qtquick-controls-checkbox.html">CheckBox</a></span>{
+                <span class="name">id</span>: <span class="name">frameCheckbox</span>
+                <span class="name">checked</span>: <span class="number">true</span>
+                <span class="name">text</span>: <span class="string">&quot;Frame&quot;</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+            }
+            <span class="type"><a href="qml-qtquick-controls-checkbox.html">CheckBox</a></span>{
+                <span class="name">id</span>: <span class="name">headerCheckbox</span>
+                <span class="name">checked</span>: <span class="number">true</span>
+                <span class="name">text</span>: <span class="string">&quot;Headers&quot;</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+            }
+        }
+    }
+}</pre>
+</div>
+<!-- @@@tableview/main.qml -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtBluetooth">
+    <examples>
+        <example name="Bluetooth Chat Example" docUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/qtbluetooth-btchat-example.html" projectPath="bluetooth/btchat/btchat.pro" imageUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/images/btchat-example.png">
+            <description><![CDATA[An example showing communication through Bluetooth.]]></description>
+            <tags>bluetooth,chat</tags>
+            <fileToOpen mainFile="true">bluetooth/btchat/main.cpp</fileToOpen>
+        </example>
+        <example name="Bluetooth File Transfer Example" docUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/qtbluetooth-btfiletransfer-example.html" projectPath="bluetooth/btfiletransfer/btfiletransfer.pro" imageUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/images/btfiletransfer-example.png">
+            <description><![CDATA[An example showing the use of Bluetooth Object Push Profile (OPP).]]></description>
+            <tags>transfer,bluetooth,file</tags>
+            <fileToOpen mainFile="true">bluetooth/btfiletransfer/main.cpp</fileToOpen>
+        </example>
+        <example name="Bluetooth QML Ping Pong example" docUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/qtbluetooth-pingpong-example.html" projectPath="bluetooth/pingpong/pingpong.pro" imageUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/images/intro.png">
+            <description><![CDATA[A QML example showing Bluetooth communication.]]></description>
+            <tags>qml,bluetooth,ping,pong</tags>
+            <fileToOpen>bluetooth/pingpong/main.cpp</fileToOpen>
+            <fileToOpen>bluetooth/pingpong/assets/main.qml</fileToOpen>
+            <fileToOpen>bluetooth/pingpong/pingpong.h</fileToOpen>
+            <fileToOpen mainFile="true">bluetooth/pingpong/pingpong.cpp</fileToOpen>
+        </example>
+        <example name="Bluetooth Scanner Example" docUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/qtbluetooth-btscanner-example.html" projectPath="bluetooth/btscanner/btscanner.pro" imageUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/images/btscanner-example.png">
+            <description><![CDATA[An example showing how to locate Bluetooth devices.]]></description>
+            <tags>scanner,bluetooth</tags>
+            <fileToOpen mainFile="true">bluetooth/btscanner/main.cpp</fileToOpen>
+        </example>
+        <example name="QML Bluetooth Picture Push Example" docUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/qtbluetooth-picturetransfer-example.html" projectPath="bluetooth/picturetransfer/picturetransfer.pro" imageUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/images/opp-example-1.png">
+            <description><![CDATA[An example showing the use Bluetooth Object Push Profile (OPP).]]></description>
+            <tags>push,picture,qml,bluetooth</tags>
+            <fileToOpen mainFile="true">bluetooth/picturetransfer/main.cpp</fileToOpen>
+        </example>
+        <example name="QML Bluetooth Scanner Example" docUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/qtbluetooth-scanner-example.html" projectPath="bluetooth/scanner/scanner.pro" imageUrl="qthelp://org.qt-project.qtbluetooth.531/qtbluetooth/images/devicescan.png">
+            <description><![CDATA[A QML example about locating Bluetooth devices.]]></description>
+            <tags>scanner,qml,bluetooth</tags>
+            <fileToOpen mainFile="true">bluetooth/scanner/scanner.qml</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

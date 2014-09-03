@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- enginioclient.cpp -->
+  <title>EnginioClient Class | QtEnginio 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-cpp-classes-and-examples.html">Enginio C++ Classes and Examples</a></li>
+<li>EnginioClient</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">EnginioClient Class</h1>
+<!-- $$$EnginioClient-brief -->
+<p>EnginioClient handles all communication with the Enginio server <a href="#details">More...</a></p>
+<!-- @@@EnginioClient -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;EnginioClient&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.3</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="enginioclientconnection.html">EnginioClientConnection</a>.</td></tr></table><ul>
+<li><a href="enginioclient-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#EnginioClient">EnginioClient</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#dtor.EnginioClient">~EnginioClient</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#create">create</a></b>(const QJsonObject &amp;<i> object</i>, const Enginio::Operation<i> operation</i> = Enginio::ObjectOperation)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#downloadUrl">downloadUrl</a></b>(const QJsonObject &amp;<i> object</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#fullTextSearch">fullTextSearch</a></b>(const QJsonObject &amp;<i> query</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#query">query</a></b>(const QJsonObject &amp;<i> query</i>, const Enginio::Operation<i> operation</i> = Enginio::ObjectOperation)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#remove">remove</a></b>(const QJsonObject &amp;<i> object</i>, const Enginio::Operation<i> operation</i> = Enginio::ObjectOperation)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#update">update</a></b>(const QJsonObject &amp;<i> object</i>, const Enginio::Operation<i> operation</i> = Enginio::ObjectOperation)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> EnginioReply * </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#uploadFile">uploadFile</a></b>(const QJsonObject &amp;<i> object</i>, const QUrl &amp;<i> file</i>)</td></tr>
+</table>
+<ul>
+<li class="fn">8 public functions inherited from <a href="enginioclientconnection.html#public-functions">EnginioClientConnection</a></li>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#error">error</a></b>(EnginioReply *<i> reply</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#finished">finished</a></b>(EnginioReply *<i> reply</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#sessionAuthenticated">sessionAuthenticated</a></b>(EnginioReply *<i> reply</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#sessionAuthenticationError">sessionAuthenticationError</a></b>(EnginioReply *<i> reply</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="enginioclient.html#sessionTerminated">sessionTerminated</a></b>() const</td></tr>
+</table>
+<ul>
+<li class="fn">4 signals inherited from <a href="enginioclientconnection.html#signals">EnginioClientConnection</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">4 properties inherited from <a href="enginioclientconnection.html#properties">EnginioClientConnection</a></li>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$EnginioClient-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<a name="enginioclientcpp"></a><p>EnginioClient handles all communication with the Enginio server</p>
+<p>The Enginio server supports several separate &quot;backends&quot; with each account. By setting the <a href="enginioclientconnection.html#backendId-prop">backendId</a> a backend is chosen. After setting the ID interaction with the server is possible. The information about the backend is available on the Enginio Dashboard after logging in to <a href="http://engin.io">Enginio</a>.</p>
+<pre class="cpp">EnginioClient <span class="operator">*</span>client <span class="operator">=</span> <span class="keyword">new</span> <a href="enginioclient.html#EnginioClient">EnginioClient</a>(parent);
+client<span class="operator">-</span><span class="operator">&gt;</span><a href="enginioclientconnection.html#backendId-prop">setBackendId</a>(<span class="type">QByteArrayLiteral</span>(<span class="string">&quot;YOUR_BACKEND_ID&quot;</span>));</pre>
+<p>The basic functions used to interact with the backend are <a href="enginioclient.html#create">create</a>(), <a href="enginioclient.html#query">query</a>(), <a href="enginioclient.html#remove">remove</a>() and <a href="enginioclient.html#update">update</a>(). It is possible to do a fulltext search on the server using <a href="enginioclient.html#fullTextSearch">fullTextSearch</a>(). For file handling <a href="enginioclient.html#downloadUrl">downloadUrl</a>() and <a href="enginioclient.html#uploadFile">uploadFile</a>() are provided. The functions are asynchronous, which means that they are not blocking and the result of them will be delivered together with <a href="enginioreply.html#finished">EnginioReply::finished</a>() signal.</p>
+<p><b>Note: </b>After the request has finished, it is the responsibility of the user to delete the <a href="enginioreply.html">EnginioReply</a> object at an appropriate time. Do not directly delete it inside the slot connected to <a href="enginioclient.html#finished">finished</a>(). You can use the <a href="../qtcore/qobject.html#deleteLater">deleteLater()</a> function.</p><p>In order to make queries that return an array of data more convenient a model is provided by <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a>.</p>
+</div>
+<!-- @@@EnginioClient -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$EnginioClient[overload1]$$$EnginioClientQObject* -->
+<h3 class="fn"><a name="EnginioClient"></a>EnginioClient::<span class="name">EnginioClient</span>(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> *<i> parent</i> = 0)</h3>
+<p>Creates a new <a href="enginioclient.html">EnginioClient</a> with <i>parent</i> as <a href="../qtcore/qobject.html">QObject</a> parent.</p>
+<!-- @@@EnginioClient -->
+<!-- $$$~EnginioClient[overload1]$$$~EnginioClient -->
+<h3 class="fn"><a name="dtor.EnginioClient"></a>EnginioClient::<span class="name">~EnginioClient</span>()</h3>
+<p>Destroys the <a href="enginioclient.html">EnginioClient</a>.</p>
+<p>This ends the Enginio session.</p>
+<!-- @@@~EnginioClient -->
+<!-- $$$create[overload1]$$$createconstQJsonObject&constEnginio::Operation -->
+<h3 class="fn"><a name="create"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">create</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> object</i>, const <span class="type"><a href="enginio.html#Operation-enum">Enginio::Operation</a></span><i> operation</i> = Enginio::ObjectOperation)</h3>
+<p>Insert a new <i>object</i> into the database.</p>
+<p>The returned <a href="enginioreply.html">EnginioReply</a> indicates the success of the object creation. The object becomes available from the backend if it finishes without errors.</p>
+<p><i>operation</i> determines the kind of object created. For example a regular object or a user or usergroup. By default, <a href="enginio.html#Operation-enum">Enginio::ObjectOperation</a> is used and regular objects created.</p>
+<p><b>Note: </b>that the <tt>objectType</tt> is required for regular objects and has to begin with <tt>&quot;objects.&quot;</tt>.</p><p>The JSON for the object that will be created must follow this structure:</p>
+<pre class="cpp">{
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;object.myType&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;name&quot;</span> : <span class="string">&quot;A thing&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;price&quot;</span> : <span class="string">&quot;5&quot;</span><span class="operator">,</span>
+}</pre>
+<p>Where only the <tt>objectType</tt> property is required and <tt>name</tt> and <tt>price</tt> are examples of custom properties.</p>
+<p>Users and all kinds of other objects are created the same way but do not require any <tt>objectType</tt>.</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> query;
+query<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.todos&quot;</span>);
+query<span class="operator">[</span><span class="string">&quot;title&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;A todo&quot;</span>);
+query<span class="operator">[</span><span class="string">&quot;completed&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="keyword">true</span>;
+<span class="keyword">const</span> EnginioReply<span class="operator">*</span> response <span class="operator">=</span> client<span class="operator">.</span>create(query);</pre>
+<p>To add a new member to a usergroup, the JSON needs to look like the example below.</p>
+<pre class="cpp">  {
+      <span class="string">&quot;id&quot;</span>: <span class="string">&quot;groupId&quot;</span><span class="operator">,</span>
+      <span class="string">&quot;member&quot;</span>: { <span class="string">&quot;id&quot;</span>: <span class="string">&quot;userId&quot;</span><span class="operator">,</span> <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;users&quot;</span> }
+  }</pre>
+<p>It can be constructed like this:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> query;
+query<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span> <span class="operator">=</span> groupId;
+<span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> user;
+user<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span> <span class="operator">=</span> userId;
+user<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;users&quot;</span>);
+query<span class="operator">[</span><span class="string">&quot;member&quot;</span><span class="operator">]</span> <span class="operator">=</span> user;
+
+EnginioReply <span class="operator">*</span>reply <span class="operator">=</span> client<span class="operator">.</span>create(query<span class="operator">,</span> Enginio<span class="operator">::</span>UsergroupMembersOperation);</pre>
+<p>Returns an <a href="enginioreply.html">EnginioReply</a> containing the status and data once it is finished.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>, <a href="enginioclient.html#query">query</a>(), <a href="enginioclient.html#update">update</a>(), <a href="enginioclient.html#remove">remove</a>(), and <a href="enginio.html#Operation-enum">Enginio::Operation</a>.</p>
+<!-- @@@create -->
+<!-- $$$downloadUrl[overload1]$$$downloadUrlconstQJsonObject& -->
+<h3 class="fn"><a name="downloadUrl"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">downloadUrl</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> object</i>)</h3>
+<p>Get a temporary URL for a file stored in Enginio</p>
+<p>From this URL a file can be downloaded. The URL is valid for a certain amount of time as indicated in the reply.</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> object;
+object<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span> <span class="operator">=</span> fileId; <span class="comment">// ID of an existing object with attached file</span>
+
+<span class="keyword">const</span> EnginioReply <span class="operator">*</span>replyDownload <span class="operator">=</span> client<span class="operator">.</span>downloadUrl(object);</pre>
+<p>The propertyName can be anything, but it must be the same as the one used to upload the file with. This way one object can have several files attached to itself (one per propertyName).</p>
+<p>If a file provides several variants, it is possible to request a variant by including it in the <i>object</i>.</p>
+<pre class="cpp">{
+    <span class="string">&quot;id&quot;</span>: <span class="string">&quot;abc123&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;variant&quot;</span>: <span class="string">&quot;thumbnail&quot;</span>
+}</pre>
+<!-- @@@downloadUrl -->
+<!-- $$$error[overload1]$$$errorEnginioReply* -->
+<h3 class="fn"><a name="error"></a><span class="type">void</span> EnginioClient::<span class="name">error</span>(<span class="type"><a href="enginioreply.html">EnginioReply</a></span> *<i> reply</i>)<tt> [signal]</tt></h3>
+<p>This signal is emitted when a request to the backend returns an error.</p>
+<p>The <i>reply</i> contains the details about the error that occured.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>.</p>
+<!-- @@@error -->
+<!-- $$$finished[overload1]$$$finishedEnginioReply* -->
+<h3 class="fn"><a name="finished"></a><span class="type">void</span> EnginioClient::<span class="name">finished</span>(<span class="type"><a href="enginioreply.html">EnginioReply</a></span> *<i> reply</i>)<tt> [signal]</tt></h3>
+<p>This signal is emitted when a request to the backend finishes.</p>
+<p>The <i>reply</i> contains the data returned. This signal is emitted for both, successful requests and failed ones.</p>
+<p>From this moment on ownership of the <i>reply</i> is moved from <a href="enginioclient.html">EnginioClient</a>, therefore it is the developer's responsibility to delete the <i>reply</i> after this signal is handled. That can be achieved by calling the <a href="../qtcore/qobject.html#deleteLater">deleteLater()</a> method of the <i>reply</i>.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>.</p>
+<!-- @@@finished -->
+<!-- $$$fullTextSearch[overload1]$$$fullTextSearchconstQJsonObject& -->
+<h3 class="fn"><a name="fullTextSearch"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">fullTextSearch</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> query</i>)</h3>
+<p>Fulltext search on the Enginio backend</p>
+<p>The <i>query</i> is JSON sent to the backend to perform a fulltext search. Note that the search requires the searched properties to be indexed (on the server, configureable in the backend).</p>
+<p>Returns <a href="enginioreply.html">EnginioReply</a> containing the status and the result once it is finished.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>, <a href="enginioclient.html#create">create</a>(), <a href="enginioclient.html#query">query</a>(), <a href="enginioclient.html#update">update</a>(), <a href="enginioclient.html#remove">remove</a>(), <a href="enginio-qt-cloudaddressbook-example.html">Address book example</a>, and <a href="https://engin.io/documentation/rest/parameters/fulltext_query">JSON request structure</a>.</p>
+<!-- @@@fullTextSearch -->
+<!-- $$$query[overload1]$$$queryconstQJsonObject&constEnginio::Operation -->
+<h3 class="fn"><a name="query"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">query</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> query</i>, const <span class="type"><a href="enginio.html#Operation-enum">Enginio::Operation</a></span><i> operation</i> = Enginio::ObjectOperation)</h3>
+<p>Query the database</p>
+<p>The <i>query</i> is an object containing the actual query to the backend. The query will be run on the <i>operation</i> part of the backend.</p>
+<p>The <i>query</i> has to contain an &quot;objectType&quot; which has to point to a type defined in the backend. Optionally, it can also contain:</p>
+<ul>
+<li>query - describes how objects are queried, allows filtering of results. See {https://engin.io/documentation/rest/parameters/queries} {JSON query structure}</li>
+<li>limit - limits how many objects the server should return (default value is <tt>100</tt>).</li>
+<li>offset - how many objects the server should skip from the beginning of the returned results. Note that the server keeps the data in random order so that usage of offset implies using <tt>sort</tt> as well.</li>
+<li>sort - describes how results are sorted. See <a href="https://engin.io/documentation/rest/parameters/sort">JSON sort request structure</a></li>
+<li>count - if the <tt>count</tt> is set, the server will return only count of matching objects</li>
+<li>include - describes which other objects are included in the response. See <a href="https://engin.io/documentation/rest/parameters/include">JSON include structure</a></li>
+</ul>
+<p>The JSON to list all objects of type &quot;objects.image&quot;:</p>
+<pre class="cpp">{
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;objects.image&quot;</span>
+}</pre>
+<p>An example using <tt>include</tt> to get <tt>file</tt> references and with a query parameter that limits the results to only those objects where the reference is valid:</p>
+<pre class="cpp">{
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;objects.image&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;include&quot;</span>: {<span class="string">&quot;file&quot;</span>: {}}<span class="operator">,</span>
+    <span class="string">&quot;query&quot;</span> : { <span class="string">&quot;file&quot;</span>: { <span class="string">&quot;$ne&quot;</span>: null } }
+}</pre>
+<p>To query the database for all objects of the type &quot;objects.todo&quot;:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> object;
+object<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.todos&quot;</span>);
+<span class="keyword">const</span> EnginioReply<span class="operator">*</span> reply <span class="operator">=</span> client<span class="operator">.</span>query(object);</pre>
+<p>Returns an <a href="enginioreply.html">EnginioReply</a> containing the status and the result once it is finished.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>, <a href="enginioclient.html#create">create</a>(), <a href="enginioclient.html#update">update</a>(), and <a href="enginioclient.html#remove">remove</a>().</p>
+<!-- @@@query -->
+<!-- $$$remove[overload1]$$$removeconstQJsonObject&constEnginio::Operation -->
+<h3 class="fn"><a name="remove"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">remove</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> object</i>, const <span class="type"><a href="enginio.html#Operation-enum">Enginio::Operation</a></span><i> operation</i> = Enginio::ObjectOperation)</h3>
+<p>Remove an object from the database.</p>
+<p>The <i>object</i> that is to be removed is identified by its object ID and if it is a regular object also <tt>objectType</tt>.</p>
+<p>The JSON that identfies an object looks like this:</p>
+<pre class="cpp">{
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;objects.images&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;id&quot;</span>: <span class="string">&quot;52b1a94b5a3d8b15b1037ff5&quot;</span>
+}</pre>
+<p>The <i>operation</i> is the area from which the object gets removed. It defaults to <a href="enginio.html#Operation-enum">Enginio::ObjectOperation</a> to remove regular objects by default.</p>
+<p>To remove a todo object:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> query;
+query<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.todos&quot;</span>);
+query<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span> <span class="operator">=</span> objectId;
+<span class="keyword">const</span> EnginioReply <span class="operator">*</span>response <span class="operator">=</span> client<span class="operator">.</span>remove(query);</pre>
+<p>Returns an <a href="enginioreply.html">EnginioReply</a> containing the status and the data once it is finished.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>, <a href="enginioclient.html#create">create</a>(), <a href="enginioclient.html#query">query</a>(), and <a href="enginioclient.html#update">update</a>().</p>
+<!-- @@@remove -->
+<!-- $$$sessionAuthenticated[overload1]$$$sessionAuthenticatedEnginioReply* -->
+<h3 class="fn"><a name="sessionAuthenticated"></a><span class="type">void</span> EnginioClient::<span class="name">sessionAuthenticated</span>(<span class="type"><a href="enginioreply.html">EnginioReply</a></span> *<i> reply</i>) const<tt> [signal]</tt></h3>
+<p>Emitted when a user logs in.</p>
+<p>The signal is emitted after a user was successfully logged into the backend. From that point on, all communication with the backend will be using these credentials. The <i>reply</i> contains the information about the login and the user. The details may be different depending on the authentication method used, but a typical reply look like this:</p>
+<pre class="cpp">{
+  <span class="string">&quot;access_token&quot;</span>: <span class="string">&quot;...&quot;</span><span class="operator">,</span>              <span class="comment">// oauth2 access token</span>
+  <span class="string">&quot;refresh_token&quot;</span>: <span class="string">&quot;...&quot;</span><span class="operator">,</span>             <span class="comment">// oauth2 refresh token</span>
+  <span class="string">&quot;token_type&quot;</span>: <span class="string">&quot;bearer&quot;</span><span class="operator">,</span>             <span class="comment">// oauth2 token type</span>
+  <span class="string">&quot;expires_in&quot;</span>: <span class="number">28799</span><span class="operator">,</span>                <span class="comment">// oautth2 token expiry date</span>
+  <span class="string">&quot;enginio_data&quot;</span>: {
+    <span class="string">&quot;user&quot;</span>: {
+      <span class="string">&quot;id&quot;</span>: <span class="string">&quot;...&quot;</span><span class="operator">,</span>                    <span class="comment">// this user Id</span>
+      <span class="string">&quot;createdAt&quot;</span>: <span class="string">&quot;...&quot;</span><span class="operator">,</span>             <span class="comment">// when the user was created</span>
+      <span class="string">&quot;creator&quot;</span>: {                    <span class="comment">// who created the user</span>
+        <span class="string">&quot;id&quot;</span>: <span class="string">&quot;creatorId&quot;</span><span class="operator">,</span>
+        <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;users&quot;</span>
+      }<span class="operator">,</span>
+      <span class="string">&quot;email&quot;</span>: <span class="string">&quot;user@user.com&quot;</span><span class="operator">,</span>       <span class="comment">// the user's email address</span>
+      <span class="string">&quot;firstName&quot;</span>: <span class="string">&quot;John&quot;</span><span class="operator">,</span>            <span class="comment">// the user's first name</span>
+      <span class="string">&quot;lastName&quot;</span>: <span class="string">&quot;Foo&quot;</span><span class="operator">,</span>              <span class="comment">// the user's last name</span>
+      <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;users&quot;</span><span class="operator">,</span>
+      <span class="string">&quot;updatedAt&quot;</span>: <span class="string">&quot;2013-11-25T14:54:58.957Z&quot;</span><span class="operator">,</span>
+      <span class="string">&quot;username&quot;</span>: <span class="string">&quot;JohnFoo&quot;</span>           <span class="comment">// the user's login</span>
+    }<span class="operator">,</span>
+    <span class="string">&quot;usergroups&quot;</span>: <span class="operator">[</span><span class="operator">]</span>                  <span class="comment">// usergroups to which the user belongs</span>
+  }
+}</pre>
+<p><b>Note: </b>The <i>reply</i> will be deleted automatically after this signal, so it can not be stored.</p><p><b>See also </b><a href="enginioclient.html#sessionAuthenticationError">sessionAuthenticationError</a>(), <a href="enginioreply.html">EnginioReply</a>, and <a href="enginiooauth2authentication.html">EnginioOAuth2Authentication</a>.</p>
+<!-- @@@sessionAuthenticated -->
+<!-- $$$sessionAuthenticationError[overload1]$$$sessionAuthenticationErrorEnginioReply* -->
+<h3 class="fn"><a name="sessionAuthenticationError"></a><span class="type">void</span> EnginioClient::<span class="name">sessionAuthenticationError</span>(<span class="type"><a href="enginioreply.html">EnginioReply</a></span> *<i> reply</i>) const<tt> [signal]</tt></h3>
+<p>Emitted when a user login fails.</p>
+<p>The <i>reply</i> contains the details about why the login failed.</p>
+<p><b>Note: </b>The <i>reply</i> will be deleted automatically after this signal, so it can not be stored.</p><p><b>See also </b><a href="enginioclient.html#sessionAuthenticated">sessionAuthenticated</a>(), <a href="enginioreply.html">EnginioReply</a>, <a href="enginioclientconnection.html#identity-prop">EnginioClientConnection::identity</a>(), and <a href="enginiooauth2authentication.html">EnginioOAuth2Authentication</a>.</p>
+<!-- @@@sessionAuthenticationError -->
+<!-- $$$sessionTerminated[overload1]$$$sessionTerminated -->
+<h3 class="fn"><a name="sessionTerminated"></a><span class="type">void</span> EnginioClient::<span class="name">sessionTerminated</span>() const<tt> [signal]</tt></h3>
+<p>Emitted when a user logs out.</p>
+<p><b>See also </b><a href="enginioclientconnection.html#identity-prop">EnginioClientConnection::identity</a>() and <a href="enginiooauth2authentication.html">EnginioOAuth2Authentication</a>.</p>
+<!-- @@@sessionTerminated -->
+<!-- $$$update[overload1]$$$updateconstQJsonObject&constEnginio::Operation -->
+<h3 class="fn"><a name="update"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">update</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> object</i>, const <span class="type"><a href="enginio.html#Operation-enum">Enginio::Operation</a></span><i> operation</i> = Enginio::ObjectOperation)</h3>
+<p>Update an object in the database.</p>
+<p>The <i>operation</i> is the area in which the <i>object</i> gets updated. It defaults to <a href="enginio.html#Operation-enum">Enginio::ObjectOperation</a> to update regular objects by default.</p>
+<p>To change the name property of an object to &quot;New Name&quot;, use the following JSON:</p>
+<pre class="cpp">{
+    <span class="string">&quot;id&quot;</span>: <span class="string">&quot;objectId&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;objects.objectType&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;New Name&quot;</span>
+}</pre>
+<p>All other existing properties of the object are not affected by the update.</p>
+<p>To update the access control list of an object, use the following JSON:</p>
+<pre class="cpp">{
+    <span class="string">&quot;id&quot;</span>: <span class="string">&quot;objectId&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;objects.objectType&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;access&quot;</span>: { <span class="string">&quot;read&quot;</span>: <span class="operator">[</span><span class="string">&quot;id&quot;</span>: <span class="string">&quot;userId&quot;</span><span class="operator">,</span> <span class="string">&quot;objectTypes&quot;</span>: <span class="string">&quot;users&quot;</span><span class="operator">]</span><span class="operator">,</span>
+                <span class="string">&quot;update&quot;</span>: <span class="operator">[</span><span class="string">&quot;id&quot;</span>: <span class="string">&quot;userId&quot;</span><span class="operator">,</span> <span class="string">&quot;objectTypes&quot;</span>: <span class="string">&quot;users&quot;</span><span class="operator">]</span><span class="operator">,</span>
+                <span class="string">&quot;admin&quot;</span>: <span class="operator">[</span><span class="string">&quot;id&quot;</span>: <span class="string">&quot;userId&quot;</span><span class="operator">,</span> <span class="string">&quot;objectTypes&quot;</span>: <span class="string">&quot;users&quot;</span><span class="operator">]</span> }
+}</pre>
+<p>In C++, the updating of the ACL could be done like this:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> aclUpdate;
+aclUpdate<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> obj<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span>;
+aclUpdate<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span> <span class="operator">=</span> obj<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span>;
+<span class="type"><a href="../qtcore/qstring.html">QString</a></span> json <span class="operator">=</span> <span class="string">&quot;{ \&quot;read\&quot;: [ { \&quot;id\&quot;: \&quot;%3\&quot;, \&quot;objectType\&quot;: \&quot;users\&quot; } ],&quot;</span>
+                 <span class="string">&quot;\&quot;update\&quot;: [ { \&quot;id\&quot;: \&quot;%2\&quot;, \&quot;objectType\&quot;: \&quot;users\&quot; } ],&quot;</span>
+                 <span class="string">&quot;\&quot;admin\&quot;: [ { \&quot;id\&quot;: \&quot;%1\&quot;, \&quot;objectType\&quot;: \&quot;users\&quot; } ] }&quot;</span>;
+json <span class="operator">=</span> json<span class="operator">.</span>arg(id1<span class="operator">,</span> id2<span class="operator">,</span> id3);
+aclUpdate<span class="operator">[</span><span class="string">&quot;access&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qjsondocument.html">QJsonDocument</a></span><span class="operator">::</span>fromJson(json<span class="operator">.</span>toUtf8())<span class="operator">.</span>object();
+
+reqId <span class="operator">=</span> client<span class="operator">.</span>update(aclUpdate<span class="operator">,</span> Enginio<span class="operator">::</span>AccessControlOperation);</pre>
+<p>Returns an <a href="enginioreply.html">EnginioReply</a> containing the status of the query and the data once it is finished.</p>
+<p><b>See also </b><a href="enginioreply.html">EnginioReply</a>, <a href="enginioclient.html#create">create</a>(), <a href="enginioclient.html#query">query</a>(), and <a href="enginioclient.html#remove">remove</a>().</p>
+<!-- @@@update -->
+<!-- $$$uploadFile[overload1]$$$uploadFileconstQJsonObject&constQUrl& -->
+<h3 class="fn"><a name="uploadFile"></a><span class="type"><a href="enginioreply.html">EnginioReply</a></span> * EnginioClient::<span class="name">uploadFile</span>(const <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> &amp;<i> object</i>, const <span class="type"><a href="../qtcore/qurl.html">QUrl</a></span> &amp;<i> file</i>)</h3>
+<p>Stores a <i>file</i> attached to an <i>object</i> in Enginio</p>
+<p>Each uploaded file needs to be associated with an object in the database.</p>
+<p><b>Note: </b>The upload will only work with the propper server setup: in the dashboard create a property of the type that you will use. Set this property to be a reference to files.</p><p>Each uploaded file needs to be associated with an object in the database.</p>
+<p>In order to upload a file, first create an object:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> obj;
+obj<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.%1&quot;</span>)<span class="operator">.</span>arg(EnginioTests<span class="operator">::</span>CUSTOM_OBJECT1);
+obj<span class="operator">[</span><span class="string">&quot;title&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;Object With File&quot;</span>);
+<span class="keyword">const</span> EnginioReply<span class="operator">*</span> createReply <span class="operator">=</span> client<span class="operator">.</span>create(obj);</pre>
+<p>Then do the actual upload:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> object;
+object<span class="operator">[</span><span class="string">&quot;id&quot;</span><span class="operator">]</span> <span class="operator">=</span> id;
+object<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.%1&quot;</span>)<span class="operator">.</span>arg(EnginioTests<span class="operator">::</span>CUSTOM_OBJECT1);
+object<span class="operator">[</span><span class="string">&quot;propertyName&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type">QStringLiteral</span>(<span class="string">&quot;fileAttachment&quot;</span>);
+
+<span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> fileObject;
+fileObject<span class="operator">[</span><span class="type">QStringLiteral</span>(<span class="string">&quot;fileName&quot;</span>)<span class="operator">]</span> <span class="operator">=</span> fileName;
+
+<span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> uploadJson;
+uploadJson<span class="operator">[</span><span class="type">QStringLiteral</span>(<span class="string">&quot;targetFileProperty&quot;</span>)<span class="operator">]</span> <span class="operator">=</span> object;
+uploadJson<span class="operator">[</span><span class="type">QStringLiteral</span>(<span class="string">&quot;file&quot;</span>)<span class="operator">]</span> <span class="operator">=</span> fileObject;
+<span class="keyword">const</span> EnginioReply <span class="operator">*</span>responseUpload <span class="operator">=</span> client<span class="operator">.</span>uploadFile(uploadJson<span class="operator">,</span> <span class="type"><a href="../qtcore/qurl.html">QUrl</a></span>(filePath));</pre>
+<p>Note: There is no need to directly delete files. Instead when the object that contains the link to the file gets deleted, the file will automatically be deleted as well.</p>
+<p><b>See also </b><a href="enginioclient.html#downloadUrl">downloadUrl</a>().</p>
+<!-- @@@uploadFile -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

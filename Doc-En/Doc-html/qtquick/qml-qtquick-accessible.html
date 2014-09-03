@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qquickaccessibleattached.cpp -->
+  <title>Accessible QML Type | QtQuick 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li><a href="qtquick-qmltypereference.html">QML Types</a></li>
+<li>Accessible QML Type</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">Accessible QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Accessible-brief -->
+<p>Enables accessibility of QML items <a href="#details">More...</a></p>
+<!-- @@@Accessible -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import QtQuick 2.2</tt></td></tr></table><ul>
+<li><a href="qml-qtquick-accessible-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#checkStateMixed-prop">checkStateMixed</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#checkable-prop">checkable</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#checked-prop">checked</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#defaultButton-prop">defaultButton</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#description-prop">description</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#editable-prop">editable</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#focusable-prop">focusable</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#focused-prop">focused</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#multiLine-prop">multiLine</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#name-prop">name</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#passwordEdit-prop">passwordEdit</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#pressed-prop">pressed</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#readOnly-prop">readOnly</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#role-prop">role</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#selectable-prop">selectable</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#selectableText-prop">selectableText</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-accessible.html#selected-prop">selected</a></b></b> : bool</li>
+</ul>
+<!-- $$$Accessible-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This class is part of the <a href="../qtdoc/accessible-qtquick.html">Accessibility for Qt Quick Applications</a>.</p>
+<p>Items the user interacts with or that give information to the user need to expose their information to the accessibility framework. Then assistive tools can make use of that information to enable users to interact with the application in various ways. This enables Qt Quick applications to be used with screen-readers for example.</p>
+<p>The most important properties are <a href="qml-qtquick-accessible.html#name-prop">name</a>, <a href="qml-qtquick-accessible.html#description-prop">description</a> and <a href="qml-qtquick-accessible.html#role-prop">role</a>.</p>
+<p>Example implementation of a simple button:</p>
+<pre class="qml"><span class="type"><a href="qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">myButton</span>
+    <span class="type"><a href="qml-qtquick-text.html">Text</a></span> {
+        <span class="name">id</span>: <span class="name">label</span>
+        <span class="name">text</span>: <span class="string">&quot;next&quot;</span>
+    }
+    <span class="name">Accessible</span>.role: <span class="name">Accessible</span>.<span class="name">Button</span>
+    <span class="name">Accessible</span>.name: <span class="name">label</span>.<span class="name">text</span>
+    <span class="name">Accessible</span>.description: <span class="string">&quot;shows the next page&quot;</span>
+    <span class="keyword">function</span> <span class="name">accessiblePressAction</span>() {
+        <span class="comment">// do a button click</span>
+    }
+}</pre>
+<p>The <a href="qml-qtquick-accessible.html#role-prop">role</a> is set to <tt>Button</tt> to indicate the type of control. Accessible.name is the most important information and bound to the text on the button. The name is a short and consise description of the control and should reflect the visual label. In this case it is not clear what the button does with the name only, so <a href="qml-qtquick-accessible.html#description-prop">description</a> contains an explanation. There is also a function <tt>accessiblePressAction()</tt> which can be invoked by assistive tools to trigger the button. This function needs to have the same effect as tapping or clicking the button would have.</p>
+<p><b>See also </b><a href="../qtdoc/accessible.html">Accessibility</a>.</p>
+<!-- @@@Accessible -->
+<h2>Property Documentation</h2>
+<!-- $$$checkStateMixed -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="checkStateMixed-prop"></a><span class="name">checkStateMixed</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is in the partially checked state.</p>
+<p>By default this property is <tt>false</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#checked-prop">checked</a> and <a href="qml-qtquick-accessible.html#checkable-prop">checkable</a>.</p>
+</div></div><!-- @@@checkStateMixed -->
+<br/>
+<!-- $$$checkable -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="checkable-prop"></a><span class="name">checkable</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is checkable (like a check box or some buttons).</p>
+<p>By default this property is <tt>false</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#checked-prop">checked</a>.</p>
+</div></div><!-- @@@checkable -->
+<br/>
+<!-- $$$checked -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="checked-prop"></a><span class="name">checked</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is currently checked.</p>
+<p>By default this property is <tt>false</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#checkable-prop">checkable</a>.</p>
+</div></div><!-- @@@checked -->
+<br/>
+<!-- $$$defaultButton -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="defaultButton-prop"></a><span class="name">defaultButton</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is the default button of a dialog.</p>
+<p>By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@defaultButton -->
+<br/>
+<!-- $$$description -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="description-prop"></a><span class="name">description</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property sets an accessible description. Similar to the name it describes the item. The description can be a little more verbose and tell what the item does, for example the functionallity of the button it describes.</p>
+</div></div><!-- @@@description -->
+<br/>
+<!-- $$$editable -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="editable-prop"></a><span class="name">editable</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item has editable text.</p>
+<p>By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@editable -->
+<br/>
+<!-- $$$focusable -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="focusable-prop"></a><span class="name">focusable</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is focusable.</p>
+<p>By default, this property is <tt>false</tt> except for items where the role is one of <tt>CheckBox</tt>, <tt>RadioButton</tt>, <tt>Button</tt>, <tt>MenuItem</tt>, <tt>PageTab</tt>, <tt>EditableText</tt>, <tt>SpinBox</tt>, <tt>ComboBox</tt>, <tt>Terminal</tt> or <tt>ScrollBar</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#focused-prop">focused</a>.</p>
+</div></div><!-- @@@focusable -->
+<br/>
+<!-- $$$focused -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="focused-prop"></a><span class="name">focused</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item currently has the active focus.</p>
+<p>By default, this property is <tt>false</tt>, but it will return <tt>true</tt> for items that have <a href="qquickitem.html#activeFocus-prop">QQuickItem::hasActiveFocus()</a> returning <tt>true</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#focusable-prop">focusable</a>.</p>
+</div></div><!-- @@@focused -->
+<br/>
+<!-- $$$multiLine -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="multiLine-prop"></a><span class="name">multiLine</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item has multiple text lines.</p>
+<p>By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@multiLine -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="name-prop"></a><span class="name">name</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property sets an accessible name. For a button for example, this should have a binding to its text. In general this property should be set to a simple and concise but human readable name. Do not include the type of control you want to represent but just the name.</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$passwordEdit -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="passwordEdit-prop"></a><span class="name">passwordEdit</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is a password text edit.</p>
+<p>By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@passwordEdit -->
+<br/>
+<!-- $$$pressed -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="pressed-prop"></a><span class="name">pressed</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is pressed (for example a button during a mouse click).</p>
+<p>By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@pressed -->
+<br/>
+<!-- $$$readOnly -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="readOnly-prop"></a><span class="name">readOnly</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property indicates that a text field is read only.</p>
+<p>It is relevant when the role is <a href="../qtgui/qaccessible.html#Role-enum">QAccessible::EditableText</a> and set to be read-only. By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@readOnly -->
+<br/>
+<!-- $$$role -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="role-prop"></a><span class="name">role</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr></table></div><div class="qmldoc"><p>This flags sets the semantic type of the widget. A button for example would have &quot;Button&quot; as type. The value must be one of <a href="../qtgui/qaccessible.html#Role-enum">QAccessible::Role</a>.</p>
+<p>Some roles have special semantics. In order to implement check boxes for example a &quot;checked&quot; property is expected.</p>
+<table class="generic">
+ <thead><tr class="qt-style"><th ><b>Role</b></th><th ><b>Properties and functions</b></th><th ><b>Explanation</b></th></tr></thead>
+<tr valign="top" class="odd"><td >All interactive elements</td><td ><a href="qml-qtquick-accessible.html#focusable-prop">focusable</a> and <a href="qml-qtquick-accessible.html#focused-prop">focused</a></td><td >All elements that the user can interact with should have focusable set to <tt>true</tt> and set focus to <tt>true</tt> when they have the focus. This is important even for applications that run on touch-only devices since screen readers often implement a virtual focus that can be moved from item to item.</td></tr>
+<tr valign="top" class="even"><td >Button, <a href="../qtquickcontrols/qml-qtquick-controls-checkbox.html">CheckBox</a>, <a href="../qtquickcontrols/qml-qtquick-controls-radiobutton.html">RadioButton</a></td><td ><tt>accessiblePressAction()</tt></td><td >A button should have a function with the name <tt>accessiblePressAction</tt>. This function may be called by an assistive tool such as a screen-reader. The implementation needs to behave the same as a mouse click or tap on the button.</td></tr>
+<tr valign="top" class="odd"><td ><a href="../qtquickcontrols/qml-qtquick-controls-checkbox.html">CheckBox</a>, <a href="../qtquickcontrols/qml-qtquick-controls-radiobutton.html">RadioButton</a></td><td ><a href="qml-qtquick-accessible.html#checkable-prop">checkable</a>, <a href="qml-qtquick-accessible.html#checked-prop">checked</a></td><td >The check state of the check box. Updated on Press, Check and Uncheck actions.</td></tr>
+<tr valign="top" class="even"><td >Slider, <a href="../qtquickcontrols/qml-qtquick-controls-spinbox.html">SpinBox</a>, Dial, <a href="../qtquickcontrols/qml-qtquick-controls-private-scrollbar.html">ScrollBar</a></td><td ><tt>value</tt>, <tt>minimumValue</tt>, <tt>maximumValue</tt>, <tt>stepSize</tt></td><td >These properties reflect the state and possible values for the elements.</td></tr>
+<tr valign="top" class="odd"><td >Slider, <a href="../qtquickcontrols/qml-qtquick-controls-spinbox.html">SpinBox</a>, Dial, <a href="../qtquickcontrols/qml-qtquick-controls-private-scrollbar.html">ScrollBar</a></td><td ><tt>accessibleIncreaseAction()</tt>, <tt>accessibleDecreaseAction()</tt></td><td >Actions to increase and decrease the value of the element.</td></tr>
+</table>
+</div></div><!-- @@@role -->
+<br/>
+<!-- $$$selectable -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectable-prop"></a><span class="name">selectable</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item can be selected.</p>
+<p>By default this property is <tt>false</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#selected-prop">selected</a>.</p>
+</div></div><!-- @@@selectable -->
+<br/>
+<!-- $$$selectableText -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectableText-prop"></a><span class="name">selectableText</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item contains selectable text.</p>
+<p>By default this property is <tt>false</tt>.</p>
+</div></div><!-- @@@selectableText -->
+<br/>
+<!-- $$$selected -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selected-prop"></a><span class="name">selected</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property holds whether this item is selected.</p>
+<p>By default this property is <tt>false</tt>.</p>
+<p><b>See also </b><a href="qml-qtquick-accessible.html#selectable-prop">selectable</a>.</p>
+</div></div><!-- @@@selected -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

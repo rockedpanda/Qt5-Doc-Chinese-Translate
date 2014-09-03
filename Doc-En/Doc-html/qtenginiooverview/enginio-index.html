@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- enginio_overview.qdoc -->
+  <title>Enginio Manual | QtEnginioOverview 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="next" href="enginio-getting-started.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="nextPage" href="enginio-getting-started.html">Enginio Installation and Prerequisites</a>
+</p><p/>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#tutorials">Tutorials</a></li>
+<li class="level1"><a href="#reference-documentation-and-examples">Reference documentation and examples:</a></li>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level2"><a href="#objects">Objects</a></li>
+<li class="level2"><a href="#operations">Operations</a></li>
+<li class="level2"><a href="#file-management">File Management</a></li>
+</ul>
+</div>
+<h1 class="title">Enginio Manual</h1>
+<span class="subtitle"></span>
+<!-- $$$enginio-index.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Enginio is a Backend-as-a-Service solution to ease backend development for any connected and data-driven application.</p>
+<a name="tutorials"></a>
+<h2>Tutorials</h2>
+<p>To get started quickly, follow the mini-tutorial using Qt Quick or C++.</p>
+<ul>
+<li><a href="enginio-getting-started.html">Enginio Installation and Prerequisites</a></li>
+<li><a href="enginio-qml.html">Getting Started with Enginio using Qt Quick</a></li>
+<li><a href="enginio-cpp.html">Getting Started with Enginio using C++</a></li>
+</ul>
+<a name="reference-documentation-and-examples"></a>
+<h2>Reference documentation and examples:</h2>
+<ul>
+<li><a href="../qtenginio/enginio-cpp-classes-and-examples.html">Enginio C++ Classes and Examples</a></li>
+<li><a href="../qtenginioqml/enginio-qml-types-and-examples.html">Enginio QML Types and Examples</a></li>
+</ul>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>When using Enginio (with Qt Quick or C++), the API is following a general pattern that will be helpful to understand. This section gives a short, high-level overview of the concepts used throughout the library.</p>
+<p>The Qt library is a client-side library to communicate with the server at <a href="http://engin.io">http://engin.io</a>. Several <i>backends</i> can exist for each account on the server. For all communication with the server, the <i>backend</i> is determined by its <i>id</i>. When shipping an application built with Enginio, the <tt>backend id</tt> will be the same for all users of that application.</p>
+<a name="objects"></a>
+<h3>Objects</h3>
+<p>Enginio provides several types of objects: <tt>custom objects</tt>, <tt>users</tt>, <tt>user groups</tt>, <i>files</i>, and more. All communication with the backend uses JSON. When writing QML, JSON can simply be written inline. On the C++ side, <a href="../qtcore/qjsonobject.html">QJsonObject</a> and <a href="../qtcore/qjsonvalue.html">QJsonValue</a> are used.</p>
+<p>Each object in the database has an <tt>id</tt>, <tt>objectType</tt>, <tt>createdAt</tt> and <tt>updatedAt</tt> property that are reserved and always exist. For example, a custom object with no additional properties (in JSON) might look like this:</p>
+<pre class="cpp">{
+    <span class="string">&quot;id&quot;</span>: <span class="string">&quot;51cdbc08989e975ec300772a&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;objectType&quot;</span>: <span class="string">&quot;objects.todos&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;createdAt&quot;</span>: <span class="string">&quot;2013-06-28T16:38:32.369Z&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;updatedAt&quot;</span>: <span class="string">&quot;2013-06-28T16:38:32.725Z&quot;</span>
+}</pre>
+<p>With this basis, the objects can be augmented with user defined properties that contain the actual application data and can even contain other objects. For a more detailed description see the <a href="http://engin.io/documentation/overview/objects">Enginio Object documentation</a>.</p>
+<a name="operations"></a>
+<h3>Operations</h3>
+<p>To operate on objects of any type, the basic operations are:</p>
+<ul>
+<li>create: create a new object</li>
+<li>query: list objects</li>
+<li>update: change an object</li>
+<li>remove: delete an object</li>
+</ul>
+<p>For a detailed description of the operations see the functions in the <a href="../qtenginio/enginioclient.html#enginioclientcpp">EnginioClient Class</a> in C++ or <a href="../qtenginioqml/qml-enginio-enginioclient.html#enginioclientqml">EnginioClient type</a> in QML.</p>
+<p><b>Note: </b>User management and access control lists are conveniently done by the same functions.</p><a name="file-management"></a>
+<h3>File Management</h3>
+<p>For file management, the operations are slightly different. Files are always attached to objects and can only be referenced through them. The Qt library provides convenient functions to upload and download files.</p>
+<p>The entire Enginio documentation, including backend and client, is available here: <a href="http://engin.io/documentation/">Enginio Documentation</a></p>
+</div>
+<!-- @@@enginio-index.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="nextPage" href="enginio-getting-started.html">Enginio Installation and Prerequisites</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

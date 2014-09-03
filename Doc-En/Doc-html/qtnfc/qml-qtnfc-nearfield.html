@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativenearfield.cpp -->
+  <title>NearField QML Type | QtNfc 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtnfc-index.html">Qt NFC</a></li>
+<li><a href="qtnfc-qmlmodule.html">QML Types</a></li>
+<li>NearField QML Type</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">NearField QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$NearField-brief -->
+<p>Provides access to NDEF messages stored on NFC Forum tags. <a href="#details">More...</a></p>
+<!-- @@@NearField -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import QtNfc 5.2</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.2</td></tr></table><ul>
+<li><a href="qml-qtnfc-nearfield-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtnfc-nearfield.html#filter-prop">filter</a></b></b> : list&lt;NdefFilter&gt;</li>
+<li class="fn"><b><b><a href="qml-qtnfc-nearfield.html#messageRecords-prop">messageRecords</a></b></b> : list&lt;NdefRecord&gt;</li>
+<li class="fn"><b><b><a href="qml-qtnfc-nearfield.html#orderMatch-prop">orderMatch</a></b></b> : bool</li>
+</ul>
+<!-- $$$NearField-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>The NearField type can be used to read NDEF messages from NFC Forum tags. Set the <a href="qml-qtnfc-nearfield.html#filter-prop">filter</a> and <a href="qml-qtnfc-nearfield.html#orderMatch-prop">orderMatch</a> properties to match the required NDEF messages. Once an NDEF message is successfully read from a tag the <a href="qml-qtnfc-nearfield.html#messageRecords-prop">messageRecords</a> property is updated.</p>
+<pre class="qml">    <span class="type">NearField</span> {
+        <span class="name">filter</span>: [ <span class="type"><a href="qml-qtnfc-ndeffilter.html">NdefFilter</a></span> { <span class="name">type</span>: <span class="string">&quot;U&quot;</span>; <span class="name">typeNameFormat</span>: <span class="name">NdefRecord</span>.<span class="name">NfcRtd</span>; <span class="name">minimum</span>: <span class="number">1</span>; <span class="name">maximum</span>: <span class="number">1</span> } ]
+        <span class="name">orderMatch</span>: <span class="number">false</span>
+
+        <span class="name">onMessageRecordsChanged</span>: <span class="name">displayMessage</span>()
+    }</pre>
+<p><b>See also </b><a href="qml-qtnfc-ndeffilter.html">NdefFilter</a>, <a href="qml-qtnfc-ndefrecord.html">NdefRecord</a>, <a href="qnearfieldmanager.html">QNearFieldManager</a>, <a href="qndefmessage.html">QNdefMessage</a>, and <a href="qndefrecord.html">QNdefRecord</a>.</p>
+<!-- @@@NearField -->
+<h2>Property Documentation</h2>
+<!-- $$$filter -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="filter-prop"></a><span class="name">filter</span> : <span class="type">list</span>&lt;<span class="type"><a href="qml-qtnfc-ndeffilter.html">NdefFilter</a></span>&gt;</p></td></tr></table></div><div class="qmldoc"><p>This property holds the NDEF filter constraints. The <a href="qml-qtnfc-nearfield.html#messageRecords-prop">messageRecords</a> property will only be set to NDEF messages which match the filter. If no filter is set, a message handler for all NDEF messages will be registered.</p>
+<p><a href="qnearfieldmanager.html#registerNdefMessageHandler">QNearFieldManager::registerNdefMessageHandler()</a></p>
+</div></div><!-- @@@filter -->
+<br/>
+<!-- $$$messageRecords -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="messageRecords-prop"></a><span class="name">messageRecords</span> : <span class="type">list</span>&lt;<span class="type"><a href="qml-qtnfc-ndefrecord.html">NdefRecord</a></span>&gt;</p></td></tr></table></div><div class="qmldoc"><p>This property contains the list of NDEF records in the last NDEF message read.</p>
+</div></div><!-- @@@messageRecords -->
+<br/>
+<!-- $$$orderMatch -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="orderMatch-prop"></a><span class="name">orderMatch</span> : <span class="type">bool</span></p></td></tr></table></div><div class="qmldoc"><p>This property indicates whether the order of records should be taken into account when matching messages.</p>
+</div></div><!-- @@@orderMatch -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

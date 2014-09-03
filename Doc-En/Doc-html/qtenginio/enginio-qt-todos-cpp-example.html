@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- todos-cpp.qdoc -->
+  <title>Enginio C++ Examples - Todos | QtEnginio 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-cpp-classes-and-examples.html">Enginio C++ Classes and Examples</a></li>
+<li>Enginio C++ Examples - Todos</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Enginio C++ Examples - Todos</h1>
+<span class="subtitle"></span>
+<!-- $$$todos-cpp-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Todo example shows how to use the <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a> with Qt Widgets.<p>In this example, a simple list of objects is displayed in a <a href="../qtwidgets/qlistview.html">QListView</a>. Each item in the list is a &quot;To Do&quot; object which can be &quot;done&quot; or &quot;not yet done&quot;. Todos can be added, removed, or altered.</p>
+<p class="centerAlign"><img src="images/todo-example.png" alt="" /></p><p>In this simple schema the objects will have two properties that are added to the default properties (such as creation date which always exists): a string &quot;title&quot; and a bool &quot;completed&quot;. The object type will be created when a call to create, or in this case EnginoModel::append(), is made.</p>
+<p>A todo object will look like this (in JSON):</p>
+<pre class="cpp">{
+  <span class="string">&quot;title&quot;</span>: <span class="string">&quot;Buy Milk&quot;</span><span class="operator">,</span>
+  <span class="string">&quot;completed&quot;</span>: <span class="keyword">false</span>
+}</pre>
+<p>The first step is to create a TodosModel which inherits <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a>, and defines the main roles which will be used. As we are interested in the To Do <tt>title</tt> and the <tt>completed</tt> information we need to define these two roles.</p>
+<pre class="cpp"><span class="keyword">class</span> TodosModel : <span class="keyword">public</span> EnginioModel
+{
+    Q_OBJECT
+
+<span class="keyword">public</span>:
+    <span class="keyword">enum</span> Role
+    {
+        TitleRole <span class="operator">=</span> Enginio<span class="operator">::</span>CustomPropertyRole<span class="operator">,</span>
+        CompletedRole
+    };</pre>
+<p>By default, views (for example <a href="../qtwidgets/qlistview.html">QListView</a>) use the <a href="../qtcore/qt.html#ItemDataRole-enum">Qt::ItemDataRole</a> role to display or edit the content. The newly created <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a> is empty and defines basic roles. Most roles are created dynamically, based on the JSON datastructure. They have no predefined value in the <a href="../qtcore/qt.html#ItemDataRole-enum">Qt::ItemDataRole</a> enum. <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a> automatically populates itself as soon as the <a href="enginiomodel.html#query-prop">query</a> and <a href="enginiomodel.html#client-prop">client</a> properties have been set. When the data is downloaded, the model resets itself, and sets up the internal data cache and roles names. <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a> guesses the role names based on heuristics. It may be wrong if not all objects received from the backend have exactly the same structure. For example, a property can be missing in certain objects. To protect against such cases, we overload <a href="../qtcore/qabstractitemmodel.html#roleNames">roleNames()</a>. Overriding <a href="../qtcore/qabstractitemmodel.html#roleNames">roleNames()</a> can also be used to match default Qt roles to the named ones.</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">,</span> <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span><span class="operator">&gt;</span> TodosModel<span class="operator">::</span>roleNames() <span class="keyword">const</span>
+{
+    <span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">,</span> <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span><span class="operator">&gt;</span> roles <span class="operator">=</span> EnginioModel<span class="operator">::</span>roleNames();
+    roles<span class="operator">.</span>insert(TitleRole<span class="operator">,</span> <span class="string">&quot;title&quot;</span>);
+    roles<span class="operator">.</span>insert(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>DisplayRole<span class="operator">,</span> <span class="string">&quot;title&quot;</span>);
+    roles<span class="operator">.</span>insert(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>EditRole<span class="operator">,</span> <span class="string">&quot;title&quot;</span>);
+    roles<span class="operator">.</span>insert(CompletedRole<span class="operator">,</span> <span class="string">&quot;completed&quot;</span>);
+    <span class="keyword">return</span> roles;
+}</pre>
+<p>In this example we map the <a href="../qtcore/qt.html#ItemDataRole-enum">Qt::DisplayRole</a> and <a href="../qtcore/qt.html#ItemDataRole-enum">Qt::EditRole</a> to the <tt>title</tt> property in the JSON. This way the right string is shown by default and editing works as expected.</p>
+<p>Remember to always call the base class implementation to avoid situations in which the internal cache is not in sync.</p>
+<p>By default <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a> operates on <a href="../qtcore/qjsonvalue.html">QJsonValue</a>, and that is what the <a href="../qtcore/qabstractitemmodel.html#data">data()</a> function returns inside the <a href="../qtcore/qvariant.html">QVariant</a>, but standard views, such as <a href="../qtwidgets/qlistview.html">QListView</a>, use predefined roles which do not map directly to our roles. That is why we need to write a mapping between them:</p>
+<pre class="cpp"><span class="type"><a href="../qtcore/qvariant.html">QVariant</a></span> TodosModel<span class="operator">::</span>data(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qmodelindex.html">QModelIndex</a></span> <span class="operator">&amp;</span>index<span class="operator">,</span> <span class="type">int</span> role) <span class="keyword">const</span>
+{
+    <span class="keyword">if</span> (role <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>FontRole) {
+        bool completed <span class="operator">=</span> EnginioModel<span class="operator">::</span>data(index<span class="operator">,</span> CompletedRole)<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type"><a href="../qtcore/qjsonvalue.html">QJsonValue</a></span><span class="operator">&gt;</span>()<span class="operator">.</span>toBool();
+        <span class="type"><a href="../qtgui/qfont.html">QFont</a></span> font;
+        font<span class="operator">.</span>setPointSize(<span class="number">20</span>);
+        font<span class="operator">.</span>setStrikeOut(completed);
+        <span class="keyword">return</span> font;
+    }
+
+    <span class="keyword">if</span> (role <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>TextColorRole) {
+        bool completed <span class="operator">=</span> EnginioModel<span class="operator">::</span>data(index<span class="operator">,</span> CompletedRole)<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type"><a href="../qtcore/qjsonvalue.html">QJsonValue</a></span><span class="operator">&gt;</span>()<span class="operator">.</span>toBool();
+        <span class="keyword">return</span> completed <span class="operator">?</span> <span class="type"><a href="../qtgui/qcolor.html">QColor</a></span>(<span class="string">&quot;#999&quot;</span>) : <span class="type"><a href="../qtgui/qcolor.html">QColor</a></span>(<span class="string">&quot;#333&quot;</span>);
+    }
+
+    <span class="keyword">if</span> (role <span class="operator">=</span><span class="operator">=</span> CompletedRole)
+        <span class="keyword">return</span> EnginioModel<span class="operator">::</span>data(index<span class="operator">,</span> CompletedRole)<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type"><a href="../qtcore/qjsonvalue.html">QJsonValue</a></span><span class="operator">&gt;</span>()<span class="operator">.</span>toBool();
+
+    <span class="comment">// fallback to base class</span>
+    <span class="keyword">return</span> EnginioModel<span class="operator">::</span>data(index<span class="operator">,</span> role);
+}</pre>
+<p>As we have our model defined, we need to create an instance of <a href="enginioclient.html">EnginioClient</a>:</p>
+<pre class="cpp">m_client <span class="operator">=</span> <span class="keyword">new</span> EnginioClient(<span class="keyword">this</span>);
+m_client<span class="operator">-</span><span class="operator">&gt;</span>setBackendId(EnginioBackendId);</pre>
+<p>It is used by the model to connect to the Enginio backend. Next we need to construct and configure our model too. The configuration is based on two steps, assigning an <a href="enginioclient.html">EnginioClient</a> instance and by creating a query.</p>
+<pre class="cpp">m_model <span class="operator">=</span> <span class="keyword">new</span> TodosModel(<span class="keyword">this</span>);
+m_model<span class="operator">-</span><span class="operator">&gt;</span>setClient(m_client);
+
+<span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> query;
+query<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.todos&quot;</span>);
+m_model<span class="operator">-</span><span class="operator">&gt;</span>setQuery(query);</pre>
+<p>The model has to be assigned to a view. In our case it is a <a href="../qtwidgets/qlistview.html">QListView</a>.</p>
+<pre class="cpp">m_view<span class="operator">-</span><span class="operator">&gt;</span>setModel(m_model);</pre>
+<p>To make the application fully functional, a way to add and remove &quot;To Dos&quot; is needed. To do so, we need to connect the correct buttons to slots for adding a new item:</p>
+<pre class="cpp"><span class="type">void</span> MainWindow<span class="operator">::</span>appendItem()
+{
+    bool ok;
+    <span class="type"><a href="../qtcore/qstring.html">QString</a></span> text <span class="operator">=</span> <span class="type"><a href="../qtwidgets/qinputdialog.html">QInputDialog</a></span><span class="operator">::</span>getText(<span class="keyword">this</span><span class="operator">,</span> tr(<span class="string">&quot;Create a new To Do&quot;</span>)
+                                         <span class="operator">,</span> tr(<span class="string">&quot;Title:&quot;</span>)<span class="operator">,</span> <span class="type"><a href="../qtwidgets/qlineedit.html">QLineEdit</a></span><span class="operator">::</span>Normal
+                                         <span class="operator">,</span> <span class="string">&quot;&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok);
+    <span class="keyword">if</span> (ok <span class="operator">&amp;</span><span class="operator">&amp;</span> <span class="operator">!</span>text<span class="operator">.</span>isEmpty()){
+        <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> object;
+        object<span class="operator">[</span><span class="string">&quot;title&quot;</span><span class="operator">]</span> <span class="operator">=</span> text;
+        object<span class="operator">[</span><span class="string">&quot;completed&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="keyword">false</span>; <span class="comment">// By default a new To Do is not completed</span>
+        EnginioReply <span class="operator">*</span>reply <span class="operator">=</span> m_model<span class="operator">-</span><span class="operator">&gt;</span>append(object);
+        <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>finished<span class="operator">,</span> reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>deleteLater);
+    }
+}</pre>
+<p>and for removing it:</p>
+<pre class="cpp"><span class="type">void</span> MainWindow<span class="operator">::</span>removeItem()
+{
+    <span class="type"><a href="../qtcore/qmodelindex.html">QModelIndex</a></span> index <span class="operator">=</span> m_view<span class="operator">-</span><span class="operator">&gt;</span>currentIndex();
+    EnginioReply <span class="operator">*</span>reply <span class="operator">=</span> m_model<span class="operator">-</span><span class="operator">&gt;</span>remove(index<span class="operator">.</span>row());
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>finished<span class="operator">,</span> reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>deleteLater);
+}</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtenginio-todos-cpp-mainwindow-cpp.html">todos-cpp/mainwindow.cpp</a></li>
+<li><a href="qtenginio-todos-cpp-mainwindow-h.html">todos-cpp/mainwindow.h</a></li>
+<li><a href="qtenginio-todos-cpp-todosmodel-cpp.html">todos-cpp/todosmodel.cpp</a></li>
+<li><a href="qtenginio-todos-cpp-todosmodel-h.html">todos-cpp/todosmodel.h</a></li>
+<li><a href="qtenginio-todos-cpp-main-cpp.html">todos-cpp/main.cpp</a></li>
+<li><a href="qtenginio-todos-cpp-todos-cpp-pro.html">todos-cpp/todos-cpp.pro</a></li>
+</ul>
+</div>
+<!-- @@@todos-cpp -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

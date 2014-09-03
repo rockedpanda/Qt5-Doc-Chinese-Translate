@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- enginioqmlmodel.cpp -->
+  <title>EnginioModel QML Type | QtEnginioQml 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-qml-types-and-examples.html">Enginio QML Types and Examples</a></li>
+<li>EnginioModel QML Type</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">EnginioModel QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$EnginioModel-brief -->
+<p>Makes accessing collections of objects easy <a href="#details">More...</a></p>
+<!-- @@@EnginioModel -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import Enginio 1.0</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.3</td></tr></table><ul>
+<li><a href="qml-enginio-enginiomodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-enginio-enginiomodel.html#client-prop">client</a></b></b> : EnginioClient</li>
+<li class="fn"><b><b><a href="qml-enginio-enginiomodel.html#operation-prop">operation</a></b></b> : Enginio::Operation</li>
+<li class="fn"><b><b><a href="qml-enginio-enginiomodel.html#query-prop">query</a></b></b> : QJSValue</li>
+</ul>
+<a name="methods"></a>
+<h2>Methods</h2>
+<ul>
+<li class="fn">EnginioReply <b><b><a href="qml-enginio-enginiomodel.html#append-method">append</a></b></b>(QJSValue <i>object</i>)</li>
+<li class="fn">EnginioReply <b><b><a href="qml-enginio-enginiomodel.html#remove-method">remove</a></b></b>(int <i>row</i>)</li>
+<li class="fn">EnginioReply <b><b><a href="qml-enginio-enginiomodel.html#setProperty-method">setProperty</a></b></b>(int <i>row</i>, string <i>propertyName</i>, QVariant <i>value</i>)</li>
+</ul>
+<!-- $$$EnginioModel-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<pre class="qml">import Enginio 1.0</pre>
+<p>The query property of the model takes a JSON object.</p>
+<p>To get a model of each object of type &quot;objects.city&quot; use:</p>
+<pre class="qml"><span class="type">EnginioModel</span> {
+    <span class="name">id</span>: <span class="name">enginioModel</span>
+    <span class="name">client</span>: <span class="name">client</span>
+    <span class="name">query</span>: { &quot;objectType&quot;: <span class="string">&quot;objects.city&quot;</span> }
+}</pre>
+<p>It is then possible to use a regular Qt Quick <a href="../qtquick/qml-qtquick-listview.html">ListView</a> to display the list of cities that the backend contains.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-listview.html">ListView</a></span> {
+    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+    <span class="name">model</span>: <span class="name">enginioModel</span>
+    <span class="name">delegate</span>: <span class="name">Text</span> {
+        <span class="name">text</span>: <span class="name">name</span> <span class="operator">+</span> <span class="string">&quot;: &quot;</span> <span class="operator">+</span> <span class="name">population</span>
+    }
+}</pre>
+<p>Note that the properties of the objects can be directly accessed. In this example, we have the type &quot;objects.city&quot; in the backend with two properties: &quot;name&quot; and &quot;population&quot;.</p>
+<p>The model supports several function to modify the data, for example <a href="qml-enginio-enginiomodel.html#append-method">append()</a>, <a href="qml-enginio-enginiomodel.html#remove-method">remove()</a>, <a href="qml-enginio-enginiomodel.html#setProperty-method">setProperty()</a></p>
+<p>The QML version of EnginioModel supports the same functionality as the C++ version. <a href="../qtenginio/enginiomodel.html#enginiomodelcpp">EnginioModel C++</a></p>
+<!-- @@@EnginioModel -->
+<h2>Property Documentation</h2>
+<!-- $$$client -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="client-prop"></a><span class="name">client</span> : <span class="type"><a href="qml-enginio-enginioclient.html">EnginioClient</a></span></p></td></tr></table></div><div class="qmldoc"><p>The instance of <a href="qml-enginio-enginioclient.html">EnginioClient</a> used for this model.</p>
+</div></div><!-- @@@client -->
+<br/>
+<!-- $$$operation -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="operation-prop"></a><span class="name">operation</span> : <span class="type">Enginio::Operation</span></p></td></tr></table></div><div class="qmldoc"><p>The operation used for the <a href="qml-enginio-enginiomodel.html#query-prop">query</a>.</p>
+</div></div><!-- @@@operation -->
+<br/>
+<!-- $$$query -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="query-prop"></a><span class="name">query</span> : <span class="type"><a href="../qtqml/qjsvalue.html">QJSValue</a></span></p></td></tr></table></div><div class="qmldoc"><p>The query used to populate the model with data from the backend.</p>
+<p>See <a href="qml-enginio-enginioclient.html#query-method">EnginioClient::query()</a> documentation for information on how to construct a query.</p>
+<p>While the <a href="qml-enginio-enginioclient.html">EnginioClient</a> implementation of <tt>query()</tt> returns the data of a query as a JSON object, for the model the query will be interpreted as the model data.</p>
+<p>Usually, the query is for a single object type and will return all objects in the database of that type. The model will then represent each returned object as one row. It can be limited and sorted just like its counterpart in <a href="qml-enginio-enginioclient.html">EnginioClient</a>.</p>
+<p>One important thing to note is that the model cannot keep the same sorting as the backend, and thus sorting and limits are only preserved until an insertion or deletion happens.</p>
+<p><b>See also </b><a href="qml-enginio-enginioclient.html#query-method">EnginioClient::query()</a>.</p>
+</div></div><!-- @@@query -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$append -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="append-method"></a><span class="type"><a href="qml-enginio-enginioreply.html">EnginioReply</a></span> <span class="name">append</span>(<span class="type"><a href="../qtqml/qjsvalue.html">QJSValue</a></span><i> object</i>)</p></td></tr></table></div><div class="qmldoc"><p>Add a new <i>object</i> to the model and database.</p>
+<p>This function appends the new object to the local model cache and makes an asynchronous request to the backend.</p>
+<p>Since adding an object to the database may fail for various reasons, the returned reply must be kept and used for error handling (see <a href="qml-enginio-enginioreply.html">EnginioReply</a>). If the operation fails, the object that was supposed to be appended will be removed from the local model again. If the model is used in a view and the backend does not accept the object because it violates a validator, it will be visible to the user that a new row in the view appears and disappears again.</p>
+<p>Returns the <a href="qml-enginio-enginioreply.html">EnginioReply</a> from the backend</p>
+<p>To add a &quot;city&quot; object to the model by appending it:</p>
+<pre class="qml"><span class="keyword">function</span> <span class="name">addCity</span>() {
+    var <span class="name">berlin</span> = {
+        &quot;objectType&quot;: <span class="string">&quot;objects.city&quot;</span>,
+        &quot;name&quot;: <span class="string">&quot;Berlin&quot;</span>,
+        &quot;population&quot;: <span class="number">3300000</span>
+    }
+    <span class="name">enginioModel</span>.<span class="name">append</span>(<span class="name">berlin</span>)
+}</pre>
+</div></div><!-- @@@append -->
+<br/>
+<!-- $$$remove -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="remove-method"></a><span class="type"><a href="qml-enginio-enginioreply.html">EnginioReply</a></span> <span class="name">remove</span>(<span class="type"><a href="../qtqml/qml-int.html">int</a></span><i> row</i>)</p></td></tr></table></div><div class="qmldoc"><p>Removes the <i>row</i> from the model and database.</p>
+<p>This function immediately removes the <i>row</i> from the local cache and sends a remove request to the Enginio backend.</p>
+<p>Returns the <a href="qml-enginio-enginioreply.html">EnginioReply</a> from the backend.</p>
+<p><b>See also </b><a href="qml-enginio-enginioclient.html#remove-method">EnginioClient::remove()</a>.</p>
+</div></div><!-- @@@remove -->
+<br/>
+<!-- $$$setProperty -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="setProperty-method"></a><span class="type"><a href="qml-enginio-enginioreply.html">EnginioReply</a></span> <span class="name">setProperty</span>(<span class="type"><a href="../qtqml/qml-int.html">int</a></span><i> row</i>, <span class="type"><a href="../qtqml/qml-string.html">string</a></span><i> propertyName</i>, <span class="type"><a href="../qtcore/qvariant.html">QVariant</a></span><i> value</i>)</p></td></tr></table></div><div class="qmldoc"><p>Change a property of an object in the model</p>
+<p>The property <i>propertyName</i> of the object at <i>row</i> will be set to <i>value</i>. The model will locally reflect the change immediately and propagage the change to the server in the background.</p>
+</div></div><!-- @@@setProperty -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

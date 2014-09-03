@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- todos.qdoc -->
+  <title>Enginio QML Examples - Todos | QtEnginioQml 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-qml-types-and-examples.html">Enginio QML Types and Examples</a></li>
+<li>Enginio QML Examples - Todos</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Enginio QML Examples - Todos</h1>
+<span class="subtitle"></span>
+<!-- $$$todos-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Todo example shows the <a href="collision-enginiomodel.html">EnginioModel</a> usage in Qt Quick.<p>In this example a simple list of objects is displayed in a <a href="../qtquick/qml-qtquick-listview.html">ListView</a>. Each item in the list is a &quot;To Do&quot; object which can be <i>done</i> or <i>not yet done</i>. Todos can be added and removed (when hovering with the mouse).</p>
+<p class="centerAlign"><img src="images/todolist.png" alt="" /></p><p>In this simple schema the objects will only have two properties that are added to the default properties (such as creation date, which always exists): a string <tt>title</tt> and a bool <tt>completed</tt>. The object type will be created when a call to create, or, in this case, a call to <a href="qml-enginio-enginiomodel.html#append-method">EnginioModel::append()</a> is made.</p>
+<p>A todo object will look like this (in JSON):</p>
+<pre class="cpp">{
+  <span class="string">&quot;title&quot;</span>: <span class="string">&quot;Buy Milk&quot;</span><span class="operator">,</span>
+  <span class="string">&quot;completed&quot;</span>: <span class="keyword">false</span>
+}</pre>
+<p>The example uses Qt Quick Controls, Layouts, and Enginio.</p>
+<pre class="qml">import Enginio 1.0</pre>
+<p>The first step is to create an <a href="qml-enginio-enginiomodel.html">Enginio::EnginioModel</a> and the Enginio instance with the backend configuration. To get nice debug output in case something goes wrong, the onError signal in Enginio is handled. Since the error is a JSON object, JSON.stringify is used to format it to a string.</p>
+<pre class="qml"><span class="type"><a href="collision-enginiomodel.html">EnginioModel</a></span> {
+    <span class="name">id</span>: <span class="name">enginioModel</span>
+    <span class="name">client</span>: <span class="name">EnginioClient</span> {
+        <span class="name">backendId</span>: <span class="name">backendHelper</span>.<span class="name">backendId</span>
+        <span class="name">onError</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;Enginio error:&quot;</span>, <span class="name">JSON</span>.<span class="name">stringify</span>(<span class="name">reply</span>.<span class="name">data</span>))
+    }
+    <span class="name">query</span>: {&quot;objectType&quot;: <span class="string">&quot;objects.todos&quot;</span> }
+}</pre>
+<p>A <a href="../qtquick/qml-qtquick-listview.html">ListView</a> is used to display the list of Todos. In the delegate, the properties of the Enginio objects are used.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-listview.html">ListView</a></span> {
+    <span class="name">id</span>: <span class="name">listview</span>
+    <span class="name">model</span>: <span class="name">enginioModel</span>
+    <span class="name">delegate</span>: <span class="name">listItemDelegate</span>
+    <span class="name">anchors</span>.top: <span class="name">header</span>.<span class="name">bottom</span>
+    <span class="name">anchors</span>.bottom: <span class="name">footer</span>.<span class="name">top</span>
+    <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+    <span class="name">clip</span>: <span class="number">true</span>
+
+    <span class="comment">// Animations</span>
+    <span class="name">add</span>: <span class="name">Transition</span> { <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">properties</span>: <span class="string">&quot;y&quot;</span>; <span class="name">from</span>: <span class="name">root</span>.<span class="name">height</span>; <span class="name">duration</span>: <span class="number">250</span> } }
+    <span class="name">removeDisplaced</span>: <span class="name">Transition</span> { <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">properties</span>: <span class="string">&quot;y&quot;</span>; <span class="name">duration</span>: <span class="number">150</span> } }
+    <span class="name">remove</span>: <span class="name">Transition</span> { <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">property</span>: <span class="string">&quot;opacity&quot;</span>; <span class="name">to</span>: <span class="number">0</span>; <span class="name">duration</span>: <span class="number">150</span> } }
+}</pre>
+<p>It is easy to add a new object to the model. By using the onAccepted signal handler of a <a href="../qtquickcontrols/qml-qtquick-controls-textfield.html">TextField</a>, the data is appended to the model. After appending the new Todo, the text gets cleared so that a new Todo can be entered.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a></span> {
+
+    <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+    <span class="name">anchors</span>.right: <span class="name">addButton</span>.<span class="name">left</span>
+    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+    <span class="name">anchors</span>.margins: <span class="number">16</span>
+    <span class="name">source</span>:<span class="string">&quot;images/textfield.png&quot;</span>
+    <span class="name">border</span>.left: <span class="number">14</span> ; <span class="name">border</span>.right: <span class="number">14</span> ; <span class="name">border</span>.top: <span class="number">8</span> ; <span class="name">border</span>.bottom: <span class="number">8</span>
+
+    <span class="type"><a href="../qtquick/qml-qtquick-textinput.html">TextInput</a></span>{
+        <span class="name">id</span>: <span class="name">textInput</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">clip</span>: <span class="number">true</span>
+        <span class="name">anchors</span>.leftMargin: <span class="number">14</span>
+        <span class="name">anchors</span>.rightMargin: <span class="number">14</span>
+        <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+        <span class="name">font</span>.pixelSize: <span class="number">22</span>
+        <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+            <span class="name">id</span>: <span class="name">placeholderText</span>
+            <span class="name">anchors</span>.fill: <span class="name">parent</span>
+            <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+            <span class="name">visible</span>: !(<span class="name">parent</span>.<span class="name">text</span>.<span class="name">length</span> <span class="operator">||</span> <span class="name">parent</span>.<span class="name">inputMethodComposing</span>)
+            <span class="name">font</span>: <span class="name">parent</span>.<span class="name">font</span>
+            <span class="name">text</span>: <span class="string">&quot;New todo...&quot;</span>
+            <span class="name">color</span>: <span class="string">&quot;#aaa&quot;</span>
+        }
+        <span class="name">onAccepted</span>: {
+            <span class="name">enginioModel</span>.<span class="name">append</span>({&quot;title&quot;: <span class="name">textInput</span>.<span class="name">text</span>, &quot;completed&quot;: <span class="number">false</span>})
+            <span class="name">textInput</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>
+        }
+    }
+}
+
+<span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">id</span>: <span class="name">addButton</span>
+
+    <span class="name">width</span>: <span class="number">40</span> ; <span class="name">height</span>: <span class="number">40</span>
+    <span class="name">anchors</span>.margins: <span class="number">20</span>
+    <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+    <span class="name">enabled</span>: <span class="name">textInput</span>.<span class="name">text</span>.<span class="name">length</span>
+    <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+        <span class="name">source</span>: <span class="name">addMouseArea</span>.<span class="name">pressed</span> ? <span class="string">&quot;qrc:icons/add_icon_pressed.png&quot;</span> : <span class="string">&quot;qrc:icons/add_icon.png&quot;</span>
+        <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+        <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.5</span>
+    }
+    <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">id</span>: <span class="name">addMouseArea</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onClicked</span>: <span class="name">textInput</span>.<span class="name">accepted</span>()
+    }
+}
+}</pre>
+<p>Inside the delegate, the data for the index is available by using the property names (<i>title</i> and <i>completed</i>). The <i>title</i> property is directly assigned to the text displayed on each list item. The <i>completed</i> boolean is used to display the item with a strikeout font and a light color.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+    <span class="name">id</span>: <span class="name">todoText</span>
+    <span class="name">text</span>: <span class="name">title</span>
+    <span class="name">font</span>.pixelSize: <span class="number">26</span>
+    <span class="name">color</span>: <span class="string">&quot;#333&quot;</span>
+
+    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+    <span class="name">anchors</span>.left: <span class="name">checkbox</span>.<span class="name">right</span>
+    <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+    <span class="name">anchors</span>.leftMargin: <span class="number">12</span>
+    <span class="name">anchors</span>.rightMargin: <span class="number">40</span>
+    <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+}</pre>
+<p>The <a href="qml-enginio-enginiomodel.html#setProperty-method">Enginio::EnginioModel::setProperty</a>() function is called to update the data in the Enginio backend.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+    <span class="name">id</span>: <span class="name">mouse</span>
+    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+    <span class="name">hoverEnabled</span>: <span class="number">true</span>
+    <span class="name">onClicked</span>: {
+        <span class="keyword">if</span> (<span class="name">index</span> <span class="operator">!==</span> -<span class="number">1</span> <span class="operator">&amp;&amp;</span> <span class="name">_synced</span>) {
+            <span class="name">enginioModel</span>.<span class="name">setProperty</span>(<span class="name">index</span>, <span class="string">&quot;completed&quot;</span>, !<span class="name">completed</span>)
+        }
+    }
+}</pre>
+<p>The <tt>_synced</tt> property can be used to ascertain whether an item has been synced or not. It is always available in the delegate, and may be used, for example, to disable the user interface until syncing has completed.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+    <span class="name">id</span>: <span class="name">removeIcon</span>
+
+    <span class="name">source</span>: <span class="name">removeMouseArea</span>.<span class="name">pressed</span> ? <span class="string">&quot;qrc:icons/delete_icon_pressed.png&quot;</span> : <span class="string">&quot;qrc:icons/delete_icon.png&quot;</span>
+    <span class="name">anchors</span>.margins: <span class="number">20</span>
+    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+    <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+    <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.5</span>
+    Behavior on <span class="name">opacity</span> {<span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span>{<span class="name">duration</span>: <span class="number">100</span>}}
+    <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">id</span>: <span class="name">removeMouseArea</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onClicked</span>: <span class="name">enginioModel</span>.<span class="name">remove</span>(<span class="name">index</span>)
+    }
+}</pre>
+<p>Finally, a remove button is visible when hovering over an item with the mouse. Removal is implemented by calling <a href="qml-enginio-enginiomodel.html#remove-method">EnginioModel::remove()</a> with the row of the item.</p>
+<pre class="qml"><span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+    <span class="name">id</span>: <span class="name">removeMouseArea</span>
+    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+    <span class="name">onClicked</span>: <span class="name">enginioModel</span>.<span class="name">remove</span>(<span class="name">index</span>)
+}</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtenginioqml-todos-todo-qml.html">todos/todo.qml</a></li>
+<li><a href="qtenginioqml-todos-todo-qrc.html">todos/todo.qrc</a></li>
+<li><a href="qtenginioqml-todos-todos-pro.html">todos/todos.pro</a></li>
+</ul>
+</div>
+<!-- @@@todos -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

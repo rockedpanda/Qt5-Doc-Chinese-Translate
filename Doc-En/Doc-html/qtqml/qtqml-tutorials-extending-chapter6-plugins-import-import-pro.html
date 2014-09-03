@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>import.pro Example File | QtQml 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtqml-index.html">Qt QML</a></li>
+<li><a href="qtqml-tutorials-extending-chapter6-plugins-example.html">Chapter 6: Writing an Extension Plugin</a></li>
+<li>import.pro Example File</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">import.pro Example File</h1>
+<span class="subtitle">tutorials/extending/chapter6-plugins/import/import.pro</span>
+<!-- $$$tutorials/extending/chapter6-plugins/import/import.pro-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp">TEMPLATE = lib
+CONFIG += plugin
+QT += qml quick
+
+DESTDIR = ../Charts
+TARGET = $$qtLibraryTarget(chartsplugin)
+
+HEADERS += piechart.h \
+           pieslice.h \
+           chartsplugin.h
+
+SOURCES += piechart.cpp \
+           pieslice.cpp \
+           chartsplugin.cpp
+
+DESTPATH=$$[QT_INSTALL_EXAMPLES]/qml/tutorials/extending/chapter6-plugins/Charts
+
+target.path=$$DESTPATH
+qmldir.files=$$PWD/qmldir
+qmldir.path=$$DESTPATH
+INSTALLS += target qmldir
+
+OTHER_FILES += qmldir
+
+# Copy the qmldir file to the same folder as the plugin binary
+QMAKE_POST_LINK += $$QMAKE_COPY $$replace($$list($$quote($$PWD/qmldir) $$DESTDIR), /, $$QMAKE_DIR_SEP)</pre>
+</div>
+<!-- @@@tutorials/extending/chapter6-plugins/import/import.pro -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
