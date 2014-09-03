@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mainwindow.cpp Example File | QtEnginio 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-cpp-classes-and-examples.html">Enginio C++ Classes and Examples</a></li>
+<li><a href="enginio-qt-image-gallery-cpp-example.html">Enginio C++ Examples - Image Gallery</a></li>
+<li>mainwindow.cpp Example File</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">mainwindow.cpp Example File</h1>
+<span class="subtitle">image-gallery-cpp/mainwindow.cpp</span>
+<!-- $$$image-gallery-cpp/mainwindow.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp"><span class="comment">/****************************************************************************
+**
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the examples of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** You may use this file under the terms of the BSD license as follows:
+**
+** &quot;Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of Digia Plc and its Subsidiary(-ies) nor the names
+**     of its contributors may be used to endorse or promote products derived
+**     from this software without specific prior written permission.
+**
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/</span>
+
+<span class="preprocessor">#include &lt;QtWidgets&gt;</span>
+<span class="preprocessor">#include &lt;QDebug&gt;</span>
+<span class="preprocessor">#include &lt;QFrame&gt;</span>
+<span class="preprocessor">#include &lt;QLabel&gt;</span>
+<span class="preprocessor">#include &lt;QListView&gt;</span>
+<span class="preprocessor">#include &lt;QMenu&gt;</span>
+<span class="preprocessor">#include &lt;QNetworkAccessManager&gt;</span>
+<span class="preprocessor">#include &lt;QPushButton&gt;</span>
+<span class="preprocessor">#include &lt;QTimer&gt;</span>
+<span class="preprocessor">#include &lt;QVBoxLayout&gt;</span>
+
+<span class="preprocessor">#include &lt;enginioclient.h&gt;</span>
+<span class="preprocessor">#include &lt;enginioreply.h&gt;</span>
+
+<span class="comment">// To get the backend right, we use a helper class in the example.</span>
+<span class="comment">// Usually one would just insert the backend information below.</span>
+<span class="preprocessor">#include &quot;backendhelper.h&quot;</span>
+
+<span class="preprocessor">#include &quot;imageobject.h&quot;</span>
+<span class="preprocessor">#include &quot;mainwindow.h&quot;</span>
+<span class="preprocessor">#include &quot;imagemodel.h&quot;</span>
+
+MainWindow<span class="operator">::</span>MainWindow(<span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span>parent)
+    : <span class="type"><a href="../qtwidgets/qmainwindow.html">QMainWindow</a></span>(parent)
+{
+    setWindowTitle(<span class="type">QStringLiteral</span>(<span class="string">&quot;Enginio Image Gallery&quot;</span>));
+
+    m_client <span class="operator">=</span> <span class="keyword">new</span> EnginioClient(<span class="keyword">this</span>);
+    m_client<span class="operator">-</span><span class="operator">&gt;</span>setBackendId(backendId(<span class="string">&quot;image-gallery&quot;</span>));
+
+    m_model <span class="operator">=</span> <span class="keyword">new</span> ImageModel(<span class="keyword">this</span>);
+    m_model<span class="operator">-</span><span class="operator">&gt;</span>setClient(m_client);
+
+    m_view <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtwidgets/qlistview.html">QListView</a></span>;
+    m_view<span class="operator">-</span><span class="operator">&gt;</span>setModel(m_model);
+    m_view<span class="operator">-</span><span class="operator">&gt;</span>setViewMode(<span class="type"><a href="../qtwidgets/qlistview.html">QListView</a></span><span class="operator">::</span>IconMode);
+    m_view<span class="operator">-</span><span class="operator">&gt;</span>setGridSize(<span class="type"><a href="../qtcore/qsize.html">QSize</a></span>(<span class="number">104</span><span class="operator">,</span> <span class="number">104</span>));
+
+    m_fileDialog <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtwidgets/qfiledialog.html">QFileDialog</a></span>(<span class="keyword">this</span>);
+    m_fileDialog<span class="operator">-</span><span class="operator">&gt;</span>setFileMode(<span class="type"><a href="../qtwidgets/qfiledialog.html">QFileDialog</a></span><span class="operator">::</span>ExistingFile);
+    m_fileDialog<span class="operator">-</span><span class="operator">&gt;</span>setNameFilter(<span class="string">&quot;Image files (*.png *.jpg *.jpeg)&quot;</span>);
+    connect(m_fileDialog<span class="operator">,</span> SIGNAL(fileSelected(<span class="type"><a href="../qtcore/qstring.html">QString</a></span>))<span class="operator">,</span>
+            <span class="keyword">this</span><span class="operator">,</span> SLOT(fileSelected(<span class="type"><a href="../qtcore/qstring.html">QString</a></span>)));
+
+    m_uploadButton <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtwidgets/qpushbutton.html">QPushButton</a></span>(<span class="string">&quot;Upload image&quot;</span>);
+    connect(m_uploadButton<span class="operator">,</span> SIGNAL(clicked())<span class="operator">,</span>
+            m_fileDialog<span class="operator">,</span> SLOT(show()));
+
+    <span class="type"><a href="../qtwidgets/qframe.html">QFrame</a></span> <span class="operator">*</span>frame <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtwidgets/qframe.html">QFrame</a></span>;
+    <span class="type"><a href="../qtwidgets/qvboxlayout.html">QVBoxLayout</a></span> <span class="operator">*</span>windowLayout <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtwidgets/qvboxlayout.html">QVBoxLayout</a></span>(frame);
+    windowLayout<span class="operator">-</span><span class="operator">&gt;</span>addWidget(m_view);
+    windowLayout<span class="operator">-</span><span class="operator">&gt;</span>addWidget(m_uploadButton);
+    setCentralWidget(frame);
+
+    queryImages();
+}
+
+<span class="type"><a href="../qtcore/qsize.html">QSize</a></span> MainWindow<span class="operator">::</span>sizeHint() <span class="keyword">const</span>
+{
+    <span class="keyword">return</span> <span class="type"><a href="../qtcore/qsize.html">QSize</a></span>(<span class="number">500</span><span class="operator">,</span> <span class="number">700</span>);
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>queryImages()
+{
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> query;
+    query<span class="operator">.</span>insert(<span class="string">&quot;objectType&quot;</span><span class="operator">,</span> <span class="type">QStringLiteral</span>(<span class="string">&quot;objects.image&quot;</span>));
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> fileObject;
+    fileObject<span class="operator">.</span>insert(<span class="string">&quot;file&quot;</span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span>());
+
+    <span class="comment">// Use include parameter to request full &quot;file&quot; object for every result</span>
+    <span class="comment">// object including image and thumbnail URLs.</span>
+    query<span class="operator">.</span>insert(<span class="string">&quot;include&quot;</span><span class="operator">,</span> fileObject);
+
+    <span class="comment">// Filter out objects which have not yet been uploaded completely</span>
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> filter;
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> exists;
+    exists<span class="operator">.</span>insert(<span class="string">&quot;$exists&quot;</span><span class="operator">,</span> <span class="keyword">true</span>);
+    filter<span class="operator">.</span>insert(<span class="string">&quot;file.id&quot;</span><span class="operator">,</span> exists);
+    query<span class="operator">.</span>insert(<span class="string">&quot;query&quot;</span><span class="operator">,</span> filter);
+
+    m_model<span class="operator">-</span><span class="operator">&gt;</span>setQuery(query);
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>error(EnginioReply <span class="operator">*</span>error)
+{
+    <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> Q_FUNC_INFO <span class="operator">&lt;</span><span class="operator">&lt;</span> error;
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>fileSelected(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>filePath)
+{
+    <span class="keyword">if</span> (filePath<span class="operator">.</span>isEmpty())
+        <span class="keyword">return</span>;
+
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> object;
+    object<span class="operator">.</span>insert(<span class="string">&quot;objectType&quot;</span><span class="operator">,</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span>(<span class="string">&quot;objects.image&quot;</span>));
+    <span class="type"><a href="../qtcore/qstring.html">QString</a></span> fileName <span class="operator">=</span> filePath<span class="operator">.</span>split(<span class="type"><a href="../qtcore/qdir.html">QDir</a></span><span class="operator">::</span>separator())<span class="operator">.</span>last();
+    object<span class="operator">.</span>insert(<span class="string">&quot;name&quot;</span><span class="operator">,</span> fileName);
+    object<span class="operator">.</span>insert(<span class="string">&quot;localPath&quot;</span><span class="operator">,</span> filePath);
+    EnginioReply <span class="operator">*</span>reply <span class="operator">=</span> m_model<span class="operator">-</span><span class="operator">&gt;</span>append(object);
+    connect(reply<span class="operator">,</span> SIGNAL(finished(EnginioReply<span class="operator">*</span>))<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> SLOT(beginUpload(EnginioReply<span class="operator">*</span>)));
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>beginUpload(EnginioReply <span class="operator">*</span>reply)
+{
+    reply<span class="operator">-</span><span class="operator">&gt;</span>deleteLater();
+    <span class="type"><a href="../qtcore/qstring.html">QString</a></span> path <span class="operator">=</span> reply<span class="operator">-</span><span class="operator">&gt;</span>data()<span class="operator">.</span>value(<span class="string">&quot;localPath&quot;</span>)<span class="operator">.</span>toString();
+    <span class="type"><a href="../qtcore/qstring.html">QString</a></span> objectId <span class="operator">=</span> reply<span class="operator">-</span><span class="operator">&gt;</span>data()<span class="operator">.</span>value(<span class="string">&quot;id&quot;</span>)<span class="operator">.</span>toString();
+
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> object;
+    object<span class="operator">.</span>insert(<span class="string">&quot;id&quot;</span><span class="operator">,</span> objectId);
+    object<span class="operator">.</span>insert(<span class="string">&quot;objectType&quot;</span><span class="operator">,</span> <span class="type">QStringLiteral</span>(<span class="string">&quot;objects.image&quot;</span>));
+    object<span class="operator">.</span>insert(<span class="string">&quot;propertyName&quot;</span><span class="operator">,</span> <span class="type">QStringLiteral</span>(<span class="string">&quot;file&quot;</span>));
+
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> fileObject;
+    fileObject<span class="operator">.</span>insert(<span class="type">QStringLiteral</span>(<span class="string">&quot;fileName&quot;</span>)<span class="operator">,</span> path);
+
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> uploadJson;
+    uploadJson<span class="operator">.</span>insert(<span class="type">QStringLiteral</span>(<span class="string">&quot;targetFileProperty&quot;</span>)<span class="operator">,</span> object);
+    uploadJson<span class="operator">.</span>insert(<span class="type">QStringLiteral</span>(<span class="string">&quot;file&quot;</span>)<span class="operator">,</span> fileObject);
+
+    EnginioReply <span class="operator">*</span>upload <span class="operator">=</span> m_client<span class="operator">-</span><span class="operator">&gt;</span>uploadFile(uploadJson<span class="operator">,</span> <span class="type"><a href="../qtcore/qurl.html">QUrl</a></span><span class="operator">::</span>fromUserInput(path));
+    connect(upload<span class="operator">,</span> SIGNAL(finished(EnginioReply<span class="operator">*</span>))<span class="operator">,</span> upload<span class="operator">,</span> SLOT(deleteLater()));
+}</pre>
+</div>
+<!-- @@@image-gallery-cpp/mainwindow.cpp -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

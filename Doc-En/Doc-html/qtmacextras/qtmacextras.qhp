@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtmacextras.531</namespace>
+    <virtualFolder>qtmacextras</virtualFolder>
+    <customFilter name="QtMacExtras 5.3.1">
+        <filterAttribute>5.3.1</filterAttribute>
+        <filterAttribute>qtmacextras</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>5.3.1</filterAttribute>
+        <filterAttribute>qtmacextras</filterAttribute>
+        <filterAttribute>qtrefdoc</filterAttribute>
+        <toc>
+            <section ref="qtmacextras-index.html" title="Qt Mac Extras">
+                <section ref="qtmacextras-module.html" title="C++ Classes and Namespaces">
+                    <section ref="qmacpasteboardmime.html" title="QMacPasteboardMime Class Reference">
+                        <section ref="qmacpasteboardmime-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qmactoolbaritem.html" title="QMacToolBarItem Class Reference">
+                        <section ref="qmactoolbaritem-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qtmac.html" title="QtMac"/>
+                </section>
+                <section ref="examples-qtmacextras.html" title="Examples"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Embedded QWindow" id="Embedded QWindow" ref="qtmacextras-embeddedqwindow-example.html"/>
+            <keyword name="Mac Functions" id="Mac Functions" ref="qtmacextras-macfunctions-example.html"/>
+            <keyword name="Mac Pasteboard MIME Converter" id="Mac Pasteboard MIME Converter" ref="qtmacextras-macpasteboardmime-example.html"/>
+            <keyword name="QMacPasteboardMime" id="QMacPasteboardMime" ref="qmacpasteboardmime.html"/>
+            <keyword name="canConvert" id="QMacPasteboardMime::canConvert" ref="qmacpasteboardmime.html#canConvert"/>
+            <keyword name="convertFromMime" id="QMacPasteboardMime::convertFromMime" ref="qmacpasteboardmime.html#convertFromMime"/>
+            <keyword name="convertToMime" id="QMacPasteboardMime::convertToMime" ref="qmacpasteboardmime.html#convertToMime"/>
+            <keyword name="convertorName" id="QMacPasteboardMime::convertorName" ref="qmacpasteboardmime.html#convertorName"/>
+            <keyword name="count" id="QMacPasteboardMime::count" ref="qmacpasteboardmime.html#count"/>
+            <keyword name="flavorFor" id="QMacPasteboardMime::flavorFor" ref="qmacpasteboardmime.html#flavorFor"/>
+            <keyword name="mimeFor" id="QMacPasteboardMime::mimeFor" ref="qmacpasteboardmime.html#mimeFor"/>
+            <keyword name="~QMacPasteboardMime" id="QMacPasteboardMime::~QMacPasteboardMime" ref="qmacpasteboardmime.html#dtor.QMacPasteboardMime"/>
+            <keyword name="QMacToolBarItem" id="QMacToolBarItem" ref="qmactoolbaritem.html"/>
+            <keyword name="QMacToolBarItem::StandardItem" id="QMacToolBarItem::StandardItem" ref="qmactoolbaritem.html#StandardItem-enum"/>
+            <keyword name="QMacToolBarItem::NoStandardItem" id="QMacToolBarItem::NoStandardItem" ref="qmactoolbaritem.html#StandardItem-enum"/>
+            <keyword name="QMacToolBarItem::Space" id="QMacToolBarItem::Space" ref="qmactoolbaritem.html#StandardItem-enum"/>
+            <keyword name="QMacToolBarItem::FlexibleSpace" id="QMacToolBarItem::FlexibleSpace" ref="qmactoolbaritem.html#StandardItem-enum"/>
+            <keyword name="activated" id="QMacToolBarItem::activated" ref="qmactoolbaritem.html#activated"/>
+            <keyword name="icon" id="QMacToolBarItem::icon" ref="qmactoolbaritem.html#icon-prop"/>
+            <keyword name="nativeToolBarItem" id="QMacToolBarItem::nativeToolBarItem" ref="qmactoolbaritem.html#nativeToolBarItem"/>
+            <keyword name="selectable" id="QMacToolBarItem::selectable" ref="qmactoolbaritem.html#selectable-prop"/>
+            <keyword name="setIcon" id="QMacToolBarItem::setIcon" ref="qmactoolbaritem.html#icon-prop"/>
+            <keyword name="setSelectable" id="QMacToolBarItem::setSelectable" ref="qmactoolbaritem.html#selectable-prop"/>
+            <keyword name="setStandardItem" id="QMacToolBarItem::setStandardItem" ref="qmactoolbaritem.html#standardItem-prop"/>
+            <keyword name="setText" id="QMacToolBarItem::setText" ref="qmactoolbaritem.html#text-prop"/>
+            <keyword name="standardItem" id="QMacToolBarItem::standardItem" ref="qmactoolbaritem.html#standardItem-prop"/>
+            <keyword name="text" id="QMacToolBarItem::text" ref="qmactoolbaritem.html#text-prop"/>
+            <keyword name="~QMacToolBarItem" id="QMacToolBarItem::~QMacToolBarItem" ref="qmactoolbaritem.html#dtor.QMacToolBarItem"/>
+            <keyword name="Qt Mac Extras" id="Qt Mac Extras" ref="qtmacextras-index.html"/>
+            <keyword name="Qt Mac Extras C++ Classes" id="Qt Mac Extras C++ Classes" ref="qtmacextras-module.html"/>
+            <keyword name="Qt Mac Extras Examples" id="Qt Mac Extras Examples" ref="examples-qtmacextras.html"/>
+            <keyword name="QtMac" id="QtMac" ref="qtmac.html"/>
+            <keyword name="applicationIconBadgeNumber" id="QtMac::applicationIconBadgeNumber" ref="qtmac.html#applicationIconBadgeNumber"/>
+            <keyword name="badgeLabelText" id="QtMac::badgeLabelText" ref="qtmac.html#badgeLabelText"/>
+            <keyword name="currentCGContext" id="QtMac::currentCGContext" ref="qtmac.html#currentCGContext"/>
+            <keyword name="fromCGImageRef" id="QtMac::fromCGImageRef" ref="qtmac.html#fromCGImageRef"/>
+            <keyword name="fromNSData" id="QtMac::fromNSData" ref="qtmac-compat.html#fromNSData"/>
+            <keyword name="isMainWindow" id="QtMac::isMainWindow" ref="qtmac.html#isMainWindow"/>
+            <keyword name="setApplicationIconBadgeNumber" id="QtMac::setApplicationIconBadgeNumber" ref="qtmac.html#setApplicationIconBadgeNumber"/>
+            <keyword name="setBadgeLabelText" id="QtMac::setBadgeLabelText" ref="qtmac.html#setBadgeLabelText"/>
+            <keyword name="toCGImageRef" id="QtMac::toCGImageRef" ref="qtmac.html#toCGImageRef"/>
+            <keyword name="toNSData" id="QtMac::toNSData" ref="qtmac-compat.html#toNSData"/>
+            <keyword name="toNSImage" id="QtMac::toNSImage" ref="qtmac.html#toNSImage"/>
+            <keyword name="qRegisterDraggedTypes" id="qRegisterDraggedTypes" ref="qmacpasteboardmime.html#qRegisterDraggedTypes"/>
+        </keywords>
+        <files>
+            <file>qtmacextras-macpasteboardmime-macpasteboardmime-pro.html</file>
+            <file>qmactoolbaritem.html</file>
+            <file>qtmacextras-embeddedqwindow-example.html</file>
+            <file>qtmacextras-module.html</file>
+            <file>qtmacextras-macfunctions-main-cpp.html</file>
+            <file>qtmacextras-embeddedqwindow-window-cpp.html</file>
+            <file>qtmacextras-embeddedqwindow-embeddedqwindow-pro.html</file>
+            <file>qtmac-compat.html</file>
+            <file>qtmacextras-macfunctions-example.html</file>
+            <file>qtmacextras-index.html</file>
+            <file>qtmac.html</file>
+            <file>qtmacextras-macfunctions-macfunctions-qrc.html</file>
+            <file>qtmacextras-embeddedqwindow-window-h.html</file>
+            <file>qtmacextras-macpasteboardmime-example.html</file>
+            <file>qtmacextras-macfunctions-macfunctions-pro.html</file>
+            <file>qtmacextras-macpasteboardmime-main-cpp.html</file>
+            <file>examples-qtmacextras.html</file>
+            <file>qmacpasteboardmime.html</file>
+            <file>qmactoolbaritem-members.html</file>
+            <file>qmacpasteboardmime-members.html</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/logo.png</file>
+            <file>images/ico_out.png</file>
+            <file>style/offline.css</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/arrow_bc.png</file>
+            <file>images/ico_note_attention.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

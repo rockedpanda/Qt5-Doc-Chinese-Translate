@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- android.qdoc -->
+  <title>Getting Started with Qt for Android | QtDoc 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.3</a></li>
+<li>Getting Started with Qt for Android</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#requirements">Requirements</a></li>
+<li class="level1"><a href="#installing-qt-for-android">Installing Qt for Android</a></li>
+</ul>
+</div>
+<h1 class="title">Getting Started with Qt for Android</h1>
+<span class="subtitle"></span>
+<!-- $$$androidgs.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="requirements"></a>
+<h2>Requirements</h2>
+<p>In order to use <a href="android-support.html">Qt for Android</a>, you need the following:</p>
+<ul>
+<li><a href="http://developer.android.com/sdk/index.html">The Android SDK Tools</a></li>
+<li><a href="http://developer.android.com/tools/sdk/ndk/index.html">The Android NDK</a></li>
+<li><a href="http://ant.apache.org/bindownload.cgi">Apache Ant</a> v1.8 or later</li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java SE Development Kit</a> (JDK) v6 or later. You can also use <a href="http://openjdk.java.net">OpenJDK</a> on Linux.</li>
+<li>On Windows, you need the following additional installations:<ul>
+<li><a href="http://www.mingw.org/">MinGW</a> v4.8&#x2e;0 revision 2</li>
+<li>Android Debug Bridge (ADB) driver on the Windows platform to enable USB debugging. The default USB driver on Windows does not allow debugging. For details about how to get the USB driver, see <a href="http://developer.android.com/sdk/win-usb.html">http://developer.android.com/sdk/win-usb.html</a>.<p>After installing the driver, try running a few basic <a href="http://developer.android.com/tools/help/adb.html">adb</a> commands and check whether your device responds to it.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><b>Note: </b>You must set the <tt>JAVA_HOME</tt> environment variable to the JDK install directory path so that Qt Creator finds the binaries required to build your application.</p><p>After installing these tools, update the Android SDK to get the API and tools packages required for development. You can update the SDK using the <a href="http://developer.android.com/tools/help/android.html">android</a> tool that comes with the SDK Tools package. For example, on Ubuntu the following command starts the <a href="http://developer.android.com/sdk/installing/adding-packages.html">Android SDK Manager</a>, which enables you to select the packages you want to install:</p>
+<pre class="cpp"><span class="operator">.</span><span class="operator">/</span>android update sdk</pre>
+<a name="installing-qt-for-android"></a>
+<h2>Installing Qt for Android</h2>
+<p>The Qt 5 installers for different platforms are available from the <a href="http://qt-project.org/downloads">Downloads</a> page. Choose the one that is appropriate.</p>
+<p><b>Note: </b>Enterprise packages are available from the <a href="http://qt.digia.com/Try-Buy/">Try Qt Enterprise</a> page. Qt for Android is also available as part of Qt Mobile Edition, see <a href="http://qt.digia.com/">qt.digia.com</a> for details.</p><p>Once you have the installer, follow these steps:</p>
+<ol class="1">
+<li>Run the installer to begin installing Qt 5 on your development platform.</li>
+<li>Select the components you need in the <b>Select Components</b> screen and click <b>Next</b>.</li>
+<li>After the installation is complete, the installer lets you open Qt Creator and the README. Select to open Qt Creator and click <b>Finish</b>.</li>
+<li>Select <b>Tools &gt; Options &gt; Android</b> in Qt Creator to add the Android NDK and SDK paths. For more details, see <a href="http://qt-project.org/doc/qtcreator/creator-developing-android.html">Qt Creator Manual</a>.</li>
+</ol>
+<p>Now you can test your development setup by running the examples that came with the Qt 5 package installed earlier. You can browse the examples in Qt Creator <b>Welcome</b> mode. Use the <tt>android</tt> filter in the search field to list all the examples tested on Android.</p>
+<p>To develop a simple application from scratch, see <a href="http://qt-project.org/doc/qtcreator/creator-mobile-app-tutorial.html">Creating a Mobile Application</a>.</p>
+</div>
+<!-- @@@androidgs.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

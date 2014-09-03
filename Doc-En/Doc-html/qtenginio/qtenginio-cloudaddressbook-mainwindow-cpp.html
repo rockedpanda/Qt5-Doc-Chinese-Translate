@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mainwindow.cpp Example File | QtEnginio 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-cpp-classes-and-examples.html">Enginio C++ Classes and Examples</a></li>
+<li><a href="enginio-qt-cloudaddressbook-example.html">Enginio C++ Examples - Cloud Address Book</a></li>
+<li>mainwindow.cpp Example File</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">mainwindow.cpp Example File</h1>
+<span class="subtitle">cloudaddressbook/mainwindow.cpp</span>
+<!-- $$$cloudaddressbook/mainwindow.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp"><span class="comment">/****************************************************************************
+**
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the examples of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** You may use this file under the terms of the BSD license as follows:
+**
+** &quot;Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of Digia Plc and its Subsidiary(-ies) nor the names
+**     of its contributors may be used to endorse or promote products derived
+**     from this software without specific prior written permission.
+**
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/</span>
+
+<span class="preprocessor">#include &lt;QtCore/qbytearray.h&gt;</span>
+<span class="preprocessor">#include &lt;QtCore/qpair.h&gt;</span>
+
+<span class="preprocessor">#include &lt;QtCore/qjsondocument.h&gt;</span>
+<span class="preprocessor">#include &lt;QtCore/qjsonobject.h&gt;</span>
+<span class="preprocessor">#include &lt;QtCore/qsortfilterproxymodel.h&gt;</span>
+
+<span class="preprocessor">#include &lt;Enginio/enginioclient.h&gt;</span>
+<span class="preprocessor">#include &lt;Enginio/enginioreply.h&gt;</span>
+
+<span class="preprocessor">#include &lt;QtGui/qicon.h&gt;</span>
+<span class="preprocessor">#include &lt;QtWidgets/qpushbutton.h&gt;</span>
+
+<span class="preprocessor">#include &quot;addressbookmodel.h&quot;</span>
+
+<span class="comment">// To get the backend right, we use a helper class in the example.</span>
+<span class="comment">// Usually one would just insert the backend information below.</span>
+<span class="preprocessor">#include &quot;backendhelper.h&quot;</span>
+
+<span class="preprocessor">#include &quot;mainwindow.h&quot;</span>
+
+MainWindow<span class="operator">::</span>MainWindow(<span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span>parent)
+    : <span class="type"><a href="../qtwidgets/qmainwindow.html">QMainWindow</a></span>(parent)
+{
+    setupUi(<span class="keyword">this</span>);
+    <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> EnginioBackendId <span class="operator">=</span> backendId(<span class="string">&quot;cloudaddressbook&quot;</span>);
+
+    client <span class="operator">=</span> <span class="keyword">new</span> EnginioClient(<span class="keyword">this</span>);
+    client<span class="operator">-</span><span class="operator">&gt;</span>setBackendId(EnginioBackendId);
+
+    <span class="comment">// this line is a debugging conviniance, passing all errors to qDebug()</span>
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(client<span class="operator">,</span> <span class="operator">&amp;</span>EnginioClient<span class="operator">::</span>error<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>MainWindow<span class="operator">::</span>error);
+
+    model <span class="operator">=</span> <span class="keyword">new</span> AddressBookModel(<span class="keyword">this</span>);
+    model<span class="operator">-</span><span class="operator">&gt;</span>setClient(client);
+
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> query;
+    query<span class="operator">[</span><span class="string">&quot;objectType&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.addressbook&quot;</span>);
+    model<span class="operator">-</span><span class="operator">&gt;</span>setQuery(query);
+
+    tableView<span class="operator">-</span><span class="operator">&gt;</span>horizontalHeader()<span class="operator">-</span><span class="operator">&gt;</span>setSectionResizeMode(<span class="type"><a href="../qtwidgets/qheaderview.html">QHeaderView</a></span><span class="operator">::</span>ResizeToContents);
+
+    sortFilterProxyModel <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtcore/qsortfilterproxymodel.html">QSortFilterProxyModel</a></span>(<span class="keyword">this</span>);
+    sortFilterProxyModel<span class="operator">-</span><span class="operator">&gt;</span>setSourceModel(model);
+    tableView<span class="operator">-</span><span class="operator">&gt;</span>setSortingEnabled(<span class="keyword">true</span>);
+    tableView<span class="operator">-</span><span class="operator">&gt;</span>setModel(sortFilterProxyModel);
+
+    <span class="comment">// create the full text search based on searchEdit text value</span>
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(searchEdit<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="../qtwidgets/qlineedit.html">QLineEdit</a></span><span class="operator">::</span>returnPressed<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>MainWindow<span class="operator">::</span>onSearchEdit);
+
+    <span class="comment">// clear the status bar when the search is finished</span>
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(model<span class="operator">,</span> <span class="operator">&amp;</span>AddressBookModel<span class="operator">::</span>searchFinished<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>MainWindow<span class="operator">::</span>onSearchFinished);
+
+    <span class="comment">// append an empty row</span>
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(add<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="../qtwidgets/qpushbutton.html">QPushButton</a></span><span class="operator">::</span>clicked<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>MainWindow<span class="operator">::</span>onAddRow);
+
+    <span class="comment">// enable remove button when a row is selected</span>
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(tableView<span class="operator">-</span><span class="operator">&gt;</span>selectionModel()<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="../qtcore/qitemselectionmodel.html">QItemSelectionModel</a></span><span class="operator">::</span>selectionChanged<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>MainWindow<span class="operator">::</span>onSelectionChanged);
+
+    <span class="comment">// remove selected rows</span>
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(remove<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="../qtwidgets/qpushbutton.html">QPushButton</a></span><span class="operator">::</span>clicked<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>MainWindow<span class="operator">::</span>onRemoveRow);
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>onSearchEdit()
+{
+    model<span class="operator">-</span><span class="operator">&gt;</span>newSearch(searchEdit<span class="operator">-</span><span class="operator">&gt;</span>text());
+    statusbar<span class="operator">-</span><span class="operator">&gt;</span>showMessage(<span class="type">QStringLiteral</span>(<span class="string">&quot;Searching for: &quot;</span>) <span class="operator">+</span> searchEdit<span class="operator">-</span><span class="operator">&gt;</span>text());
+    searchEdit<span class="operator">-</span><span class="operator">&gt;</span>clear();
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>onSearchFinished()
+{
+    statusbar<span class="operator">-</span><span class="operator">&gt;</span>showMessage(<span class="type">QStringLiteral</span>(<span class="string">&quot;Search finished&quot;</span>)<span class="operator">,</span> <span class="number">1500</span>);
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>onAddRow()
+{
+    <span class="type"><a href="../qtcore/qjsonobject.html">QJsonObject</a></span> item;
+    item<span class="operator">.</span>insert(<span class="string">&quot;objectType&quot;</span><span class="operator">,</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">::</span>fromUtf8(<span class="string">&quot;objects.addressbook&quot;</span>));
+    EnginioReply <span class="operator">*</span>reply <span class="operator">=</span> model<span class="operator">-</span><span class="operator">&gt;</span>append(item);
+    <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>finished<span class="operator">,</span> reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>deleteLater);
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>onSelectionChanged()
+{
+    remove<span class="operator">-</span><span class="operator">&gt;</span>setEnabled(tableView<span class="operator">-</span><span class="operator">&gt;</span>selectionModel()<span class="operator">-</span><span class="operator">&gt;</span>selectedRows()<span class="operator">.</span>count());
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>onRemoveRow()
+{
+    foreach (<span class="keyword">const</span> <span class="type"><a href="../qtcore/qmodelindex.html">QModelIndex</a></span> <span class="operator">&amp;</span>index<span class="operator">,</span> tableView<span class="operator">-</span><span class="operator">&gt;</span>selectionModel()<span class="operator">-</span><span class="operator">&gt;</span>selectedRows()) {
+        <span class="type"><a href="../qtcore/qmodelindex.html">QModelIndex</a></span> sourceIndex <span class="operator">=</span> sortFilterProxyModel<span class="operator">-</span><span class="operator">&gt;</span>mapToSource(index);
+        EnginioReply <span class="operator">*</span>reply <span class="operator">=</span> model<span class="operator">-</span><span class="operator">&gt;</span>remove(sourceIndex<span class="operator">.</span>row());
+        <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>finished<span class="operator">,</span> reply<span class="operator">,</span> <span class="operator">&amp;</span>EnginioReply<span class="operator">::</span>deleteLater);
+    }
+}
+
+<span class="type">void</span> MainWindow<span class="operator">::</span>error(EnginioReply <span class="operator">*</span>error)
+{
+    <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> Q_FUNC_INFO <span class="operator">&lt;</span><span class="operator">&lt;</span> error;
+}</pre>
+</div>
+<!-- @@@cloudaddressbook/mainwindow.cpp -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

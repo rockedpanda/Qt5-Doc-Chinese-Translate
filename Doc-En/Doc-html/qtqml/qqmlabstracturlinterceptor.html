@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qqmlabstracturlinterceptor.cpp -->
+  <title>QQmlAbstractUrlInterceptor Class | QtQml 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtqml-index.html">Qt QML</a></li>
+<li><a href="qtqml-module.html">C++ Classes</a></li>
+<li>QQmlAbstractUrlInterceptor</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QQmlAbstractUrlInterceptor Class</h1>
+<!-- $$$QQmlAbstractUrlInterceptor-brief -->
+<p>allows you to control QML file loading. <a href="#details">More...</a></p>
+<!-- @@@QQmlAbstractUrlInterceptor -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QQmlAbstractUrlInterceptor&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += qml</tt></td></tr></table><ul>
+<li><a href="qqmlabstracturlinterceptor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qqmlabstracturlinterceptor.html#DataType-enum">DataType</a></b> { QmlFile, JavaScriptFile, QmldirFile, UrlString }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qqmlabstracturlinterceptor.html#QQmlAbstractUrlInterceptor">QQmlAbstractUrlInterceptor</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qqmlabstracturlinterceptor.html#dtor.QQmlAbstractUrlInterceptor">~QQmlAbstractUrlInterceptor</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QUrl </td><td class="memItemRight bottomAlign"><b><a href="qqmlabstracturlinterceptor.html#intercept">intercept</a></b>(const QUrl &amp;<i> url</i>, DataType<i> type</i>) = 0</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QQmlAbstractUrlInterceptor-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>allows you to control QML file loading.</p>
+<p>QQmlAbstractUrlInterceptor is an interface which can be used to alter URLs before they are used by the QML engine. This is primarily useful for altering file urls into other file urls, such as selecting different graphical assets for the current platform.</p>
+<p>Relative URLs are intercepted after being resolved against the file path of the current QML context. URL interception also occurs after setting the base path for a loaded QML file. This means that the content loaded for that QML file uses the intercepted URL, but inside the file the pre-intercepted URL is used for resolving relative paths. This allows for interception of .qml file loading without needing all paths (or local types) inside intercepted content to insert a different relative path.</p>
+<p>Compared to setNetworkAccessManagerFactory, QQmlAbstractUrlInterceptor affects all URLs and paths, including local files and embedded resource files. QQmlAbstractUrlInterceptor is synchronous, and for asynchronous files must return a url with an asynchronous scheme (such as http or a custom scheme handled by your own custom QNetworkAccessManager). You can use a QQmlAbstractUrlInterceptor to change file URLs into networked URLs which are handled by your own custom QNetworkAccessManager.</p>
+<p>To implement support for a custom networked scheme, see setNetworkAccessManagerFactory.</p>
+</div>
+<!-- @@@QQmlAbstractUrlInterceptor -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DataType$$$QmlFile$$$JavaScriptFile$$$QmldirFile$$$UrlString -->
+<h3 class="fn"><a name="DataType-enum"></a>enum QQmlAbstractUrlInterceptor::<span class="name">DataType</span></h3>
+<!-- @@@DataType -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QQmlAbstractUrlInterceptor[overload1]$$$QQmlAbstractUrlInterceptor -->
+<h3 class="fn"><a name="QQmlAbstractUrlInterceptor"></a>QQmlAbstractUrlInterceptor::<span class="name">QQmlAbstractUrlInterceptor</span>()</h3>
+<!-- @@@QQmlAbstractUrlInterceptor -->
+<!-- $$$~QQmlAbstractUrlInterceptor[overload1]$$$~QQmlAbstractUrlInterceptor -->
+<h3 class="fn"><a name="dtor.QQmlAbstractUrlInterceptor"></a>QQmlAbstractUrlInterceptor::<span class="name">~QQmlAbstractUrlInterceptor</span>()<tt> [virtual]</tt></h3>
+<!-- @@@~QQmlAbstractUrlInterceptor -->
+<!-- $$$intercept[overload1]$$$interceptconstQUrl&DataType -->
+<h3 class="fn"><a name="intercept"></a><span class="type"><a href="../qtcore/qurl.html">QUrl</a></span> QQmlAbstractUrlInterceptor::<span class="name">intercept</span>(const <span class="type"><a href="../qtcore/qurl.html">QUrl</a></span> &amp;<i> url</i>, <span class="type"><a href="qqmlabstracturlinterceptor.html#DataType-enum">DataType</a></span><i> type</i>)<tt> [pure virtual]</tt></h3>
+<p>A pure virtual function where you can intercept the <i>url</i>. The returned value is taken as the new value for the url. The type of url being intercepted is given by the <i>type</i> variable.</p>
+<p>Your implementation of this function must be thread-safe, as it can be called from multiple threads at the same time.</p>
+<!-- @@@intercept -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

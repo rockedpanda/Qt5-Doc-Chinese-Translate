@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Login.qml Example File | QtEnginioQml 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-qml-types-and-examples.html">Enginio QML Types and Examples</a></li>
+<li><a href="enginio-qml-socialtodos-example.html">Enginio QML Examples - Social Todos</a></li>
+<li>Login.qml Example File</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Login.qml Example File</h1>
+<span class="subtitle">socialtodos/Login.qml</span>
+<!-- $$$socialtodos/Login.qml-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="qml"><span class="comment">/****************************************************************************
+**
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the QtEnginio module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** You may use this file under the terms of the BSD license as follows:
+**
+** &quot;Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of Digia Plc and its Subsidiary(-ies) nor the names
+**     of its contributors may be used to endorse or promote products derived
+**     from this software without specific prior written permission.
+**
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/</span>
+
+import QtQuick 2.1
+import QtQuick.Layouts 1.0
+import QtQuick.Controls 1.0 as Controls
+import Enginio 1.0
+
+<span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">width</span>: <span class="number">400</span>
+    <span class="name">height</span>: <span class="number">600</span>
+
+    <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+        <span class="name">id</span>: <span class="name">header</span>
+        <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+        <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+        <span class="name">height</span>: <span class="number">70</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+        <span class="name">color</span>: <span class="string">&quot;white&quot;</span>
+
+        <span class="type"><a href="../qtquick/qml-qtquick-row.html">Row</a></span> {
+            <span class="name">id</span>: <span class="name">logo</span>
+            <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+            <span class="name">anchors</span>.horizontalCenterOffset: -<span class="number">4</span>
+            <span class="name">spacing</span>: <span class="number">4</span>
+            <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+                <span class="name">source</span>: <span class="string">&quot;qrc:images/enginio.png&quot;</span>
+                <span class="name">width</span>: <span class="number">160</span> <span class="operator">*</span> <span class="name">scaleFactor</span> ; <span class="name">height</span>: <span class="number">60</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+                <span class="name">fillMode</span>: <span class="name">Image</span>.<span class="name">PreserveAspectFit</span>
+            }
+            <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                <span class="name">text</span>: <span class="string">&quot;Todos&quot;</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                <span class="name">anchors</span>.verticalCenterOffset: -<span class="number">3</span>
+                <span class="name">font</span>.bold: <span class="number">true</span>
+                <span class="name">font</span>.pixelSize: <span class="number">46</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+                <span class="name">color</span>: <span class="string">&quot;#555&quot;</span>
+            }
+        }
+        <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> ; <span class="name">height</span>: <span class="number">1</span>
+            <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+            <span class="name">color</span>: <span class="string">&quot;#bbb&quot;</span>
+        }
+    }
+
+    <span class="type"><a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a></span> {
+        <span class="name">id</span>: <span class="name">input</span>
+
+        <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+        <span class="name">anchors</span>.top: <span class="name">header</span>.<span class="name">bottom</span>
+        <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+        <span class="name">source</span>: <span class="string">&quot;qrc:images/delegate.png&quot;</span>
+        <span class="name">border</span>.left: <span class="number">5</span>; <span class="name">border</span>.top: <span class="number">5</span>
+        <span class="name">border</span>.right: <span class="number">5</span>; <span class="name">border</span>.bottom: <span class="number">5</span>
+
+        <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+            <span class="name">y</span>: -<span class="number">1</span> ; <span class="name">height</span>: <span class="number">1</span>
+            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+            <span class="name">color</span>: <span class="string">&quot;#bbb&quot;</span>
+        }
+        <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+            <span class="name">y</span>: <span class="number">0</span> ; <span class="name">height</span>: <span class="number">1</span>
+            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+            <span class="name">color</span>: <span class="string">&quot;white&quot;</span>
+        }
+    }
+
+    <span class="type"><a href="../qtquick/qml-qtquick-column.html">Column</a></span> {
+        <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+        <span class="name">anchors</span>.alignWhenCentered: <span class="number">true</span>
+        <span class="name">width</span>: <span class="number">360</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+        <span class="name">spacing</span>: <span class="number">14</span> <span class="operator">*</span> <span class="name">intScaleFactor</span>
+
+        <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls-textfield.html">TextField</a></span> {
+            <span class="name">id</span>: <span class="name">nameInput</span>
+            <span class="name">onAccepted</span>: <span class="name">passwordInput</span>.<span class="name">forceActiveFocus</span>()
+            <span class="name">placeholderText</span>: <span class="string">&quot;Username&quot;</span>
+            <span class="name">KeyNavigation</span>.tab: <span class="name">passwordInput</span>
+        }
+
+        <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls-textfield.html">TextField</a></span> {
+            <span class="name">id</span>: <span class="name">passwordInput</span>
+            <span class="name">onAccepted</span>: <span class="name">login</span>()
+            <span class="name">placeholderText</span>: <span class="string">&quot;Password&quot;</span>
+            <span class="name">echoMode</span>: <span class="name">TextInput</span>.<span class="name">Password</span>
+            <span class="name">KeyNavigation</span>.tab: <span class="name">loginButton</span>
+        }
+
+        <span class="type"><a href="../qtquick/qml-qtquick-row.html">Row</a></span> {
+            <span class="comment">// button</span>
+            <span class="name">spacing</span>: <span class="number">20</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+            <span class="name">width</span>: <span class="number">360</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+            <span class="name">anchors</span>.horizontalCenter: <span class="name">parent</span>.<span class="name">horizontalCenter</span>
+            <span class="name">anchors</span>.alignWhenCentered: <span class="number">true</span>
+            <span class="type">TouchButton</span> {
+                <span class="name">id</span>: <span class="name">loginButton</span>
+                <span class="name">text</span>: <span class="string">&quot;Login&quot;</span>
+                <span class="name">baseColor</span>: <span class="string">&quot;#7a5&quot;</span>
+                <span class="name">width</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">parent</span>.<span class="name">spacing</span>)<span class="operator">/</span><span class="number">2</span>
+                <span class="name">onClicked</span>: <span class="name">login</span>()
+                <span class="name">enabled</span>: <span class="name">enginioClient</span>.<span class="name">authenticationState</span> <span class="operator">!==</span> <span class="name">Enginio</span>.<span class="name">Authenticating</span> <span class="operator">&amp;&amp;</span> <span class="name">nameInput</span>.<span class="name">text</span>.<span class="name">length</span> <span class="operator">&amp;&amp;</span> <span class="name">passwordInput</span>.<span class="name">text</span>.<span class="name">length</span>
+                <span class="name">KeyNavigation</span>.tab: <span class="name">registerButton</span>
+            }
+            <span class="type">TouchButton</span> {
+                <span class="name">id</span>: <span class="name">registerButton</span>
+                <span class="name">text</span>: <span class="string">&quot;Register&quot;</span>
+                <span class="name">onClicked</span>: <span class="name">registerAndLogin</span>()
+                <span class="name">width</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">parent</span>.<span class="name">spacing</span>)<span class="operator">/</span><span class="number">2</span>
+                <span class="name">enabled</span>: <span class="name">enginioClient</span>.<span class="name">authenticationState</span> <span class="operator">!==</span> <span class="name">Enginio</span>.<span class="name">Authenticating</span> <span class="operator">&amp;&amp;</span> <span class="name">nameInput</span>.<span class="name">text</span>.<span class="name">length</span> <span class="operator">&amp;&amp;</span> <span class="name">passwordInput</span>.<span class="name">text</span>.<span class="name">length</span>
+                <span class="name">KeyNavigation</span>.tab: <span class="name">nameInput</span>
+            }
+        }
+    }
+
+    <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+        <span class="name">id</span>: <span class="name">statusText</span>
+        <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+        <span class="name">anchors</span>.horizontalCenter: <span class="name">parent</span>.<span class="name">horizontalCenter</span>
+        <span class="name">anchors</span>.bottomMargin: <span class="number">70</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+        <span class="name">font</span>.pixelSize: <span class="number">18</span> <span class="operator">*</span> <span class="name">scaleFactor</span>
+        <span class="name">color</span>: <span class="string">&quot;#444&quot;</span>
+    }
+
+    <span class="name">Component</span>.onCompleted: {
+        <span class="name">enginioClient</span>.<span class="name">sessionAuthenticationError</span>.<span class="name">connect</span>(<span class="keyword">function</span>(<span class="name">reply</span>){
+            <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Login failed: &quot;</span> <span class="operator">+</span> <span class="name">reply</span>.<span class="name">errorString</span>
+        })
+
+       <span class="name">enginioClient</span>.<span class="name">sessionAuthenticated</span>.<span class="name">connect</span>(<span class="keyword">function</span>(<span class="name">reply</span>){
+           <span class="name">addUserToAllUsersGroup</span>(<span class="name">reply</span>.<span class="name">data</span>.<span class="name">enginio_data</span>.<span class="name">user</span>.<span class="name">id</span>)
+        })
+    }
+
+    <span class="name">Controls</span>.Stack.onStatusChanged: {
+        <span class="keyword">if</span> (<span class="name">Controls</span>.<span class="name">Stack</span>.<span class="name">status</span> <span class="operator">==</span> <span class="name">Controls</span>.<span class="name">Stack</span>.<span class="name">Activating</span>) {
+            <span class="name">nameInput</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>
+            <span class="name">passwordInput</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>
+            <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>
+            <span class="name">nameInput</span>.<span class="name">forceActiveFocus</span>()
+        }
+    }
+
+    <span class="keyword">function</span> <span class="name">login</span>() {
+        <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Logging in...&quot;</span>
+        <span class="name">enginioClient</span>.<span class="name">identity</span> <span class="operator">=</span> <span class="number">null</span>
+        <span class="name">auth</span>.<span class="name">user</span> <span class="operator">=</span> <span class="name">nameInput</span>.<span class="name">text</span>
+        <span class="name">auth</span>.<span class="name">password</span> <span class="operator">=</span> <span class="name">passwordInput</span>.<span class="name">text</span>
+        <span class="name">enginioClient</span>.<span class="name">identity</span> <span class="operator">=</span> <span class="name">auth</span>
+    }
+
+    <span class="comment">// Register a new user and add her to the group &quot;allUsers&quot;</span>
+    <span class="keyword">function</span> <span class="name">registerAndLogin</span>() {
+        <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Creating user account...&quot;</span>
+        var <span class="name">createAccount</span> = <span class="name">enginioClient</span>.<span class="name">create</span>({ &quot;username&quot;: <span class="name">nameInput</span>.<span class="name">text</span>, &quot;password&quot;: <span class="name">passwordInput</span>.<span class="name">text</span> }, <span class="name">Enginio</span>.<span class="name">UserOperation</span>)
+        <span class="name">createAccount</span>.<span class="name">finished</span>.<span class="name">connect</span>(<span class="keyword">function</span>() {
+            <span class="keyword">if</span> (<span class="name">createAccount</span>.<span class="name">errorType</span> <span class="operator">!==</span> <span class="name">EnginioReply</span>.<span class="name">NoError</span>) {
+                <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Account creation failed: &quot;</span> <span class="operator">+</span> <span class="name">createAccount</span>.<span class="name">errorString</span>
+            } <span class="keyword">else</span> {
+                <span class="name">login</span>()
+            }
+        })
+    }
+
+    <span class="keyword">function</span> <span class="name">addUserToAllUsersGroup</span>(<span class="name">userId</span>) {
+        var <span class="name">groupQuery</span> = <span class="name">enginioClient</span>.<span class="name">query</span>({ &quot;query&quot;: { &quot;name&quot; : <span class="string">&quot;allUsers&quot;</span> } }, <span class="name">Enginio</span>.<span class="name">UsergroupOperation</span>)
+
+        <span class="name">groupQuery</span>.<span class="name">finished</span>.<span class="name">connect</span>(<span class="keyword">function</span>(){
+            <span class="keyword">if</span> (<span class="name">groupQuery</span>.<span class="name">errorType</span> <span class="operator">!==</span> <span class="name">EnginioReply</span>.<span class="name">NoError</span>) {
+                <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="name">groupQuery</span>.<span class="name">errorString</span>
+            } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="name">groupQuery</span>.<span class="name">data</span>.<span class="name">results</span>.<span class="name">length</span> <span class="operator">===</span> <span class="number">0</span> ){
+                <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Usergroup 'allUsers' not found, check required backend configuration from Social Todos example documentation.&quot;</span>
+            } <span class="keyword">else</span> {
+                var <span class="name">addUserToGroupData</span> = {
+                    &quot;id&quot;: <span class="name">groupQuery</span>.<span class="name">data</span>.<span class="name">results</span>[<span class="number">0</span>].<span class="name">id</span>,
+                    &quot;member&quot; : {
+                        &quot;id&quot;: <span class="name">userId</span>,
+                        &quot;objectType&quot;: <span class="string">&quot;users&quot;</span>
+                    }
+                }
+                var <span class="name">addUserToGroup</span> = <span class="name">enginioClient</span>.<span class="name">create</span>(<span class="name">addUserToGroupData</span>, <span class="name">Enginio</span>.<span class="name">UsergroupMembersOperation</span>)
+                <span class="name">addUserToGroup</span>.<span class="name">finished</span>.<span class="name">connect</span>(<span class="keyword">function</span>(){
+                    <span class="keyword">if</span> (<span class="name">addUserToGroup</span>.<span class="name">errorType</span> <span class="operator">===</span> <span class="name">EnginioReply</span>.<span class="name">NoError</span>) {
+                        <span class="name">switchToListsView</span>()
+                    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="name">addUserToGroup</span>.<span class="name">errorType</span> <span class="operator">===</span> <span class="name">EnginioReply</span>.<span class="name">BackendError</span> <span class="operator">&amp;&amp;</span>
+                               <span class="name">addUserToGroup</span>.<span class="name">backendStatus</span> <span class="operator">===</span> <span class="number">400</span>) {
+                        <span class="comment">//User already present in group, OK to proceed</span>
+                        <span class="name">switchToListsView</span>()
+                    } <span class="keyword">else</span> {
+                        <span class="name">statusText</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;User add to group failed: &quot;</span> <span class="operator">+</span> <span class="name">JSON</span>.<span class="name">stringify</span>(<span class="name">addUserToGroup</span>.<span class="name">data</span>.<span class="name">errors</span>[<span class="number">0</span>])
+                    }
+                })
+            }
+        })
+    }
+
+    <span class="keyword">function</span> <span class="name">switchToListsView</span>() {
+        <span class="name">mainView</span>.<span class="name">push</span>({ item: <span class="name">lists</span>, properties: {&quot;username&quot;: <span class="name">enginioClient</span>.<span class="name">identity</span>.<span class="name">user</span>}})
+    }
+}</pre>
+</div>
+<!-- @@@socialtodos/Login.qml -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

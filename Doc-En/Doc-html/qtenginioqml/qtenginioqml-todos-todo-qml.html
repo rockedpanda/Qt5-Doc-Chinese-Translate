@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>todo.qml Example File | QtEnginioQml 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-qml-types-and-examples.html">Enginio QML Types and Examples</a></li>
+<li><a href="enginio-qml-todos-example.html">Enginio QML Examples - Todos</a></li>
+<li>todo.qml Example File</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">todo.qml Example File</h1>
+<span class="subtitle">todos/todo.qml</span>
+<!-- $$$todos/todo.qml-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="qml"><span class="comment">/****************************************************************************
+**
+** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the examples of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** You may use this file under the terms of the BSD license as follows:
+**
+** &quot;Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of Digia Plc and its Subsidiary(-ies) nor the names
+**     of its contributors may be used to endorse or promote products derived
+**     from this software without specific prior written permission.
+**
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/</span>
+
+import QtQuick 2.0
+import Enginio 1.0
+
+<span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">width</span>: <span class="number">400</span>
+    <span class="name">height</span>: <span class="number">640</span>
+    <span class="type">BackendHelper</span>{
+        <span class="name">id</span>: <span class="name">backendHelper</span>
+    }
+
+    <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+        <span class="name">id</span>: <span class="name">root</span>
+        <span class="name">color</span>: <span class="string">&quot;#f4f4f4&quot;</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">opacity</span>: <span class="number">1</span> <span class="operator">-</span> <span class="name">backendHelper</span>.<span class="name">opacity</span>
+
+        <span class="type"><a href="collision-enginiomodel.html">EnginioModel</a></span> {
+            <span class="name">id</span>: <span class="name">enginioModel</span>
+            <span class="name">client</span>: <span class="name">EnginioClient</span> {
+                <span class="name">backendId</span>: <span class="name">backendHelper</span>.<span class="name">backendId</span>
+                <span class="name">onError</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;Enginio error:&quot;</span>, <span class="name">JSON</span>.<span class="name">stringify</span>(<span class="name">reply</span>.<span class="name">data</span>))
+            }
+            <span class="name">query</span>: {&quot;objectType&quot;: <span class="string">&quot;objects.todos&quot;</span> }
+        }
+
+        <span class="comment">// A simple layout:</span>
+        <span class="comment">// a listview and a line edit with button to add to the list</span>
+        <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+            <span class="name">id</span>: <span class="name">header</span>
+            <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+            <span class="name">height</span>: <span class="number">70</span>
+            <span class="name">color</span>: <span class="string">&quot;white&quot;</span>
+
+            <span class="type"><a href="../qtquick/qml-qtquick-row.html">Row</a></span> {
+                <span class="name">id</span>: <span class="name">logo</span>
+                <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+                <span class="name">anchors</span>.horizontalCenterOffset: -<span class="number">4</span>
+                <span class="name">spacing</span>: <span class="number">4</span>
+                <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+                    <span class="name">source</span>: <span class="string">&quot;qrc:images/enginio.png&quot;</span>
+                    <span class="name">width</span>: <span class="number">160</span> ; <span class="name">height</span>: <span class="number">60</span>
+                    <span class="name">fillMode</span>: <span class="name">Image</span>.<span class="name">PreserveAspectFit</span>
+                }
+                <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                    <span class="name">text</span>: <span class="string">&quot;Todos&quot;</span>
+                    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                    <span class="name">anchors</span>.verticalCenterOffset: -<span class="number">3</span>
+                    <span class="name">font</span>.bold: <span class="number">true</span>
+                    <span class="name">font</span>.pixelSize: <span class="number">46</span>
+                    <span class="name">color</span>: <span class="string">&quot;#555&quot;</span>
+                }
+            }
+            <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+                <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> ; <span class="name">height</span>: <span class="number">1</span>
+                <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+                <span class="name">color</span>: <span class="string">&quot;#bbb&quot;</span>
+            }
+        }
+
+        <span class="type"><a href="../qtquick/qml-qtquick-listview.html">ListView</a></span> {
+            <span class="name">id</span>: <span class="name">listview</span>
+            <span class="name">model</span>: <span class="name">enginioModel</span>
+            <span class="name">delegate</span>: <span class="name">listItemDelegate</span>
+            <span class="name">anchors</span>.top: <span class="name">header</span>.<span class="name">bottom</span>
+            <span class="name">anchors</span>.bottom: <span class="name">footer</span>.<span class="name">top</span>
+            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+            <span class="name">clip</span>: <span class="number">true</span>
+
+            <span class="comment">// Animations</span>
+            <span class="name">add</span>: <span class="name">Transition</span> { <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">properties</span>: <span class="string">&quot;y&quot;</span>; <span class="name">from</span>: <span class="name">root</span>.<span class="name">height</span>; <span class="name">duration</span>: <span class="number">250</span> } }
+            <span class="name">removeDisplaced</span>: <span class="name">Transition</span> { <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">properties</span>: <span class="string">&quot;y&quot;</span>; <span class="name">duration</span>: <span class="number">150</span> } }
+            <span class="name">remove</span>: <span class="name">Transition</span> { <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">property</span>: <span class="string">&quot;opacity&quot;</span>; <span class="name">to</span>: <span class="number">0</span>; <span class="name">duration</span>: <span class="number">150</span> } }
+        }
+
+        <span class="type"><a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a></span> {
+            <span class="name">id</span>: <span class="name">footer</span>
+
+            <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+            <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+            <span class="name">source</span>: <span class="string">&quot;qrc:images/delegate.png&quot;</span>
+            <span class="name">border</span>.left: <span class="number">5</span>; <span class="name">border</span>.top: <span class="number">5</span>
+            <span class="name">border</span>.right: <span class="number">5</span>; <span class="name">border</span>.bottom: <span class="number">5</span>
+
+            <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+                <span class="name">y</span>: -<span class="number">1</span> ; <span class="name">height</span>: <span class="number">1</span>
+                <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                <span class="name">color</span>: <span class="string">&quot;#bbb&quot;</span>
+            }
+            <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+                <span class="name">y</span>: <span class="number">0</span> ; <span class="name">height</span>: <span class="number">1</span>
+                <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                <span class="name">color</span>: <span class="string">&quot;white&quot;</span>
+            }
+
+
+            <span class="type"><a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a></span> {
+
+                <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+                <span class="name">anchors</span>.right: <span class="name">addButton</span>.<span class="name">left</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                <span class="name">anchors</span>.margins: <span class="number">16</span>
+                <span class="name">source</span>:<span class="string">&quot;images/textfield.png&quot;</span>
+                <span class="name">border</span>.left: <span class="number">14</span> ; <span class="name">border</span>.right: <span class="number">14</span> ; <span class="name">border</span>.top: <span class="number">8</span> ; <span class="name">border</span>.bottom: <span class="number">8</span>
+
+                <span class="type"><a href="../qtquick/qml-qtquick-textinput.html">TextInput</a></span>{
+                    <span class="name">id</span>: <span class="name">textInput</span>
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                    <span class="name">clip</span>: <span class="number">true</span>
+                    <span class="name">anchors</span>.leftMargin: <span class="number">14</span>
+                    <span class="name">anchors</span>.rightMargin: <span class="number">14</span>
+                    <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+                    <span class="name">font</span>.pixelSize: <span class="number">22</span>
+                    <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                        <span class="name">id</span>: <span class="name">placeholderText</span>
+                        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                        <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+                        <span class="name">visible</span>: !(<span class="name">parent</span>.<span class="name">text</span>.<span class="name">length</span> <span class="operator">||</span> <span class="name">parent</span>.<span class="name">inputMethodComposing</span>)
+                        <span class="name">font</span>: <span class="name">parent</span>.<span class="name">font</span>
+                        <span class="name">text</span>: <span class="string">&quot;New todo...&quot;</span>
+                        <span class="name">color</span>: <span class="string">&quot;#aaa&quot;</span>
+                    }
+                    <span class="name">onAccepted</span>: {
+                        <span class="name">enginioModel</span>.<span class="name">append</span>({&quot;title&quot;: <span class="name">textInput</span>.<span class="name">text</span>, &quot;completed&quot;: <span class="number">false</span>})
+                        <span class="name">textInput</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>
+                    }
+                }
+            }
+
+            <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+                <span class="name">id</span>: <span class="name">addButton</span>
+
+                <span class="name">width</span>: <span class="number">40</span> ; <span class="name">height</span>: <span class="number">40</span>
+                <span class="name">anchors</span>.margins: <span class="number">20</span>
+                <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+                <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                <span class="name">enabled</span>: <span class="name">textInput</span>.<span class="name">text</span>.<span class="name">length</span>
+                <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+                    <span class="name">source</span>: <span class="name">addMouseArea</span>.<span class="name">pressed</span> ? <span class="string">&quot;qrc:icons/add_icon_pressed.png&quot;</span> : <span class="string">&quot;qrc:icons/add_icon.png&quot;</span>
+                    <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+                    <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.5</span>
+                }
+                <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+                    <span class="name">id</span>: <span class="name">addMouseArea</span>
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                    <span class="name">onClicked</span>: <span class="name">textInput</span>.<span class="name">accepted</span>()
+                }
+            }
+        }
+
+        <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span> {
+            <span class="name">id</span>: <span class="name">listItemDelegate</span>
+
+            <span class="type"><a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a></span> {
+                <span class="name">id</span>: <span class="name">item</span>
+
+                <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> ; <span class="name">height</span>: <span class="number">70</span>
+                <span class="name">source</span>: <span class="name">mouse</span>.<span class="name">pressed</span> ? <span class="string">&quot;qrc:images/delegate_pressed.png&quot;</span> : <span class="string">&quot;qrc:images/delegate.png&quot;</span>
+                <span class="name">border</span>.left: <span class="number">5</span>; <span class="name">border</span>.top: <span class="number">5</span>
+                <span class="name">border</span>.right: <span class="number">5</span>; <span class="name">border</span>.bottom: <span class="number">5</span>
+
+                <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+                    <span class="name">id</span>: <span class="name">shadow</span>
+                    <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">bottom</span>
+                    <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+                    <span class="name">visible</span>: !<span class="name">mouse</span>.<span class="name">pressed</span>
+                    <span class="name">source</span>: <span class="string">&quot;qrc:images/shadow.png&quot;</span>
+                }
+
+                <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+                    <span class="name">id</span>: <span class="name">mouse</span>
+                    <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                    <span class="name">hoverEnabled</span>: <span class="number">true</span>
+                    <span class="name">onClicked</span>: {
+                        <span class="keyword">if</span> (<span class="name">index</span> <span class="operator">!==</span> -<span class="number">1</span> <span class="operator">&amp;&amp;</span> <span class="name">_synced</span>) {
+                            <span class="name">enginioModel</span>.<span class="name">setProperty</span>(<span class="name">index</span>, <span class="string">&quot;completed&quot;</span>, !<span class="name">completed</span>)
+                        }
+                    }
+                }
+                <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+                    <span class="name">id</span>: <span class="name">checkbox</span>
+                    <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+                    <span class="name">anchors</span>.leftMargin: <span class="number">16</span>
+                    <span class="name">width</span>: <span class="number">32</span>
+                    <span class="name">fillMode</span>: <span class="name">Image</span>.<span class="name">PreserveAspectFit</span>
+                    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                    <span class="name">source</span>: <span class="name">completed</span> ? <span class="string">&quot;qrc:images/checkmark.png&quot;</span> : <span class="string">&quot;&quot;</span>
+                }
+
+                <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+                    <span class="name">id</span>: <span class="name">todoText</span>
+                    <span class="name">text</span>: <span class="name">title</span>
+                    <span class="name">font</span>.pixelSize: <span class="number">26</span>
+                    <span class="name">color</span>: <span class="string">&quot;#333&quot;</span>
+
+                    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                    <span class="name">anchors</span>.left: <span class="name">checkbox</span>.<span class="name">right</span>
+                    <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+                    <span class="name">anchors</span>.leftMargin: <span class="number">12</span>
+                    <span class="name">anchors</span>.rightMargin: <span class="number">40</span>
+                    <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+                }
+
+                <span class="comment">// Show a delete button when the mouse is over the delegate</span>
+                <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+                    <span class="name">id</span>: <span class="name">removeIcon</span>
+
+                    <span class="name">source</span>: <span class="name">removeMouseArea</span>.<span class="name">pressed</span> ? <span class="string">&quot;qrc:icons/delete_icon_pressed.png&quot;</span> : <span class="string">&quot;qrc:icons/delete_icon.png&quot;</span>
+                    <span class="name">anchors</span>.margins: <span class="number">20</span>
+                    <span class="name">anchors</span>.verticalCenter: <span class="name">parent</span>.<span class="name">verticalCenter</span>
+                    <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+                    <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.5</span>
+                    Behavior on <span class="name">opacity</span> {<span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span>{<span class="name">duration</span>: <span class="number">100</span>}}
+                    <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+                        <span class="name">id</span>: <span class="name">removeMouseArea</span>
+                        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+                        <span class="name">onClicked</span>: <span class="name">enginioModel</span>.<span class="name">remove</span>(<span class="name">index</span>)
+                    }
+                }
+            }
+        }
+    }
+}</pre>
+</div>
+<!-- @@@todos/todo.qml -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
