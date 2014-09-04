@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qtgui-qdocconf.qdoc -->
+  <title>Qtgui.qdocconf with notes | QDoc 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qdoc-index.html">QDoc Manual</a></li>
+<li>Qtgui.qdocconf with notes</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qtgui.qdocconf with notes</h1>
+<span class="subtitle"></span>
+<!-- $$$qtgui-qdocconf.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>This document goes through a typical Qt 5 qdocconf file. The contents is taken from Qt GUI's <i>qtgui.qdocconf</i> file.</p>
+<p>Below you will find the full contents of qtgui.qdocconf. The subsequent section will discuss every statement in the qdocconf file.</p>
+<pre class="cpp"><span class="keyword">include</span>($QT_INSTALL_DOCS<span class="operator">/</span>global<span class="operator">/</span>qt<span class="operator">-</span>module<span class="operator">-</span>defaults<span class="operator">.</span>qdocconf)
+
+project                 <span class="operator">=</span> <span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span>
+description             <span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span> GUI Reference Documentation
+url                     <span class="operator">=</span> http:<span class="comment">//qt-project.org/doc/qt-$QT_VER/qtgui</span>
+version                 <span class="operator">=</span> $QT_VERSION
+
+examplesinstallpath     <span class="operator">=</span> gui
+
+qhp<span class="operator">.</span>projects            <span class="operator">=</span> <span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span>
+
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>file         <span class="operator">=</span> qtgui<span class="operator">.</span>qhp
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span><span class="keyword">namespace</span>           <span class="operator">=</span> org<span class="operator">.</span>qt<span class="operator">-</span>project<span class="operator">.</span>qtgui<span class="operator">.</span>$QT_VERSION_TAG
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>virtualFolder       <span class="operator">=</span> qtgui
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>indexTitle          <span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span> GUI
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>indexRoot           <span class="operator">=</span>
+
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>filterAttributes    <span class="operator">=</span> qtgui $QT_VERSION qtrefdoc
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>customFilters<span class="operator">.</span><span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">.</span>name <span class="operator">=</span> Qtgui $QT_VERSION
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>customFilters<span class="operator">.</span><span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">.</span>filterAttributes <span class="operator">=</span> qtgui $QT_VERSION
+
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects         <span class="operator">=</span> classes
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>title <span class="operator">=</span> C<span class="operator">+</span><span class="operator">+</span> Classes
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>indexTitle <span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span> GUI C<span class="operator">+</span><span class="operator">+</span> Classes
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>selectors <span class="operator">=</span> <span class="keyword">class</span> fake:headerfile
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>sortPages <span class="operator">=</span> <span class="keyword">true</span>
+
+tagfile                 <span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>doc<span class="operator">/</span>qtgui<span class="operator">/</span>qtgui<span class="operator">.</span>tags
+
+depends <span class="operator">+</span><span class="operator">=</span> \
+    qtcore \
+    qtnetwork \
+    qtopengl \
+    qtsvg \
+    qtqml \
+    qtquick \
+    qtwidgets \
+    qtdoc
+
+headerdirs  <span class="operator">+</span><span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span>
+
+sourcedirs  <span class="operator">+</span><span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span> \
+               <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui<span class="operator">/</span>doc<span class="operator">/</span>src
+
+excludedirs  <span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui<span class="operator">/</span>doc<span class="operator">/</span>src<span class="operator">/</span>tmp
+
+exampledirs <span class="operator">+</span><span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui \
+               snippets
+
+imagedirs   <span class="operator">+</span><span class="operator">=</span> images \
+               <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui<span class="operator">/</span>doc<span class="operator">/</span>images \
+               <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>doc<span class="operator">/</span>src<span class="operator">/</span>images \</pre>
+<pre class="cpp"><span class="keyword">include</span>($QT_INSTALL_DOCS<span class="operator">/</span>global<span class="operator">/</span>qt<span class="operator">-</span>module<span class="operator">-</span>defaults<span class="operator">.</span>qdocconf)</pre>
+<p>QDoc inherits the default templates, macros, and settings from the directory specified from the <tt>$QT_INSTALL_DOCS</tt> variable. <tt>qmake</tt> prints the value of the variable.</p>
+<pre class="cpp">qmake <span class="operator">-</span>query</pre>
+<pre class="cpp">project                 <span class="operator">=</span> <span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span></pre>
+<p>The <tt>project</tt> variable sets the name of the QDoc build. This name is also used to form the index file, which, in this case, will be <i>qtgui.index</i>. The name of the index file doesn't adopt the uppercase letters of the project name.</p>
+<pre class="cpp">description             <span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span> GUI Reference Documentation</pre>
+<p>A short description of the project concerned.</p>
+<pre class="cpp">url                     <span class="operator">=</span> http:<span class="comment">//qt-project.org/doc/qt-$QT_VER/qtgui</span></pre>
+<p>The <tt>url</tt> variable holds the base url of the project.</p>
+<p>The URL is stored in the generated index file for the project. QDoc will use this as the base URL when constructing links to content listed in the index.</p>
+<p><b>Note: </b>QDoc omits this value when the -installdir argument is specified when running QDoc.</p><a name="examplesinstallpath"></a><pre class="cpp">examplesinstallpath     <span class="operator">=</span> gui</pre>
+<p>This <i>examplesinstallpath</i> variable indicates that the examples will be installed in the <i>gui</i> directory under the parent examples directory (for Qt, this is $QT_INSTALL_EXAMPLES).</p>
+<p><b>Note: </b>The examplepath variable has to match the example directory specified in exampledirs.</p><pre class="cpp">qhp<span class="operator">.</span>projects    <span class="operator">=</span> <span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span>
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>file  <span class="operator">=</span> qtgui<span class="operator">.</span>qhp</pre>
+<p>The following parameters are for creating a QHP file (<i>.qhp</i>). The qhelpgenerator program can convert the QHP file into a QCH file (<i>.qch</i>), which can be opened in Qt Assistant or Qt Creator.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span><span class="keyword">namespace</span>           <span class="operator">=</span> org<span class="operator">.</span>qt<span class="operator">-</span>project<span class="operator">.</span>qtgui<span class="operator">.</span>$QT_VERSION_TAG</pre>
+<p>A unique identifier which enables <a href="../qthelp/qhelpengine.html">QHelpEngine</a> to retrieve the helpfile from a given link. This namespace is also used as a base url for links to the helpfile.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>virtualFolder       <span class="operator">=</span> qtgui</pre>
+<p>Virtual folders group documentation together into a single location. A virtual folder will become the root directory of all files referenced in a compressed help file.</p>
+<p>When two manuals are located in the same virtual folder, it is possible to refer to sections of the other manual using relative paths. The virtual folder tag is mandatory and the folder must not contain any '/'.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>indexTitle          <span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span> GUI  the title of the page that has the contents</pre>
+<p>This is the title of the page that has the contents.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>indexRoot           <span class="operator">=</span>  to be checked</pre>
+<p>Specifies the title of the root (namespace) page to generate the documentation for. Typically defined as an empty string.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>filterAttributes    <span class="operator">=</span> qtgui $QT_VERSION qtrefdoc
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>customFilters<span class="operator">.</span><span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">.</span>name <span class="operator">=</span> <span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span> $QT_VERSION
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>customFilters<span class="operator">.</span><span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">.</span>filterAttributes <span class="operator">=</span> qtgui $QT_VERSION</pre>
+<p>The documentation set (one per QDoc project) can have any number of filter attributes assigned to it. A filter attribute is an ordinary string which can be freely chosen. Additionally, custom filters that reference above attributes can be defined. Qt Assistant will display the name of the custom filter in its <b>Filtered by</b> drop-down list. Only the documentation sets that have their filter attributes match the attributes of the selected custom filter will be shown.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects         <span class="operator">=</span> classes
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>title <span class="operator">=</span> C<span class="operator">+</span><span class="operator">+</span> Classes
+qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>indexTitle <span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span> GUI C<span class="operator">+</span><span class="operator">+</span> Classes</pre>
+<p>The subprojects specify the sections that are displayed in the table of contents for this project. In this example, the subproject, which is displayed in the Assistant's sidebar, is named &quot;C++ Classes&quot; and its index is the page titled &quot;QT GUI C++ Classes&quot;.</p>
+<pre class="cpp">qhp<span class="operator">.</span><span class="type"><a href="../qtgui/qtgui-module.html">QtGui</a></span><span class="operator">.</span>subprojects<span class="operator">.</span>classes<span class="operator">.</span>selectors <span class="operator">=</span> <span class="keyword">class</span> fake:headerfile</pre>
+<p>Lists all headerfiles.</p>
+<p>A ‘fake’ type specifies a generic documentation node, and is followed by a c : and a <i>subtype</i> specifier.</p>
+<p>Possible values:</p>
+<pre class="cpp"> example
+ headerfile
+ file
+ group
+ module
+ page
+ externalpage
+ qmlclass
+ qmlpropertygroup
+ qmlbasictype</pre>
+<p>tagfile = ../&#x2e;./&#x2e;./doc/qtgui/qtgui.tags This specifies the Doxygen tag file that needs to be written when the html is generated by QDoc.</p>
+<pre class="cpp">depends <span class="operator">+</span><span class="operator">=</span> \
+   qtcore \
+   qtnetwork \
+   qtopengl \
+   qtsvg \
+   qtqml \
+   qtquick \
+   qtwidgets \
+   qtdoc</pre>
+<p>Specifies the modules QDoc needs to load for generating output for Qt GUI. QDoc loads the index files for all modules listed in the depends statement in order to enable linking to pages in these modules.</p>
+<pre class="cpp">   headerdirs  <span class="operator">+</span><span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span></pre>
+<p>Add the parent directory to the list of directories containing the header files associated with the <i>.cpp</i> source files.</p>
+<pre class="cpp">   sourcedirs  <span class="operator">+</span><span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span> \
+                  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui<span class="operator">/</span>doc<span class="operator">/</span>src</pre>
+<p>Add the specified directories to the list of directories containing the <i>.cpp</i> and <i>.qdoc</i> files used in the documentation.</p>
+<pre class="cpp">   excludedirs  <span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui<span class="operator">/</span>doc<span class="operator">/</span>src<span class="operator">/</span>tmp</pre>
+<p>The <tt>excludedirs</tt> variable is for listing directories that should not be processed by qdoc, even if the same directories are included by the <tt>sourcedirs</tt> or <tt>headerdirs</tt> variables.</p>
+<p>When executed, QDoc will ignore the directories listed.</p>
+<pre class="cpp">   exampledirs <span class="operator">+</span><span class="operator">=</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui \
+                  snippets</pre>
+<p>Add the two directories specified to the list of directories containing the source code of the example files.</p>
+<p>If QDoc encounters both <tt>exampledirs</tt> and <tt>examples</tt>, it will look first in the <tt>examples</tt> directory. QDoc will accept the first matching file it finds. QDoc will search in the directories specified, not in their subdirectories.</p>
+<pre class="cpp">   imagedirs   <span class="operator">+</span><span class="operator">=</span> images \
+                  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>examples<span class="operator">/</span>gui<span class="operator">/</span>doc<span class="operator">/</span>images \
+                  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>doc<span class="operator">/</span>src<span class="operator">/</span>images \</pre>
+<p>Add the directories specified above to the list of directories where the images can be found.</p>
+</div>
+<p><b>See also </b><a href="12-0-qdoc-commands-miscellaneous.html#include">include</a>, <a href="25-qdoc-configuration-derivedprojects.html#project">project</a>, <a href="22-qdoc-configuration-generalvariables.html#exampledirs">exampledirs</a>, <a href="22-qdoc-configuration-generalvariables.html#excludefiles">excludefiles</a>, <a href="22-qdoc-configuration-generalvariables.html#examples-variable">examples</a>, and <a href="#examplesinstallpath">examplesinstallpath</a>.</p>
+<!-- @@@qtgui-qdocconf.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

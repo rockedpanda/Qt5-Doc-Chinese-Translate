@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- image-gallery-cpp.qdoc -->
+  <title>Enginio C++ Examples - Image Gallery | QtEnginio 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtenginiooverview/enginio-index.html">Enginio Manual</a></li>
+<li><a href="enginio-cpp-classes-and-examples.html">Enginio C++ Classes and Examples</a></li>
+<li>Enginio C++ Examples - Image Gallery</li>
+<li id="buildversion">
+Enginio 1.0.5 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#backend-configuration">Backend configuration</a></li>
+<li class="level1"><a href="#the-example-code">The Example Code</a></li>
+</ul>
+</div>
+<h1 class="title">Enginio C++ Examples - Image Gallery</h1>
+<span class="subtitle"></span>
+<!-- $$$image-gallery-cpp-description -->
+<div class="descr"> <a name="details"></a>
+<p>This is an example that demonstrates uploading and downloading of files in Enginio.<p>The user interface consists of a list of images and a button to upload more images.</p>
+<p class="centerAlign"><img src="images/gallery-example.png" alt="" /></p><a name="backend-configuration"></a>
+<h2>Backend configuration</h2>
+<p>The <i>Enginio</i> <i>backend</i> needs to be set up in order to get this example working.</p>
+<p>Go to the <i>Enginio Dashboard</i> and create a new backend with the <b>Image Gallery</b> template. The template will construct a new custom backend by executing these steps:</p>
+<ul>
+<li>Create a new object type <tt>objects.image</tt> (on the <b>Object Types</b> page).<p>Add two properties to the image object: name:&quot;name&quot;, type: &quot;String&quot; and name: &quot;file&quot;, type: &quot;Ref&quot; with target &quot;files&quot;.</p>
+</li>
+<li>Add a file processor by clicking the <tt>file</tt> property. Choose <b>Image processor</b> and in <b>Variants</b> enter:<pre class="cpp">{
+    <span class="string">&quot;thumbnail&quot;</span>: { <span class="string">&quot;crop&quot;</span>:<span class="string">&quot;100x100&quot;</span> }
+}</pre>
+<p>This JSON snippet triggers the server to generate thumbnails for all uploaded images. In the image gallery, the thumbnails will be used in the list view, and the full image will be shown when the thumbnail is clicked.</p>
+</li>
+</ul>
+<p>Copy the backend id from the Enginio dashboard, and use them when requested.</p>
+<a name="the-example-code"></a>
+<h2>The Example Code</h2>
+<p>The example consists of three classes. ImageModel is a subclass of <a href="enginiomodel.html#enginiomodelcpp">EnginioModel</a> that exposes the images in the <a href="../qtcore/qt.html#ItemDataRole-enum">Qt::DecorationRole</a> for the list view. In the <tt>MainWindow</tt>, a normal <a href="../qtwidgets/qlistview.html">QListView</a> is used to display the model contents. The ImageObject is a class that takes care of the download, and emits a signal when an image has been downloaded.</p>
+<p>Files:</p>
+<ul>
+<li><a href="qtenginio-image-gallery-cpp-imagemodel-cpp.html">image-gallery-cpp/imagemodel.cpp</a></li>
+<li><a href="qtenginio-image-gallery-cpp-imagemodel-h.html">image-gallery-cpp/imagemodel.h</a></li>
+<li><a href="qtenginio-image-gallery-cpp-imageobject-cpp.html">image-gallery-cpp/imageobject.cpp</a></li>
+<li><a href="qtenginio-image-gallery-cpp-imageobject-h.html">image-gallery-cpp/imageobject.h</a></li>
+<li><a href="qtenginio-image-gallery-cpp-mainwindow-cpp.html">image-gallery-cpp/mainwindow.cpp</a></li>
+<li><a href="qtenginio-image-gallery-cpp-mainwindow-h.html">image-gallery-cpp/mainwindow.h</a></li>
+<li><a href="qtenginio-image-gallery-cpp-main-cpp.html">image-gallery-cpp/main.cpp</a></li>
+<li><a href="qtenginio-image-gallery-cpp-image-gallery-cpp-pro.html">image-gallery-cpp/image-gallery-cpp.pro</a></li>
+</ul>
+</div>
+<!-- @@@image-gallery-cpp -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

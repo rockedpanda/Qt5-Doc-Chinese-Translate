@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qserialport.cpp -->
+  <title>Obsolete Members for QSerialPort | QtSerialPort 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtserialport-index.html">Qt Serial Port</a></li>
+<li><a href="qtserialport-module.html">C++ Classes</a></li>
+<li>QSerialPort</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Obsolete Members for QSerialPort</h1>
+<p><b>The following members of class <a href="qserialport.html">QSerialPort</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qserialport-obsolete.html#DataErrorPolicy-enum">DataErrorPolicy</a></b> { SkipPolicy, PassZeroPolicy, IgnorePolicy, StopReceivingPolicy, UnknownPolicy }<tt> (obsolete)</tt></td></tr>
+</table>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qserialport-obsolete.html#dataErrorPolicy-prop">dataErrorPolicy</a></b> : DataErrorPolicy<tt> (obsolete)</tt></li>
+<li class="fn"><b><a href="qserialport-obsolete.html#settingsRestoredOnClose-prop">settingsRestoredOnClose</a></b> : bool<tt> (obsolete)</tt></li>
+</ul>
+<h2>Member Type Documentation</h2>
+<!-- $$$DataErrorPolicy$$$SkipPolicy$$$PassZeroPolicy$$$IgnorePolicy$$$StopReceivingPolicy$$$UnknownPolicy -->
+<h3 class="fn"><a name="DataErrorPolicy-enum"></a>enum QSerialPort::<span class="name">DataErrorPolicy</span></h3>
+<p>This enum describes the policies for the received symbols while parity errors were detected.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QSerialPort::SkipPolicy</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Skips the bad character.</td></tr>
+<tr><td class="topAlign"><tt>QSerialPort::PassZeroPolicy</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">Replaces bad character with zero.</td></tr>
+<tr><td class="topAlign"><tt>QSerialPort::IgnorePolicy</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">Ignores the error for a bad character.</td></tr>
+<tr><td class="topAlign"><tt>QSerialPort::StopReceivingPolicy</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">Stops data reception on error.</td></tr>
+<tr><td class="topAlign"><tt>QSerialPort::UnknownPolicy</tt></td><td class="topAlign"><tt>-1</tt></td><td class="topAlign">Unknown policy.</td></tr>
+</table>
+<p><b>See also </b><a href="qserialport-obsolete.html#dataErrorPolicy-prop">QSerialPort::dataErrorPolicy</a>.</p>
+<!-- @@@DataErrorPolicy -->
+<h2>Property Documentation</h2>
+<!-- $$$dataErrorPolicy-prop$$$dataErrorPolicy$$$setDataErrorPolicyDataErrorPolicy$$$dataErrorPolicyChangedQSerialPort::DataErrorPolicy -->
+<h3 class="fn"><a name="dataErrorPolicy-prop"></a><span class="name">dataErrorPolicy</span> : <span class="type"><a href="qserialport-obsolete.html#DataErrorPolicy-enum">DataErrorPolicy</a></span></h3>
+<p>This property holds the error policy for how the process receives characters in the case where a parity error is detected.</p>
+<p>If the setting is successful, returns true; otherwise returns false. The default policy set is <a href="qserialport-obsolete.html#DataErrorPolicy-enum">IgnorePolicy</a>.</p>
+<p><b>Note: </b>The serial port has to be open before trying to set this property; otherwise returns false and sets the <a href="qserialport.html#SerialPortError-enum">NotOpenError</a> error code. This is a bit unusual as opposed to the regular Qt property settings of a class. However, this is a special use case since the property is set through the interaction with the kernel and hardware. Hence, the two scenarios cannot be completely compared to each other.</p><p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> DataErrorPolicy </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qserialport-compat.html#dataErrorPolicy-prop">dataErrorPolicy</a></b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qserialport-compat.html#dataErrorPolicy-prop">setDataErrorPolicy</a></b></span>(DataErrorPolicy<i> policy</i> = IgnorePolicy)</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>dataErrorPolicyChanged</b></span>(QSerialPort::DataErrorPolicy<i> policy</i>)</td></tr>
+</table>
+<!-- @@@dataErrorPolicy -->
+<!-- $$$settingsRestoredOnClose-prop$$$settingsRestoredOnClose$$$setSettingsRestoredOnClosebool -->
+<h3 class="fn"><a name="settingsRestoredOnClose-prop"></a><span class="name">settingsRestoredOnClose</span> : <span class="type">bool</span></h3>
+<p>This property holds the flag which specifies to restore the previous settings when closing the serial port.</p>
+<p>If this flag is true, the settings will be restored; otherwise not. The default state of the <a href="qserialport.html">QSerialPort</a> class is to restore the settings.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qserialport-compat.html#settingsRestoredOnClose-prop">settingsRestoredOnClose</a></b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qserialport-compat.html#settingsRestoredOnClose-prop">setSettingsRestoredOnClose</a></b></span>(bool<i> restore</i>)</td></tr>
+</table>
+<!-- @@@settingsRestoredOnClose -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

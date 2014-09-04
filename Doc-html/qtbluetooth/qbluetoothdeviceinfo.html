@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbluetoothdeviceinfo.cpp -->
+  <title>QBluetoothDeviceInfo Class | QtBluetooth 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtbluetooth-index.html">Qt Bluetooth</a></li>
+<li><a href="qtbluetooth-module.html">C++ Classes</a></li>
+<li>QBluetoothDeviceInfo</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QBluetoothDeviceInfo Class</h1>
+<!-- $$$QBluetoothDeviceInfo-brief -->
+<p>The QBluetoothDeviceInfo class stores information about the Bluetooth device. <a href="#details">More...</a></p>
+<!-- @@@QBluetoothDeviceInfo -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QBluetoothDeviceInfo&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += bluetooth</tt></td></tr></table><ul>
+<li><a href="qbluetoothdeviceinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataCompleteness</a></b> { DataComplete, DataIncomplete, DataUnavailable }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MajorDeviceClass-enum">MajorDeviceClass</a></b> { MiscellaneousDevice, ComputerDevice, PhoneDevice, LANAccessDevice, ..., UncategorizedDevice }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorAudioVideoClass-enum">MinorAudioVideoClass</a></b> { UncategorizedAudioVideoDevice, WearableHeadsetDevice, HandsFreeDevice, Microphone, ..., GamingDevice }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorComputerClass-enum">MinorComputerClass</a></b> { UncategorizedComputer, DesktopComputer, ServerComputer, LaptopComputer, ..., WearableComputer }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorHealthClass-enum">MinorHealthClass</a></b> { UncategorizedHealthDevice, HealthBloodPressureMonitor, HealthThermometer, HealthWeightScale, ..., HealthStepCounter }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorImagingClass-enum">MinorImagingClass</a></b> { UncategorizedImagingDevice, ImageDisplay, ImageCamera, ImageScanner, ImagePrinter }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorMiscellaneousClass-enum">MinorMiscellaneousClass</a></b> { UncategorizedMiscellaneous }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorNetworkClass-enum">MinorNetworkClass</a></b> { NetworkFullService, NetworkLoadFactorOne, NetworkLoadFactorTwo, NetworkLoadFactorThree, ..., NetworkNoService }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorPeripheralClass-enum">MinorPeripheralClass</a></b> { UncategorizedPeripheral, KeyboardPeripheral, PointingDevicePeripheral, KeyboardWithPointingDevicePeripheral, ..., CardReaderPeripheral }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorPhoneClass-enum">MinorPhoneClass</a></b> { UncategorizedPhone, CellularPhone, CordlessPhone, SmartPhone, WiredModemOrVoiceGatewayPhone, CommonIsdnAccessPhone }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorToyClass-enum">MinorToyClass</a></b> { UncategorizedToy, ToyRobot, ToyVehicle, ToyDoll, ToyController, ToyGame }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#MinorWearableClass-enum">MinorWearableClass</a></b> { UncategorizedWearableDevice, WearableWristWatch, WearablePager, WearableJacket, WearableHelmet, WearableGlasses }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#ServiceClass-enum">ServiceClass</a></b> { NoService, PositioningService, NetworkingService, RenderingService, ..., AllServices }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#ServiceClass-enum">ServiceClasses</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#QBluetoothDeviceInfo">QBluetoothDeviceInfo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#QBluetoothDeviceInfo-2">QBluetoothDeviceInfo</a></b>(const QBluetoothAddress &amp;<i> address</i>, const QString &amp;<i> name</i>, quint32<i> classOfDevice</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#QBluetoothDeviceInfo-3">QBluetoothDeviceInfo</a></b>(const QBluetoothDeviceInfo &amp;<i> other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#dtor.QBluetoothDeviceInfo">~QBluetoothDeviceInfo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothAddress </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#address">address</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#isCached">isCached</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#isValid">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> MajorDeviceClass </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#majorDeviceClass">majorDeviceClass</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint8 </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#minorDeviceClass">minorDeviceClass</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#name">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint16 </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#rssi">rssi</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ServiceClasses </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#serviceClasses">serviceClasses</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QBluetoothUuid&gt; </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#serviceUuids">serviceUuids</a></b>(DataCompleteness *<i> completeness</i> = 0) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> DataCompleteness </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#serviceUuidsCompleteness">serviceUuidsCompleteness</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#setCached">setCached</a></b>(bool<i> cached</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#setRssi">setRssi</a></b>(qint16<i> signal</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#setServiceUuids">setServiceUuids</a></b>(const QList&lt;QBluetoothUuid&gt; &amp;<i> uuids</i>, DataCompleteness<i> completeness</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#operator-not-eq">operator!=</a></b>(const QBluetoothDeviceInfo &amp;<i> other</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothDeviceInfo &amp; </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#operator-eq">operator=</a></b>(const QBluetoothDeviceInfo &amp;<i> other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothdeviceinfo.html#operator-eq-eq">operator==</a></b>(const QBluetoothDeviceInfo &amp;<i> other</i>) const</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QBluetoothDeviceInfo-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QBluetoothDeviceInfo class stores information about the Bluetooth device.</p>
+<p>QBluetoothDeviceInfo provides information about a Bluetooth device's name, address and class of device.</p>
+</div>
+<!-- @@@QBluetoothDeviceInfo -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DataCompleteness$$$DataComplete$$$DataIncomplete$$$DataUnavailable -->
+<h3 class="fn"><a name="DataCompleteness-enum"></a>enum QBluetoothDeviceInfo::<span class="name">DataCompleteness</span></h3>
+<p>This enum describes the completeness of the received data.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::DataComplete</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">The data is complete.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::DataIncomplete</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">The data is incomplete. Addition datum is available via other interfaces.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::DataUnavailable</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">No data is available.</td></tr>
+</table>
+<!-- @@@DataCompleteness -->
+<!-- $$$MajorDeviceClass$$$MiscellaneousDevice$$$ComputerDevice$$$PhoneDevice$$$LANAccessDevice$$$AudioVideoDevice$$$PeripheralDevice$$$ImagingDevice$$$WearableDevice$$$ToyDevice$$$HealthDevice$$$UncategorizedDevice -->
+<h3 class="fn"><a name="MajorDeviceClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MajorDeviceClass</span></h3>
+<p>This enum describes a Bluetooth device's major device class.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::MiscellaneousDevice</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">A miscellaneous device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ComputerDevice</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">A computer device or PDA.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::PhoneDevice</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">A telephone device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::LANAccessDevice</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">A device that provides access to a local area network.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::AudioVideoDevice</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">A device capable of playback or capture of audio and/or video.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::PeripheralDevice</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">A peripheral device such as a keyboard, mouse, and so on.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ImagingDevice</tt></td><td class="topAlign"><tt>6</tt></td><td class="topAlign">An imaging device such as a display, printer, scanner or camera.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableDevice</tt></td><td class="topAlign"><tt>7</tt></td><td class="topAlign">A wearable device such as a watch or pager.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ToyDevice</tt></td><td class="topAlign"><tt>8</tt></td><td class="topAlign">A toy.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthDevice</tt></td><td class="topAlign"><tt>9</tt></td><td class="topAlign">A health reated device such as heart rate or temperature monitor.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedDevice</tt></td><td class="topAlign"><tt>31</tt></td><td class="topAlign">A device that does not fit into any of the other device classes.</td></tr>
+</table>
+<!-- @@@MajorDeviceClass -->
+<!-- $$$MinorAudioVideoClass$$$UncategorizedAudioVideoDevice$$$WearableHeadsetDevice$$$HandsFreeDevice$$$Microphone$$$Loudspeaker$$$Headphones$$$PortableAudioDevice$$$CarAudio$$$SetTopBox$$$HiFiAudioDevice$$$Vcr$$$VideoCamera$$$Camcorder$$$VideoMonitor$$$VideoDisplayAndLoudspeaker$$$VideoConferencing$$$GamingDevice -->
+<h3 class="fn"><a name="MinorAudioVideoClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorAudioVideoClass</span></h3>
+<p>This enum describes the minor device classes for audio/video devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedAudioVideoDevice</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized audio/video device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableHeadsetDevice</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">A wearable headset device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HandsFreeDevice</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">A handsfree device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::Microphone</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">A microphone.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::Loudspeaker</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">A loudspeaker.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::Headphones</tt></td><td class="topAlign"><tt>6</tt></td><td class="topAlign">Headphones.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::PortableAudioDevice</tt></td><td class="topAlign"><tt>7</tt></td><td class="topAlign">A portable audio device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::CarAudio</tt></td><td class="topAlign"><tt>8</tt></td><td class="topAlign">A car audio device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::SetTopBox</tt></td><td class="topAlign"><tt>9</tt></td><td class="topAlign">A settop box.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HiFiAudioDevice</tt></td><td class="topAlign"><tt>10</tt></td><td class="topAlign">A HiFi audio device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::Vcr</tt></td><td class="topAlign"><tt>11</tt></td><td class="topAlign">A video cassette recorder.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::VideoCamera</tt></td><td class="topAlign"><tt>12</tt></td><td class="topAlign">A video camera.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::Camcorder</tt></td><td class="topAlign"><tt>13</tt></td><td class="topAlign">A video camera.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::VideoMonitor</tt></td><td class="topAlign"><tt>14</tt></td><td class="topAlign">A video monitor.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::VideoDisplayAndLoudspeaker</tt></td><td class="topAlign"><tt>15</tt></td><td class="topAlign">A video display with built-in loudspeaker.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::VideoConferencing</tt></td><td class="topAlign"><tt>16</tt></td><td class="topAlign">A video conferencing device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::GamingDevice</tt></td><td class="topAlign"><tt>18</tt></td><td class="topAlign">A gaming device.</td></tr>
+</table>
+<!-- @@@MinorAudioVideoClass -->
+<!-- $$$MinorComputerClass$$$UncategorizedComputer$$$DesktopComputer$$$ServerComputer$$$LaptopComputer$$$HandheldClamShellComputer$$$HandheldComputer$$$WearableComputer -->
+<h3 class="fn"><a name="MinorComputerClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorComputerClass</span></h3>
+<p>This enum describes the minor device classes for computer devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedComputer</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized computer device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::DesktopComputer</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">A desktop computer.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ServerComputer</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">A server computer.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::LaptopComputer</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">A laptop computer.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HandheldClamShellComputer</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">A clamshell handheld computer or PDA.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HandheldComputer</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">A handheld computer or PDA.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableComputer</tt></td><td class="topAlign"><tt>6</tt></td><td class="topAlign">A wearable computer.</td></tr>
+</table>
+<!-- @@@MinorComputerClass -->
+<!-- $$$MinorHealthClass$$$UncategorizedHealthDevice$$$HealthBloodPressureMonitor$$$HealthThermometer$$$HealthWeightScale$$$HealthGlucoseMeter$$$HealthPulseOximeter$$$HealthDataDisplay$$$HealthStepCounter -->
+<h3 class="fn"><a name="MinorHealthClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorHealthClass</span></h3>
+<p>This enum describes the minor device classes for health devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedHealthDevice</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized health device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthBloodPressureMonitor</tt></td><td class="topAlign"><tt>0x1</tt></td><td class="topAlign">A blood pressure monitor.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthThermometer</tt></td><td class="topAlign"><tt>0x2</tt></td><td class="topAlign">A Thermometer.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthWeightScale</tt></td><td class="topAlign"><tt>0x3</tt></td><td class="topAlign">A scale.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthGlucoseMeter</tt></td><td class="topAlign"><tt>0x4</tt></td><td class="topAlign">A glucose meter.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthPulseOximeter</tt></td><td class="topAlign"><tt>0x5</tt></td><td class="topAlign">A blood oxygen saturation meter.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthDataDisplay</tt></td><td class="topAlign"><tt>0x7</tt></td><td class="topAlign">A data display.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::HealthStepCounter</tt></td><td class="topAlign"><tt>0x8</tt></td><td class="topAlign">A pedometer.</td></tr>
+</table>
+<!-- @@@MinorHealthClass -->
+<!-- $$$MinorImagingClass$$$UncategorizedImagingDevice$$$ImageDisplay$$$ImageCamera$$$ImageScanner$$$ImagePrinter -->
+<h3 class="fn"><a name="MinorImagingClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorImagingClass</span></h3>
+<p>This enum describes the minor device classes for imaging devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedImagingDevice</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized imaging device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ImageDisplay</tt></td><td class="topAlign"><tt>0x04</tt></td><td class="topAlign">A device capable of displaying images.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ImageCamera</tt></td><td class="topAlign"><tt>0x08</tt></td><td class="topAlign">A camera.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ImageScanner</tt></td><td class="topAlign"><tt>0x10</tt></td><td class="topAlign">An image scanner.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ImagePrinter</tt></td><td class="topAlign"><tt>0x20</tt></td><td class="topAlign">A printer.</td></tr>
+</table>
+<!-- @@@MinorImagingClass -->
+<!-- $$$MinorMiscellaneousClass$$$UncategorizedMiscellaneous -->
+<h3 class="fn"><a name="MinorMiscellaneousClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorMiscellaneousClass</span></h3>
+<p>This enum describes the minor device classes for miscellaneous Bluetooth devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedMiscellaneous</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized miscellaneous device.</td></tr>
+</table>
+<!-- @@@MinorMiscellaneousClass -->
+<!-- $$$MinorNetworkClass$$$NetworkFullService$$$NetworkLoadFactorOne$$$NetworkLoadFactorTwo$$$NetworkLoadFactorThree$$$NetworkLoadFactorFour$$$NetworkLoadFactorFive$$$NetworkLoadFactorSix$$$NetworkNoService -->
+<h3 class="fn"><a name="MinorNetworkClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorNetworkClass</span></h3>
+<p>This enum describes the minor device classes for local area network access devices. Local area network access devices use the minor device class to specify the current network utilization.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkFullService</tt></td><td class="topAlign"><tt>0x00</tt></td><td class="topAlign">100% of the total bandwidth is available.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkLoadFactorOne</tt></td><td class="topAlign"><tt>0x08</tt></td><td class="topAlign">0 - 17% of the total bandwidth is currently being used.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkLoadFactorTwo</tt></td><td class="topAlign"><tt>0x10</tt></td><td class="topAlign">17 - 33% of the total bandwidth is currently being used.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkLoadFactorThree</tt></td><td class="topAlign"><tt>0x18</tt></td><td class="topAlign">33 - 50% of the total bandwidth is currently being used.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkLoadFactorFour</tt></td><td class="topAlign"><tt>0x20</tt></td><td class="topAlign">50 - 67% of the total bandwidth is currently being used.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkLoadFactorFive</tt></td><td class="topAlign"><tt>0x28</tt></td><td class="topAlign">67 - 83% of the total bandwidth is currently being used.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkLoadFactorSix</tt></td><td class="topAlign"><tt>0x30</tt></td><td class="topAlign">83 - 99% of the total bandwidth is currently being used.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkNoService</tt></td><td class="topAlign"><tt>0x38</tt></td><td class="topAlign">No network service available.</td></tr>
+</table>
+<!-- @@@MinorNetworkClass -->
+<!-- $$$MinorPeripheralClass$$$UncategorizedPeripheral$$$KeyboardPeripheral$$$PointingDevicePeripheral$$$KeyboardWithPointingDevicePeripheral$$$JoystickPeripheral$$$GamepadPeripheral$$$RemoteControlPeripheral$$$SensingDevicePeripheral$$$DigitizerTabletPeripheral$$$CardReaderPeripheral -->
+<h3 class="fn"><a name="MinorPeripheralClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorPeripheralClass</span></h3>
+<p>This enum describes the minor device classes for peripheral devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedPeripheral</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized peripheral device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::KeyboardPeripheral</tt></td><td class="topAlign"><tt>0x10</tt></td><td class="topAlign">A keyboard.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::PointingDevicePeripheral</tt></td><td class="topAlign"><tt>0x20</tt></td><td class="topAlign">A pointing device, for example a mouse.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::KeyboardWithPointingDevicePeripheral</tt></td><td class="topAlign"><tt>0x30</tt></td><td class="topAlign">A keyboard with built-in pointing device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::JoystickPeripheral</tt></td><td class="topAlign"><tt>0x01</tt></td><td class="topAlign">A joystick.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::GamepadPeripheral</tt></td><td class="topAlign"><tt>0x02</tt></td><td class="topAlign">A game pad.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::RemoteControlPeripheral</tt></td><td class="topAlign"><tt>0x03</tt></td><td class="topAlign">A remote control.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::SensingDevicePeripheral</tt></td><td class="topAlign"><tt>0x04</tt></td><td class="topAlign">A sensing device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::DigitizerTabletPeripheral</tt></td><td class="topAlign"><tt>0x05</tt></td><td class="topAlign">A digitizer tablet peripheral.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::CardReaderPeripheral</tt></td><td class="topAlign"><tt>0x06</tt></td><td class="topAlign">A card reader peripheral.</td></tr>
+</table>
+<!-- @@@MinorPeripheralClass -->
+<!-- $$$MinorPhoneClass$$$UncategorizedPhone$$$CellularPhone$$$CordlessPhone$$$SmartPhone$$$WiredModemOrVoiceGatewayPhone$$$CommonIsdnAccessPhone -->
+<h3 class="fn"><a name="MinorPhoneClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorPhoneClass</span></h3>
+<p>This enum describes the minor device classes for phone devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedPhone</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized phone device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::CellularPhone</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">A cellular phone.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::CordlessPhone</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">A cordless phone.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::SmartPhone</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">A smart phone.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WiredModemOrVoiceGatewayPhone</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">A wired modem or voice gateway.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::CommonIsdnAccessPhone</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">A device that provides ISDN access.</td></tr>
+</table>
+<!-- @@@MinorPhoneClass -->
+<!-- $$$MinorToyClass$$$UncategorizedToy$$$ToyRobot$$$ToyVehicle$$$ToyDoll$$$ToyController$$$ToyGame -->
+<h3 class="fn"><a name="MinorToyClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorToyClass</span></h3>
+<p>This enum describes the minor device classes for toy devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedToy</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized toy.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ToyRobot</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">A toy robot.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ToyVehicle</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">A toy vehicle.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ToyDoll</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">A toy doll or action figure.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ToyController</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">A controller.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ToyGame</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">A game.</td></tr>
+</table>
+<!-- @@@MinorToyClass -->
+<!-- $$$MinorWearableClass$$$UncategorizedWearableDevice$$$WearableWristWatch$$$WearablePager$$$WearableJacket$$$WearableHelmet$$$WearableGlasses -->
+<h3 class="fn"><a name="MinorWearableClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">MinorWearableClass</span></h3>
+<p>This enum describes the minor device classes for wearable devices.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::UncategorizedWearableDevice</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">An uncategorized wearable device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableWristWatch</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">A wristwatch.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearablePager</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">A pager.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableJacket</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">A jacket.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableHelmet</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">A helmet.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::WearableGlasses</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">A pair of glasses.</td></tr>
+</table>
+<!-- @@@MinorWearableClass -->
+<!-- $$$ServiceClass$$$NoService$$$PositioningService$$$NetworkingService$$$RenderingService$$$CapturingService$$$ObjectTransferService$$$AudioService$$$TelephonyService$$$InformationService$$$AllServices -->
+<h3 class="flags"><a name="ServiceClass-enum"></a>enum QBluetoothDeviceInfo::<span class="name">ServiceClass</span><br/>flags QBluetoothDeviceInfo::<span class="name">ServiceClasses</span></h3>
+<p>This enum describes the service class of the Bluetooth device. The service class is used as a rudimentary form of service discovery. It is meant to provide a list of the types of services that the device might provide.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NoService</tt></td><td class="topAlign"><tt>0x0000</tt></td><td class="topAlign">The device does not provide any services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::PositioningService</tt></td><td class="topAlign"><tt>0x0001</tt></td><td class="topAlign">The device provides positioning services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::NetworkingService</tt></td><td class="topAlign"><tt>0x0002</tt></td><td class="topAlign">The device provides networking services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::RenderingService</tt></td><td class="topAlign"><tt>0x0004</tt></td><td class="topAlign">The device provides rendering services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::CapturingService</tt></td><td class="topAlign"><tt>0x0008</tt></td><td class="topAlign">The device provides capturing services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::ObjectTransferService</tt></td><td class="topAlign"><tt>0x0010</tt></td><td class="topAlign">The device provides object transfer services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::AudioService</tt></td><td class="topAlign"><tt>0x0020</tt></td><td class="topAlign">The device provides audio services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::TelephonyService</tt></td><td class="topAlign"><tt>0x0040</tt></td><td class="topAlign">The device provides telephony services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::InformationService</tt></td><td class="topAlign"><tt>0x0080</tt></td><td class="topAlign">The device provides information services.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothDeviceInfo::AllServices</tt></td><td class="topAlign"><tt>0x07ff</tt></td><td class="topAlign">The device provides services of all types.</td></tr>
+</table>
+<p>The ServiceClasses type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;ServiceClass&gt;. It stores an OR combination of ServiceClass values.</p>
+<!-- @@@ServiceClass -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBluetoothDeviceInfo[overload1]$$$QBluetoothDeviceInfo -->
+<h3 class="fn"><a name="QBluetoothDeviceInfo"></a>QBluetoothDeviceInfo::<span class="name">QBluetoothDeviceInfo</span>()</h3>
+<p>Constructs an invalid <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> object.</p>
+<!-- @@@QBluetoothDeviceInfo -->
+<!-- $$$QBluetoothDeviceInfo$$$QBluetoothDeviceInfoconstQBluetoothAddress&constQString&quint32 -->
+<h3 class="fn"><a name="QBluetoothDeviceInfo-2"></a>QBluetoothDeviceInfo::<span class="name">QBluetoothDeviceInfo</span>(const <span class="type"><a href="qbluetoothaddress.html">QBluetoothAddress</a></span> &amp;<i> address</i>, const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i> name</i>, <span class="type"><a href="../qtcore/qtglobal.html#quint32-typedef">quint32</a></span><i> classOfDevice</i>)</h3>
+<p>Constructs a <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> object with Bluetooth address <i>address</i>, device name <i>name</i> and the encoded class of device <i>classOfDevice</i>.</p>
+<p>The <i>classOfDevice</i> parameter is encoded in the following format</p>
+<table class="generic">
+ <thead><tr class="qt-style"><th >Bits</th><th >Size</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >0 - 1</td><td >2</td><td >Unused, set to 0.</td></tr>
+<tr valign="top" class="even"><td >2 - 7</td><td >6</td><td >Minor device class.</td></tr>
+<tr valign="top" class="odd"><td >8 - 12</td><td >5</td><td >Major device class.</td></tr>
+<tr valign="top" class="even"><td >13 - 23</td><td >11</td><td >Service class.</td></tr>
+</table>
+<!-- @@@QBluetoothDeviceInfo -->
+<!-- $$$QBluetoothDeviceInfo$$$QBluetoothDeviceInfoconstQBluetoothDeviceInfo& -->
+<h3 class="fn"><a name="QBluetoothDeviceInfo-3"></a>QBluetoothDeviceInfo::<span class="name">QBluetoothDeviceInfo</span>(const <span class="type">QBluetoothDeviceInfo</span> &amp;<i> other</i>)</h3>
+<p>Constructs a <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> that is a copy of <i>other</i>.</p>
+<!-- @@@QBluetoothDeviceInfo -->
+<!-- $$$~QBluetoothDeviceInfo[overload1]$$$~QBluetoothDeviceInfo -->
+<h3 class="fn"><a name="dtor.QBluetoothDeviceInfo"></a>QBluetoothDeviceInfo::<span class="name">~QBluetoothDeviceInfo</span>()</h3>
+<p>Destroys the <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a>.</p>
+<!-- @@@~QBluetoothDeviceInfo -->
+<!-- $$$address[overload1]$$$address -->
+<h3 class="fn"><a name="address"></a><span class="type"><a href="qbluetoothaddress.html">QBluetoothAddress</a></span> QBluetoothDeviceInfo::<span class="name">address</span>() const</h3>
+<p>Returns the address of the device.</p>
+<!-- @@@address -->
+<!-- $$$isCached[overload1]$$$isCached -->
+<h3 class="fn"><a name="isCached"></a><span class="type">bool</span> QBluetoothDeviceInfo::<span class="name">isCached</span>() const</h3>
+<p>Returns true if the <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> object is created from cached data.</p>
+<!-- @@@isCached -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn"><a name="isValid"></a><span class="type">bool</span> QBluetoothDeviceInfo::<span class="name">isValid</span>() const</h3>
+<p>Returns true if the <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> object is valid, otherwise returns false.</p>
+<!-- @@@isValid -->
+<!-- $$$majorDeviceClass[overload1]$$$majorDeviceClass -->
+<h3 class="fn"><a name="majorDeviceClass"></a><span class="type"><a href="qbluetoothdeviceinfo.html#MajorDeviceClass-enum">MajorDeviceClass</a></span> QBluetoothDeviceInfo::<span class="name">majorDeviceClass</span>() const</h3>
+<p>Returns the major device class of the device.</p>
+<!-- @@@majorDeviceClass -->
+<!-- $$$minorDeviceClass[overload1]$$$minorDeviceClass -->
+<h3 class="fn"><a name="minorDeviceClass"></a><span class="type"><a href="../qtcore/qtglobal.html#quint8-typedef">quint8</a></span> QBluetoothDeviceInfo::<span class="name">minorDeviceClass</span>() const</h3>
+<p>Returns the minor device class of the device.</p>
+<!-- @@@minorDeviceClass -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn"><a name="name"></a><span class="type"><a href="../qtcore/qstring.html">QString</a></span> QBluetoothDeviceInfo::<span class="name">name</span>() const</h3>
+<p>Returns the name assigned to the device.</p>
+<!-- @@@name -->
+<!-- $$$rssi[overload1]$$$rssi -->
+<h3 class="fn"><a name="rssi"></a><span class="type"><a href="../qtcore/qtglobal.html#qint16-typedef">qint16</a></span> QBluetoothDeviceInfo::<span class="name">rssi</span>() const</h3>
+<p>Returns the signal strength when the device was last scanned</p>
+<p><b>See also </b><a href="qbluetoothdeviceinfo.html#setRssi">setRssi</a>().</p>
+<!-- @@@rssi -->
+<!-- $$$serviceClasses[overload1]$$$serviceClasses -->
+<h3 class="fn"><a name="serviceClasses"></a><span class="type"><a href="qbluetoothdeviceinfo.html#ServiceClass-enum">ServiceClasses</a></span> QBluetoothDeviceInfo::<span class="name">serviceClasses</span>() const</h3>
+<p>Returns the service class of the device.</p>
+<!-- @@@serviceClasses -->
+<!-- $$$serviceUuids[overload1]$$$serviceUuidsDataCompleteness* -->
+<h3 class="fn"><a name="serviceUuids"></a><span class="type"><a href="../qtcore/qlist.html">QList</a></span>&lt;<span class="type"><a href="qbluetoothuuid.html">QBluetoothUuid</a></span>&gt; QBluetoothDeviceInfo::<span class="name">serviceUuids</span>(<span class="type"><a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataCompleteness</a></span> *<i> completeness</i> = 0) const</h3>
+<p>Returns the list of service UUIDS supported by the device. If <i>completeness</i> is not 0 it will be set to <a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataComplete</a> and the complete list of UUIDs supported by the device is returned. <a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataIncomplete</a> if additional service UUIDs are supported by the device and <a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataUnavailable</a> if no service UUID information is available.</p>
+<p>This function requires both the Bluetooth devices to support the 2.1 specification.</p>
+<p><b>See also </b><a href="qbluetoothdeviceinfo.html#setServiceUuids">setServiceUuids</a>().</p>
+<!-- @@@serviceUuids -->
+<!-- $$$serviceUuidsCompleteness[overload1]$$$serviceUuidsCompleteness -->
+<h3 class="fn"><a name="serviceUuidsCompleteness"></a><span class="type"><a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataCompleteness</a></span> QBluetoothDeviceInfo::<span class="name">serviceUuidsCompleteness</span>() const</h3>
+<p>Returns the completeness of the service UUID list. If <a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataComplete</a> is returned, <a href="qbluetoothdeviceinfo.html#serviceUuids">serviceUuids</a>() returns the complete list of service UUIDs supported by the device, otherwise only the partial or empty list of service UUIDs. To get a list of all services supported by the device, a full service discovery needs to be performed.</p>
+<!-- @@@serviceUuidsCompleteness -->
+<!-- $$$setCached[overload1]$$$setCachedbool -->
+<h3 class="fn"><a name="setCached"></a><span class="type">void</span> QBluetoothDeviceInfo::<span class="name">setCached</span>(<span class="type">bool</span><i> cached</i>)</h3>
+<p>Used by the system to set the <i>cached</i> flag if the <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> is created from cached data. Cached information may not be as accurate as data read from an active device.</p>
+<p><b>See also </b><a href="qbluetoothdeviceinfo.html#isCached">isCached</a>().</p>
+<!-- @@@setCached -->
+<!-- $$$setRssi[overload1]$$$setRssiqint16 -->
+<h3 class="fn"><a name="setRssi"></a><span class="type">void</span> QBluetoothDeviceInfo::<span class="name">setRssi</span>(<span class="type"><a href="../qtcore/qtglobal.html#qint16-typedef">qint16</a></span><i> signal</i>)</h3>
+<p>Set the <i>signal</i> strength value, used internally.</p>
+<p><b>See also </b><a href="qbluetoothdeviceinfo.html#rssi">rssi</a>().</p>
+<!-- @@@setRssi -->
+<!-- $$$setServiceUuids[overload1]$$$setServiceUuidsconstQList<QBluetoothUuid>&DataCompleteness -->
+<h3 class="fn"><a name="setServiceUuids"></a><span class="type">void</span> QBluetoothDeviceInfo::<span class="name">setServiceUuids</span>(const <span class="type"><a href="../qtcore/qlist.html">QList</a></span>&lt;<span class="type"><a href="qbluetoothuuid.html">QBluetoothUuid</a></span>&gt; &amp;<i> uuids</i>, <span class="type"><a href="qbluetoothdeviceinfo.html#DataCompleteness-enum">DataCompleteness</a></span><i> completeness</i>)</h3>
+<p>Sets the list of service UUIDs to <i>uuids</i> and the completeness of the data to <i>completeness</i>.</p>
+<p><b>See also </b><a href="qbluetoothdeviceinfo.html#serviceUuids">serviceUuids</a>().</p>
+<!-- @@@setServiceUuids -->
+<!-- $$$operator!=[overload1]$$$operator!=constQBluetoothDeviceInfo& -->
+<h3 class="fn"><a name="operator-not-eq"></a><span class="type">bool</span> QBluetoothDeviceInfo::<span class="name">operator!=</span>(const <span class="type">QBluetoothDeviceInfo</span> &amp;<i> other</i>) const</h3>
+<p>Returns true if this object is different from <i>other</i>, or false otherwise.</p>
+<p><b>See also </b><a href="qbluetoothdeviceinfo.html#operator-eq-eq">operator==</a>().</p>
+<!-- @@@operator!= -->
+<!-- $$$operator=[overload1]$$$operator=constQBluetoothDeviceInfo& -->
+<h3 class="fn"><a name="operator-eq"></a><span class="type">QBluetoothDeviceInfo</span> &amp; QBluetoothDeviceInfo::<span class="name">operator=</span>(const <span class="type">QBluetoothDeviceInfo</span> &amp;<i> other</i>)</h3>
+<p>Makes a copy of the <i>other</i> and assigns it to this <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> object.</p>
+<!-- @@@operator= -->
+<!-- $$$operator==[overload1]$$$operator==constQBluetoothDeviceInfo& -->
+<h3 class="fn"><a name="operator-eq-eq"></a><span class="type">bool</span> QBluetoothDeviceInfo::<span class="name">operator==</span>(const <span class="type">QBluetoothDeviceInfo</span> &amp;<i> other</i>) const</h3>
+<p>Returns true if the <i>other</i> <a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a> object and this are identical.</p>
+<!-- @@@operator== -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qquickthumbnailtoolbar.cpp -->
+  <title>ThumbnailToolBar QML Type | QtWinExtras 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtwinextras-index.html">Qt Windows Extras</a></li>
+<li><a href="qtwinextras-qmlmodule.html">QML Types</a></li>
+<li>ThumbnailToolBar QML Type</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level3"><a href="#example">Example</a></li>
+</ul>
+</div>
+<h1 class="title">ThumbnailToolBar QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$ThumbnailToolBar-brief -->
+<p>Allows manipulating the window's thumbnail toolbar. <a href="#details">More...</a></p>
+<!-- @@@ThumbnailToolBar -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import QtWinExtras 1.0</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  QtWinExtras 1.0</td></tr></table><ul>
+<li><a href="qml-qtwinextras-thumbnailtoolbar-members.html">List of all members, including inherited members</a></li>
+</ul>
+<!-- $$$ThumbnailToolBar-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This class allows an application to embed a toolbar in the thumbnail of a window, which is shown when hovering over its taskbar icon. It provides quick access to the window's commands without requiring the user to restore or activate the window.</p>
+<p class="centerAlign"><img src="images/thumbbar.png" alt="Media player thumbnail toolbar" /></p><a name="example"></a>
+<h4>Example</h4>
+<pre class="qml"><span class="type">Window</span> {
+    <span class="type">ThumbnailToolBar</span> {
+        <span class="type"><a href="qml-qtwinextras-thumbnailtoolbutton.html">ThumbnailToolButton</a></span> { <span class="name">iconSource</span>: <span class="string">&quot;qrc:///player_rew.png&quot;</span>; <span class="name">tooltip</span>: <span class="string">&quot;Rewind&quot;</span>; <span class="name">onClicked</span>: <span class="name">player</span>.<span class="name">rewind</span>() }
+        <span class="type"><a href="qml-qtwinextras-thumbnailtoolbutton.html">ThumbnailToolButton</a></span> { <span class="name">iconSource</span>: <span class="string">&quot;qrc:///player_pause.png&quot;</span>; <span class="name">tooltip</span>: <span class="string">&quot;Pause&quot;</span>; <span class="name">onClicked</span>: <span class="name">player</span>.<span class="name">togglePlay</span>() }
+        <span class="type"><a href="qml-qtwinextras-thumbnailtoolbutton.html">ThumbnailToolButton</a></span> { <span class="name">iconSource</span>: <span class="string">&quot;qrc:///player_fwd.png&quot;</span>; <span class="name">tooltip</span>: <span class="string">&quot;Forward&quot;</span>; <span class="name">onClicked</span>: <span class="name">player</span>.<span class="name">forward</span>() }
+        <span class="type"><a href="qml-qtwinextras-thumbnailtoolbutton.html">ThumbnailToolButton</a></span> { <span class="name">interactive</span>: <span class="number">false</span>; <span class="name">flat</span>: <span class="number">true</span> }
+        <span class="type"><a href="qml-qtwinextras-thumbnailtoolbutton.html">ThumbnailToolButton</a></span> { <span class="name">iconSource</span>: <span class="string">&quot;qrc:///configure.png&quot;</span>; <span class="name">tooltip</span>: <span class="string">&quot;Settings&quot;</span>; <span class="name">onClicked</span>: <span class="name">settingsWindow</span>.<span class="name">show</span>() }
+        <span class="type"><a href="qml-qtwinextras-thumbnailtoolbutton.html">ThumbnailToolButton</a></span> { <span class="name">iconSource</span>: <span class="string">&quot;qrc:///document_open_folder.png&quot;</span>; <span class="name">tooltip</span>: <span class="string">&quot;Open&quot;</span>; <span class="name">onClicked</span>: <span class="name">player</span>.<span class="name">open</span>() }
+    }
+}</pre>
+<!-- @@@ThumbnailToolBar -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- windows.qdoc -->
+  <title>Qt for Windows - Requirements | QtDoc 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.3</a></li>
+<li>Qt for Windows - Requirements</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#libraries">Libraries</a></li>
+<li class="level2"><a href="#graphics-drivers">Graphics Drivers</a></li>
+<li class="level1"><a href="#building-from-source">Building from Source</a></li>
+<li class="level1"><a href="#sdks-and-compilers">SDKs and Compilers</a></li>
+</ul>
+</div>
+<h1 class="title">Qt for Windows - Requirements</h1>
+<span class="subtitle"></span>
+<!-- $$$windows-requirements.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>This page describes the required libraries and environment for <a href="windows-support.html">Qt for Windows</a>.</p>
+<a name="libraries"></a>
+<h2>Libraries</h2>
+<p>These libraries are required when running Qt 5 applications in Windows:</p>
+<ul>
+<li><a href="http://site.icu-project.org/">ICU</a>: Qt 5 can make use of the ICU library for enhanced UNICODE and Globalization support (see <a href="../qtcore/qtextcodec.html">QTextCodec</a>, <a href="../qtcore/qcollator.html#setNumericMode">QCollator::setNumericMode</a>()).<p>At compile time, the <i>include</i> and <i>lib</i> folders of the ICU installation must be appended to the <tt>INCLUDE</tt> and <tt>LIB</tt> environment variables. At run-time, the ICU DLLs need to be found by copying the DLLs to the application folder or by adding the <i>bin</i> folder of the ICU installation to the <tt>PATH</tt> environment variable.</p>
+</li>
+<li><a href="http://code.google.com/p/angleproject/">ANGLE</a>: This library converts <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.0 API calls to DirectX 9, removing the need to install graphics drivers on the target machines. Building the library requires the installation of the <a href="http://msdn.microsoft.com/en-us/directx/default.aspx">Direct X SDK</a>. More information is available at <a href="http://code.google.com/p/angleproject/wiki/DevSetup">http://code.google.com/p/angleproject/wiki/DevSetup</a><p><b>Note: </b>When building for 64-bit environments, de-activate the <tt>WarnAsError</tt> option in every project file, otherwise, integer conversion warnings will break the build.</p></li>
+</ul>
+<p>Support for Secure Sockets Layer (SSL) communication is provided by the <a href="http://www.openssl.org/">OpenSSL Toolkit</a>, which must be obtained separately. See <a href="../qtnetwork/ssl.html">Secure Sockets Layer (SSL) Classes</a> for instructions on building Qt with SSL support.</p>
+<a name="graphics-drivers"></a>
+<h3>Graphics Drivers</h3>
+<p>For <a href="../qtquick/qtquick-index.html">Qt Quick</a> 2 to work, a graphics driver that provides <a href="../qtopengl/opengl-module.html">OpenGL</a> 2.1 or higher is required. The default driver from Windows is <a href="../qtopengl/opengl-module.html">OpenGL</a> 1.1&#x2e; Qt includes a version of the <a href="http://code.google.com/p/angleproject/">ANGLE</a> project which is included from the Windows Qt installers. ANGLE implements the <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.0 API on top of DirectX 9. ANGLE requires that the DirectX SDK is installed when building Qt.</p>
+<p>To use a custom version of ANGLE, set the <tt>ANGLE_DIR</tt> environment variable to point to the ANGLE source tree before building Qt.</p>
+<p>If you installed additional <a href="../qtopengl/opengl-module.html">OpenGL</a> drivers from your hardware vendor, then you may want to consider using this version of <a href="../qtopengl/opengl-module.html">OpenGL</a> instead of ANGLE. To use <a href="../qtopengl/opengl-module.html">OpenGL</a>, pass the command line options <tt>-opengl desktop</tt> to the configure script.</p>
+<pre class="cpp">configure <span class="operator">-</span>opengl desktop</pre>
+<p>To use an <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.0 emulator instead of ANGLE, use the configure options: <tt>-opengl es2 -no-angle</tt>.</p>
+<pre class="cpp">configure <span class="operator">-</span>opengl es2 <span class="operator">-</span>no<span class="operator">-</span>angle</pre>
+<a name="building-from-source"></a>
+<h2>Building from Source</h2>
+<p>These tools are not needed to run Qt 5 applications, but they are required for building Qt 5 from source.</p>
+<ul>
+<li><a href="http://www.activestate.com/Products/activeperl/index.mhtml">ActivePerl</a> - Install a recent version of <a href="http://www.activestate.com/Products/activeperl/index.mhtml">ActivePerl</a> (<a href="http://www.activestate.com/activeperl">download page</a>) and add the installation location to your <tt>PATH</tt>.</li>
+<li>Python - Install Python from the <a href="http://www.python.org/download/">here</a> and add the installation location to your PATH in order to be able to build Qt <a href="../qtwebkit/webkit.html">WebKit</a>.</li>
+<li>Install <a href="http://www.ruby-lang.org">Ruby</a> from <a href="http://rubyinstaller.org/">here</a> and add the installation location to your PATH in order to be able to build Qt <a href="../qtwebkit/webkit.html">WebKit</a>.</li>
+</ul>
+<p><b>Note: </b>Please make sure that the <tt>perl</tt> executable from <a href="http://www.activestate.com/Products/activeperl/index.mhtml">ActivePerl</a> is found in the path before the perl executable provided by msysgit, since the latter is outdated.</p><p>Qt <a href="../qtwebkit/webkit.html">WebKit</a> and ANGLE depend on these extra tools from the <a href="http://gnuwin32.sourceforge.net/packages.html">GnuWin32 Project</a> which are provided for your convenience in the <i>gnuwin32/bin</i> folder:</p>
+<ul>
+<li><a href="http://gnuwin32.sourceforge.net/downlinks/bison.php">Bison</a></li>
+<li><a href="http://gnuwin32.sourceforge.net/downlinks/gperf.php">GPerf</a></li>
+<li><a href="http://gnuwin32.sourceforge.net/downlinks/flex.php">Flex</a></li>
+</ul>
+<p>The <i>gnuwin32/bin</i> folder should be added to the <tt>PATH</tt> variable.</p>
+<p>For instructions for building the Qt 5 source,read the <a href="windows-building.html">Qt for Windows - Building from Source</a> page.</p>
+<a name="sdks-and-compilers"></a>
+<h2>SDKs and Compilers</h2>
+<p>A Windows SDK is required to develop Qt applications on Windows.</p>
+<ul>
+<li>Windows SDK 8 (with Visual Studio 2012 Express). As of Windows 8, the SDK no longer ships with a complete command-line build environment. You must install a compiler and build environment separately. If you require a complete development environment that includes compilers and a build environment, you can download Visual Studio 2012 Express, which includes the appropriate components of the Windows SDK. (<a href="http://msdn.microsoft.com/en-us/windows/desktop/hh852363.aspx">Download page</a>)</li>
+<li>Windows SDK 7.1&#x2e; Note that, as of 16.3&#x2e;2012, if you use this SDK with Visual Studio 2010, installing the SDK requires installing the following packages in this order (see <i>readme.html</i> provided with the service pack):<ol class="1">
+<li>Install Visual Studio 2010</li>
+<li>Install Windows SDK 7.1</li>
+<li>Install Visual Studio 2010 SP1</li>
+<li>Install Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1</li>
+</ol>
+</li>
+<li>Windows SDK 7.</li>
+<li>A <a href="http://www.mingw.org/">MinGW</a> toolchain with g++ version 4.7 or higher. Qt 5 is tested regularly with a <a href="http://sourceforge.net/projects/mingwbuilds/files/host-windows/releases/4.8.0/32-bit/threads-posix/dwarf/x32-4.8.0-release-posix-dwarf-rev1.7z">32 bit gcc 4.8&#x2e;0 toolchain</a> from the <a href="http://mingwbuilds.sourceforge.net">MinGW-builds</a> project.</li>
+</ul>
+<p>For the most up to date information about the <a href="../qtwebkit/qtwebkit-index.html">Qt WebKit</a> dependencies, please refer to the <a href="http://trac.webkit.org/wiki/BuildingQtOnWindows">Qt WebKit Wiki for Windows</a>.</p>
+</div>
+<!-- @@@windows-requirements.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
