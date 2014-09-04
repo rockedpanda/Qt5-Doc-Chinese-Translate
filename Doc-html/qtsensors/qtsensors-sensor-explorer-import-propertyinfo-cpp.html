@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>propertyinfo.cpp Example File | QtSensors 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtsensors-index.html">Qt Sensors</a></li>
+<li><a href="qtsensors-sensor-explorer-example.html">Qt Sensors - Explorer QML Example</a></li>
+<li>propertyinfo.cpp Example File</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">propertyinfo.cpp Example File</h1>
+<span class="subtitle">sensor_explorer/import/propertyinfo.cpp</span>
+<!-- $$$sensor_explorer/import/propertyinfo.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp"><span class="comment">/****************************************************************************
+**
+** Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the QtSensors module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Digia.  For licensing terms and
+** conditions see http://qt.digia.com/licensing.  For further information
+** use the contact form at http://qt.digia.com/contact-us.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Digia gives you certain additional
+** rights.  These rights are described in the Digia Qt LGPL Exception
+** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/</span>
+
+<span class="preprocessor">#include &quot;sensoritem.h&quot;</span>
+<span class="preprocessor">#include &lt;QtCore/QDebug&gt;</span>
+<span class="preprocessor">#include &lt;QtSensors&gt;</span>
+
+<span class="comment">/*
+    \class QPropertyInfo
+    \brief The QPropertyInfo type provides an easy access for reading and writing the property values.
+*/</span>
+
+<span class="comment">/*
+    Construct a QPropertyInfo object with parent \a parent
+*/</span>
+<span class="type">QPropertyInfo</span><span class="operator">::</span><span class="type">QPropertyInfo</span>(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">*</span> parent)
+    : <span class="type"><a href="../qtcore/qobject.html">QObject</a></span>(parent)
+    <span class="operator">,</span> _index(<span class="number">0</span>)
+    <span class="operator">,</span> _isWriteable(<span class="keyword">false</span>)
+    <span class="operator">,</span> _name(<span class="string">&quot;&quot;</span>)
+    <span class="operator">,</span> _typeName(<span class="string">&quot;&quot;</span>)
+    <span class="operator">,</span> _value(<span class="string">&quot;&quot;</span>)
+{}
+
+<span class="comment">/*
+    Construct a QPropertyInfo object with parent \a parent, property name \a name, property index \a index,
+    property write access \a writeable, property type \a typeName and property value \a value
+*/</span>
+<span class="type">QPropertyInfo</span><span class="operator">::</span><span class="type">QPropertyInfo</span>(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">&amp;</span> name<span class="operator">,</span> <span class="type">int</span> index<span class="operator">,</span> bool writeable<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">&amp;</span> typeName<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">&amp;</span> value<span class="operator">,</span> <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">*</span> parent)
+    : <span class="type"><a href="../qtcore/qobject.html">QObject</a></span>(parent)
+    <span class="operator">,</span> _index(index)
+    <span class="operator">,</span> _isWriteable(writeable)
+    <span class="operator">,</span> _name(name)
+    <span class="operator">,</span> _typeName(typeName)
+    <span class="operator">,</span> _value(value)
+{}
+
+<span class="comment">/*
+    \property QPropertyInfo::name
+    Returns the name of the property
+*/</span>
+<span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="type">QPropertyInfo</span><span class="operator">::</span>name()
+{
+    <span class="keyword">return</span> _name;
+}
+
+<span class="comment">/*
+    \property QPropertyInfo::typeName
+    Returns the type of the property
+*/</span>
+<span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="type">QPropertyInfo</span><span class="operator">::</span>typeName()
+{
+    <span class="keyword">return</span> _typeName;
+}
+
+<span class="comment">/*
+    \property QPropertyInfo::value
+    Returns the current value of the property
+*/</span>
+<span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="type">QPropertyInfo</span><span class="operator">::</span>value()
+{
+    <span class="keyword">return</span> _value;
+}
+
+<span class="comment">/*
+    \fn void QPropertyInfo::valueChanged()
+    Signal that notifies the client if the property value was changed.
+*/</span>
+
+<span class="comment">/*
+    \fn QPropertyInfo::setValue(const QString&amp; value)
+    Sets the value \a value of the property
+*/</span>
+<span class="type">void</span> <span class="type">QPropertyInfo</span><span class="operator">::</span>setValue(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">&amp;</span> value)
+{
+    <span class="keyword">if</span> (value <span class="operator">!</span><span class="operator">=</span> _value){
+        _value <span class="operator">=</span> value;
+        <span class="keyword">emit</span> valueChanged();
+    }
+}
+
+<span class="comment">/*
+    \fn QPropertyInfo::index()
+    Returns the meta-data index of the property
+*/</span>
+<span class="type">int</span> <span class="type">QPropertyInfo</span><span class="operator">::</span>index()
+{
+    <span class="keyword">return</span> _index;
+}
+
+<span class="comment">/*
+    \property QPropertyInfo::isWriteable
+    Returns true if the property is writeable false if property is read only
+*/</span>
+bool <span class="type">QPropertyInfo</span><span class="operator">::</span>isWriteable()
+{
+    <span class="keyword">return</span> _isWriteable;
+}</pre>
+</div>
+<!-- @@@sensor_explorer/import/propertyinfo.cpp -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

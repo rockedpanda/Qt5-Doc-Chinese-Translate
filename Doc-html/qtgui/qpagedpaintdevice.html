@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qpagedpaintdevice.cpp -->
+  <title>QPagedPaintDevice Class | QtGui 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QPagedPaintDevice</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QPagedPaintDevice Class</h1>
+<!-- $$$QPagedPaintDevice-brief -->
+<p>The QPagedPaintDevice class is a represents a paintdevice that supports multiple pages. <a href="#details">More...</a></p>
+<!-- @@@QPagedPaintDevice -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QPagedPaintDevice&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += gui</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qpaintdevice.html">QPaintDevice</a>.</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qpdfwriter.html">QPdfWriter</a>.</p>
+</td></tr></table><ul>
+<li><a href="qpagedpaintdevice-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> class </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice-margins.html">Margins</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#PageSize-enum">PageSize</a></b> { A0, A1, A2, A3, ..., LastPageSize }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#QPagedPaintDevice">QPagedPaintDevice</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#dtor.QPagedPaintDevice">~QPagedPaintDevice</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Margins </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#margins">margins</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#newPage">newPage</a></b>() = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPageLayout </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#pageLayout">pageLayout</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PageSize </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#pageSize">pageSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSizeF </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#pageSizeMM">pageSizeMM</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setMargins">setMargins</a></b>(const Margins &amp;<i> margins</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageLayout">setPageLayout</a></b>(const QPageLayout &amp;<i> newPageLayout</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageMargins">setPageMargins</a></b>(const QMarginsF &amp;<i> margins</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageMargins-2">setPageMargins</a></b>(const QMarginsF &amp;<i> margins</i>, QPageLayout::Unit<i> units</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageOrientation">setPageOrientation</a></b>(QPageLayout::Orientation<i> orientation</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageSize">setPageSize</a></b>(const QPageSize &amp;<i> pageSize</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageSize-2">setPageSize</a></b>(PageSize<i> size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qpagedpaintdevice.html#setPageSizeMM">setPageSizeMM</a></b>(const QSizeF &amp;<i> size</i>)</td></tr>
+</table>
+<ul>
+<li class="fn">13 public functions inherited from <a href="qpaintdevice.html#public-functions">QPaintDevice</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 protected function inherited from <a href="qpaintdevice.html#protected-functions">QPaintDevice</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QPagedPaintDevice-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QPagedPaintDevice class is a represents a paintdevice that supports multiple pages.</p>
+<p>Paged paint devices are used to generate output for printing or for formats like PDF. <a href="qpdfwriter.html">QPdfWriter</a> and QPrinter inherit from it.</p>
+</div>
+<!-- @@@QPagedPaintDevice -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$PageSize$$$A4$$$B5$$$Letter$$$Legal$$$Executive$$$A0$$$A1$$$A2$$$A3$$$A5$$$A6$$$A7$$$A8$$$A9$$$B0$$$B1$$$B10$$$B2$$$B3$$$B4$$$B6$$$B7$$$B8$$$B9$$$C5E$$$Comm10E$$$DLE$$$Folio$$$Ledger$$$Tabloid$$$Custom$$$A10$$$A3Extra$$$A4Extra$$$A4Plus$$$A4Small$$$A5Extra$$$B5Extra$$$JisB0$$$JisB1$$$JisB2$$$JisB3$$$JisB4$$$JisB5$$$JisB6$$$JisB7$$$JisB8$$$JisB9$$$JisB10$$$AnsiC$$$AnsiD$$$AnsiE$$$LegalExtra$$$LetterExtra$$$LetterPlus$$$LetterSmall$$$TabloidExtra$$$ArchA$$$ArchB$$$ArchC$$$ArchD$$$ArchE$$$Imperial7x9$$$Imperial8x10$$$Imperial9x11$$$Imperial9x12$$$Imperial10x11$$$Imperial10x13$$$Imperial10x14$$$Imperial12x11$$$Imperial15x11$$$ExecutiveStandard$$$Note$$$Quarto$$$Statement$$$SuperA$$$SuperB$$$Postcard$$$DoublePostcard$$$Prc16K$$$Prc32K$$$Prc32KBig$$$FanFoldUS$$$FanFoldGerman$$$FanFoldGermanLegal$$$EnvelopeB4$$$EnvelopeB5$$$EnvelopeB6$$$EnvelopeC0$$$EnvelopeC1$$$EnvelopeC2$$$EnvelopeC3$$$EnvelopeC4$$$EnvelopeC6$$$EnvelopeC65$$$EnvelopeC7$$$Envelope9$$$Envelope11$$$Envelope12$$$Envelope14$$$EnvelopeMonarch$$$EnvelopePersonal$$$EnvelopeChou3$$$EnvelopeChou4$$$EnvelopeInvite$$$EnvelopeItalian$$$EnvelopeKaku2$$$EnvelopeKaku3$$$EnvelopePrc1$$$EnvelopePrc2$$$EnvelopePrc3$$$EnvelopePrc4$$$EnvelopePrc5$$$EnvelopePrc6$$$EnvelopePrc7$$$EnvelopePrc8$$$EnvelopePrc9$$$EnvelopePrc10$$$EnvelopeYou4$$$LastPageSize$$$NPageSize$$$NPaperSize$$$AnsiA$$$AnsiB$$$EnvelopeC5$$$EnvelopeDL$$$Envelope10 -->
+<h3 class="fn"><a name="PageSize-enum"></a>enum QPagedPaintDevice::<span class="name">PageSize</span></h3>
+<p>This enum type lists the available page sizes as defined in the Postscript PPD standard. These values are duplicated in <a href="qpagesize.html">QPageSize</a> and QPrinter.</p>
+<p>The defined sizes are:</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A0</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">841 x 1189 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A1</tt></td><td class="topAlign"><tt>6</tt></td><td class="topAlign">594 x 841 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A2</tt></td><td class="topAlign"><tt>7</tt></td><td class="topAlign">420 x 594 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A3</tt></td><td class="topAlign"><tt>8</tt></td><td class="topAlign">297 x 420 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A4</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">210 x 297 mm, 8.26 x 11.69 inches</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A5</tt></td><td class="topAlign"><tt>9</tt></td><td class="topAlign">148 x 210 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A6</tt></td><td class="topAlign"><tt>10</tt></td><td class="topAlign">105 x 148 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A7</tt></td><td class="topAlign"><tt>11</tt></td><td class="topAlign">74 x 105 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A8</tt></td><td class="topAlign"><tt>12</tt></td><td class="topAlign">52 x 74 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A9</tt></td><td class="topAlign"><tt>13</tt></td><td class="topAlign">37 x 52 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B0</tt></td><td class="topAlign"><tt>14</tt></td><td class="topAlign">1000 x 1414 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B1</tt></td><td class="topAlign"><tt>15</tt></td><td class="topAlign">707 x 1000 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B2</tt></td><td class="topAlign"><tt>17</tt></td><td class="topAlign">500 x 707 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B3</tt></td><td class="topAlign"><tt>18</tt></td><td class="topAlign">353 x 500 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B4</tt></td><td class="topAlign"><tt>19</tt></td><td class="topAlign">250 x 353 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B5</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">176 x 250 mm, 6.93 x 9.84 inches</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B6</tt></td><td class="topAlign"><tt>20</tt></td><td class="topAlign">125 x 176 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B7</tt></td><td class="topAlign"><tt>21</tt></td><td class="topAlign">88 x 125 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B8</tt></td><td class="topAlign"><tt>22</tt></td><td class="topAlign">62 x 88 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B9</tt></td><td class="topAlign"><tt>23</tt></td><td class="topAlign">33 x 62 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B10</tt></td><td class="topAlign"><tt>16</tt></td><td class="topAlign">31 x 44 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::C5E</tt></td><td class="topAlign"><tt>24</tt></td><td class="topAlign">163 x 229 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Comm10E</tt></td><td class="topAlign"><tt>25</tt></td><td class="topAlign">105 x 241 mm, U.S&#x2e; Common 10 Envelope</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::DLE</tt></td><td class="topAlign"><tt>26</tt></td><td class="topAlign">110 x 220 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Executive</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">7.5 x 10 inches, 190.5 x 254 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Folio</tt></td><td class="topAlign"><tt>27</tt></td><td class="topAlign">210 x 330 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Ledger</tt></td><td class="topAlign"><tt>28</tt></td><td class="topAlign">431.8 x 279.4 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Legal</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">8.5 x 14 inches, 215.9 x 355.6 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Letter</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">8.5 x 11 inches, 215.9 x 279.4 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Tabloid</tt></td><td class="topAlign"><tt>29</tt></td><td class="topAlign">279.4 x 431.8 mm</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Custom</tt></td><td class="topAlign"><tt>30</tt></td><td class="topAlign">Unknown, or a user defined size.</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A10</tt></td><td class="topAlign"><tt>31</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A3Extra</tt></td><td class="topAlign"><tt>32</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A4Extra</tt></td><td class="topAlign"><tt>33</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A4Plus</tt></td><td class="topAlign"><tt>34</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A4Small</tt></td><td class="topAlign"><tt>35</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::A5Extra</tt></td><td class="topAlign"><tt>36</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::B5Extra</tt></td><td class="topAlign"><tt>37</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB0</tt></td><td class="topAlign"><tt>38</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB1</tt></td><td class="topAlign"><tt>39</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB2</tt></td><td class="topAlign"><tt>40</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB3</tt></td><td class="topAlign"><tt>41</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB4</tt></td><td class="topAlign"><tt>42</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB5</tt></td><td class="topAlign"><tt>43</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB6</tt></td><td class="topAlign"><tt>44</tt></td><td class="topAlign">,</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB7</tt></td><td class="topAlign"><tt>45</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB8</tt></td><td class="topAlign"><tt>46</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB9</tt></td><td class="topAlign"><tt>47</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::JisB10</tt></td><td class="topAlign"><tt>48</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::AnsiA</tt></td><td class="topAlign"><tt>Letter</tt></td><td class="topAlign">= Letter</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::AnsiB</tt></td><td class="topAlign"><tt>Ledger</tt></td><td class="topAlign">= Ledger</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::AnsiC</tt></td><td class="topAlign"><tt>49</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::AnsiD</tt></td><td class="topAlign"><tt>50</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::AnsiE</tt></td><td class="topAlign"><tt>51</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::LegalExtra</tt></td><td class="topAlign"><tt>52</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::LetterExtra</tt></td><td class="topAlign"><tt>53</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::LetterPlus</tt></td><td class="topAlign"><tt>54</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::LetterSmall</tt></td><td class="topAlign"><tt>55</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::TabloidExtra</tt></td><td class="topAlign"><tt>56</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::ArchA</tt></td><td class="topAlign"><tt>57</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::ArchB</tt></td><td class="topAlign"><tt>58</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::ArchC</tt></td><td class="topAlign"><tt>59</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::ArchD</tt></td><td class="topAlign"><tt>60</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::ArchE</tt></td><td class="topAlign"><tt>61</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial7x9</tt></td><td class="topAlign"><tt>62</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial8x10</tt></td><td class="topAlign"><tt>63</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial9x11</tt></td><td class="topAlign"><tt>64</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial9x12</tt></td><td class="topAlign"><tt>65</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial10x11</tt></td><td class="topAlign"><tt>66</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial10x13</tt></td><td class="topAlign"><tt>67</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial10x14</tt></td><td class="topAlign"><tt>68</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial12x11</tt></td><td class="topAlign"><tt>69</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Imperial15x11</tt></td><td class="topAlign"><tt>70</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::ExecutiveStandard</tt></td><td class="topAlign"><tt>71</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Note</tt></td><td class="topAlign"><tt>72</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Quarto</tt></td><td class="topAlign"><tt>73</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Statement</tt></td><td class="topAlign"><tt>74</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::SuperA</tt></td><td class="topAlign"><tt>75</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::SuperB</tt></td><td class="topAlign"><tt>76</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Postcard</tt></td><td class="topAlign"><tt>77</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::DoublePostcard</tt></td><td class="topAlign"><tt>78</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Prc16K</tt></td><td class="topAlign"><tt>79</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Prc32K</tt></td><td class="topAlign"><tt>80</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Prc32KBig</tt></td><td class="topAlign"><tt>81</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::FanFoldUS</tt></td><td class="topAlign"><tt>82</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::FanFoldGerman</tt></td><td class="topAlign"><tt>83</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::FanFoldGermanLegal</tt></td><td class="topAlign"><tt>84</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeB4</tt></td><td class="topAlign"><tt>85</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeB5</tt></td><td class="topAlign"><tt>86</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeB6</tt></td><td class="topAlign"><tt>87</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC0</tt></td><td class="topAlign"><tt>88</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC1</tt></td><td class="topAlign"><tt>89</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC2</tt></td><td class="topAlign"><tt>90</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC3</tt></td><td class="topAlign"><tt>91</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC4</tt></td><td class="topAlign"><tt>92</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC5</tt></td><td class="topAlign"><tt>C5E</tt></td><td class="topAlign">= C5E</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC6</tt></td><td class="topAlign"><tt>93</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC65</tt></td><td class="topAlign"><tt>94</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeC7</tt></td><td class="topAlign"><tt>95</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeDL</tt></td><td class="topAlign"><tt>DLE</tt></td><td class="topAlign">= DLE</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Envelope9</tt></td><td class="topAlign"><tt>96</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Envelope10</tt></td><td class="topAlign"><tt>Comm10E</tt></td><td class="topAlign">= Comm10E</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Envelope11</tt></td><td class="topAlign"><tt>97</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Envelope12</tt></td><td class="topAlign"><tt>98</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::Envelope14</tt></td><td class="topAlign"><tt>99</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeMonarch</tt></td><td class="topAlign"><tt>100</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePersonal</tt></td><td class="topAlign"><tt>101</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeChou3</tt></td><td class="topAlign"><tt>102</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeChou4</tt></td><td class="topAlign"><tt>103</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeInvite</tt></td><td class="topAlign"><tt>104</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeItalian</tt></td><td class="topAlign"><tt>105</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeKaku2</tt></td><td class="topAlign"><tt>106</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeKaku3</tt></td><td class="topAlign"><tt>107</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc1</tt></td><td class="topAlign"><tt>108</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc2</tt></td><td class="topAlign"><tt>109</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc3</tt></td><td class="topAlign"><tt>110</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc4</tt></td><td class="topAlign"><tt>111</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc5</tt></td><td class="topAlign"><tt>112</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc6</tt></td><td class="topAlign"><tt>113</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc7</tt></td><td class="topAlign"><tt>114</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc8</tt></td><td class="topAlign"><tt>115</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc9</tt></td><td class="topAlign"><tt>116</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopePrc10</tt></td><td class="topAlign"><tt>117</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::EnvelopeYou4</tt></td><td class="topAlign"><tt>118</tt></td><td class="topAlign">&nbsp;</td></tr>
+<tr><td class="topAlign"><tt>QPagedPaintDevice::LastPageSize</tt></td><td class="topAlign"><tt>EnvelopeYou4</tt></td><td class="topAlign">= EnvelopeYou4</td></tr>
+</table>
+<p>Due to historic reasons <a href="qpagesize.html#PageSizeId-enum">QPageSize::Executive</a> is not the same as the standard Postscript and Windows Executive size, use <a href="qpagesize.html#PageSizeId-enum">QPageSize::ExecutiveStandard</a> instead.</p>
+<p>The Postscript standard size <a href="qpagesize.html#PageSizeId-enum">QPageSize::Folio</a> is different to the Windows DMPAPER_FOLIO size, use the Postscript standard size <a href="qpagesize.html#PageSizeId-enum">QPageSize::FanFoldGermanLegal</a> if needed.</p>
+<!-- @@@PageSize -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QPagedPaintDevice[overload1]$$$QPagedPaintDevice -->
+<h3 class="fn"><a name="QPagedPaintDevice"></a>QPagedPaintDevice::<span class="name">QPagedPaintDevice</span>()</h3>
+<p>Constructs a new paged paint device.</p>
+<!-- @@@QPagedPaintDevice -->
+<!-- $$$~QPagedPaintDevice[overload1]$$$~QPagedPaintDevice -->
+<h3 class="fn"><a name="dtor.QPagedPaintDevice"></a>QPagedPaintDevice::<span class="name">~QPagedPaintDevice</span>()</h3>
+<p>Destroys the object.</p>
+<!-- @@@~QPagedPaintDevice -->
+<!-- $$$margins[overload1]$$$margins -->
+<h3 class="fn"><a name="margins"></a><span class="type"><a href="qpagedpaintdevice-margins.html">Margins</a></span> QPagedPaintDevice::<span class="name">margins</span>() const</h3>
+<p>Returns the current margins of the paint device. The default is 0.</p>
+<p>Margins are specified in millimeters.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#setMargins">setMargins</a>().</p>
+<!-- @@@margins -->
+<!-- $$$newPage[overload1]$$$newPage -->
+<h3 class="fn"><a name="newPage"></a><span class="type">bool</span> QPagedPaintDevice::<span class="name">newPage</span>()<tt> [pure virtual]</tt></h3>
+<p>Starts a new page. Returns <tt>true</tt> on success.</p>
+<!-- @@@newPage -->
+<!-- $$$pageLayout[overload1]$$$pageLayout -->
+<h3 class="fn"><a name="pageLayout"></a><span class="type"><a href="qpagelayout.html">QPageLayout</a></span> QPagedPaintDevice::<span class="name">pageLayout</span>() const</h3>
+<p>Returns the current page layout. Use this method to access the current <a href="qpagesize.html">QPageSize</a>, <a href="qpagelayout.html#Orientation-enum">QPageLayout::Orientation</a>, <a href="../qtcore/qmarginsf.html">QMarginsF</a>, fullRect() and paintRect().</p>
+<p>Note that you cannot use the setters on the returned object, you must either call the individual <a href="qpagedpaintdevice.html">QPagedPaintDevice</a> setters or use <a href="qpagedpaintdevice.html#setPageLayout">setPageLayout</a>().</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#setPageLayout">setPageLayout</a>(), <a href="qpagedpaintdevice.html#setPageSize">setPageSize</a>(), <a href="qpagedpaintdevice.html#setPageOrientation">setPageOrientation</a>(), and <a href="qpagedpaintdevice.html#setPageMargins">setPageMargins</a>().</p>
+<!-- @@@pageLayout -->
+<!-- $$$pageSize[overload1]$$$pageSize -->
+<h3 class="fn"><a name="pageSize"></a><span class="type"><a href="qpagedpaintdevice.html#PageSize-enum">PageSize</a></span> QPagedPaintDevice::<span class="name">pageSize</span>() const</h3>
+<p>Returns the currently used page size.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#setPageSize">setPageSize</a>().</p>
+<!-- @@@pageSize -->
+<!-- $$$pageSizeMM[overload1]$$$pageSizeMM -->
+<h3 class="fn"><a name="pageSizeMM"></a><span class="type"><a href="../qtcore/qsizef.html">QSizeF</a></span> QPagedPaintDevice::<span class="name">pageSizeMM</span>() const</h3>
+<p>Returns the page size in millimeters.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#setPageSizeMM">setPageSizeMM</a>().</p>
+<!-- @@@pageSizeMM -->
+<!-- $$$setMargins[overload1]$$$setMarginsconstMargins& -->
+<h3 class="fn"><a name="setMargins"></a><span class="type">void</span> QPagedPaintDevice::<span class="name">setMargins</span>(const <span class="type"><a href="qpagedpaintdevice-margins.html">Margins</a></span> &amp;<i> margins</i>)<tt> [virtual]</tt></h3>
+<p>Sets the margins to be used to <i>margins</i>.</p>
+<p>Margins are specified in millimeters.</p>
+<p>The margins are purely a hint to the drawing method. They don't affect the coordinate system or clipping.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#margins">margins</a>().</p>
+<!-- @@@setMargins -->
+<!-- $$$setPageLayout[overload1]$$$setPageLayoutconstQPageLayout& -->
+<h3 class="fn"><a name="setPageLayout"></a><span class="type">bool</span> QPagedPaintDevice::<span class="name">setPageLayout</span>(const <span class="type"><a href="qpagelayout.html">QPageLayout</a></span> &amp;<i> newPageLayout</i>)</h3>
+<p>Sets the page layout to <i>newPageLayout</i>.</p>
+<p>You should call this before calling <a href="qpainter.html#begin">QPainter::begin</a>(), or immediately before calling <a href="qpagedpaintdevice.html#newPage">newPage</a>() to apply the new page layout to a new page. You should not call any painting methods between a call to setPageLayout() and <a href="qpagedpaintdevice.html#newPage">newPage</a>() as the wrong paint metrics may be used.</p>
+<p>Returns true if the page layout was successfully set to <i>newPageLayout</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().</p>
+<!-- @@@setPageLayout -->
+<!-- $$$setPageMargins[overload1]$$$setPageMarginsconstQMarginsF& -->
+<h3 class="fn"><a name="setPageMargins"></a><span class="type">bool</span> QPagedPaintDevice::<span class="name">setPageMargins</span>(const <span class="type"><a href="../qtcore/qmarginsf.html">QMarginsF</a></span> &amp;<i> margins</i>)</h3>
+<p>Set the page <i>margins</i> in the current page layout units.</p>
+<p>You should call this before calling <a href="qpainter.html#begin">QPainter::begin</a>(), or immediately before calling <a href="qpagedpaintdevice.html#newPage">newPage</a>() to apply the new margins to a new page. You should not call any painting methods between a call to setPageMargins() and <a href="qpagedpaintdevice.html#newPage">newPage</a>() as the wrong paint metrics may be used.</p>
+<p>To get the current page margins use <a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().pageMargins().</p>
+<p>Returns true if the page margins were successfully set to <i>margins</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().</p>
+<!-- @@@setPageMargins -->
+<!-- $$$setPageMargins$$$setPageMarginsconstQMarginsF&QPageLayout::Unit -->
+<h3 class="fn"><a name="setPageMargins-2"></a><span class="type">bool</span> QPagedPaintDevice::<span class="name">setPageMargins</span>(const <span class="type"><a href="../qtcore/qmarginsf.html">QMarginsF</a></span> &amp;<i> margins</i>, <span class="type"><a href="qpagelayout.html#Unit-enum">QPageLayout::Unit</a></span><i> units</i>)</h3>
+<p>Set the page <i>margins</i> defined in the given <i>units</i>.</p>
+<p>You should call this before calling <a href="qpainter.html#begin">QPainter::begin</a>(), or immediately before calling <a href="qpagedpaintdevice.html#newPage">newPage</a>() to apply the new margins to a new page. You should not call any painting methods between a call to <a href="qpagedpaintdevice.html#setPageMargins">setPageMargins</a>() and <a href="qpagedpaintdevice.html#newPage">newPage</a>() as the wrong paint metrics may be used.</p>
+<p>To get the current page margins use <a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().pageMargins().</p>
+<p>Returns true if the page margins were successfully set to <i>margins</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().</p>
+<!-- @@@setPageMargins -->
+<!-- $$$setPageOrientation[overload1]$$$setPageOrientationQPageLayout::Orientation -->
+<h3 class="fn"><a name="setPageOrientation"></a><span class="type">bool</span> QPagedPaintDevice::<span class="name">setPageOrientation</span>(<span class="type"><a href="qpagelayout.html#Orientation-enum">QPageLayout::Orientation</a></span><i> orientation</i>)</h3>
+<p>Sets the page <i>orientation</i>.</p>
+<p>The page orientation is used to define the orientation of the page size when obtaining the page rect.</p>
+<p>You should call this before calling <a href="qpainter.html#begin">QPainter::begin</a>(), or immediately before calling <a href="qpagedpaintdevice.html#newPage">newPage</a>() to apply the new orientation to a new page. You should not call any painting methods between a call to setPageOrientation() and <a href="qpagedpaintdevice.html#newPage">newPage</a>() as the wrong paint metrics may be used.</p>
+<p>To get the current <a href="qpagelayout.html#Orientation-enum">QPageLayout::Orientation</a> use <a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().pageOrientation().</p>
+<p>Returns true if the page orientation was successfully set to <i>orientation</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().</p>
+<!-- @@@setPageOrientation -->
+<!-- $$$setPageSize[overload1]$$$setPageSizeconstQPageSize& -->
+<h3 class="fn"><a name="setPageSize"></a><span class="type">bool</span> QPagedPaintDevice::<span class="name">setPageSize</span>(const <span class="type"><a href="qpagesize.html">QPageSize</a></span> &amp;<i> pageSize</i>)</h3>
+<p>Sets the page size to <i>pageSize</i>.</p>
+<p>To get the current <a href="qpagesize.html">QPageSize</a> use <a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().<a href="qpagedpaintdevice.html#pageSize">pageSize</a>().</p>
+<p>You should call this before calling <a href="qpainter.html#begin">QPainter::begin</a>(), or immediately before calling <a href="qpagedpaintdevice.html#newPage">newPage</a>() to apply the new page size to a new page. You should not call any painting methods between a call to setPageSize() and <a href="qpagedpaintdevice.html#newPage">newPage</a>() as the wrong paint metrics may be used.</p>
+<p>Returns true if the page size was successfully set to <i>pageSize</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#pageSize">pageSize</a>() and <a href="qpagedpaintdevice.html#pageLayout">pageLayout</a>().</p>
+<!-- @@@setPageSize -->
+<!-- $$$setPageSize$$$setPageSizePageSize -->
+<h3 class="fn"><a name="setPageSize-2"></a><span class="type">void</span> QPagedPaintDevice::<span class="name">setPageSize</span>(<span class="type"><a href="qpagedpaintdevice.html#PageSize-enum">PageSize</a></span><i> size</i>)<tt> [virtual]</tt></h3>
+<p>Sets the size of the a page to <i>size</i>.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#setPageSizeMM">setPageSizeMM</a>().</p>
+<!-- @@@setPageSize -->
+<!-- $$$setPageSizeMM[overload1]$$$setPageSizeMMconstQSizeF& -->
+<h3 class="fn"><a name="setPageSizeMM"></a><span class="type">void</span> QPagedPaintDevice::<span class="name">setPageSizeMM</span>(const <span class="type"><a href="../qtcore/qsizef.html">QSizeF</a></span> &amp;<i> size</i>)<tt> [virtual]</tt></h3>
+<p>Sets the page size to <i>size</i>. <i>size</i> is specified in millimeters.</p>
+<p>If the size matches a standard <a href="qpagedpaintdevice.html#PageSize-enum">QPagedPaintDevice::PageSize</a> then that page size will be used, otherwise <a href="qpagedpaintdevice.html#PageSize-enum">QPagedPaintDevice::Custom</a> will be set.</p>
+<p><b>See also </b><a href="qpagedpaintdevice.html#pageSizeMM">pageSizeMM</a>().</p>
+<!-- @@@setPageSizeMM -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- blackberry.qdoc -->
+  <title>Building Qt 5 for BlackBerry 10 | QtDoc 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.3</a></li>
+<li>Building Qt 5 for BlackBerry 10</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#setting-up-the-environment">Setting up the Environment</a></li>
+<li class="level1"><a href="#getting-the-source">Getting the Source</a></li>
+<li class="level1"><a href="#building-qtbase">Building qtbase</a></li>
+<li class="level2"><a href="#linux-and-mac-os-x">Linux and Mac OS X</a></li>
+<li class="level2"><a href="#windows">Windows</a></li>
+<li class="level2"><a href="#mac-os-x">Mac OS X</a></li>
+<li class="level1"><a href="#building-other-modules">Building other Modules</a></li>
+<li class="level2"><a href="#linux-and-mac-os-x">Linux and Mac OS X</a></li>
+<li class="level2"><a href="#windows">Windows</a></li>
+</ul>
+</div>
+<h1 class="title">Building Qt 5 for BlackBerry 10</h1>
+<span class="subtitle"></span>
+<!-- $$$blackberrybuild.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="setting-up-the-environment"></a>
+<h2>Setting up the Environment</h2>
+<p>See <a href="blackberrygs.html">Setup for BlackBerry 10 development</a> for the introduction and further instructions.</p>
+<a name="getting-the-source"></a>
+<h2>Getting the Source</h2>
+<p>The approach we will take is to do an in-source build of the Qt 5 repositories that are needed but to install them to a custom directory (<i>$HOME/development/qnx/qt5</i> in the following example). Please also note that we clone and build git submodules separately. This procedure is different to the builds for desktop platforms and allows to include only those submodules which are relevant. Please adjust the paths to suit your setup as needed.</p>
+<p>First create a directory to hold the source code:</p>
+<pre class="cpp">cd $HOME<span class="operator">/</span>development
+mkdir qt5
+cd qt5</pre>
+<p>The following repositories are used in regular builds for BlackBerry 10 in <a href="http://qtlab.blackberry.com/">BlackBerry’s public CI</a>:</p>
+<ul>
+<li>qtbase</li>
+<li>qtxmlpatterns</li>
+<li>qtsensors</li>
+<li>qtdeclarative</li>
+<li>qtmultimedia</li>
+<li>qtgraphicaleffects</li>
+<li>qtconnectivity</li>
+<li>qtquickcontrols</li>
+</ul>
+<p>This matches all essential modules, plus several add-on modules. <a href="../qtwebkit/qtwebkit-module.html">QtWebKit</a> is currently not a part of the regular builds. Still, it is possible to build it, see <a href="http://qt-project.org/wiki/Building-QtWebKit-for-Blackberry">Building QtWebKit for Blackberry</a></p>
+<p>Other repositories known to build:</p>
+<ul>
+<li>qt3d (optional, provides 3D scenes using QML)</li>
+<li>qtscript (optional, only needed when using the qtquick1 submodule)</li>
+<li>qtlocation</li>
+</ul>
+<p>Then clone:</p>
+<pre class="cpp">git clone git:<span class="comment">//gitorious.org/qt/qtbase.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtxmlpatterns.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtsensors.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtdeclarative.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtmultimedia.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtgraphicaleffects.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtconnectivity.git</span>
+git clone git:<span class="comment">//gitorious.org/qt/qtquickcontrols.git</span></pre>
+<a name="building-qtbase"></a>
+<h2>Building qtbase</h2>
+<p>The process of building Qt 5 for BlackBerry devices is very similar to building it for any other platform so it is worth having a quick read through the generic instructions for building Qt 5 before proceeding.</p>
+<p>Be sure that you have configured your environment to use the BlackBerry 10 NDK (source the bbndk script on Linux for instance). This especially concerns setting the right values in $PATH to pickup tools and the cross-compile tool-chain provided in the NDK.</p>
+<a name="linux-and-mac-os-x"></a>
+<h3>Linux and Mac OS X</h3>
+<p>First we need to configure Qt.</p>
+<p>The examples below show a minimal set of configure options. You can see the full set of configure options used in the <a href="http://qtlab.blackberry.com/">BlackBerry’s public CI</a> in the raw console output of the <tt>qtbase</tt> build. See this <a href="http://qtlab.blackberry.com/job/qt-5-qtbase-stable/">link</a> and then open the raw <i>Console Output</i> for the last successful build for ARM or for x86.</p>
+<pre class="cpp">cd qtbase
+<span class="operator">.</span><span class="operator">/</span>configure <span class="operator">-</span>prefix $HOME<span class="operator">/</span>development<span class="operator">/</span>qnx<span class="operator">/</span>qt5 <span class="operator">-</span>xplatform blackberry<span class="operator">-</span>armle<span class="operator">-</span>v7<span class="operator">-</span>qcc <span class="operator">-</span>opengl es2 <span class="operator">-</span>nomake examples <span class="operator">-</span>nomake tests  <span class="operator">-</span>opensource <span class="operator">-</span>confirm<span class="operator">-</span>license <span class="operator">-</span>release</pre>
+<p>Afterwards we simply build it by calling make and make install.</p>
+<pre class="cpp">make <span class="operator">-</span>j<span class="operator">&lt;</span>N<span class="operator">&gt;</span>
+make install</pre>
+<p>where <tt>&lt;N&gt;</tt> is the number of parallel make jobs to run. This is often set to <tt>&lt;No. of CPU cores + 1&gt;</tt>.</p>
+<a name="windows"></a>
+<h3>Windows</h3>
+<pre class="cpp">C:\dev<span class="operator">&gt;</span> cd qtbase
+C:\dev\qtbase<span class="operator">&gt;</span> configure <span class="operator">-</span>prefix C:\dev\qt5install <span class="operator">-</span>xplatform blackberry<span class="operator">-</span>armle<span class="operator">-</span>v7<span class="operator">-</span>qcc <span class="operator">-</span>opengl es2 <span class="operator">-</span>nomake examples <span class="operator">-</span>nomake tests <span class="operator">-</span>opensource <span class="operator">-</span>confirm<span class="operator">-</span>license <span class="operator">-</span>release</pre>
+<p>If you want to work with the HTTPS protocol, add the <tt>-openssl</tt> option.</p>
+<a name="mac-os-x"></a>
+<h3>Mac OS X</h3>
+<p>This is almost the same as on Linux:</p>
+<pre class="cpp">$ cd qtbase
+$ <span class="operator">.</span><span class="operator">/</span>configure <span class="operator">-</span>prefix $HOME<span class="operator">/</span>development<span class="operator">/</span>qnx<span class="operator">/</span>qt5 <span class="operator">-</span>xplatform blackberry<span class="operator">-</span>armle<span class="operator">-</span>v7<span class="operator">-</span>qcc <span class="operator">-</span>opengl es2 <span class="operator">-</span>nomake examples  <span class="operator">-</span>nomake tests  <span class="operator">-</span>opensource <span class="operator">-</span>confirm<span class="operator">-</span>license <span class="operator">-</span>release <span class="operator">-</span>no<span class="operator">-</span>neon</pre>
+<p>After this process, you should have a basic Qt 5 installation located in <tt>$HOME/development/qnx/qt5</tt> or in <i>C:<b class="redFont"><code>\dev</code></b><b class="redFont"><code>\qt5install</code></b></i>, depending on your operating system.</p>
+<p>You may now either move on to building your applications or continue here to install some additional git submodules to gain access to additional features of Qt 5.</p>
+<a name="building-other-modules"></a>
+<h2>Building other Modules</h2>
+<p>If you want to build additional git submodules, make sure to do this in the right order, because some git submodules depend on each other.</p>
+<p>To build additional git submodules we need to use the qmake from our new Qt 5 installation so we adjust the PATH environment variable accordingly:</p>
+<p><b>Linux and Mac OS X</b>: <tt>export PATH=$HOME/development/qnx/qt5/bin:$PATH</tt></p>
+<p><b>Windows</b>: <tt>C:\dev&gt; set PATH=C:\dev\qt5install\bin;%PATH%</tt></p>
+<p>Now for each of the additional git submodules that you wish to build, do the following:</p>
+<a name="linux-and-mac-os-x"></a>
+<h3>Linux and Mac OS X</h3>
+<pre class="cpp">cd <span class="operator">&lt;</span>sub_module_name<span class="operator">&gt;</span>
+qmake
+make <span class="operator">-</span>j<span class="operator">&lt;</span>N<span class="operator">&gt;</span>
+make install</pre>
+<a name="windows"></a>
+<h3>Windows</h3>
+<pre class="cpp">C:\dev<span class="operator">&gt;</span> cd <span class="operator">&lt;</span>sub_module_name<span class="operator">&gt;</span>
+C:\dev\submodule<span class="operator">&gt;</span> qmake
+C:\dev\submodule<span class="operator">&gt;</span> mingw32<span class="operator">-</span>make <span class="operator">-</span>j
+C:\dev\submodule<span class="operator">&gt;</span> mingw32<span class="operator">-</span>make <span class="operator">-</span>j install</pre>
+</div>
+<!-- @@@blackberrybuild.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- android.qdoc -->
+  <title>Adding OpenSSL Support | QtDoc 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.3</a></li>
+<li>Adding OpenSSL Support</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Adding OpenSSL Support</h1>
+<span class="subtitle"></span>
+<!-- $$$opensslsupport.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Qt installation package does not ship the OpenSSL libraries due to legal restrictions in some countries. If you want to use OpenSSL in your application, you must build the OpenSSL libraries for Android and bundle them with your Application Package (APK) to ensure that your application behaves as expected on the device.</p>
+<p><b>Note: </b>If your development platform is Windows, you need <tt>msys</tt> with <tt>perl</tt> v5.14 or later to build OpenSSL.</p><p>The following instructions guide you to add OpenSSL support to your application:</p>
+<ol class="1">
+<li>Download the latest OpenSSL sources from <a href="http://www.openssl.org/source">http://www.openssl.org/source</a>.</li>
+<li>Extract the sources to a folder and navigate to that folder using the CLI (<tt>msys</tt> shell on Windows).</li>
+<li>Set the following environment variables to point to the ARM compiler toolchain and sysroot you want to use:<pre class="cpp">CC<span class="operator">=</span><span class="operator">&lt;</span>ANDROID_NDK_PATH<span class="operator">&gt;</span><span class="operator">/</span>toolchains<span class="operator">/</span>arm<span class="operator">-</span>linux<span class="operator">-</span>androideabi<span class="operator">-</span><span class="operator">&lt;</span>VER<span class="operator">&gt;</span><span class="operator">/</span>prebuilt<span class="operator">/</span><span class="operator">&lt;</span>NDK_HOST<span class="operator">&gt;</span><span class="operator">/</span>bin<span class="operator">/</span>arm<span class="operator">-</span>linux<span class="operator">-</span>androideabi<span class="operator">-</span>gcc
+AR<span class="operator">=</span><span class="operator">&lt;</span>ANDROID_NDK_PATH<span class="operator">&gt;</span><span class="operator">/</span>toolchains<span class="operator">/</span>arm<span class="operator">-</span>linux<span class="operator">-</span>androideabi<span class="operator">-</span><span class="operator">&lt;</span>VER<span class="operator">&gt;</span><span class="operator">/</span>prebuilt<span class="operator">/</span><span class="operator">&lt;</span>NDK_HOST<span class="operator">&gt;</span><span class="operator">/</span>bin<span class="operator">/</span>arm<span class="operator">-</span>linux<span class="operator">-</span>androideabi<span class="operator">-</span>ar
+ANDROID_DEV<span class="operator">=</span><span class="operator">&lt;</span>ANDROID_NDK_PATH<span class="operator">&gt;</span><span class="operator">/</span>platforms<span class="operator">/</span>android<span class="operator">-</span><span class="number">9</span><span class="operator">/</span>arch<span class="operator">-</span>arm<span class="operator">/</span>usr</pre>
+</li>
+<li>Configure the OpenSSL sources to build for Android (ARMv5 or ARMv7) using the following command:<pre class="cpp"><span class="operator">.</span><span class="operator">/</span>Configure shared android <span class="keyword">or</span> android<span class="operator">-</span>armv7</pre>
+<p><b>Note: </b>You can also configure it for <i>mips</i> or <i>x86</i> architectures.</p></li>
+<li>Run <tt>make build_libs</tt> to build the <tt>libcrypto</tt> and <tt>libssl</tt> shared libraries.</li>
+<li>Open your Qt project using Qt Creator and update the &quot;Deployment Configuration&quot; under run settings to add <i>libcrypto</i> and <i>libssl</i> as additional libraries required for your project.</li>
+<li>Run your application to see it running on the device.</li>
+</ol>
+<p>Qt Creator builds your application and creates an application package (APK) with the OpenSSL libraries bundled in it. Once the APK is ready, Qt Creator prompts you to choose the device to install the APK, and then you should see your application running on the device you selected.</p>
+</div>
+<!-- @@@opensslsupport.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

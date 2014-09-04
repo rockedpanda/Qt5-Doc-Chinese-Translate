@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qopengldebug.cpp -->
+  <title>QOpenGLDebugMessage Class | QtGui 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QOpenGLDebugMessage</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOpenGLDebugMessage Class</h1>
+<!-- $$$QOpenGLDebugMessage-brief -->
+<p>The QOpenGLDebugMessage class wraps an <a href="../qtopengl/opengl-module.html">OpenGL</a> debug message. <a href="#details">More...</a></p>
+<!-- @@@QOpenGLDebugMessage -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QOpenGLDebugMessage&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += gui</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.1</td></tr></table><p><b>Note:</b> All functions in this class are <a href="../qtdoc/threads-reentrancy.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qopengldebugmessage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#Severity-enum">Severities</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#Severity-enum">Severity</a></b> { InvalidSeverity, HighSeverity, MediumSeverity, LowSeverity, NotificationSeverity, AnySeverity }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#Source-enum">Source</a></b> { InvalidSource, APISource, WindowSystemSource, ShaderCompilerSource, ..., AnySource }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#Source-enum">Sources</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#Type-enum">Type</a></b> { InvalidType, ErrorType, DeprecatedBehaviorType, UndefinedBehaviorType, ..., AnyType }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#Type-enum">Types</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#QOpenGLDebugMessage">QOpenGLDebugMessage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#QOpenGLDebugMessage-2">QOpenGLDebugMessage</a></b>(const QOpenGLDebugMessage &amp;<i> debugMessage</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#dtor.QOpenGLDebugMessage">~QOpenGLDebugMessage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> GLuint </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#id">id</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#message">message</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Severity </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#severity">severity</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Source </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#source">source</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#swap">swap</a></b>(QOpenGLDebugMessage &amp;<i> debugMessage</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Type </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#type">type</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-not-eq">operator!=</a></b>(const QOpenGLDebugMessage &amp;<i> debugMessage</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOpenGLDebugMessage &amp; </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-eq">operator=</a></b>(const QOpenGLDebugMessage &amp;<i> debugMessage</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOpenGLDebugMessage &amp; </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-eq-2">operator=</a></b>(QOpenGLDebugMessage &amp;&amp;<i> debugMessage</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-eq-eq">operator==</a></b>(const QOpenGLDebugMessage &amp;<i> debugMessage</i>) const</td></tr>
+</table>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QOpenGLDebugMessage </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#createApplicationMessage">createApplicationMessage</a></b>(const QString &amp;<i> text</i>, GLuint<i> id</i> = 0, Severity<i> severity</i> = NotificationSeverity, Type<i> type</i> = OtherType)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOpenGLDebugMessage </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#createThirdPartyMessage">createThirdPartyMessage</a></b>(const QString &amp;<i> text</i>, GLuint<i> id</i> = 0, Severity<i> severity</i> = NotificationSeverity, Type<i> type</i> = OtherType)</td></tr>
+</table>
+<a name="related-non-members"></a>
+<h2>Related Non-Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QDebug </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-lt-lt-190">operator&lt;&lt;</a></b>(QDebug<i> debug</i>, const QOpenGLDebugMessage &amp;<i> message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDebug </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-lt-lt-191">operator&lt;&lt;</a></b>(QDebug<i> debug</i>, QOpenGLDebugMessage::Source<i> source</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDebug </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-lt-lt-192">operator&lt;&lt;</a></b>(QDebug<i> debug</i>, QOpenGLDebugMessage::Type<i> type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDebug </td><td class="memItemRight bottomAlign"><b><a href="qopengldebugmessage.html#operator-lt-lt-193">operator&lt;&lt;</a></b>(QDebug<i> debug</i>, QOpenGLDebugMessage::Severity<i> severity</i>)</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QOpenGLDebugMessage-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QOpenGLDebugMessage class wraps an <a href="../qtopengl/opengl-module.html">OpenGL</a> debug message.</p>
+<p>Debug messages are usually created by the <a href="../qtopengl/opengl-module.html">OpenGL</a> server and then read by <a href="../qtopengl/opengl-module.html">OpenGL</a> clients (either from the <a href="../qtopengl/opengl-module.html">OpenGL</a> internal debug log, or logged in real-time). A debug message has a textual representation, a vendor-specific numeric id, a source, a type and a severity.</p>
+<p>It's also possible for applications or third-party libraries and toolkits to create and insert messages in the debug log. In order to do so, you can use the <a href="qopengldebugmessage.html#createApplicationMessage">createApplicationMessage</a>() or the <a href="qopengldebugmessage.html#createThirdPartyMessage">createThirdPartyMessage</a>() static functions.</p>
+</div>
+<p><b>See also </b><a href="qopengldebuglogger.html">QOpenGLDebugLogger</a>.</p>
+<!-- @@@QOpenGLDebugMessage -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Severity$$$InvalidSeverity$$$HighSeverity$$$MediumSeverity$$$LowSeverity$$$NotificationSeverity$$$LastSeverity$$$AnySeverity -->
+<h3 class="flags"><a name="Severity-enum"></a>enum QOpenGLDebugMessage::<span class="name">Severity</span><br/>flags QOpenGLDebugMessage::<span class="name">Severities</span></h3>
+<p>The Severity enum defines the severity of the debug message.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::InvalidSeverity</tt></td><td class="topAlign"><tt>0x00000000</tt></td><td class="topAlign">The severity of the message is invalid; this is the severity of a default-constructed <a href="qopengldebugmessage.html">QOpenGLDebugMessage</a> object.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::HighSeverity</tt></td><td class="topAlign"><tt>0x00000001</tt></td><td class="topAlign">The message has a high severity.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::MediumSeverity</tt></td><td class="topAlign"><tt>0x00000002</tt></td><td class="topAlign">The message has a medium severity.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::LowSeverity</tt></td><td class="topAlign"><tt>0x00000004</tt></td><td class="topAlign">The message has a low severity.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::NotificationSeverity</tt></td><td class="topAlign"><tt>0x00000008</tt></td><td class="topAlign">The message is a notification.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::AnySeverity</tt></td><td class="topAlign"><tt>0xffffffff</tt></td><td class="topAlign">This value corresponds to a mask of all possible message severities.</td></tr>
+</table>
+<p>The Severities type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;Severity&gt;. It stores an OR combination of Severity values.</p>
+<!-- @@@Severity -->
+<!-- $$$Source$$$InvalidSource$$$APISource$$$WindowSystemSource$$$ShaderCompilerSource$$$ThirdPartySource$$$ApplicationSource$$$OtherSource$$$LastSource$$$AnySource -->
+<h3 class="flags"><a name="Source-enum"></a>enum QOpenGLDebugMessage::<span class="name">Source</span><br/>flags QOpenGLDebugMessage::<span class="name">Sources</span></h3>
+<p>The Source enum defines the source of the debug message.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::InvalidSource</tt></td><td class="topAlign"><tt>0x00000000</tt></td><td class="topAlign">The source of the message is invalid; this is the source of a default-constructed <a href="qopengldebugmessage.html">QOpenGLDebugMessage</a> object.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::APISource</tt></td><td class="topAlign"><tt>0x00000001</tt></td><td class="topAlign">The message was generated in response to <a href="../qtopengl/opengl-module.html">OpenGL</a> API calls.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::WindowSystemSource</tt></td><td class="topAlign"><tt>0x00000002</tt></td><td class="topAlign">The message was generated by the window system.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::ShaderCompilerSource</tt></td><td class="topAlign"><tt>0x00000004</tt></td><td class="topAlign">The message was generated by the shader compiler.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::ThirdPartySource</tt></td><td class="topAlign"><tt>0x00000008</tt></td><td class="topAlign">The message was generated by a third party, for instance an <a href="../qtopengl/opengl-module.html">OpenGL</a> framework a or debugging toolkit.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::ApplicationSource</tt></td><td class="topAlign"><tt>0x00000010</tt></td><td class="topAlign">The message was generated by the application itself.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::OtherSource</tt></td><td class="topAlign"><tt>0x00000020</tt></td><td class="topAlign">The message was generated by a source not included in this enumeration.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::AnySource</tt></td><td class="topAlign"><tt>0xffffffff</tt></td><td class="topAlign">This value corresponds to a mask of all possible message sources.</td></tr>
+</table>
+<p>The Sources type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;Source&gt;. It stores an OR combination of Source values.</p>
+<!-- @@@Source -->
+<!-- $$$Type$$$InvalidType$$$ErrorType$$$DeprecatedBehaviorType$$$UndefinedBehaviorType$$$PortabilityType$$$PerformanceType$$$OtherType$$$MarkerType$$$GroupPushType$$$GroupPopType$$$LastType$$$AnyType -->
+<h3 class="flags"><a name="Type-enum"></a>enum QOpenGLDebugMessage::<span class="name">Type</span><br/>flags QOpenGLDebugMessage::<span class="name">Types</span></h3>
+<p>The Type enum defines the type of the debug message.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::InvalidType</tt></td><td class="topAlign"><tt>0x00000000</tt></td><td class="topAlign">The type of the message is invalid; this is the type of a default-constructed <a href="qopengldebugmessage.html">QOpenGLDebugMessage</a> object.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::ErrorType</tt></td><td class="topAlign"><tt>0x00000001</tt></td><td class="topAlign">The message represents an error.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::DeprecatedBehaviorType</tt></td><td class="topAlign"><tt>0x00000002</tt></td><td class="topAlign">The message represents an usage of deprecated behavior.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::UndefinedBehaviorType</tt></td><td class="topAlign"><tt>0x00000004</tt></td><td class="topAlign">The message represents an usage of undefined behavior.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::PortabilityType</tt></td><td class="topAlign"><tt>0x00000008</tt></td><td class="topAlign">The message represents an usage of vendor-specific behavior, that might pose portability concerns.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::PerformanceType</tt></td><td class="topAlign"><tt>0x00000010</tt></td><td class="topAlign">The message represents a performance issue.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::OtherType</tt></td><td class="topAlign"><tt>0x00000020</tt></td><td class="topAlign">The message represents a type not included in this enumeration.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::MarkerType</tt></td><td class="topAlign"><tt>0x00000040</tt></td><td class="topAlign">The message represents a marker in the debug log.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::GroupPushType</tt></td><td class="topAlign"><tt>0x00000080</tt></td><td class="topAlign">The message represents a debug group push operation.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::GroupPopType</tt></td><td class="topAlign"><tt>0x00000100</tt></td><td class="topAlign">The message represents a debug group pop operation.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLDebugMessage::AnyType</tt></td><td class="topAlign"><tt>0xffffffff</tt></td><td class="topAlign">This value corresponds to a mask of all possible message types.</td></tr>
+</table>
+<p>The Types type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;Type&gt;. It stores an OR combination of Type values.</p>
+<!-- @@@Type -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QOpenGLDebugMessage[overload1]$$$QOpenGLDebugMessage -->
+<h3 class="fn"><a name="QOpenGLDebugMessage"></a>QOpenGLDebugMessage::<span class="name">QOpenGLDebugMessage</span>()</h3>
+<p>Constructs a debug message with an empty message string, id set to 0, source set to <a href="qopengldebugmessage.html#Source-enum">InvalidSource</a>, type set to <a href="qopengldebugmessage.html#Type-enum">InvalidType</a>, and severity set to <a href="qopengldebugmessage.html#Severity-enum">InvalidSeverity</a>.</p>
+<p><b>Note: </b>This constructor should not be used to create a debug message; instead, use the <a href="qopengldebugmessage.html#createApplicationMessage">createApplicationMessage</a>() or the <a href="qopengldebugmessage.html#createThirdPartyMessage">createThirdPartyMessage</a>() static functions.</p><p><b>See also </b><a href="qopengldebugmessage.html#createApplicationMessage">createApplicationMessage</a>() and <a href="qopengldebugmessage.html#createThirdPartyMessage">createThirdPartyMessage</a>().</p>
+<!-- @@@QOpenGLDebugMessage -->
+<!-- $$$QOpenGLDebugMessage$$$QOpenGLDebugMessageconstQOpenGLDebugMessage& -->
+<h3 class="fn"><a name="QOpenGLDebugMessage-2"></a>QOpenGLDebugMessage::<span class="name">QOpenGLDebugMessage</span>(const <span class="type">QOpenGLDebugMessage</span> &amp;<i> debugMessage</i>)</h3>
+<p>Constructs a debug message as a copy of <i>debugMessage</i>.</p>
+<p><b>See also </b><a href="qopengldebugmessage.html#operator-eq">operator=</a>().</p>
+<!-- @@@QOpenGLDebugMessage -->
+<!-- $$$~QOpenGLDebugMessage[overload1]$$$~QOpenGLDebugMessage -->
+<h3 class="fn"><a name="dtor.QOpenGLDebugMessage"></a>QOpenGLDebugMessage::<span class="name">~QOpenGLDebugMessage</span>()</h3>
+<p>Destroys this debug message.</p>
+<!-- @@@~QOpenGLDebugMessage -->
+<!-- $$$createApplicationMessage[overload1]$$$createApplicationMessageconstQString&GLuintSeverityType -->
+<h3 class="fn"><a name="createApplicationMessage"></a><span class="type">QOpenGLDebugMessage</span> QOpenGLDebugMessage::<span class="name">createApplicationMessage</span>(const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i> text</i>, <span class="type">GLuint</span><i> id</i> = 0, <span class="type"><a href="qopengldebugmessage.html#Severity-enum">Severity</a></span><i> severity</i> = NotificationSeverity, <span class="type"><a href="qopengldebugmessage.html#Type-enum">Type</a></span><i> type</i> = OtherType)<tt> [static]</tt></h3>
+<p>Constructs and returns a debug message with <i>text</i> as its text, <i>id</i> as id, <i>severity</i> as severity, and <i>type</i> as type. The message source will be set to <a href="qopengldebugmessage.html#Source-enum">ApplicationSource</a>.</p>
+<p><b>See also </b><a href="qopengldebuglogger.html#logMessage">QOpenGLDebugLogger::logMessage</a>() and <a href="qopengldebugmessage.html#createThirdPartyMessage">createThirdPartyMessage</a>().</p>
+<!-- @@@createApplicationMessage -->
+<!-- $$$createThirdPartyMessage[overload1]$$$createThirdPartyMessageconstQString&GLuintSeverityType -->
+<h3 class="fn"><a name="createThirdPartyMessage"></a><span class="type">QOpenGLDebugMessage</span> QOpenGLDebugMessage::<span class="name">createThirdPartyMessage</span>(const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i> text</i>, <span class="type">GLuint</span><i> id</i> = 0, <span class="type"><a href="qopengldebugmessage.html#Severity-enum">Severity</a></span><i> severity</i> = NotificationSeverity, <span class="type"><a href="qopengldebugmessage.html#Type-enum">Type</a></span><i> type</i> = OtherType)<tt> [static]</tt></h3>
+<p>Constructs and returns a debug message with <i>text</i> as its text, <i>id</i> as id, <i>severity</i> as severity, and <i>type</i> as type. The message source will be set to <a href="qopengldebugmessage.html#Source-enum">ThirdPartySource</a>.</p>
+<p><b>See also </b><a href="qopengldebuglogger.html#logMessage">QOpenGLDebugLogger::logMessage</a>() and <a href="qopengldebugmessage.html#createApplicationMessage">createApplicationMessage</a>().</p>
+<!-- @@@createThirdPartyMessage -->
+<!-- $$$id[overload1]$$$id -->
+<h3 class="fn"><a name="id"></a><span class="type">GLuint</span> QOpenGLDebugMessage::<span class="name">id</span>() const</h3>
+<p>Returns the id of the debug message. Ids are generally vendor-specific.</p>
+<!-- @@@id -->
+<!-- $$$message[overload1]$$$message -->
+<h3 class="fn"><a name="message"></a><span class="type"><a href="../qtcore/qstring.html">QString</a></span> QOpenGLDebugMessage::<span class="name">message</span>() const</h3>
+<p>Returns the textual message contained by this debug message.</p>
+<!-- @@@message -->
+<!-- $$$severity[overload1]$$$severity -->
+<h3 class="fn"><a name="severity"></a><span class="type"><a href="qopengldebugmessage.html#Severity-enum">Severity</a></span> QOpenGLDebugMessage::<span class="name">severity</span>() const</h3>
+<p>Returns the severity of the debug message.</p>
+<!-- @@@severity -->
+<!-- $$$source[overload1]$$$source -->
+<h3 class="fn"><a name="source"></a><span class="type"><a href="qopengldebugmessage.html#Source-enum">Source</a></span> QOpenGLDebugMessage::<span class="name">source</span>() const</h3>
+<p>Returns the source of the debug message.</p>
+<!-- @@@source -->
+<!-- $$$swap[overload1]$$$swapQOpenGLDebugMessage& -->
+<h3 class="fn"><a name="swap"></a><span class="type">void</span> QOpenGLDebugMessage::<span class="name">swap</span>(<span class="type">QOpenGLDebugMessage</span> &amp;<i> debugMessage</i>)</h3>
+<p>Swaps the message <i>debugMessage</i> with this message. This operation is very fast and never fails.</p>
+<!-- @@@swap -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><span class="type"><a href="qopengldebugmessage.html#Type-enum">Type</a></span> QOpenGLDebugMessage::<span class="name">type</span>() const</h3>
+<p>Returns the type of the debug message.</p>
+<!-- @@@type -->
+<!-- $$$operator!=[overload1]$$$operator!=constQOpenGLDebugMessage& -->
+<h3 class="fn"><a name="operator-not-eq"></a><span class="type">bool</span> QOpenGLDebugMessage::<span class="name">operator!=</span>(const <span class="type">QOpenGLDebugMessage</span> &amp;<i> debugMessage</i>) const</h3>
+<p>Returns <tt>true</tt> if this message is different from <i>debugMessage</i>, or false otherwise.</p>
+<p><b>See also </b><a href="qopengldebugmessage.html#operator-eq-eq">operator==</a>().</p>
+<!-- @@@operator!= -->
+<!-- $$$operator=[overload1]$$$operator=constQOpenGLDebugMessage& -->
+<h3 class="fn"><a name="operator-eq"></a><span class="type">QOpenGLDebugMessage</span> &amp; QOpenGLDebugMessage::<span class="name">operator=</span>(const <span class="type">QOpenGLDebugMessage</span> &amp;<i> debugMessage</i>)</h3>
+<p>Assigns the message <i>debugMessage</i> to this object, and returns a reference to the copy.</p>
+<!-- @@@operator= -->
+<!-- $$$operator=$$$operator=QOpenGLDebugMessage&& -->
+<h3 class="fn"><a name="operator-eq-2"></a><span class="type">QOpenGLDebugMessage</span> &amp; QOpenGLDebugMessage::<span class="name">operator=</span>(<span class="type">QOpenGLDebugMessage</span> &amp;&amp;<i> debugMessage</i>)</h3>
+<!-- @@@operator= -->
+<!-- $$$operator==[overload1]$$$operator==constQOpenGLDebugMessage& -->
+<h3 class="fn"><a name="operator-eq-eq"></a><span class="type">bool</span> QOpenGLDebugMessage::<span class="name">operator==</span>(const <span class="type">QOpenGLDebugMessage</span> &amp;<i> debugMessage</i>) const</h3>
+<p>Returns <tt>true</tt> if this debug message is equal to <i>debugMessage</i>, or false otherwise. Two debugging messages are equal if they have the same textual message, the same id, the same source, the same type and the same severity.</p>
+<p><b>See also </b><a href="qopengldebugmessage.html#operator-not-eq">operator!=</a>().</p>
+<!-- @@@operator== -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$operator<<$$$operator<<QDebugconstQOpenGLDebugMessage& -->
+<h3 class="fn"><a name="operator-lt-lt-190"></a><span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span> <span class="name">operator&lt;&lt;</span>(<span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span><i> debug</i>, const <span class="type">QOpenGLDebugMessage</span> &amp;<i> message</i>)</h3>
+<p>Writes the message <i>message</i> into the debug object <i>debug</i> for debugging purposes.</p>
+<!-- @@@operator<< -->
+<!-- $$$operator<<$$$operator<<QDebugQOpenGLDebugMessage::Source -->
+<h3 class="fn"><a name="operator-lt-lt-191"></a><span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span> <span class="name">operator&lt;&lt;</span>(<span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span><i> debug</i>, <span class="type"><a href="qopengldebugmessage.html#Source-enum">QOpenGLDebugMessage::Source</a></span><i> source</i>)</h3>
+<p>Writes the source <i>source</i> into the debug object <i>debug</i> for debugging purposes.</p>
+<!-- @@@operator<< -->
+<!-- $$$operator<<$$$operator<<QDebugQOpenGLDebugMessage::Type -->
+<h3 class="fn"><a name="operator-lt-lt-192"></a><span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span> <span class="name">operator&lt;&lt;</span>(<span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span><i> debug</i>, <span class="type"><a href="qopengldebugmessage.html#Type-enum">QOpenGLDebugMessage::Type</a></span><i> type</i>)</h3>
+<p>Writes the type <i>type</i> into the debug object <i>debug</i> for debugging purposes.</p>
+<!-- @@@operator<< -->
+<!-- $$$operator<<$$$operator<<QDebugQOpenGLDebugMessage::Severity -->
+<h3 class="fn"><a name="operator-lt-lt-193"></a><span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span> <span class="name">operator&lt;&lt;</span>(<span class="type"><a href="../qtcore/qdebug.html">QDebug</a></span><i> debug</i>, <span class="type"><a href="qopengldebugmessage.html#Severity-enum">QOpenGLDebugMessage::Severity</a></span><i> severity</i>)</h3>
+<p>Writes the severity <i>severity</i> into the debug object <i>debug</i> for debugging purposes.</p>
+<!-- @@@operator<< -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtXmlPatterns">
+    <examples>
+        <example name="C++ Source Code Analyzer Example" docUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/qtxmlpatterns-xmlpatterns-xquery-globalvariables-example.html">
+            <description><![CDATA[No description available]]></description>
+            <tags>c++,xml,patterns,code,source,analyzer</tags>
+        </example>
+        <example name="File System Example" docUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/qtxmlpatterns-xmlpatterns-filetree-example.html" projectPath="xmlpatterns/filetree/filetree.pro" imageUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/images/filetree_1-example.png">
+            <description><![CDATA[No description available]]></description>
+            <tags>xml,file,patterns,system</tags>
+            <fileToOpen>xmlpatterns/filetree/main.cpp</fileToOpen>
+            <fileToOpen>xmlpatterns/filetree/filetree.h</fileToOpen>
+            <fileToOpen mainFile="true">xmlpatterns/filetree/filetree.cpp</fileToOpen>
+        </example>
+        <example name="Recipes Example" docUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/qtxmlpatterns-xmlpatterns-recipes-example.html" projectPath="xmlpatterns/recipes/recipes.pro" imageUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/images/recipes-example.png">
+            <description><![CDATA[No description available]]></description>
+            <tags>xml,recipes,patterns</tags>
+            <fileToOpen mainFile="true">xmlpatterns/recipes/main.cpp</fileToOpen>
+        </example>
+        <example name="XML Schema Validation Example" docUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/qtxmlpatterns-xmlpatterns-schema-example.html" projectPath="xmlpatterns/schema/schema.pro" imageUrl="qthelp://org.qt-project.qtxmlpatterns.531/qtxmlpatterns/images/schema-example.png">
+            <description><![CDATA[No description available]]></description>
+            <tags>validation,xml,schema,patterns</tags>
+            <fileToOpen mainFile="true">xmlpatterns/schema/main.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

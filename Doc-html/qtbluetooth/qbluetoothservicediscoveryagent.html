@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbluetoothservicediscoveryagent.cpp -->
+  <title>QBluetoothServiceDiscoveryAgent Class | QtBluetooth 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtbluetooth-index.html">Qt Bluetooth</a></li>
+<li><a href="qtbluetooth-module.html">C++ Classes</a></li>
+<li>QBluetoothServiceDiscoveryAgent</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QBluetoothServiceDiscoveryAgent Class</h1>
+<!-- $$$QBluetoothServiceDiscoveryAgent-brief -->
+<p>The QBluetoothServiceDiscoveryAgent class enables you to query for Bluetooth services. <a href="#details">More...</a></p>
+<!-- @@@QBluetoothServiceDiscoveryAgent -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QBluetoothServiceDiscoveryAgent&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += bluetooth</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="../qtcore/qobject.html">QObject</a>.</td></tr></table><ul>
+<li><a href="qbluetoothservicediscoveryagent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#DiscoveryMode-enum">DiscoveryMode</a></b> { MinimalDiscovery, FullDiscovery }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#Error-enum">Error</a></b> { NoError, PoweredOffError, InputOutputError, InvalidBluetoothAdapterError, UnknownError }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#QBluetoothServiceDiscoveryAgent">QBluetoothServiceDiscoveryAgent</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#QBluetoothServiceDiscoveryAgent-2">QBluetoothServiceDiscoveryAgent</a></b>(const QBluetoothAddress &amp;<i> deviceAdapter</i>, QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#dtor.QBluetoothServiceDiscoveryAgent">~QBluetoothServiceDiscoveryAgent</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QBluetoothServiceInfo&gt; </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#discoveredServices">discoveredServices</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Error </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#error">error</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#errorString">errorString</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#isActive">isActive</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothAddress </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#remoteAddress">remoteAddress</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#setRemoteAddress">setRemoteAddress</a></b>(const QBluetoothAddress &amp;<i> address</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#setUuidFilter">setUuidFilter</a></b>(const QList&lt;QBluetoothUuid&gt; &amp;<i> uuids</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#setUuidFilter-2">setUuidFilter</a></b>(const QBluetoothUuid &amp;<i> uuid</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QBluetoothUuid&gt; </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#uuidFilter">uuidFilter</a></b>() const</td></tr>
+</table>
+<ul>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#clear">clear</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#start">start</a></b>(DiscoveryMode<i> mode</i> = MinimalDiscovery)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#stop">stop</a></b>()</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#canceled">canceled</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#error-2">error</a></b>(QBluetoothServiceDiscoveryAgent::Error<i> error</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#finished">finished</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothservicediscoveryagent.html#serviceDiscovered">serviceDiscovered</a></b>(const QBluetoothServiceInfo &amp;<i> info</i>)</td></tr>
+</table>
+<ul>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QBluetoothServiceDiscoveryAgent-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QBluetoothServiceDiscoveryAgent class enables you to query for Bluetooth services.</p>
+<p>To query the services provided by all contactable Bluetooth devices:</p>
+<ul>
+<li>create an instance of QBluetoothServiceDiscoveryAgent,</li>
+<li>connect to either the <a href="qbluetoothservicediscoveryagent.html#serviceDiscovered">serviceDiscovered</a>() or <a href="qbluetoothservicediscoveryagent.html#finished">finished</a>() signals,</li>
+<li>and call <a href="qbluetoothservicediscoveryagent.html#start">start</a>().</li>
+</ul>
+<pre class="cpp"><span class="type">void</span> MyClass<span class="operator">::</span>startServiceDiscovery()
+{
+
+    <span class="comment">// Create a discovery agent and connect to its signals</span>
+    <span class="type">QBluetoothServiceDiscoveryAgent</span> <span class="operator">*</span>discoveryAgent <span class="operator">=</span> <span class="keyword">new</span> <span class="type">QBluetoothServiceDiscoveryAgent</span>(<span class="keyword">this</span>);
+    connect(discoveryAgent<span class="operator">,</span> SIGNAL(serviceDiscovered(<span class="type"><a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></span>))<span class="operator">,</span>
+            <span class="keyword">this</span><span class="operator">,</span> SLOT(serviceDiscovered(<span class="type"><a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></span>)));
+
+    <span class="comment">// Start a discovery</span>
+    discoveryAgent<span class="operator">-</span><span class="operator">&gt;</span>start();
+
+    <span class="comment">//...</span>
+}
+
+<span class="comment">// In your local slot, read information about the found devices</span>
+<span class="type">void</span> MyClass<span class="operator">::</span><a href="qbluetoothservicediscoveryagent.html#serviceDiscovered">serviceDiscovered</a>(<span class="keyword">const</span> <span class="type"><a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></span> <span class="operator">&amp;</span>service)
+{
+    <a href="../qtcore/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Found new service:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> service<span class="operator">.</span>serviceName()
+             <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="char">'('</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> service<span class="operator">.</span>device()<span class="operator">.</span>address()<span class="operator">.</span>toString() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="char">')'</span>;
+}</pre>
+<p>By default a minimal service discovery is performed. In this mode, the QBluetotohServiceInfo objects returned are guaranteed to contain only device and service UUID information. Depending on platform and device capabilities, other service information may also be available. For most use cases this is adequate as <a href="qbluetoothsocket.html#connectToService">QBluetoothSocket::connectToService</a>() will perform additional discovery if required. If full service information is required, pass <a href="qbluetoothservicediscoveryagent.html#DiscoveryMode-enum">FullDiscovery</a> as the discoveryMode parameter to <a href="qbluetoothservicediscoveryagent.html#start">start</a>().</p>
+<p>This class may internally utilize <a href="qbluetoothdevicediscoveryagent.html">QBluetoothDeviceDiscoveryAgent</a> to find unknown devices.</p>
+</div>
+<p><b>See also </b><a href="qbluetoothdevicediscoveryagent.html">QBluetoothDeviceDiscoveryAgent</a>.</p>
+<!-- @@@QBluetoothServiceDiscoveryAgent -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DiscoveryMode$$$MinimalDiscovery$$$FullDiscovery -->
+<h3 class="fn"><a name="DiscoveryMode-enum"></a>enum QBluetoothServiceDiscoveryAgent::<span class="name">DiscoveryMode</span></h3>
+<p>This enum describes the service discovery mode.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::MinimalDiscovery</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Performs a minimal service discovery. The <a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a> objects returned may be incomplete and are only guaranteed to contain device and service UUID information.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::FullDiscovery</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">Performs a full service discovery.</td></tr>
+</table>
+<!-- @@@DiscoveryMode -->
+<!-- $$$Error$$$NoError$$$InputOutputError$$$PoweredOffError$$$InvalidBluetoothAdapterError$$$UnknownError -->
+<h3 class="fn"><a name="Error-enum"></a>enum QBluetoothServiceDiscoveryAgent::<span class="name">Error</span></h3>
+<p>This enum describes errors that can occur during service discovery.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::NoError</tt></td><td class="topAlign"><tt>QBluetoothDeviceDiscoveryAgent::NoError</tt></td><td class="topAlign">No error has occurred.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::PoweredOffError</tt></td><td class="topAlign"><tt>QBluetoothDeviceDiscoveryAgent::PoweredOffError</tt></td><td class="topAlign">The Bluetooth adaptor is powered off, power it on before doing discovery.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::InputOutputError</tt></td><td class="topAlign"><tt>QBluetoothDeviceDiscoveryAgent::InputOutputError</tt></td><td class="topAlign">Writing or reading from the device resulted in an error.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::InvalidBluetoothAdapterError</tt></td><td class="topAlign"><tt>QBluetoothDeviceDiscoveryAgent::InvalidBluetoothAdapterError</tt></td><td class="topAlign">The passed local adapter address does not match the physical adapter address of any local Bluetooth device.</td></tr>
+<tr><td class="topAlign"><tt>QBluetoothServiceDiscoveryAgent::UnknownError</tt></td><td class="topAlign"><tt>QBluetoothDeviceDiscoveryAgent::UnknownError</tt></td><td class="topAlign">An unknown error has occurred.</td></tr>
+</table>
+<!-- @@@Error -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBluetoothServiceDiscoveryAgent[overload1]$$$QBluetoothServiceDiscoveryAgentQObject* -->
+<h3 class="fn"><a name="QBluetoothServiceDiscoveryAgent"></a>QBluetoothServiceDiscoveryAgent::<span class="name">QBluetoothServiceDiscoveryAgent</span>(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> *<i> parent</i> = 0)</h3>
+<p>Constructs a new <a href="qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a> with <i>parent</i>. The search is performed via the local default Bluetooth adapter.</p>
+<!-- @@@QBluetoothServiceDiscoveryAgent -->
+<!-- $$$QBluetoothServiceDiscoveryAgent$$$QBluetoothServiceDiscoveryAgentconstQBluetoothAddress&QObject* -->
+<h3 class="fn"><a name="QBluetoothServiceDiscoveryAgent-2"></a>QBluetoothServiceDiscoveryAgent::<span class="name">QBluetoothServiceDiscoveryAgent</span>(const <span class="type"><a href="qbluetoothaddress.html">QBluetoothAddress</a></span> &amp;<i> deviceAdapter</i>, <span class="type"><a href="../qtcore/qobject.html">QObject</a></span> *<i> parent</i> = 0)</h3>
+<p>Constructs a new <a href="qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a> for <i>deviceAdapter</i> and with <i>parent</i>.</p>
+<p>It uses <i>deviceAdapter</i> for the service search. If <i>deviceAdapter</i> is default constructed the resulting <a href="qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a> object will use the local default Bluetooth adapter.</p>
+<p>If a <i>deviceAdapter</i> is specified that is not a local adapter <a href="qbluetoothservicediscoveryagent.html#error">error</a>() will be set to <a href="qbluetoothservicediscoveryagent.html#Error-enum">InvalidBluetoothAdapterError</a>. Therefore it is recommended to test the error flag immediately after using this constructor.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#error">error</a>().</p>
+<!-- @@@QBluetoothServiceDiscoveryAgent -->
+<!-- $$$~QBluetoothServiceDiscoveryAgent[overload1]$$$~QBluetoothServiceDiscoveryAgent -->
+<h3 class="fn"><a name="dtor.QBluetoothServiceDiscoveryAgent"></a>QBluetoothServiceDiscoveryAgent::<span class="name">~QBluetoothServiceDiscoveryAgent</span>()</h3>
+<p>Destructor for <a href="qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a></p>
+<!-- @@@~QBluetoothServiceDiscoveryAgent -->
+<!-- $$$canceled[overload1]$$$canceled -->
+<h3 class="fn"><a name="canceled"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">canceled</span>()<tt> [signal]</tt></h3>
+<p>This signal is triggered when the service discovery was canceled via a call to <a href="qbluetoothservicediscoveryagent.html#stop">stop</a>().</p>
+<!-- @@@canceled -->
+<!-- $$$clear[overload1]$$$clear -->
+<h3 class="fn"><a name="clear"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">clear</span>()<tt> [slot]</tt></h3>
+<p>Clears the results of previous service discoveries and resets <a href="qbluetoothservicediscoveryagent.html#uuidFilter">uuidFilter</a>(). This function does nothing during an ongoing service discovery (see <a href="qbluetoothservicediscoveryagent.html#isActive">isActive</a>()).</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#discoveredServices">discoveredServices</a>().</p>
+<!-- @@@clear -->
+<!-- $$$discoveredServices[overload1]$$$discoveredServices -->
+<h3 class="fn"><a name="discoveredServices"></a><span class="type"><a href="../qtcore/qlist.html">QList</a></span>&lt;<span class="type"><a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></span>&gt; QBluetoothServiceDiscoveryAgent::<span class="name">discoveredServices</span>() const</h3>
+<p>Returns the list of all discovered services.</p>
+<p>This list of services accumulates newly discovered services from multiple calls to <a href="qbluetoothservicediscoveryagent.html#start">start</a>(). Unless <a href="qbluetoothservicediscoveryagent.html#clear">clear</a>() is called the list cannot decrease in size. This implies that if a remote Bluetooth device moves out of range in between two subsequent calls to <a href="qbluetoothservicediscoveryagent.html#start">start</a>() the list may contain stale entries.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#clear">clear</a>().</p>
+<!-- @@@discoveredServices -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn"><a name="error"></a><span class="type"><a href="qbluetoothservicediscoveryagent.html#Error-enum">Error</a></span> QBluetoothServiceDiscoveryAgent::<span class="name">error</span>() const</h3>
+<p>Returns the type of error that last occurred. If the service discovery is done for a single <a href="qbluetoothservicediscoveryagent.html#remoteAddress">remoteAddress</a>() it will return errors that occurred while trying to discover services on that device. If the <a href="qbluetoothservicediscoveryagent.html#remoteAddress">remoteAddress</a>() is not set and devices are discovered by a scan, errors during service discovery on individual devices are not saved and no signals are emitted. In this case, errors are fairly normal as some devices may not respond to discovery or may no longer be in range. Such errors are surpressed. If no services are returned, it can be assumed no services could be discovered.</p>
+<!-- @@@error -->
+<!-- $$$error$$$errorQBluetoothServiceDiscoveryAgent::Error -->
+<h3 class="fn"><a name="error-2"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">error</span>(<span class="type"><a href="qbluetoothservicediscoveryagent.html#Error-enum">QBluetoothServiceDiscoveryAgent::Error</a></span><i> error</i>)<tt> [signal]</tt></h3>
+<p>This signal is emitted when an <i>error</i> occurs. The <i>error</i> parameter describes the error that occurred.</p>
+<!-- @@@error -->
+<!-- $$$errorString[overload1]$$$errorString -->
+<h3 class="fn"><a name="errorString"></a><span class="type"><a href="../qtcore/qstring.html">QString</a></span> QBluetoothServiceDiscoveryAgent::<span class="name">errorString</span>() const</h3>
+<p>Returns a human-readable description of the last error that occurred during the service discovery.</p>
+<!-- @@@errorString -->
+<!-- $$$finished[overload1]$$$finished -->
+<h3 class="fn"><a name="finished"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">finished</span>()<tt> [signal]</tt></h3>
+<p>This signal is emitted when the Bluetooth service discovery completes.</p>
+<p>Unlike the <a href="qbluetoothdevicediscoveryagent.html#finished">QBluetoothDeviceDiscoveryAgent::finished</a>() signal this signal will even be emitted when an error occurred during the service discovery. Therefore it is recommended to check the <a href="qbluetoothservicediscoveryagent.html#error">error</a>() signal to evaluate the success of the service discovery discovery.</p>
+<!-- @@@finished -->
+<!-- $$$isActive[overload1]$$$isActive -->
+<h3 class="fn"><a name="isActive"></a><span class="type">bool</span> QBluetoothServiceDiscoveryAgent::<span class="name">isActive</span>() const</h3>
+<p>Returns <tt>true</tt> if the service discovery is currently active; otherwise returns <tt>false</tt>. An active discovery can be stopped by calling <a href="qbluetoothservicediscoveryagent.html#stop">stop</a>().</p>
+<!-- @@@isActive -->
+<!-- $$$remoteAddress[overload1]$$$remoteAddress -->
+<h3 class="fn"><a name="remoteAddress"></a><span class="type"><a href="qbluetoothaddress.html">QBluetoothAddress</a></span> QBluetoothServiceDiscoveryAgent::<span class="name">remoteAddress</span>() const</h3>
+<p>Returns the remote device address. If <a href="qbluetoothservicediscoveryagent.html#setRemoteAddress">setRemoteAddress</a>() is not called, the function will return a default constructed <a href="qbluetoothaddress.html">QBluetoothAddress</a>.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#setRemoteAddress">setRemoteAddress</a>().</p>
+<!-- @@@remoteAddress -->
+<!-- $$$serviceDiscovered[overload1]$$$serviceDiscoveredconstQBluetoothServiceInfo& -->
+<h3 class="fn"><a name="serviceDiscovered"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">serviceDiscovered</span>(const <span class="type"><a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></span> &amp;<i> info</i>)<tt> [signal]</tt></h3>
+<p>This signal is emitted when the Bluetooth service described by <i>info</i> is discovered.</p>
+<!-- @@@serviceDiscovered -->
+<!-- $$$setRemoteAddress[overload1]$$$setRemoteAddressconstQBluetoothAddress& -->
+<h3 class="fn"><a name="setRemoteAddress"></a><span class="type">bool</span> QBluetoothServiceDiscoveryAgent::<span class="name">setRemoteAddress</span>(const <span class="type"><a href="qbluetoothaddress.html">QBluetoothAddress</a></span> &amp;<i> address</i>)</h3>
+<p>Sets the remote device address to <i>address</i>. If <i>address</i> is default constructed, services will be discovered on all contactable Bluetooth devices. A new remote address can only be set while there is no service discovery in progress; otherwise this function returns false.</p>
+<p>On some platforms such as Blackberry the service discovery might lead to pairing requests. Therefore it is not recommended to do service discoveries on all devices.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#remoteAddress">remoteAddress</a>().</p>
+<!-- @@@setRemoteAddress -->
+<!-- $$$setUuidFilter[overload1]$$$setUuidFilterconstQList<QBluetoothUuid>& -->
+<h3 class="fn"><a name="setUuidFilter"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">setUuidFilter</span>(const <span class="type"><a href="../qtcore/qlist.html">QList</a></span>&lt;<span class="type"><a href="qbluetoothuuid.html">QBluetoothUuid</a></span>&gt; &amp;<i> uuids</i>)</h3>
+<p>Sets the UUID filter to <i>uuids</i>. Only services matching the UUIDs in <i>uuids</i> will be returned.</p>
+<p>An empty UUID list is equivalent to a list containing only <a href="qbluetoothuuid.html#ServiceClassUuid-enum">QBluetoothUuid::PublicBrowseGroup</a>.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#uuidFilter">uuidFilter</a>().</p>
+<!-- @@@setUuidFilter -->
+<!-- $$$setUuidFilter$$$setUuidFilterconstQBluetoothUuid& -->
+<h3 class="fn"><a name="setUuidFilter-2"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">setUuidFilter</span>(const <span class="type"><a href="qbluetoothuuid.html">QBluetoothUuid</a></span> &amp;<i> uuid</i>)</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the UUID filter to a list containing the single element <i>uuid</i>.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#uuidFilter">uuidFilter</a>().</p>
+<!-- @@@setUuidFilter -->
+<!-- $$$start[overload1]$$$startDiscoveryMode -->
+<h3 class="fn"><a name="start"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">start</span>(<span class="type"><a href="qbluetoothservicediscoveryagent.html#DiscoveryMode-enum">DiscoveryMode</a></span><i> mode</i> = MinimalDiscovery)<tt> [slot]</tt></h3>
+<p>Starts service discovery. <i>mode</i> specifies the type of service discovery to perform.</p>
+<p>On BlackBerry devices, device discovery may lead to pairing requests.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#DiscoveryMode-enum">DiscoveryMode</a>.</p>
+<!-- @@@start -->
+<!-- $$$stop[overload1]$$$stop -->
+<h3 class="fn"><a name="stop"></a><span class="type">void</span> QBluetoothServiceDiscoveryAgent::<span class="name">stop</span>()<tt> [slot]</tt></h3>
+<p>Stops the service discovery process. The <a href="qbluetoothservicediscoveryagent.html#canceled">canceled</a>() signal will be emitted once the search has stopped.</p>
+<!-- @@@stop -->
+<!-- $$$uuidFilter[overload1]$$$uuidFilter -->
+<h3 class="fn"><a name="uuidFilter"></a><span class="type"><a href="../qtcore/qlist.html">QList</a></span>&lt;<span class="type"><a href="qbluetoothuuid.html">QBluetoothUuid</a></span>&gt; QBluetoothServiceDiscoveryAgent::<span class="name">uuidFilter</span>() const</h3>
+<p>Returns the UUID filter.</p>
+<p><b>See also </b><a href="qbluetoothservicediscoveryagent.html#setUuidFilter">setUuidFilter</a>().</p>
+<!-- @@@uuidFilter -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

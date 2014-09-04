@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qopenglvertexarrayobject.cpp -->
+  <title>QOpenGLVertexArrayObject Class | QtGui 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QOpenGLVertexArrayObject</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOpenGLVertexArrayObject Class</h1>
+<!-- $$$QOpenGLVertexArrayObject-brief -->
+<p>The QOpenGLVertexArrayObject class wraps an <a href="../qtopengl/opengl-module.html">OpenGL</a> Vertex Array Object. <a href="#details">More...</a></p>
+<!-- @@@QOpenGLVertexArrayObject -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QOpenGLVertexArrayObject&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += gui</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.1</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="../qtcore/qobject.html">QObject</a>.</td></tr></table><ul>
+<li><a href="qopenglvertexarrayobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> class </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject-binder.html">Binder</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#QOpenGLVertexArrayObject">QOpenGLVertexArrayObject</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#dtor.QOpenGLVertexArrayObject">~QOpenGLVertexArrayObject</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#bind">bind</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#create">create</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#destroy">destroy</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#isCreated">isCreated</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> GLuint </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#objectId">objectId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopenglvertexarrayobject.html#release">release</a></b>()</td></tr>
+</table>
+<ul>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QOpenGLVertexArrayObject-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QOpenGLVertexArrayObject class wraps an <a href="../qtopengl/opengl-module.html">OpenGL</a> Vertex Array Object.</p>
+<p>A Vertex Array Object (VAO) is an <a href="../qtopengl/opengl-module.html">OpenGL</a> container object that encapsulates the state needed to specify per-vertex attribute data to the <a href="../qtopengl/opengl-module.html">OpenGL</a> pipeline. To put it another way, a VAO remembers the states of buffer objects (see <a href="qopenglbuffer.html">QOpenGLBuffer</a>) and their associated state (e.g&#x2e; vertex attribute divisors). This allows a very easy and efficient method of switching between <a href="../qtopengl/opengl-module.html">OpenGL</a> buffer states for rendering different &quot;objects&quot; in a scene. The QOpenGLVertexArrayObject class is a thin wrapper around an <a href="../qtopengl/opengl-module.html">OpenGL</a> VAO.</p>
+<p>For the desktop, VAOs are supported as a core feature in <a href="../qtopengl/opengl-module.html">OpenGL</a> 3.0 or newer and by the GL_ARB_vertex_array_object for older versions. On <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2, VAOs are provided by the optional GL_OES_vertex_array_object extension. You can check the version of <a href="../qtopengl/opengl-module.html">OpenGL</a> with QOpenGLContext::surfaceFormat() and check for the presence of extensions with <a href="qopenglcontext.html#hasExtension">QOpenGLContext::hasExtension</a>().</p>
+<p>As with the other Qt <a href="../qtopengl/opengl-module.html">OpenGL</a> classes, QOpenGLVertexArrayObject has a <a href="qopenglvertexarrayobject.html#create">create</a>() function to create the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> object. This is to allow the developer to ensure that there is a valid current <a href="../qtopengl/opengl-module.html">OpenGL</a> context at the time.</p>
+<p>Once you have successfully created a VAO the typical usage pattern is:</p>
+<ul>
+<li>In scene initialization function, for each visual object:<ul>
+<li>Bind the VAO</li>
+<li>Set vertex data state for this visual object (vertices, normals, texture coordinates etc.)</li>
+<li>Unbind (<a href="qopenglvertexarrayobject.html#release">release</a>()) the VAO</li>
+</ul>
+</li>
+<li>In render function, for each visual object:<ul>
+<li>Bind the VAO (and shader program if needed)</li>
+<li>Call a glDraw*() function</li>
+<li>Unbind (<a href="qopenglvertexarrayobject.html#release">release</a>()) the VAO</li>
+</ul>
+</li>
+</ul>
+<p>The act of binding the VAO in the render function has the effect of restoring all of the vertex data state setup in the initialization phase. In this way we can set a great deal of state when setting up a VAO and efficiently switch between state sets of objects to be rendered. Using VAOs also allows the <a href="../qtopengl/opengl-module.html">OpenGL</a> driver to amortise the validation checks of the vertex data.</p>
+<p><b>Note: </b>Vertex Array Objects, like all other <a href="../qtopengl/opengl-module.html">OpenGL</a> container objects, are specific to the context for which they were created and cannot be shared amongst a context group.</p></div>
+<p><b>See also </b><a href="qopenglvertexarrayobject-binder.html">QOpenGLVertexArrayObject::Binder</a> and <a href="qopenglbuffer.html">QOpenGLBuffer</a>.</p>
+<!-- @@@QOpenGLVertexArrayObject -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QOpenGLVertexArrayObject[overload1]$$$QOpenGLVertexArrayObjectQObject* -->
+<h3 class="fn"><a name="QOpenGLVertexArrayObject"></a>QOpenGLVertexArrayObject::<span class="name">QOpenGLVertexArrayObject</span>(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> *<i> parent</i> = 0)</h3>
+<p>Creates a <a href="qopenglvertexarrayobject.html">QOpenGLVertexArrayObject</a> with the given <i>parent</i>. You must call <a href="qopenglvertexarrayobject.html#create">create</a>() with a valid <a href="../qtopengl/opengl-module.html">OpenGL</a> context before using.</p>
+<!-- @@@QOpenGLVertexArrayObject -->
+<!-- $$$~QOpenGLVertexArrayObject[overload1]$$$~QOpenGLVertexArrayObject -->
+<h3 class="fn"><a name="dtor.QOpenGLVertexArrayObject"></a>QOpenGLVertexArrayObject::<span class="name">~QOpenGLVertexArrayObject</span>()</h3>
+<p>Destroys the <a href="qopenglvertexarrayobject.html">QOpenGLVertexArrayObject</a> and the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> resource.</p>
+<!-- @@@~QOpenGLVertexArrayObject -->
+<!-- $$$bind[overload1]$$$bind -->
+<h3 class="fn"><a name="bind"></a><span class="type">void</span> QOpenGLVertexArrayObject::<span class="name">bind</span>()</h3>
+<p>Binds this vertex array object to the <a href="../qtopengl/opengl-module.html">OpenGL</a> binding point. From this point on and until <a href="qopenglvertexarrayobject.html#release">release</a>() is called or another vertex array object is bound, any modifications made to vertex data state are stored inside this vertex array object.</p>
+<p>If another vertex array object is then bound you can later restore the set of state associated with this object by calling bind() on this object once again. This allows efficient changes between vertex data states in rendering functions.</p>
+<!-- @@@bind -->
+<!-- $$$create[overload1]$$$create -->
+<h3 class="fn"><a name="create"></a><span class="type">bool</span> QOpenGLVertexArrayObject::<span class="name">create</span>()</h3>
+<p>Creates the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> vertex array object. There must be a valid <a href="../qtopengl/opengl-module.html">OpenGL</a> context that supports vertex array objects current for this function to succeed.</p>
+<p>Returns <tt>true</tt> if the <a href="../qtopengl/opengl-module.html">OpenGL</a> vertex array object was successfully created.</p>
+<!-- @@@create -->
+<!-- $$$destroy[overload1]$$$destroy -->
+<h3 class="fn"><a name="destroy"></a><span class="type">void</span> QOpenGLVertexArrayObject::<span class="name">destroy</span>()</h3>
+<p>Destroys the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> vertex array object. There must be a valid <a href="../qtopengl/opengl-module.html">OpenGL</a> context that supports vertex array objects current for this function to succeed.</p>
+<!-- @@@destroy -->
+<!-- $$$isCreated[overload1]$$$isCreated -->
+<h3 class="fn"><a name="isCreated"></a><span class="type">bool</span> QOpenGLVertexArrayObject::<span class="name">isCreated</span>() const</h3>
+<p>Returns <tt>true</tt> is the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> vertex array object has been created. If this returns <tt>true</tt> and the associated <a href="../qtopengl/opengl-module.html">OpenGL</a> context is current, then you are able to <a href="qopenglvertexarrayobject.html#bind">bind</a>() this object.</p>
+<!-- @@@isCreated -->
+<!-- $$$objectId[overload1]$$$objectId -->
+<h3 class="fn"><a name="objectId"></a><span class="type">GLuint</span> QOpenGLVertexArrayObject::<span class="name">objectId</span>() const</h3>
+<p>Returns the id of the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> vertex array object.</p>
+<!-- @@@objectId -->
+<!-- $$$release[overload1]$$$release -->
+<h3 class="fn"><a name="release"></a><span class="type">void</span> QOpenGLVertexArrayObject::<span class="name">release</span>()</h3>
+<p>Unbinds this vertex array object by binding the default vertex array object (id = 0).</p>
+<!-- @@@release -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

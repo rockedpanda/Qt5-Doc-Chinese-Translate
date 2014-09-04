@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qwebsocketprotocol.cpp -->
+  <title>QWebSocketProtocol Namespace | QtWebSockets 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtwebsockets-index.html">Qt WebSockets</a></li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#types">Types</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QWebSocketProtocol Namespace</h1>
+<!-- $$$QWebSocketProtocol-brief -->
+<p>Contains constants related to the <a href="qml-qt-websockets-websocket.html">WebSocket</a> standard. <a href="#details">More...</a></p>
+<!-- @@@QWebSocketProtocol -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QWebSocketProtocol&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += websockets</tt></td></tr></table><ul>
+</ul>
+<a name="types"></a>
+<h2>Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qwebsocketprotocol.html#CloseCode-enum">CloseCode</a></b> { CloseCodeNormal, CloseCodeGoingAway, CloseCodeProtocolError, CloseCodeDatatypeNotSupported, ..., CloseCodeTlsHandshakeFailed }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qwebsocketprotocol.html#Version-enum">Version</a></b> { VersionUnknown, Version0, Version4, Version5, ..., VersionLatest }</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QWebSocketProtocol-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>Contains constants related to the <a href="qml-qt-websockets-websocket.html">WebSocket</a> standard.</p>
+</div>
+<!-- @@@QWebSocketProtocol -->
+<div class="types">
+<h2>Type Documentation</h2>
+<!-- $$$CloseCode$$$CloseCodeNormal$$$CloseCodeGoingAway$$$CloseCodeProtocolError$$$CloseCodeDatatypeNotSupported$$$CloseCodeReserved1004$$$CloseCodeMissingStatusCode$$$CloseCodeAbnormalDisconnection$$$CloseCodeWrongDatatype$$$CloseCodePolicyViolated$$$CloseCodeTooMuchData$$$CloseCodeMissingExtension$$$CloseCodeBadOperation$$$CloseCodeTlsHandshakeFailed -->
+<h3 class="fn"><a name="CloseCode-enum"></a>enum QWebSocketProtocol::<span class="name">CloseCode</span></h3>
+<p>The close codes supported by WebSockets V13</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeNormal</tt></td><td class="topAlign"><tt>1000</tt></td><td class="topAlign">Normal closure</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeGoingAway</tt></td><td class="topAlign"><tt>1001</tt></td><td class="topAlign">Going away</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeProtocolError</tt></td><td class="topAlign"><tt>1002</tt></td><td class="topAlign">Protocol error</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeDatatypeNotSupported</tt></td><td class="topAlign"><tt>1003</tt></td><td class="topAlign">Unsupported data</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeReserved1004</tt></td><td class="topAlign"><tt>1004</tt></td><td class="topAlign">Reserved</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeMissingStatusCode</tt></td><td class="topAlign"><tt>1005</tt></td><td class="topAlign">No status received</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeAbnormalDisconnection</tt></td><td class="topAlign"><tt>1006</tt></td><td class="topAlign">Abnormal closure</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeWrongDatatype</tt></td><td class="topAlign"><tt>1007</tt></td><td class="topAlign">Invalid frame payload data</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodePolicyViolated</tt></td><td class="topAlign"><tt>1008</tt></td><td class="topAlign">Policy violation</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeTooMuchData</tt></td><td class="topAlign"><tt>1009</tt></td><td class="topAlign">Message too big</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeMissingExtension</tt></td><td class="topAlign"><tt>1010</tt></td><td class="topAlign">Mandatory extension missing</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeBadOperation</tt></td><td class="topAlign"><tt>1011</tt></td><td class="topAlign">Internal server error</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::CloseCodeTlsHandshakeFailed</tt></td><td class="topAlign"><tt>1015</tt></td><td class="topAlign">TLS handshake failed</td></tr>
+</table>
+<p><b>See also </b><a href="qwebsocket.html#close">QWebSocket::close</a>().</p>
+<!-- @@@CloseCode -->
+<!-- $$$Version$$$VersionUnknown$$$Version0$$$Version4$$$Version5$$$Version6$$$Version7$$$Version8$$$Version13$$$VersionLatest -->
+<h3 class="fn"><a name="Version-enum"></a>enum QWebSocketProtocol::<span class="name">Version</span></h3>
+<p>The different defined versions of the <a href="qml-qt-websockets-websocket.html">WebSocket</a> protocol.</p>
+<p>For an overview of the differences between the different protocols, see &lt;http://code.google.com/p/pywebsocket/wiki/WebSocketProtocolSpec&gt;</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::VersionUnknown</tt></td><td class="topAlign"><tt>-1</tt></td><td class="topAlign">Unknown or unspecified version.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version0</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">hixie76: http://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-76 &amp; hybi-00: http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-00. Works with key1, key2 and a key in the payload. Attribute: Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Draft value 0. Not supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version4</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">hybi-04: http://tools.ietf.org/id/draft-ietf-hybi-thewebsocketprotocol-04.txt. Changed handshake: key1, key2, key3 ==&gt; Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Key, Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Nonce, Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Accept Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Draft renamed to Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Version Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Version = 4. Not supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version5</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">hybi-05: http://tools.ietf.org/id/draft-ietf-hybi-thewebsocketprotocol-05.txt. Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Version = 5 Removed Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Nonce Added Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Accept. Not supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version6</tt></td><td class="topAlign"><tt>6</tt></td><td class="topAlign">Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Version = 6. Not supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version7</tt></td><td class="topAlign"><tt>7</tt></td><td class="topAlign">hybi-07: http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-07. Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Version = 7. Not supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version8</tt></td><td class="topAlign"><tt>8</tt></td><td class="topAlign">hybi-8, hybi-9, hybi-10, hybi-11 and hybi-12. Status codes 1005 and 1006 are added and all codes are now unsigned Internal error results in 1006. Not supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::Version13</tt></td><td class="topAlign"><tt>13</tt></td><td class="topAlign">hybi-13, hybi14, hybi-15, hybi-16, hybi-17 and RFC 6455. Sec-<a href="qml-qt-websockets-websocket.html">WebSocket</a>-Version = 13 Status code 1004 is now reserved Added 1008, 1009 and 1010 Must support TLS Clarify multiple version support. Supported by <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+<tr><td class="topAlign"><tt>QWebSocketProtocol::VersionLatest</tt></td><td class="topAlign"><tt>Version13</tt></td><td class="topAlign">Refers to the latest known version to <a href="qtwebsockets-module.html">QtWebSockets</a>.</td></tr>
+</table>
+<!-- @@@Version -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

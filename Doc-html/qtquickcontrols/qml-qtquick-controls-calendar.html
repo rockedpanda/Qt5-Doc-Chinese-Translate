@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Calendar.qml -->
+  <title>Calendar QML Type | QtQuickControls 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtquickcontrols-index.html">Qt Quick Controls</a></li>
+<li><a href="qtquick-controls-qmlmodule.html">QML Types</a></li>
+<li>Calendar QML Type</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">Calendar QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Calendar-brief -->
+<p>Provides a way to select dates from a calendar <a href="#details">More...</a></p>
+<!-- @@@Calendar -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> </b><tt>import QtQuick.Controls 1.2</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.3</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="../qtquick/qml-qtquick-focusscope.html">FocusScope</a></p>
+</td></tr></table><ul>
+<li><a href="qml-qtquick-controls-calendar-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#dayOfWeekFormat-prop">dayOfWeekFormat</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#frameVisible-prop">frameVisible</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#maximumDate-prop">maximumDate</a></b></b> : date</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#minimumDate-prop">minimumDate</a></b></b> : date</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#selectedDate-prop">selectedDate</a></b></b> : date</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#style-prop">style</a></b></b> : Component</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#visibleMonth-prop">visibleMonth</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#visibleYear-prop">visibleYear</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#weekNumbersVisible-prop">weekNumbersVisible</a></b></b> : bool</li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#clicked-signal">clicked</a></b></b>(date <i>date</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#doubleClicked-signal">doubleClicked</a></b></b>(date <i>date</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#hovered-signal">hovered</a></b></b>(date <i>date</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#pressed-signal">pressed</a></b></b>(date <i>date</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#released-signal">released</a></b></b>(date <i>date</i>)</li>
+</ul>
+<a name="methods"></a>
+<h2>Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#showNextMonth-method">showNextMonth</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#showNextYear-method">showNextYear</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#showPreviousMonth-method">showPreviousMonth</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls-calendar.html#showPreviousYear-method">showPreviousYear</a></b></b>()</li>
+</ul>
+<!-- $$$Calendar-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>Calendar allows selection of dates from a grid of days, similar to <a href="../qtwidgets/qcalendarwidget.html">QCalendarWidget</a>.</p>
+<p>The dates on the calendar can be selected with the mouse, or navigated with the keyboard.</p>
+<p>The selected date can be set through <a href="qml-qtquick-controls-calendar.html#selectedDate-prop">selectedDate</a>. A minimum and maximum date can be set through <a href="qml-qtquick-controls-calendar.html#minimumDate-prop">minimumDate</a> and <a href="qml-qtquick-controls-calendar.html#maximumDate-prop">maximumDate</a>. The earliest minimum date that can be set is 1 January, 1 AD. The latest maximum date that can be set is 25 October, 275759 AD.</p>
+<p>The selected date is displayed using the format in the application's default locale.</p>
+<p>Week numbers can be displayed by setting the <a href="qml-qtquick-controls-calendar.html#weekNumbersVisible-prop">weekNumbersVisible</a> property to <tt>true</tt>.</p>
+<p>You can create a custom appearance for Calendar by assigning a <a href="qml-qtquick-controls-styles-calendarstyle.html">CalendarStyle</a>.</p>
+<!-- @@@Calendar -->
+<h2>Property Documentation</h2>
+<!-- $$$dayOfWeekFormat -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="dayOfWeekFormat-prop"></a><span class="name">dayOfWeekFormat</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr></table></div><div class="qmldoc"><p>The format in which the days of the week (in the header) are displayed.</p>
+<p><tt>Locale.ShortFormat</tt> is the default and recommended format, as <tt>Locale.NarrowFormat</tt> may not be fully supported by each locale (see <a href="../qtqml/qml-qtqml-locale.html#locale-string-format-types">Locale String Format Types</a>) and <tt>Locale.LongFormat</tt> may not fit within the header cells.</p>
+</div></div><!-- @@@dayOfWeekFormat -->
+<br/>
+<!-- $$$frameVisible -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="frameVisible-prop"></a><span class="name">frameVisible</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property determines the visibility of the frame surrounding the calendar.</p>
+<p>The default value is <tt>true</tt>.</p>
+</div></div><!-- @@@frameVisible -->
+<br/>
+<!-- $$$maximumDate -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="maximumDate-prop"></a><span class="name">maximumDate</span> : <span class="type"><a href="../qtqml/qml-date.html">date</a></span></p></td></tr></table></div><div class="qmldoc"><p>The latest date that this calendar will accept.</p>
+<p>By default, this property is set to the latest maximum date (25 October, 275759 AD).</p>
+</div></div><!-- @@@maximumDate -->
+<br/>
+<!-- $$$minimumDate -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="minimumDate-prop"></a><span class="name">minimumDate</span> : <span class="type"><a href="../qtqml/qml-date.html">date</a></span></p></td></tr></table></div><div class="qmldoc"><p>The earliest date that this calendar will accept.</p>
+<p>By default, this property is set to the earliest minimum date (1 January, 1 AD).</p>
+</div></div><!-- @@@minimumDate -->
+<br/>
+<!-- $$$selectedDate -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="selectedDate-prop"></a><span class="name">selectedDate</span> : <span class="type"><a href="../qtqml/qml-date.html">date</a></span></p></td></tr></table></div><div class="qmldoc"><p>The date that has been selected by the user.</p>
+<p>This property is subject to the following validation:</p>
+<ul>
+<li>If selectedDate is outside the range of <a href="qml-qtquick-controls-calendar.html#minimumDate-prop">minimumDate</a> and <a href="qml-qtquick-controls-calendar.html#maximumDate-prop">maximumDate</a>, it will be clamped to be within that range.</li>
+<li>selectedDate will not be changed if <tt>undefined</tt> or some other invalid value is assigned.</li>
+<li>If there are hours, minutes, seconds or milliseconds set, they will be removed.</li>
+</ul>
+<p>The default value is the current date, which is equivalent to:</p>
+<pre class="cpp"><span class="keyword">new</span> Date()</pre>
+</div></div><!-- @@@selectedDate -->
+<br/>
+<!-- $$$style -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="style-prop"></a><span class="name">style</span> : <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span></p></td></tr></table></div><div class="qmldoc"><p>The style Component for this control.</p>
+<p><b>See also </b><a href="qtquick-controls-styles-qmlmodule.html">Qt Quick Controls Styles QML Types</a>.</p>
+</div></div><!-- @@@style -->
+<br/>
+<!-- $$$visibleMonth -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="visibleMonth-prop"></a><span class="name">visibleMonth</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property determines which month in <a href="qml-qtquick-controls-calendar.html#visibleYear-prop">visibleYear</a> is shown on the calendar.</p>
+<p>The month is from <tt>0</tt> to <tt>11</tt> to be consistent with the JavaScript Date object.</p>
+<p><b>See also </b><a href="qml-qtquick-controls-calendar.html#visibleYear-prop">visibleYear</a>.</p>
+</div></div><!-- @@@visibleMonth -->
+<br/>
+<!-- $$$visibleYear -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="visibleYear-prop"></a><span class="name">visibleYear</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property determines which year is shown on the calendar.</p>
+<p><b>See also </b><a href="qml-qtquick-controls-calendar.html#visibleMonth-prop">visibleMonth</a>.</p>
+</div></div><!-- @@@visibleYear -->
+<br/>
+<!-- $$$weekNumbersVisible -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlPropNode"><p><a name="weekNumbersVisible-prop"></a><span class="name">weekNumbersVisible</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr></table></div><div class="qmldoc"><p>This property determines the visibility of week numbers.</p>
+<p>The default value is <tt>false</tt>.</p>
+</div></div><!-- @@@weekNumbersVisible -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$clicked -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="clicked-signal"></a><span class="name">clicked</span>(<span class="type"><a href="../qtqml/qml-date.html">date</a></span><i> date</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when the mouse is clicked on a valid date in the calendar.</p>
+<p><i>date</i> is the date that the mouse was clicked on.</p>
+<p>The corresponding handler is <tt>onClicked</tt>.</p>
+</div></div><!-- @@@clicked -->
+<br/>
+<!-- $$$doubleClicked -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="doubleClicked-signal"></a><span class="name">doubleClicked</span>(<span class="type"><a href="../qtqml/qml-date.html">date</a></span><i> date</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when the mouse is double-clicked on a valid date in the calendar.</p>
+<p><i>date</i> is the date that the mouse was double-clicked on.</p>
+<p>The corresponding handler is <tt>onDoubleClicked</tt>.</p>
+</div></div><!-- @@@doubleClicked -->
+<br/>
+<!-- $$$hovered -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="hovered-signal"></a><span class="name">hovered</span>(<span class="type"><a href="../qtqml/qml-date.html">date</a></span><i> date</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when the mouse hovers over a valid date in the calendar.</p>
+<p><i>date</i> is the date that was hovered over.</p>
+<p>The corresponding handler is <tt>onHovered</tt>.</p>
+</div></div><!-- @@@hovered -->
+<br/>
+<!-- $$$pressed -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="pressed-signal"></a><span class="name">pressed</span>(<span class="type"><a href="../qtqml/qml-date.html">date</a></span><i> date</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when the mouse is pressed on a valid date in the calendar.</p>
+<p>This is also emitted when dragging the mouse to another date while it is pressed.</p>
+<p><i>date</i> is the date that the mouse was pressed on.</p>
+<p>The corresponding handler is <tt>onPressed</tt>.</p>
+</div></div><!-- @@@pressed -->
+<br/>
+<!-- $$$released -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="released-signal"></a><span class="name">released</span>(<span class="type"><a href="../qtqml/qml-date.html">date</a></span><i> date</i>)</p></td></tr></table></div><div class="qmldoc"><p>Emitted when the mouse is released over a valid date in the calendar.</p>
+<p><i>date</i> is the date that the mouse was released over.</p>
+<p>The corresponding handler is <tt>onReleased</tt>.</p>
+</div></div><!-- @@@released -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$showNextMonth -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="showNextMonth-method"></a><span class="name">showNextMonth</span>()</p></td></tr></table></div><div class="qmldoc"><p>Sets <a href="qml-qtquick-controls-calendar.html#visibleMonth-prop">visibleMonth</a> to the next month.</p>
+</div></div><!-- @@@showNextMonth -->
+<br/>
+<!-- $$$showNextYear -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="showNextYear-method"></a><span class="name">showNextYear</span>()</p></td></tr></table></div><div class="qmldoc"><p>Sets <a href="qml-qtquick-controls-calendar.html#visibleYear-prop">visibleYear</a> to the next year.</p>
+</div></div><!-- @@@showNextYear -->
+<br/>
+<!-- $$$showPreviousMonth -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="showPreviousMonth-method"></a><span class="name">showPreviousMonth</span>()</p></td></tr></table></div><div class="qmldoc"><p>Sets <a href="qml-qtquick-controls-calendar.html#visibleMonth-prop">visibleMonth</a> to the previous month.</p>
+</div></div><!-- @@@showPreviousMonth -->
+<br/>
+<!-- $$$showPreviousYear -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr valign="top" class="odd"><td class="tblQmlFuncNode"><p><a name="showPreviousYear-method"></a><span class="name">showPreviousYear</span>()</p></td></tr></table></div><div class="qmldoc"><p>Sets <a href="qml-qtquick-controls-calendar.html#visibleYear-prop">visibleYear</a> to the previous year.</p>
+</div></div><!-- @@@showPreviousYear -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
