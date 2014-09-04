@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qaccessible.cpp -->
+  <title>QAccessibleTableModelChangeEvent Class | QtGui 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QAccessibleTableModelChangeEvent</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QAccessibleTableModelChangeEvent Class</h1>
+<!-- $$$QAccessibleTableModelChangeEvent-brief -->
+<p>The QAccessibleTableModelChangeEvent signifies a change in a table, list, or tree where cells are added or removed. If the change affected a number of rows, firstColumn and lastColumn will return -1. Likewise for columns, the row functions may return -1. <a href="#details">More...</a></p>
+<!-- @@@QAccessibleTableModelChangeEvent -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QAccessibleTableModelChangeEvent&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += gui</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qaccessibleevent.html">QAccessibleEvent</a>.</td></tr></table><ul>
+<li><a href="qaccessibletablemodelchangeevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#ModelChangeType-enum">ModelChangeType</a></b> { ModelReset, DataChanged, RowsInserted, ColumnsInserted, RowsRemoved, ColumnsRemoved }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#QAccessibleTableModelChangeEvent">QAccessibleTableModelChangeEvent</a></b>(QObject *<i> object</i>, ModelChangeType<i> changeType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#QAccessibleTableModelChangeEvent-2">QAccessibleTableModelChangeEvent</a></b>(QAccessibleInterface *<i> iface</i>, ModelChangeType<i> changeType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#firstColumn">firstColumn</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#firstRow">firstRow</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#lastColumn">lastColumn</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#lastRow">lastRow</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ModelChangeType </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#modelChangeType">modelChangeType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#setFirstColumn">setFirstColumn</a></b>(int<i> column</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#setFirstRow">setFirstRow</a></b>(int<i> row</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#setLastColumn">setLastColumn</a></b>(int<i> column</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#setLastRow">setLastRow</a></b>(int<i> row</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qaccessibletablemodelchangeevent.html#setModelChangeType">setModelChangeType</a></b>(ModelChangeType<i> changeType</i>)</td></tr>
+</table>
+<ul>
+<li class="fn">5 public functions inherited from <a href="qaccessibleevent.html#public-functions">QAccessibleEvent</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QAccessibleTableModelChangeEvent-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QAccessibleTableModelChangeEvent signifies a change in a table, list, or tree where cells are added or removed. If the change affected a number of rows, firstColumn and lastColumn will return -1. Likewise for columns, the row functions may return -1.</p>
+<p>This class is used with <a href="qaccessible.html#updateAccessibility">QAccessible::updateAccessibility</a>().</p>
+</div>
+<!-- @@@QAccessibleTableModelChangeEvent -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$ModelChangeType$$$ModelReset$$$DataChanged$$$RowsInserted$$$ColumnsInserted$$$RowsRemoved$$$ColumnsRemoved -->
+<h3 class="fn"><a name="ModelChangeType-enum"></a>enum QAccessibleTableModelChangeEvent::<span class="name">ModelChangeType</span></h3>
+<p>This enum describes different types of changes in the table model.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QAccessibleTableModelChangeEvent::ModelReset</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">The model has been reset, all previous knowledge about the model is now invalid.</td></tr>
+<tr><td class="topAlign"><tt>QAccessibleTableModelChangeEvent::DataChanged</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">No cells have been added or removed, but the data of the specified cell range is invalid.</td></tr>
+<tr><td class="topAlign"><tt>QAccessibleTableModelChangeEvent::RowsInserted</tt></td><td class="topAlign"><tt>2</tt></td><td class="topAlign">New rows have been inserted.</td></tr>
+<tr><td class="topAlign"><tt>QAccessibleTableModelChangeEvent::ColumnsInserted</tt></td><td class="topAlign"><tt>3</tt></td><td class="topAlign">New columns have been inserted.</td></tr>
+<tr><td class="topAlign"><tt>QAccessibleTableModelChangeEvent::RowsRemoved</tt></td><td class="topAlign"><tt>4</tt></td><td class="topAlign">Rows have been removed.</td></tr>
+<tr><td class="topAlign"><tt>QAccessibleTableModelChangeEvent::ColumnsRemoved</tt></td><td class="topAlign"><tt>5</tt></td><td class="topAlign">Columns have been removed.</td></tr>
+</table>
+<!-- @@@ModelChangeType -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QAccessibleTableModelChangeEvent[overload1]$$$QAccessibleTableModelChangeEventQObject*ModelChangeType -->
+<h3 class="fn"><a name="QAccessibleTableModelChangeEvent"></a>QAccessibleTableModelChangeEvent::<span class="name">QAccessibleTableModelChangeEvent</span>(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> *<i> object</i>, <span class="type"><a href="qaccessibletablemodelchangeevent.html#ModelChangeType-enum">ModelChangeType</a></span><i> changeType</i>)</h3>
+<p>Constructs a new <a href="qaccessibletablemodelchangeevent.html">QAccessibleTableModelChangeEvent</a> for <i>object</i> of with <i>changeType</i>.</p>
+<!-- @@@QAccessibleTableModelChangeEvent -->
+<!-- $$$QAccessibleTableModelChangeEvent$$$QAccessibleTableModelChangeEventQAccessibleInterface*ModelChangeType -->
+<h3 class="fn"><a name="QAccessibleTableModelChangeEvent-2"></a>QAccessibleTableModelChangeEvent::<span class="name">QAccessibleTableModelChangeEvent</span>(<span class="type"><a href="qaccessibleinterface.html">QAccessibleInterface</a></span> *<i> iface</i>, <span class="type"><a href="qaccessibletablemodelchangeevent.html#ModelChangeType-enum">ModelChangeType</a></span><i> changeType</i>)</h3>
+<!-- @@@QAccessibleTableModelChangeEvent -->
+<!-- $$$firstColumn[overload1]$$$firstColumn -->
+<h3 class="fn"><a name="firstColumn"></a><span class="type">int</span> QAccessibleTableModelChangeEvent::<span class="name">firstColumn</span>() const</h3>
+<p>Returns the first changed column.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#setFirstColumn">setFirstColumn</a>().</p>
+<!-- @@@firstColumn -->
+<!-- $$$firstRow[overload1]$$$firstRow -->
+<h3 class="fn"><a name="firstRow"></a><span class="type">int</span> QAccessibleTableModelChangeEvent::<span class="name">firstRow</span>() const</h3>
+<p>Returns the first changed row.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#setFirstRow">setFirstRow</a>().</p>
+<!-- @@@firstRow -->
+<!-- $$$lastColumn[overload1]$$$lastColumn -->
+<h3 class="fn"><a name="lastColumn"></a><span class="type">int</span> QAccessibleTableModelChangeEvent::<span class="name">lastColumn</span>() const</h3>
+<p>Returns the last changed column.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#setLastColumn">setLastColumn</a>().</p>
+<!-- @@@lastColumn -->
+<!-- $$$lastRow[overload1]$$$lastRow -->
+<h3 class="fn"><a name="lastRow"></a><span class="type">int</span> QAccessibleTableModelChangeEvent::<span class="name">lastRow</span>() const</h3>
+<p>Returns the last changed row.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#setLastRow">setLastRow</a>().</p>
+<!-- @@@lastRow -->
+<!-- $$$modelChangeType[overload1]$$$modelChangeType -->
+<h3 class="fn"><a name="modelChangeType"></a><span class="type"><a href="qaccessibletablemodelchangeevent.html#ModelChangeType-enum">ModelChangeType</a></span> QAccessibleTableModelChangeEvent::<span class="name">modelChangeType</span>() const</h3>
+<p>Returns the type of change.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#setModelChangeType">setModelChangeType</a>().</p>
+<!-- @@@modelChangeType -->
+<!-- $$$setFirstColumn[overload1]$$$setFirstColumnint -->
+<h3 class="fn"><a name="setFirstColumn"></a><span class="type">void</span> QAccessibleTableModelChangeEvent::<span class="name">setFirstColumn</span>(<span class="type">int</span><i> column</i>)</h3>
+<p>Sets the first changed <i>column</i>.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#firstColumn">firstColumn</a>().</p>
+<!-- @@@setFirstColumn -->
+<!-- $$$setFirstRow[overload1]$$$setFirstRowint -->
+<h3 class="fn"><a name="setFirstRow"></a><span class="type">void</span> QAccessibleTableModelChangeEvent::<span class="name">setFirstRow</span>(<span class="type">int</span><i> row</i>)</h3>
+<p>Sets the first changed <i>row</i>.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#firstRow">firstRow</a>().</p>
+<!-- @@@setFirstRow -->
+<!-- $$$setLastColumn[overload1]$$$setLastColumnint -->
+<h3 class="fn"><a name="setLastColumn"></a><span class="type">void</span> QAccessibleTableModelChangeEvent::<span class="name">setLastColumn</span>(<span class="type">int</span><i> column</i>)</h3>
+<p>Sets the last changed <i>column</i>.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#lastColumn">lastColumn</a>().</p>
+<!-- @@@setLastColumn -->
+<!-- $$$setLastRow[overload1]$$$setLastRowint -->
+<h3 class="fn"><a name="setLastRow"></a><span class="type">void</span> QAccessibleTableModelChangeEvent::<span class="name">setLastRow</span>(<span class="type">int</span><i> row</i>)</h3>
+<p>Sets the last changed <i>row</i>.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#lastRow">lastRow</a>().</p>
+<!-- @@@setLastRow -->
+<!-- $$$setModelChangeType[overload1]$$$setModelChangeTypeModelChangeType -->
+<h3 class="fn"><a name="setModelChangeType"></a><span class="type">void</span> QAccessibleTableModelChangeEvent::<span class="name">setModelChangeType</span>(<span class="type"><a href="qaccessibletablemodelchangeevent.html#ModelChangeType-enum">ModelChangeType</a></span><i> changeType</i>)</h3>
+<p>Sets the type of change to <i>changeType</i>.</p>
+<p><b>See also </b><a href="qaccessibletablemodelchangeevent.html#modelChangeType">modelChangeType</a>().</p>
+<!-- @@@setModelChangeType -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qopengltexture.cpp -->
+  <title>QOpenGLTexture Class | QtGui 5.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.3</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QOpenGLTexture</li>
+<li id="buildversion">
+Qt 5.3.1 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOpenGLTexture Class</h1>
+<!-- $$$QOpenGLTexture-brief -->
+<p>The QOpenGLTexture class encapsulates an <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object. <a href="#details">More...</a></p>
+<!-- @@@QOpenGLTexture -->
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> </b><tt><span class="preprocessor">#include &lt;QOpenGLTexture&gt;</span>
+</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> <tt>QT += gui</tt></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.2</td></tr></table><ul>
+<li><a href="qopengltexture-members.html">List of all members, including inherited members</a></li>
+<li><a href="qopengltexture-compat.html">Compatibility members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#BindingTarget-enum">BindingTarget</a></b> { BindingTarget1D, BindingTarget1DArray, BindingTarget2D, BindingTarget2DArray, ..., BindingTargetBuffer }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#CoordinateDirection-enum">CoordinateDirection</a></b> { DirectionS, DirectionT, DirectionR }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#CubeMapFace-enum">CubeMapFace</a></b> { CubeMapPositiveX, CubeMapNegativeX, CubeMapPositiveY, CubeMapNegativeY, CubeMapPositiveZ, CubeMapNegativeZ }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#DepthStencilMode-enum">DepthStencilMode</a></b> { DepthMode, StencilMode }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#Feature-enum">Feature</a></b> { ImmutableStorage, ImmutableMultisampleStorage, TextureRectangle, TextureArrays, ..., Texture1D }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#Feature-enum">Features</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#Filter-enum">Filter</a></b> { Nearest, Linear, NearestMipMapNearest, NearestMipMapLinear, LinearMipMapNearest, LinearMipMapLinear }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#MipMapGeneration-enum">MipMapGeneration</a></b> { GenerateMipMaps, DontGenerateMipMaps }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#PixelFormat-enum">PixelFormat</a></b> { NoSourceFormat, Red, RG, RGB, ..., LuminanceAlpha }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#PixelType-enum">PixelType</a></b> { NoPixelType, Int8, UInt8, Int16, ..., UInt32_RGB10A2_Rev }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#SwizzleComponent-enum">SwizzleComponent</a></b> { SwizzleRed, SwizzleGreen, SwizzleBlue, SwizzleAlpha }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></b> { RedValue, GreenValue, BlueValue, AlphaValue, ZeroValue, OneValue }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#Target-enum">Target</a></b> { Target1D, Target1DArray, Target2D, Target2DArray, ..., TargetBuffer }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#TextureFormat-enum">TextureFormat</a></b> { NoFormat, R8_UNorm, RG8_UNorm, RGB8_UNorm, ..., LuminanceAlphaFormat }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#TextureUnitReset-enum">TextureUnitReset</a></b> { ResetTextureUnit, DontResetTextureUnit }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#WrapMode-enum">WrapMode</a></b> { Repeat, MirroredRepeat, ClampToEdge, ClampToBorder }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#QOpenGLTexture">QOpenGLTexture</a></b>(Target<i> target</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#QOpenGLTexture-2">QOpenGLTexture</a></b>(const QImage &amp;<i> image</i>, MipMapGeneration<i> genMipMaps</i> = GenerateMipMaps)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#dtor.QOpenGLTexture">~QOpenGLTexture</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#allocateStorage">allocateStorage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#bind">bind</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#bind-2">bind</a></b>(uint<i> unit</i>, TextureUnitReset<i> reset</i> = DontResetTextureUnit)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QColor </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#borderColor">borderColor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#borderColor-2">borderColor</a></b>(float *<i> border</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#borderColor-3">borderColor</a></b>(int *<i> border</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#borderColor-4">borderColor</a></b>(unsigned int *<i> border</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#create">create</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOpenGLTexture * </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#createTextureView">createTextureView</a></b>(Target<i> target</i>, TextureFormat<i> viewFormat</i>, int<i> minimumMipmapLevel</i>, int<i> maximumMipmapLevel</i>, int<i> minimumLayer</i>, int<i> maximumLayer</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#depth">depth</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> DepthStencilMode </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#depthStencilMode">depthStencilMode</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#destroy">destroy</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#faces">faces</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> TextureFormat </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#format">format</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#generateMipMaps">generateMipMaps</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#generateMipMaps-2">generateMipMaps</a></b>(int<i> baseLevel</i>, bool<i> resetBaseLevel</i> = true)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#height">height</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#isAutoMipMapGenerationEnabled">isAutoMipMapGenerationEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#isBound">isBound</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#isBound-2">isBound</a></b>(uint<i> unit</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#isCreated">isCreated</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#isStorageAllocated">isStorageAllocated</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#isTextureView">isTextureView</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#layers">layers</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPair&lt;float, float&gt; </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> float </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#levelofDetailBias">levelofDetailBias</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Filter </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#magnificationFilter">magnificationFilter</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> float </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#maximumAnisotropy">maximumAnisotropy</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> float </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#maximumMipLevels">maximumMipLevels</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPair&lt;Filter, Filter&gt; </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#minMagFilters">minMagFilters</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Filter </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#minificationFilter">minificationFilter</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> float </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#mipBaseLevel">mipBaseLevel</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPair&lt;int, int&gt; </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#mipLevelRange">mipLevelRange</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#mipLevels">mipLevels</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#mipMaxLevel">mipMaxLevel</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#release">release</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#release-2">release</a></b>(uint<i> unit</i>, TextureUnitReset<i> reset</i> = DontResetTextureUnit)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a></b>(bool<i> enabled</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setBorderColor">setBorderColor</a></b>(QColor<i> color</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setBorderColor-2">setBorderColor</a></b>(float<i> r</i>, float<i> g</i>, float<i> b</i>, float<i> a</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setBorderColor-3">setBorderColor</a></b>(int<i> r</i>, int<i> g</i>, int<i> b</i>, int<i> a</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setBorderColor-4">setBorderColor</a></b>(uint<i> r</i>, uint<i> g</i>, uint<i> b</i>, uint<i> a</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setCompressedData">setCompressedData</a></b>(int<i> mipLevel</i>, int<i> layer</i>, CubeMapFace<i> cubeFace</i>, int<i> dataSize</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setCompressedData-2">setCompressedData</a></b>(int<i> mipLevel</i>, int<i> layer</i>, int<i> dataSize</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setCompressedData-3">setCompressedData</a></b>(int<i> mipLevel</i>, int<i> dataSize</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setCompressedData-4">setCompressedData</a></b>(int<i> dataSize</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setData">setData</a></b>(int<i> mipLevel</i>, int<i> layer</i>, CubeMapFace<i> cubeFace</i>, PixelFormat<i> sourceFormat</i>, PixelType<i> sourceType</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setData-2">setData</a></b>(int<i> mipLevel</i>, int<i> layer</i>, PixelFormat<i> sourceFormat</i>, PixelType<i> sourceType</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setData-3">setData</a></b>(int<i> mipLevel</i>, PixelFormat<i> sourceFormat</i>, PixelType<i> sourceType</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setData-4">setData</a></b>(PixelFormat<i> sourceFormat</i>, PixelType<i> sourceType</i>, const void *<i> data</i>, const QOpenGLPixelTransferOptions * const<i> options</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setData-9">setData</a></b>(const QImage &amp;<i> image</i>, MipMapGeneration<i> genMipMaps</i> = GenerateMipMaps)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setDepthStencilMode">setDepthStencilMode</a></b>(DepthStencilMode<i> mode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setFormat">setFormat</a></b>(TextureFormat<i> format</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setLayers">setLayers</a></b>(int<i> layers</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a></b>(float<i> min</i>, float<i> max</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setLevelofDetailBias">setLevelofDetailBias</a></b>(float<i> bias</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a></b>(Filter<i> filter</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMaximumAnisotropy">setMaximumAnisotropy</a></b>(float<i> anisotropy</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a></b>(float<i> value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMinMagFilters">setMinMagFilters</a></b>(Filter<i> minificationFilter</i>, Filter<i> magnificationFilter</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMinificationFilter">setMinificationFilter</a></b>(Filter<i> filter</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a></b>(float<i> value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a></b>(int<i> baseLevel</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMipLevelRange">setMipLevelRange</a></b>(int<i> baseLevel</i>, int<i> maxLevel</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMipLevels">setMipLevels</a></b>(int<i> levels</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a></b>(int<i> maxLevel</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setSize">setSize</a></b>(int<i> width</i>, int<i> height</i> = 1, int<i> depth</i> = 1)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setSwizzleMask">setSwizzleMask</a></b>(SwizzleComponent<i> component</i>, SwizzleValue<i> value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setSwizzleMask-2">setSwizzleMask</a></b>(SwizzleValue<i> r</i>, SwizzleValue<i> g</i>, SwizzleValue<i> b</i>, SwizzleValue<i> a</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setWrapMode">setWrapMode</a></b>(WrapMode<i> mode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#setWrapMode-2">setWrapMode</a></b>(CoordinateDirection<i> direction</i>, WrapMode<i> mode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> SwizzleValue </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#swizzleMask">swizzleMask</a></b>(SwizzleComponent<i> component</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> GLuint </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#textureId">textureId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#width">width</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> WrapMode </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#wrapMode">wrapMode</a></b>(CoordinateDirection<i> direction</i>) const</td></tr>
+</table>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> GLuint </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#boundTextureId">boundTextureId</a></b>(BindingTarget<i> target</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> GLuint </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#boundTextureId-2">boundTextureId</a></b>(uint<i> unit</i>, BindingTarget<i> target</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qopengltexture.html#hasFeature">hasFeature</a></b>(Feature<i> feature</i>)</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QOpenGLTexture-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QOpenGLTexture class encapsulates an <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object.</p>
+<p>QOpenGLTexture makes it easy to work with <a href="../qtopengl/opengl-module.html">OpenGL</a> textures and the myriad features and targets that they offer depending upon the capabilities of your <a href="../qtopengl/opengl-module.html">OpenGL</a> implementation.</p>
+<p>The typical usage pattern for QOpenGLTexture is</p>
+<ul>
+<li>Instantiate the object specifying the texture target type</li>
+<li>Set properties that affect the storage requirements e.g&#x2e; storage format, dimensions</li>
+<li>Allocate the server-side storage</li>
+<li>Optionally upload pixel data</li>
+<li>Optionally set any additional properties e.g&#x2e; filtering and border options</li>
+<li>Render with texture or render to texture</li>
+</ul>
+<p>In the common case of simply using a <a href="qimage.html">QImage</a> as the source of texture pixel data most of the above steps are performed automatically.</p>
+<pre class="cpp"><span class="comment">// Prepare texture</span>
+<span class="type">QOpenGLTexture</span> <span class="operator">*</span>texture <span class="operator">=</span> <span class="keyword">new</span> <span class="type">QOpenGLTexture</span>(<span class="type"><a href="qimage.html">QImage</a></span>(fileName)<span class="operator">.</span>mirrored());
+texture<span class="operator">-</span><span class="operator">&gt;</span><a href="qopengltexture.html#setMinificationFilter">setMinificationFilter</a>(<span class="type">QOpenGLTexture</span><span class="operator">::</span>LinearMipMapLinear);
+texture<span class="operator">-</span><span class="operator">&gt;</span><a href="qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>(<span class="type">QOpenGLTexture</span><span class="operator">::</span>Linear);
+<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+<span class="comment">// Render with texture</span>
+texture<span class="operator">-</span><span class="operator">&gt;</span><a href="qopengltexture.html#bind">bind</a>();
+glDrawArrays(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);</pre>
+<p>Note that the <a href="qimage.html">QImage</a> is mirrored vertically to account for the fact that <a href="../qtopengl/opengl-module.html">OpenGL</a> and <a href="qimage.html">QImage</a> use opposite directions for the y axis. Another option would be to transform your texture coordinates.</p>
+</div>
+<!-- @@@QOpenGLTexture -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$BindingTarget$$$BindingTarget1D$$$BindingTarget1DArray$$$BindingTarget2D$$$BindingTarget2DArray$$$BindingTarget3D$$$BindingTargetCubeMap$$$BindingTargetCubeMapArray$$$BindingTarget2DMultisample$$$BindingTarget2DMultisampleArray$$$BindingTargetRectangle$$$BindingTargetBuffer -->
+<h3 class="fn"><a name="BindingTarget-enum"></a>enum QOpenGLTexture::<span class="name">BindingTarget</span></h3>
+<p>This enum defines the possible binding targets of texture units.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget1D</tt></td><td class="topAlign"><tt>0x8068</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_1D</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget1DArray</tt></td><td class="topAlign"><tt>0x8C1C</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_1D_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget2D</tt></td><td class="topAlign"><tt>0x8069</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_2D</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget2DArray</tt></td><td class="topAlign"><tt>0x8C1D</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_2D_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget3D</tt></td><td class="topAlign"><tt>0x806A</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_3D</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTargetCubeMap</tt></td><td class="topAlign"><tt>0x8514</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_CUBE_MAP</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTargetCubeMapArray</tt></td><td class="topAlign"><tt>0x900A</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_CUBE_MAP_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget2DMultisample</tt></td><td class="topAlign"><tt>0x9104</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_2D_MULTISAMPLE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTarget2DMultisampleArray</tt></td><td class="topAlign"><tt>0x9105</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTargetRectangle</tt></td><td class="topAlign"><tt>0x84F6</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_RECTANGLE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BindingTargetBuffer</tt></td><td class="topAlign"><tt>0x8C2C</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_BINDING_BUFFER</td></tr>
+</table>
+<!-- @@@BindingTarget -->
+<!-- $$$CoordinateDirection$$$DirectionS$$$DirectionT$$$DirectionR -->
+<h3 class="fn"><a name="CoordinateDirection-enum"></a>enum QOpenGLTexture::<span class="name">CoordinateDirection</span></h3>
+<p>This enum defines the possible texture coordinate directions</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DirectionS</tt></td><td class="topAlign"><tt>0x2802</tt></td><td class="topAlign">The horizontal direction. Equivalent to GL_TEXTURE_WRAP_S</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DirectionT</tt></td><td class="topAlign"><tt>0x2803</tt></td><td class="topAlign">The vertical direction. Equivalent to GL_TEXTURE_WRAP_T</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DirectionR</tt></td><td class="topAlign"><tt>0x8072</tt></td><td class="topAlign">The depth direction. Equivalent to GL_TEXTURE_WRAP_R</td></tr>
+</table>
+<!-- @@@CoordinateDirection -->
+<!-- $$$CubeMapFace$$$CubeMapPositiveX$$$CubeMapNegativeX$$$CubeMapPositiveY$$$CubeMapNegativeY$$$CubeMapPositiveZ$$$CubeMapNegativeZ -->
+<h3 class="fn"><a name="CubeMapFace-enum"></a>enum QOpenGLTexture::<span class="name">CubeMapFace</span></h3>
+<p>This enum defines the possible CubeMap faces.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::CubeMapPositiveX</tt></td><td class="topAlign"><tt>0x8515</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_CUBE_MAP_POSITIVE_X</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::CubeMapNegativeX</tt></td><td class="topAlign"><tt>0x8516</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_CUBE_MAP_NEGATIVE_X</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::CubeMapPositiveY</tt></td><td class="topAlign"><tt>0x8517</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_CUBE_MAP_POSITIVE_Y</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::CubeMapNegativeY</tt></td><td class="topAlign"><tt>0x8518</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::CubeMapPositiveZ</tt></td><td class="topAlign"><tt>0x8519</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_CUBE_MAP_POSITIVE_Z</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::CubeMapNegativeZ</tt></td><td class="topAlign"><tt>0x851A</tt></td><td class="topAlign">Equivalent to GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</td></tr>
+</table>
+<!-- @@@CubeMapFace -->
+<!-- $$$DepthStencilMode$$$DepthMode$$$StencilMode -->
+<h3 class="fn"><a name="DepthStencilMode-enum"></a>enum QOpenGLTexture::<span class="name">DepthStencilMode</span></h3>
+<!-- @@@DepthStencilMode -->
+<!-- $$$Feature$$$ImmutableStorage$$$ImmutableMultisampleStorage$$$TextureRectangle$$$TextureArrays$$$Texture3D$$$TextureMultisample$$$TextureBuffer$$$TextureCubeMapArrays$$$Swizzle$$$StencilTexturing$$$AnisotropicFiltering$$$NPOTTextures$$$NPOTTextureRepeat$$$Texture1D -->
+<h3 class="flags"><a name="Feature-enum"></a>enum QOpenGLTexture::<span class="name">Feature</span><br/>flags QOpenGLTexture::<span class="name">Features</span></h3>
+<p>This enum defines the <a href="../qtopengl/opengl-module.html">OpenGL</a> texture-related features that can be tested for.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::ImmutableStorage</tt></td><td class="topAlign"><tt>0x00000001</tt></td><td class="topAlign">Support for immutable texture storage</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::ImmutableMultisampleStorage</tt></td><td class="topAlign"><tt>0x00000002</tt></td><td class="topAlign">Support for immutable texture storage with multisample targets</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TextureRectangle</tt></td><td class="topAlign"><tt>0x00000004</tt></td><td class="topAlign">Support for the GL_TEXTURE_RECTANGLE target</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TextureArrays</tt></td><td class="topAlign"><tt>0x00000008</tt></td><td class="topAlign">Support for texture targets with array layers</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Texture3D</tt></td><td class="topAlign"><tt>0x00000010</tt></td><td class="topAlign">Support for the 3 dimensional texture target</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TextureMultisample</tt></td><td class="topAlign"><tt>0x00000020</tt></td><td class="topAlign">Support for texture targets that have multisample capabilities</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TextureBuffer</tt></td><td class="topAlign"><tt>0x00000040</tt></td><td class="topAlign">Support for textures that use <a href="../qtopengl/opengl-module.html">OpenGL</a> buffer objects as their data source</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TextureCubeMapArrays</tt></td><td class="topAlign"><tt>0x00000080</tt></td><td class="topAlign">Support for cubemap array texture target</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Swizzle</tt></td><td class="topAlign"><tt>0x00000100</tt></td><td class="topAlign">Support for texture component swizzle masks</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::StencilTexturing</tt></td><td class="topAlign"><tt>0x00000200</tt></td><td class="topAlign">Support for stencil texturing (i.e&#x2e; looking up depth or stencil components of a combined depth/stencil format texture in GLSL shaders).</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::AnisotropicFiltering</tt></td><td class="topAlign"><tt>0x00000400</tt></td><td class="topAlign">Support for anisotropic texture filtering</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NPOTTextures</tt></td><td class="topAlign"><tt>0x00000800</tt></td><td class="topAlign">Basic support for non-power-of-two textures</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NPOTTextureRepeat</tt></td><td class="topAlign"><tt>0x00001000</tt></td><td class="topAlign">Full support for non-power-of-two textures including texture repeat modes</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Texture1D</tt></td><td class="topAlign"><tt>0x00002000</tt></td><td class="topAlign">Support for the 1 dimensional texture target</td></tr>
+</table>
+<p>The Features type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;Feature&gt;. It stores an OR combination of Feature values.</p>
+<!-- @@@Feature -->
+<!-- $$$Filter$$$Nearest$$$Linear$$$NearestMipMapNearest$$$NearestMipMapLinear$$$LinearMipMapNearest$$$LinearMipMapLinear -->
+<h3 class="fn"><a name="Filter-enum"></a>enum QOpenGLTexture::<span class="name">Filter</span></h3>
+<p>This enum defines the filtering parameters for a <a href="qopengltexture.html">QOpenGLTexture</a> object.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Nearest</tt></td><td class="topAlign"><tt>0x2600</tt></td><td class="topAlign">Equivalent to GL_NEAREST</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Linear</tt></td><td class="topAlign"><tt>0x2601</tt></td><td class="topAlign">Equivalent to GL_LINEAR</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NearestMipMapNearest</tt></td><td class="topAlign"><tt>0x2700</tt></td><td class="topAlign">Equivalent to GL_NEAREST_MIPMAP_NEAREST</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NearestMipMapLinear</tt></td><td class="topAlign"><tt>0x2702</tt></td><td class="topAlign">Equivalent to GL_NEAREST_MIPMAP_LINEAR</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::LinearMipMapNearest</tt></td><td class="topAlign"><tt>0x2701</tt></td><td class="topAlign">Equivalent to GL_LINEAR_MIPMAP_NEAREST</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::LinearMipMapLinear</tt></td><td class="topAlign"><tt>0x2703</tt></td><td class="topAlign">Equivalent to GL_LINEAR_MIPMAP_LINEAR</td></tr>
+</table>
+<!-- @@@Filter -->
+<!-- $$$MipMapGeneration$$$GenerateMipMaps$$$DontGenerateMipMaps -->
+<h3 class="fn"><a name="MipMapGeneration-enum"></a>enum QOpenGLTexture::<span class="name">MipMapGeneration</span></h3>
+<p>This enum defines the options to control mipmap generation.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::GenerateMipMaps</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Mipmaps should be generated</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DontGenerateMipMaps</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">Mipmaps should not be generated</td></tr>
+</table>
+<!-- @@@MipMapGeneration -->
+<!-- $$$PixelFormat$$$NoSourceFormat$$$Red$$$RG$$$RGB$$$BGR$$$RGBA$$$BGRA$$$Red_Integer$$$RG_Integer$$$RGB_Integer$$$BGR_Integer$$$RGBA_Integer$$$BGRA_Integer$$$Depth$$$DepthStencil$$$Alpha$$$Luminance$$$LuminanceAlpha -->
+<h3 class="fn"><a name="PixelFormat-enum"></a>enum QOpenGLTexture::<span class="name">PixelFormat</span></h3>
+<p>This enum defines the possible client-side pixel formats for a pixel transfer operation.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NoSourceFormat</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Equivalent to GL_NONE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Red</tt></td><td class="topAlign"><tt>0x1903</tt></td><td class="topAlign">Equivalent to GL_RED</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG</tt></td><td class="topAlign"><tt>0x8227</tt></td><td class="topAlign">Equivalent to GL_RG</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB</tt></td><td class="topAlign"><tt>0x1907</tt></td><td class="topAlign">Equivalent to GL_RGB</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BGR</tt></td><td class="topAlign"><tt>0x80E0</tt></td><td class="topAlign">Equivalent to GL_BGR</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA</tt></td><td class="topAlign"><tt>0x1908</tt></td><td class="topAlign">Equivalent to GL_RGBA</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BGRA</tt></td><td class="topAlign"><tt>0x80E1</tt></td><td class="topAlign">Equivalent to GL_BGRA</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Red_Integer</tt></td><td class="topAlign"><tt>0x8D94</tt></td><td class="topAlign">Equivalent to GL_RED_INTEGER</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG_Integer</tt></td><td class="topAlign"><tt>0x8228</tt></td><td class="topAlign">Equivalent to GL_RG_INTEGER</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB_Integer</tt></td><td class="topAlign"><tt>0x8D98</tt></td><td class="topAlign">Equivalent to GL_RGB_INTEGER</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BGR_Integer</tt></td><td class="topAlign"><tt>0x8D9A</tt></td><td class="topAlign">Equivalent to GL_BGR_INTEGER</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA_Integer</tt></td><td class="topAlign"><tt>0x8D99</tt></td><td class="topAlign">Equivalent to GL_RGBA_INTEGER</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BGRA_Integer</tt></td><td class="topAlign"><tt>0x8D9B</tt></td><td class="topAlign">Equivalent to GL_BGRA_INTEGER</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Depth</tt></td><td class="topAlign"><tt>0x1902</tt></td><td class="topAlign">Equivalent to GL_DEPTH_COMPONENT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DepthStencil</tt></td><td class="topAlign"><tt>0x84F9</tt></td><td class="topAlign">Equivalent to GL_DEPTH_STENCIL</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Alpha</tt></td><td class="topAlign"><tt>0x1906</tt></td><td class="topAlign">Equivalent to GL_ALPHA (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Luminance</tt></td><td class="topAlign"><tt>0x1909</tt></td><td class="topAlign">Equivalent to GL_LUMINANCE (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::LuminanceAlpha</tt></td><td class="topAlign"><tt>0x190A</tt></td><td class="topAlign">Equivalent to GL_LUMINANCE_ALPHA (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+</table>
+<!-- @@@PixelFormat -->
+<!-- $$$PixelType$$$NoPixelType$$$Int8$$$UInt8$$$Int16$$$UInt16$$$Int32$$$UInt32$$$Float16$$$Float16OES$$$Float32$$$UInt32_RGB9_E5$$$UInt32_RG11B10F$$$UInt8_RG3B2$$$UInt8_RG3B2_Rev$$$UInt16_RGB5A1$$$UInt16_RGB5A1_Rev$$$UInt16_R5G6B5$$$UInt16_R5G6B5_Rev$$$UInt16_RGBA4$$$UInt16_RGBA4_Rev$$$UInt32_RGB10A2$$$UInt32_RGB10A2_Rev -->
+<h3 class="fn"><a name="PixelType-enum"></a>enum QOpenGLTexture::<span class="name">PixelType</span></h3>
+<p>This enum defines the possible pixel data types for a pixel transfer operation</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NoPixelType</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Equivalent to GL_NONE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Int8</tt></td><td class="topAlign"><tt>0x1400</tt></td><td class="topAlign">Equivalent to GL_BYTE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt8</tt></td><td class="topAlign"><tt>0x1401</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_BYTE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Int16</tt></td><td class="topAlign"><tt>0x1402</tt></td><td class="topAlign">Equivalent to GL_SHORT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16</tt></td><td class="topAlign"><tt>0x1403</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Int32</tt></td><td class="topAlign"><tt>0x1404</tt></td><td class="topAlign">Equivalent to GL_INT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt32</tt></td><td class="topAlign"><tt>0x1405</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_INT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Float16</tt></td><td class="topAlign"><tt>0x140B</tt></td><td class="topAlign">Equivalent to GL_HALF_FLOAT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Float16OES</tt></td><td class="topAlign"><tt>0x8D61</tt></td><td class="topAlign">Equivalent to GL_HALF_FLOAT_OES</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Float32</tt></td><td class="topAlign"><tt>0x1406</tt></td><td class="topAlign">Equivalent to GL_FLOAT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt32_RGB9_E5</tt></td><td class="topAlign"><tt>0x8C3E</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_INT_5_9_9_9_REV</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt32_RG11B10F</tt></td><td class="topAlign"><tt>0x8C3B</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_INT_10F_11F_11F_REV</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt8_RG3B2</tt></td><td class="topAlign"><tt>0x8032</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_BYTE_3_3_2</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt8_RG3B2_Rev</tt></td><td class="topAlign"><tt>0x8362</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_BYTE_2_3_3_REV</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16_RGB5A1</tt></td><td class="topAlign"><tt>0x8034</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT_5_5_5_1</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16_RGB5A1_Rev</tt></td><td class="topAlign"><tt>0x8366</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT_1_5_5_5_REV</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16_R5G6B5</tt></td><td class="topAlign"><tt>0x8363</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT_5_6_5</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16_R5G6B5_Rev</tt></td><td class="topAlign"><tt>0x8364</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT_5_6_5_REV</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16_RGBA4</tt></td><td class="topAlign"><tt>0x8033</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT_4_4_4_4</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt16_RGBA4_Rev</tt></td><td class="topAlign"><tt>0x8365</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_SHORT_4_4_4_4_REV</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt32_RGB10A2</tt></td><td class="topAlign"><tt>0x8036</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_INT_10_10_10_2</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::UInt32_RGB10A2_Rev</tt></td><td class="topAlign"><tt>0x8368</tt></td><td class="topAlign">Equivalent to GL_UNSIGNED_INT_2_10_10_10_REV</td></tr>
+</table>
+<!-- @@@PixelType -->
+<!-- $$$SwizzleComponent$$$SwizzleRed$$$SwizzleGreen$$$SwizzleBlue$$$SwizzleAlpha -->
+<h3 class="fn"><a name="SwizzleComponent-enum"></a>enum QOpenGLTexture::<span class="name">SwizzleComponent</span></h3>
+<p>This enum defines the texture color components that can be assigned a swizzle mask.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SwizzleRed</tt></td><td class="topAlign"><tt>0x8E42</tt></td><td class="topAlign">The red component. Equivalent to GL_TEXTURE_SWIZZLE_R</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SwizzleGreen</tt></td><td class="topAlign"><tt>0x8E43</tt></td><td class="topAlign">The green component. Equivalent to GL_TEXTURE_SWIZZLE_G</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SwizzleBlue</tt></td><td class="topAlign"><tt>0x8E44</tt></td><td class="topAlign">The blue component. Equivalent to GL_TEXTURE_SWIZZLE_B</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SwizzleAlpha</tt></td><td class="topAlign"><tt>0x8E45</tt></td><td class="topAlign">The alpha component. Equivalent to GL_TEXTURE_SWIZZLE_A</td></tr>
+</table>
+<!-- @@@SwizzleComponent -->
+<!-- $$$SwizzleValue$$$RedValue$$$GreenValue$$$BlueValue$$$AlphaValue$$$ZeroValue$$$OneValue -->
+<h3 class="fn"><a name="SwizzleValue-enum"></a>enum QOpenGLTexture::<span class="name">SwizzleValue</span></h3>
+<p>This enum defines the possible mask values for texture swizzling.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RedValue</tt></td><td class="topAlign"><tt>0x1903</tt></td><td class="topAlign">Maps the component to the red channel. Equivalent to GL_RED</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::GreenValue</tt></td><td class="topAlign"><tt>0x1904</tt></td><td class="topAlign">Maps the component to the green channel. Equivalent to GL_GREEN</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::BlueValue</tt></td><td class="topAlign"><tt>0x1905</tt></td><td class="topAlign">Maps the component to the blue channel. Equivalent to GL_BLUE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::AlphaValue</tt></td><td class="topAlign"><tt>0x1906</tt></td><td class="topAlign">Maps the component to the alpha channel. Equivalent to GL_ALPHA</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::ZeroValue</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Maps the component to a fixed value of 0. Equivalent to GL_ZERO</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::OneValue</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">Maps the component to a fixed value of 1. Equivalent to GL_ONE</td></tr>
+</table>
+<!-- @@@SwizzleValue -->
+<!-- $$$Target$$$Target1D$$$Target1DArray$$$Target2D$$$Target2DArray$$$Target3D$$$TargetCubeMap$$$TargetCubeMapArray$$$Target2DMultisample$$$Target2DMultisampleArray$$$TargetRectangle$$$TargetBuffer -->
+<h3 class="fn"><a name="Target-enum"></a>enum QOpenGLTexture::<span class="name">Target</span></h3>
+<p>This enum defines the texture target of a <a href="qopengltexture.html">QOpenGLTexture</a> object.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target1D</tt></td><td class="topAlign"><tt>0x0DE0</tt></td><td class="topAlign">A 1-dimensional texture. Equivalent to GL_TEXTURE_1D.</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target1DArray</tt></td><td class="topAlign"><tt>0x8C18</tt></td><td class="topAlign">An array of 1-dimensional textures. Equivalent to GL_TEXTURE_1D_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target2D</tt></td><td class="topAlign"><tt>0x0DE1</tt></td><td class="topAlign">A 2-dimensional texture. Equivalent to GL_TEXTURE_2D</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target2DArray</tt></td><td class="topAlign"><tt>0x8C1A</tt></td><td class="topAlign">An array of 1-dimensional textures. Equivalent to GL_TEXTURE_2D_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target3D</tt></td><td class="topAlign"><tt>0x806F</tt></td><td class="topAlign">A 3-dimensional texture. Equivalent to GL_TEXTURE_3D</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TargetCubeMap</tt></td><td class="topAlign"><tt>0x8513</tt></td><td class="topAlign">A cubemap texture. Equivalent to GL_TEXTURE_CUBE_MAP</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TargetCubeMapArray</tt></td><td class="topAlign"><tt>0x9009</tt></td><td class="topAlign">An array of cubemap textures. Equivalent to GL_TEXTURE_CUBE_MAP_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target2DMultisample</tt></td><td class="topAlign"><tt>0x9100</tt></td><td class="topAlign">A 2-dimensional texture with multisample support. Equivalent to GL_TEXTURE_2D_MULTISAMPLE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Target2DMultisampleArray</tt></td><td class="topAlign"><tt>0x9102</tt></td><td class="topAlign">An array of 2-dimensional textures with multisample support. Equivalent to GL_TEXTURE_2D_MULTISAMPLE_ARRAY</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TargetRectangle</tt></td><td class="topAlign"><tt>0x84F5</tt></td><td class="topAlign">A rectangular 2-dimensional texture. Equivalent to GL_TEXTURE_RECTANGLE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::TargetBuffer</tt></td><td class="topAlign"><tt>0x8C2A</tt></td><td class="topAlign">A texture with data from an <a href="../qtopengl/opengl-module.html">OpenGL</a> buffer object. Equivalent to GL_TEXTURE_BUFFER</td></tr>
+</table>
+<!-- @@@Target -->
+<!-- $$$TextureFormat$$$NoFormat$$$R8_UNorm$$$RG8_UNorm$$$RGB8_UNorm$$$RGBA8_UNorm$$$R16_UNorm$$$RG16_UNorm$$$RGB16_UNorm$$$RGBA16_UNorm$$$R8_SNorm$$$RG8_SNorm$$$RGB8_SNorm$$$RGBA8_SNorm$$$R16_SNorm$$$RG16_SNorm$$$RGB16_SNorm$$$RGBA16_SNorm$$$R8U$$$RG8U$$$RGB8U$$$RGBA8U$$$R16U$$$RG16U$$$RGB16U$$$RGBA16U$$$R32U$$$RG32U$$$RGB32U$$$RGBA32U$$$R8I$$$RG8I$$$RGB8I$$$RGBA8I$$$R16I$$$RG16I$$$RGB16I$$$RGBA16I$$$R32I$$$RG32I$$$RGB32I$$$RGBA32I$$$R16F$$$RG16F$$$RGB16F$$$RGBA16F$$$R32F$$$RG32F$$$RGB32F$$$RGBA32F$$$RGB9E5$$$RG11B10F$$$RG3B2$$$R5G6B5$$$RGB5A1$$$RGBA4$$$RGB10A2$$$D16$$$D24$$$D24S8$$$D32$$$D32F$$$D32FS8X24$$$RGB_DXT1$$$RGBA_DXT1$$$RGBA_DXT3$$$RGBA_DXT5$$$R_ATI1N_UNorm$$$R_ATI1N_SNorm$$$RG_ATI2N_UNorm$$$RG_ATI2N_SNorm$$$RGB_BP_UNSIGNED_FLOAT$$$RGB_BP_SIGNED_FLOAT$$$RGB_BP_UNorm$$$SRGB8$$$SRGB8_Alpha8$$$SRGB_DXT1$$$SRGB_Alpha_DXT1$$$SRGB_Alpha_DXT3$$$SRGB_Alpha_DXT5$$$SRGB_BP_UNorm$$$DepthFormat$$$AlphaFormat$$$RGBFormat$$$RGBAFormat$$$LuminanceFormat$$$LuminanceAlphaFormat -->
+<h3 class="fn"><a name="TextureFormat-enum"></a>enum QOpenGLTexture::<span class="name">TextureFormat</span></h3>
+<p>This enum defines the possible texture formats. Depending upon your <a href="../qtopengl/opengl-module.html">OpenGL</a> implementation only a subset of these may be supported.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::NoFormat</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">Equivalent to GL_NONE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R8_UNorm</tt></td><td class="topAlign"><tt>0x8229</tt></td><td class="topAlign">Equivalent to GL_R8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG8_UNorm</tt></td><td class="topAlign"><tt>0x822B</tt></td><td class="topAlign">Equivalent to GL_RG8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB8_UNorm</tt></td><td class="topAlign"><tt>0x8051</tt></td><td class="topAlign">Equivalent to GL_RGB8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA8_UNorm</tt></td><td class="topAlign"><tt>0x8058</tt></td><td class="topAlign">Equivalent to GL_RGBA8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R16_UNorm</tt></td><td class="topAlign"><tt>0x822A</tt></td><td class="topAlign">Equivalent to GL_R16</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG16_UNorm</tt></td><td class="topAlign"><tt>0x822C</tt></td><td class="topAlign">Equivalent to GL_RG16</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB16_UNorm</tt></td><td class="topAlign"><tt>0x8054</tt></td><td class="topAlign">Equivalent to GL_RGB16</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA16_UNorm</tt></td><td class="topAlign"><tt>0x805B</tt></td><td class="topAlign">Equivalent to GL_RGBA16</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R8_SNorm</tt></td><td class="topAlign"><tt>0x8F94</tt></td><td class="topAlign">Equivalent to GL_R8_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG8_SNorm</tt></td><td class="topAlign"><tt>0x8F95</tt></td><td class="topAlign">Equivalent to GL_RG8_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB8_SNorm</tt></td><td class="topAlign"><tt>0x8F96</tt></td><td class="topAlign">Equivalent to GL_RGB8_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA8_SNorm</tt></td><td class="topAlign"><tt>0x8F97</tt></td><td class="topAlign">Equivalent to GL_RGBA8_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R16_SNorm</tt></td><td class="topAlign"><tt>0x8F98</tt></td><td class="topAlign">Equivalent to GL_R16_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG16_SNorm</tt></td><td class="topAlign"><tt>0x8F99</tt></td><td class="topAlign">Equivalent to GL_RG16_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB16_SNorm</tt></td><td class="topAlign"><tt>0x8F9A</tt></td><td class="topAlign">Equivalent to GL_RGB16_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA16_SNorm</tt></td><td class="topAlign"><tt>0x8F9B</tt></td><td class="topAlign">Equivalent to GL_RGBA16_SNORM</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R8U</tt></td><td class="topAlign"><tt>0x8232</tt></td><td class="topAlign">Equivalent to GL_R8UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG8U</tt></td><td class="topAlign"><tt>0x8238</tt></td><td class="topAlign">Equivalent to GL_RG8UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB8U</tt></td><td class="topAlign"><tt>0x8D7D</tt></td><td class="topAlign">Equivalent to GL_RGB8UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA8U</tt></td><td class="topAlign"><tt>0x8D7C</tt></td><td class="topAlign">Equivalent to GL_RGBA8UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R16U</tt></td><td class="topAlign"><tt>0x8234</tt></td><td class="topAlign">Equivalent to GL_R16UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG16U</tt></td><td class="topAlign"><tt>0x823A</tt></td><td class="topAlign">Equivalent to GL_RG16UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB16U</tt></td><td class="topAlign"><tt>0x8D77</tt></td><td class="topAlign">Equivalent to GL_RGB16UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA16U</tt></td><td class="topAlign"><tt>0x8D76</tt></td><td class="topAlign">Equivalent to GL_RGBA16UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R32U</tt></td><td class="topAlign"><tt>0x8236</tt></td><td class="topAlign">Equivalent to GL_R32UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG32U</tt></td><td class="topAlign"><tt>0x823C</tt></td><td class="topAlign">Equivalent to GL_RG32UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB32U</tt></td><td class="topAlign"><tt>0x8D71</tt></td><td class="topAlign">Equivalent to GL_RGB32UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA32U</tt></td><td class="topAlign"><tt>0x8D70</tt></td><td class="topAlign">Equivalent to GL_RGBA32UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R8I</tt></td><td class="topAlign"><tt>0x8231</tt></td><td class="topAlign">Equivalent to GL_R8I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG8I</tt></td><td class="topAlign"><tt>0x8237</tt></td><td class="topAlign">Equivalent to GL_RG8I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB8I</tt></td><td class="topAlign"><tt>0x8D8F</tt></td><td class="topAlign">Equivalent to GL_RGB8I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA8I</tt></td><td class="topAlign"><tt>0x8D8E</tt></td><td class="topAlign">Equivalent to GL_RGBA8I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R16I</tt></td><td class="topAlign"><tt>0x8233</tt></td><td class="topAlign">Equivalent to GL_R16I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG16I</tt></td><td class="topAlign"><tt>0x8239</tt></td><td class="topAlign">Equivalent to GL_RG16I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB16I</tt></td><td class="topAlign"><tt>0x8D89</tt></td><td class="topAlign">Equivalent to GL_RGB16I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA16I</tt></td><td class="topAlign"><tt>0x8D88</tt></td><td class="topAlign">Equivalent to GL_RGBA16I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R32I</tt></td><td class="topAlign"><tt>0x8235</tt></td><td class="topAlign">Equivalent to GL_R32I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG32I</tt></td><td class="topAlign"><tt>0x823B</tt></td><td class="topAlign">Equivalent to GL_RG32I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB32I</tt></td><td class="topAlign"><tt>0x8D83</tt></td><td class="topAlign">Equivalent to GL_RGB32I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA32I</tt></td><td class="topAlign"><tt>0x8D82</tt></td><td class="topAlign">Equivalent to GL_RGBA32I</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R16F</tt></td><td class="topAlign"><tt>0x822D</tt></td><td class="topAlign">Equivalent to GL_R16F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG16F</tt></td><td class="topAlign"><tt>0x822F</tt></td><td class="topAlign">Equivalent to GL_RG16F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB16F</tt></td><td class="topAlign"><tt>0x881B</tt></td><td class="topAlign">Equivalent to GL_RGB16F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA16F</tt></td><td class="topAlign"><tt>0x881A</tt></td><td class="topAlign">Equivalent to GL_RGBA16F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R32F</tt></td><td class="topAlign"><tt>0x822E</tt></td><td class="topAlign">Equivalent to GL_R32F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG32F</tt></td><td class="topAlign"><tt>0x8230</tt></td><td class="topAlign">Equivalent to GL_RG32F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB32F</tt></td><td class="topAlign"><tt>0x8815</tt></td><td class="topAlign">Equivalent to GL_RGB32F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA32F</tt></td><td class="topAlign"><tt>0x8814</tt></td><td class="topAlign">Equivalent to GL_RGBA32F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB9E5</tt></td><td class="topAlign"><tt>0x8C3D</tt></td><td class="topAlign">Equivalent to GL_RGB9_E5</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG11B10F</tt></td><td class="topAlign"><tt>0x8C3A</tt></td><td class="topAlign">Equivalent to GL_R11F_G11F_B10F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG3B2</tt></td><td class="topAlign"><tt>0x2A10</tt></td><td class="topAlign">Equivalent to GL_R3_G3_B2</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R5G6B5</tt></td><td class="topAlign"><tt>0x8D62</tt></td><td class="topAlign">Equivalent to GL_RGB565</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB5A1</tt></td><td class="topAlign"><tt>0x8057</tt></td><td class="topAlign">Equivalent to GL_RGB5_A1</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA4</tt></td><td class="topAlign"><tt>0x8056</tt></td><td class="topAlign">Equivalent to GL_RGBA4</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB10A2</tt></td><td class="topAlign"><tt>0x906F</tt></td><td class="topAlign">Equivalent to GL_RGB10_A2UI</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::D16</tt></td><td class="topAlign"><tt>0x81A5</tt></td><td class="topAlign">Equivalent to GL_DEPTH_COMPONENT16</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::D24</tt></td><td class="topAlign"><tt>0x81A6</tt></td><td class="topAlign">Equivalent to GL_DEPTH_COMPONENT24</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::D24S8</tt></td><td class="topAlign"><tt>0x88F0</tt></td><td class="topAlign">Equivalent to GL_DEPTH24_STENCIL8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::D32</tt></td><td class="topAlign"><tt>0x81A7</tt></td><td class="topAlign">Equivalent to GL_DEPTH_COMPONENT32</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::D32F</tt></td><td class="topAlign"><tt>0x8CAC</tt></td><td class="topAlign">Equivalent to GL_DEPTH_COMPONENT32F</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::D32FS8X24</tt></td><td class="topAlign"><tt>0x8CAD</tt></td><td class="topAlign">Equivalent to GL_DEPTH32F_STENCIL8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB_DXT1</tt></td><td class="topAlign"><tt>0x83F0</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGB_S3TC_DXT1_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA_DXT1</tt></td><td class="topAlign"><tt>0x83F1</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGBA_S3TC_DXT1_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA_DXT3</tt></td><td class="topAlign"><tt>0x83F2</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGBA_S3TC_DXT3_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBA_DXT5</tt></td><td class="topAlign"><tt>0x83F3</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGBA_S3TC_DXT5_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R_ATI1N_UNorm</tt></td><td class="topAlign"><tt>0x8DBB</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RED_RGTC1</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::R_ATI1N_SNorm</tt></td><td class="topAlign"><tt>0x8DBC</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SIGNED_RED_RGTC1</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG_ATI2N_UNorm</tt></td><td class="topAlign"><tt>0x8DBD</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RG_RGTC2</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RG_ATI2N_SNorm</tt></td><td class="topAlign"><tt>0x8DBE</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SIGNED_RG_RGTC2</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB_BP_UNSIGNED_FLOAT</tt></td><td class="topAlign"><tt>0x8E8F</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB_BP_SIGNED_FLOAT</tt></td><td class="topAlign"><tt>0x8E8E</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGB_BP_UNorm</tt></td><td class="topAlign"><tt>0x8E8C</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_RGBA_BPTC_UNORM_ARB</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB8</tt></td><td class="topAlign"><tt>0x8C41</tt></td><td class="topAlign">Equivalent to GL_SRGB8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB8_Alpha8</tt></td><td class="topAlign"><tt>0x8C43</tt></td><td class="topAlign">Equivalent to GL_SRGB8_ALPHA8</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB_DXT1</tt></td><td class="topAlign"><tt>0x8C4C</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SRGB_S3TC_DXT1_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB_Alpha_DXT1</tt></td><td class="topAlign"><tt>0x8C4D</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB_Alpha_DXT3</tt></td><td class="topAlign"><tt>0x8C4E</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB_Alpha_DXT5</tt></td><td class="topAlign"><tt>0x8C4F</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::SRGB_BP_UNorm</tt></td><td class="topAlign"><tt>0x8E8D</tt></td><td class="topAlign">Equivalent to GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DepthFormat</tt></td><td class="topAlign"><tt>0x1902</tt></td><td class="topAlign">Equivalent to GL_DEPTH_COMPONENT (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only and when OES_depth_texture is present)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::AlphaFormat</tt></td><td class="topAlign"><tt>0x1906</tt></td><td class="topAlign">Equivalent to GL_ALPHA (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBFormat</tt></td><td class="topAlign"><tt>0x1907</tt></td><td class="topAlign">Equivalent to GL_RGB (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::RGBAFormat</tt></td><td class="topAlign"><tt>0x1908</tt></td><td class="topAlign">Equivalent to GL_RGBA (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::LuminanceFormat</tt></td><td class="topAlign"><tt>0x1909</tt></td><td class="topAlign">Equivalent to GL_LUMINANCE (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::LuminanceAlphaFormat</tt></td><td class="topAlign"><tt>0x190A</tt></td><td class="topAlign">Equivalent to GL_LUMINANCE_ALPHA (<a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2 only)</td></tr>
+</table>
+<!-- @@@TextureFormat -->
+<!-- $$$TextureUnitReset$$$ResetTextureUnit$$$DontResetTextureUnit -->
+<h3 class="fn"><a name="TextureUnitReset-enum"></a>enum QOpenGLTexture::<span class="name">TextureUnitReset</span></h3>
+<p>This enum defines options ot control texture unit activation.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::ResetTextureUnit</tt></td><td class="topAlign"><tt>0</tt></td><td class="topAlign">The previous active texture unit will be reset</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::DontResetTextureUnit</tt></td><td class="topAlign"><tt>1</tt></td><td class="topAlign">The previous active texture unit will not be rest</td></tr>
+</table>
+<!-- @@@TextureUnitReset -->
+<!-- $$$WrapMode$$$Repeat$$$MirroredRepeat$$$ClampToEdge$$$ClampToBorder -->
+<h3 class="fn"><a name="WrapMode-enum"></a>enum QOpenGLTexture::<span class="name">WrapMode</span></h3>
+<p>This enum defines the possible texture coordinate wrapping modes.</p>
+<table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::Repeat</tt></td><td class="topAlign"><tt>0x2901</tt></td><td class="topAlign">Texture coordinate is repeated. Equivalent to GL_REPEAT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::MirroredRepeat</tt></td><td class="topAlign"><tt>0x8370</tt></td><td class="topAlign">Texture coordinate is reflected about 0 and 1. Equivalent to GL_MIRRORED_REPEAT</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::ClampToEdge</tt></td><td class="topAlign"><tt>0x812F</tt></td><td class="topAlign">Clamps the texture coordinates to [0,1]. Equivalent to GL_CLAMP_TO_EDGE</td></tr>
+<tr><td class="topAlign"><tt>QOpenGLTexture::ClampToBorder</tt></td><td class="topAlign"><tt>0x812D</tt></td><td class="topAlign">As for ClampToEdge but also blends samples at 0 and 1 with a fixed border color. Equivalent to GL_CLAMP_TO_BORDER</td></tr>
+</table>
+<!-- @@@WrapMode -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QOpenGLTexture[overload1]$$$QOpenGLTextureTarget -->
+<h3 class="fn"><a name="QOpenGLTexture"></a>QOpenGLTexture::<span class="name">QOpenGLTexture</span>(<span class="type"><a href="qopengltexture.html#Target-enum">Target</a></span><i> target</i>)</h3>
+<p>Creates a <a href="qopengltexture.html">QOpenGLTexture</a> object that can later be bound to <i>target</i>.</p>
+<p>This does not create the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object. Therefore, construction using this constructor does not require a valid current <a href="../qtopengl/opengl-module.html">OpenGL</a> context.</p>
+<!-- @@@QOpenGLTexture -->
+<!-- $$$QOpenGLTexture$$$QOpenGLTextureconstQImage&MipMapGeneration -->
+<h3 class="fn"><a name="QOpenGLTexture-2"></a>QOpenGLTexture::<span class="name">QOpenGLTexture</span>(const <span class="type"><a href="qimage.html">QImage</a></span> &amp;<i> image</i>, <span class="type"><a href="qopengltexture.html#MipMapGeneration-enum">MipMapGeneration</a></span><i> genMipMaps</i> = GenerateMipMaps)</h3>
+<p>Creates a <a href="qopengltexture.html">QOpenGLTexture</a> object that can later be bound to the 2D texture target and contains the pixel data contained in <i>image</i>. If you wish to have a chain of mipmaps generated then set <i>genMipMaps</i> to <tt>true</tt> (this is the default).</p>
+<p>This does create the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object. Therefore, construction using this constructor does require a valid current <a href="../qtopengl/opengl-module.html">OpenGL</a> context.</p>
+<!-- @@@QOpenGLTexture -->
+<!-- $$$~QOpenGLTexture[overload1]$$$~QOpenGLTexture -->
+<h3 class="fn"><a name="dtor.QOpenGLTexture"></a>QOpenGLTexture::<span class="name">~QOpenGLTexture</span>()</h3>
+<!-- @@@~QOpenGLTexture -->
+<!-- $$$allocateStorage[overload1]$$$allocateStorage -->
+<h3 class="fn"><a name="allocateStorage"></a><span class="type">void</span> QOpenGLTexture::<span class="name">allocateStorage</span>()</h3>
+<p>Allocates server-side storage for this texture object taking into account, the format, dimensions, mipmap levels, array layers and cubemap faces.</p>
+<p>Once storage has been allocated it is no longer possible to change these properties.</p>
+<p>If supported <a href="qopengltexture.html">QOpenGLTexture</a> makes use of immutable texture storage.</p>
+<p>Once storage has been allocated for the texture then pixel data can be uploaded via one of the <a href="qopengltexture.html#setData">setData</a>() overloads.</p>
+<p><b>See also </b><a href="qopengltexture.html#isStorageAllocated">isStorageAllocated</a>() and <a href="qopengltexture.html#setData">setData</a>().</p>
+<!-- @@@allocateStorage -->
+<!-- $$$bind[overload1]$$$bind -->
+<h3 class="fn"><a name="bind"></a><span class="type">void</span> QOpenGLTexture::<span class="name">bind</span>()</h3>
+<p>Binds this texture to the currently active texture unit ready for rendering. Note that you do not need to bind <a href="qopengltexture.html">QOpenGLTexture</a> objects in order to modify them as the implementation makes use of the EXT_direct_state_access extension where available and simulates it where it is not.</p>
+<p><b>See also </b><a href="qopengltexture.html#release">release</a>().</p>
+<!-- @@@bind -->
+<!-- $$$bind$$$binduintTextureUnitReset -->
+<h3 class="fn"><a name="bind-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">bind</span>(<span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> unit</i>, <span class="type"><a href="qopengltexture.html#TextureUnitReset-enum">TextureUnitReset</a></span><i> reset</i> = DontResetTextureUnit)</h3>
+<p>Binds this texture to texture unit <i>unit</i> ready for rendering. Note that you do not need to bind <a href="qopengltexture.html">QOpenGLTexture</a> objects in order to modify them as the implementation makes use of the EXT_direct_state_access extension where available and simulates it where it is not.</p>
+<p>If parameter <i>reset</i> is <tt>true</tt> then this function will restore the active unit to the texture unit that was active upon entry.</p>
+<p><b>See also </b><a href="qopengltexture.html#release">release</a>().</p>
+<!-- @@@bind -->
+<!-- $$$borderColor[overload1]$$$borderColor -->
+<h3 class="fn"><a name="borderColor"></a><span class="type"><a href="qcolor.html">QColor</a></span> QOpenGLTexture::<span class="name">borderColor</span>() const</h3>
+<p>Returns the borderColor of this texture.</p>
+<p><b>See also </b><a href="qopengltexture.html#setBorderColor">setBorderColor</a>().</p>
+<!-- @@@borderColor -->
+<!-- $$$borderColor$$$borderColorfloat* -->
+<h3 class="fn"><a name="borderColor-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">borderColor</span>(<span class="type">float</span> *<i> border</i>) const</h3>
+<p>Writes the texture border color into the first four elements of the array pointed to by <i>border</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#setBorderColor">setBorderColor</a>().</p>
+<!-- @@@borderColor -->
+<!-- $$$borderColor$$$borderColorint* -->
+<h3 class="fn"><a name="borderColor-3"></a><span class="type">void</span> QOpenGLTexture::<span class="name">borderColor</span>(<span class="type">int</span> *<i> border</i>) const</h3>
+<p>Writes the texture border color into the first four elements of the array pointed to by <i>border</i>.</p>
+<p>This is an overloaded function.</p>
+<!-- @@@borderColor -->
+<!-- $$$borderColor$$$borderColorunsignedint* -->
+<h3 class="fn"><a name="borderColor-4"></a><span class="type">void</span> QOpenGLTexture::<span class="name">borderColor</span>(<span class="type">unsigned</span> <span class="type">int</span> *<i> border</i>) const</h3>
+<p>Writes the texture border color into the first four elements of the array pointed to by <i>border</i>.</p>
+<p>This is an overloaded function.</p>
+<!-- @@@borderColor -->
+<!-- $$$boundTextureId[overload1]$$$boundTextureIdBindingTarget -->
+<h3 class="fn"><a name="boundTextureId"></a><span class="type">GLuint</span> QOpenGLTexture::<span class="name">boundTextureId</span>(<span class="type"><a href="qopengltexture.html#BindingTarget-enum">BindingTarget</a></span><i> target</i>)<tt> [static]</tt></h3>
+<p>Returns the textureId of the texture that is bound to the <i>target</i> of the currently active texture unit.</p>
+<!-- @@@boundTextureId -->
+<!-- $$$boundTextureId$$$boundTextureIduintBindingTarget -->
+<h3 class="fn"><a name="boundTextureId-2"></a><span class="type">GLuint</span> QOpenGLTexture::<span class="name">boundTextureId</span>(<span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> unit</i>, <span class="type"><a href="qopengltexture.html#BindingTarget-enum">BindingTarget</a></span><i> target</i>)<tt> [static]</tt></h3>
+<p>Returns the textureId of the texture that is bound to the <i>target</i> of the texture unit <i>unit</i>.</p>
+<!-- @@@boundTextureId -->
+<!-- $$$create[overload1]$$$create -->
+<h3 class="fn"><a name="create"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">create</span>()</h3>
+<p>Creates the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object. This requires a current valid <a href="../qtopengl/opengl-module.html">OpenGL</a> context. If the texture object already exists, this function does nothing.</p>
+<p>Once the texture object is created you can obtain the object name from the <a href="qopengltexture.html#textureId">textureId</a>() function. This may be useful if you wish to make some raw <a href="../qtopengl/opengl-module.html">OpenGL</a> calls related to this texture.</p>
+<p>Normally it should not be necessary to call this function directly as all functions that set properties of the texture object implicitly call create() on your behalf.</p>
+<p>Returns <tt>true</tt> if the creation succeeded, otherwise returns <tt>false</tt>.</p>
+<p><b>See also </b><a href="qopengltexture.html#destroy">destroy</a>(), <a href="qopengltexture.html#isCreated">isCreated</a>(), and <a href="qopengltexture.html#textureId">textureId</a>().</p>
+<!-- @@@create -->
+<!-- $$$createTextureView[overload1]$$$createTextureViewTargetTextureFormatintintintint -->
+<h3 class="fn"><a name="createTextureView"></a><span class="type">QOpenGLTexture</span> * QOpenGLTexture::<span class="name">createTextureView</span>(<span class="type"><a href="qopengltexture.html#Target-enum">Target</a></span><i> target</i>, <span class="type"><a href="qopengltexture.html#TextureFormat-enum">TextureFormat</a></span><i> viewFormat</i>, <span class="type">int</span><i> minimumMipmapLevel</i>, <span class="type">int</span><i> maximumMipmapLevel</i>, <span class="type">int</span><i> minimumLayer</i>, <span class="type">int</span><i> maximumLayer</i>) const</h3>
+<p>Attempts to create a texture view onto this texture. A texture view is somewhat analogous to a view in SQL in that it presents a restricted or reinterpreted view of the original data. Texture views do not allocate any more server-side storage, insted relying on the storage buffer of the source texture.</p>
+<p>Texture views are only available when using immutable storage. For more information on texture views see http://www.opengl.org/wiki/Texture_Storage#Texture_views.</p>
+<p>The <i>target</i> argument specifies the target to use for the view. Only some targets can be used depending upon the target of the original target. For e.g&#x2e; a view onto a <a href="qopengltexture.html#Target-enum">Target1DArray</a> texture can specify either <a href="qopengltexture.html#Target-enum">Target1DArray</a> or <a href="qopengltexture.html#Target-enum">Target1D</a> but for the latter the number of array layers specified with <i>minimumLayer</i> and <i>maximumLayer</i> must be exactly 1.</p>
+<p>Simpliar constraints apply for the <i>viewFormat</i>. See the above link and the specification for more details.</p>
+<p>The <i>minimumMipmapLevel</i>, <i>maximumMipmapLevel</i>, <i>minimumLayer</i>, and <i>maximumLayer</i> arguments serve to restrict the parts of the texture accessible by the texture view.</p>
+<p>If creation of the texture view fails this function will return 0. If the function succeeds it will return a pointer to a new <a href="qopengltexture.html">QOpenGLTexture</a> object that will return <tt>true</tt> from its <a href="qopengltexture.html#isTextureView">isTextureView</a>() function.</p>
+<p><b>See also </b><a href="qopengltexture.html#isTextureView">isTextureView</a>().</p>
+<!-- @@@createTextureView -->
+<!-- $$$depth[overload1]$$$depth -->
+<h3 class="fn"><a name="depth"></a><span class="type">int</span> QOpenGLTexture::<span class="name">depth</span>() const</h3>
+<p>Returns the depth of a 3D texture.</p>
+<p><b>See also </b><a href="qopengltexture.html#width">width</a>(), <a href="qopengltexture.html#height">height</a>(), and <a href="qopengltexture.html#setSize">setSize</a>().</p>
+<!-- @@@depth -->
+<!-- $$$depthStencilMode[overload1]$$$depthStencilMode -->
+<h3 class="fn"><a name="depthStencilMode"></a><span class="type"><a href="qopengltexture.html#DepthStencilMode-enum">DepthStencilMode</a></span> QOpenGLTexture::<span class="name">depthStencilMode</span>() const</h3>
+<p>Returns the depth stencil mode for textures using a combined depth/stencil format.</p>
+<p><b>See also </b><a href="qopengltexture.html#setDepthStencilMode">setDepthStencilMode</a>().</p>
+<!-- @@@depthStencilMode -->
+<!-- $$$destroy[overload1]$$$destroy -->
+<h3 class="fn"><a name="destroy"></a><span class="type">void</span> QOpenGLTexture::<span class="name">destroy</span>()</h3>
+<p>Destroys the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object. This requires a current valid <a href="../qtopengl/opengl-module.html">OpenGL</a> context.</p>
+<p><b>See also </b><a href="qopengltexture.html#create">create</a>(), <a href="qopengltexture.html#isCreated">isCreated</a>(), and <a href="qopengltexture.html#textureId">textureId</a>().</p>
+<!-- @@@destroy -->
+<!-- $$$faces[overload1]$$$faces -->
+<h3 class="fn"><a name="faces"></a><span class="type">int</span> QOpenGLTexture::<span class="name">faces</span>() const</h3>
+<p>Returns the number of faces for this texture. For cubemap and cubemap array type targets this will be 6.</p>
+<p>For non-cubemap type targets this will return 1.</p>
+<!-- @@@faces -->
+<!-- $$$format[overload1]$$$format -->
+<h3 class="fn"><a name="format"></a><span class="type"><a href="qopengltexture.html#TextureFormat-enum">TextureFormat</a></span> QOpenGLTexture::<span class="name">format</span>() const</h3>
+<p>Returns the format of this texture object.</p>
+<p><b>See also </b><a href="qopengltexture.html#setFormat">setFormat</a>().</p>
+<!-- @@@format -->
+<!-- $$$generateMipMaps[overload1]$$$generateMipMaps -->
+<h3 class="fn"><a name="generateMipMaps"></a><span class="type">void</span> QOpenGLTexture::<span class="name">generateMipMaps</span>()</h3>
+<p>Generates mipmaps for this texture object from mipmap level 0. If you are using a texture target and filtering option that requires mipmaps and you have disabled automatic mipmap generation then you need to call this function or the overload to create the mipmap chain.</p>
+<p><b>See also </b><a href="qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a>(), <a href="qopengltexture.html#setMipLevels">setMipLevels</a>(), and <a href="qopengltexture.html#mipLevels">mipLevels</a>().</p>
+<!-- @@@generateMipMaps -->
+<!-- $$$generateMipMaps$$$generateMipMapsintbool -->
+<h3 class="fn"><a name="generateMipMaps-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">generateMipMaps</span>(<span class="type">int</span><i> baseLevel</i>, <span class="type">bool</span><i> resetBaseLevel</i> = true)</h3>
+<p>Generates mipmaps for this texture object from mipmap level <i>baseLevel</i>. If you are using a texture target and filtering option that requires mipmaps and you have disabled automatic mipmap generation then you need to call this function or the overload to create the mipmap chain.</p>
+<p>The generation of mipmaps to above <i>baseLevel</i> is achieved by setting the mipmap base level to <i>baseLevel</i> and then generating the mipmap chain. If <i>resetBaseLevel</i> is <tt>true</tt>, then the baseLevel of the texture will be reset to its previous value.</p>
+<p><b>See also </b><a href="qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a>(), <a href="qopengltexture.html#setMipLevels">setMipLevels</a>(), and <a href="qopengltexture.html#mipLevels">mipLevels</a>().</p>
+<!-- @@@generateMipMaps -->
+<!-- $$$hasFeature[overload1]$$$hasFeatureFeature -->
+<h3 class="fn"><a name="hasFeature"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">hasFeature</span>(<span class="type"><a href="qopengltexture.html#Feature-enum">Feature</a></span><i> feature</i>)<tt> [static]</tt></h3>
+<p>Returns <tt>true</tt> if your <a href="../qtopengl/opengl-module.html">OpenGL</a> implementation and version supports the texture feature <i>feature</i>.</p>
+<!-- @@@hasFeature -->
+<!-- $$$height[overload1]$$$height -->
+<h3 class="fn"><a name="height"></a><span class="type">int</span> QOpenGLTexture::<span class="name">height</span>() const</h3>
+<p>Returns the height of a 2D or 3D texture.</p>
+<p><b>See also </b><a href="qopengltexture.html#width">width</a>(), <a href="qopengltexture.html#depth">depth</a>(), and <a href="qopengltexture.html#setSize">setSize</a>().</p>
+<!-- @@@height -->
+<!-- $$$isAutoMipMapGenerationEnabled[overload1]$$$isAutoMipMapGenerationEnabled -->
+<h3 class="fn"><a name="isAutoMipMapGenerationEnabled"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">isAutoMipMapGenerationEnabled</span>() const</h3>
+<p>Returns whether auto mipmap generation is enabled for this texture object.</p>
+<p><b>See also </b><a href="qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a>() and <a href="qopengltexture.html#generateMipMaps">generateMipMaps</a>().</p>
+<!-- @@@isAutoMipMapGenerationEnabled -->
+<!-- $$$isBound[overload1]$$$isBound -->
+<h3 class="fn"><a name="isBound"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">isBound</span>() const</h3>
+<p>Returns <tt>true</tt> if this texture is bound to the corresponding target of the currently active texture unit.</p>
+<p><b>See also </b><a href="qopengltexture.html#bind">bind</a>() and <a href="qopengltexture.html#release">release</a>().</p>
+<!-- @@@isBound -->
+<!-- $$$isBound$$$isBounduint -->
+<h3 class="fn"><a name="isBound-2"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">isBound</span>(<span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> unit</i>)</h3>
+<p>Returns <tt>true</tt> if this texture is bound to the corresponding target of texture unit <i>unit</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#bind">bind</a>() and <a href="qopengltexture.html#release">release</a>().</p>
+<!-- @@@isBound -->
+<!-- $$$isCreated[overload1]$$$isCreated -->
+<h3 class="fn"><a name="isCreated"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">isCreated</span>() const</h3>
+<p>Returns <tt>true</tt> if the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object has been created.</p>
+<p><b>See also </b><a href="qopengltexture.html#create">create</a>(), <a href="qopengltexture.html#destroy">destroy</a>(), and <a href="qopengltexture.html#textureId">textureId</a>().</p>
+<!-- @@@isCreated -->
+<!-- $$$isStorageAllocated[overload1]$$$isStorageAllocated -->
+<h3 class="fn"><a name="isStorageAllocated"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">isStorageAllocated</span>() const</h3>
+<p>Returns <tt>true</tt> if server-side storage for this texture as been allocated.</p>
+<p>The texture format, dimensions, mipmap levels and array layers cannot be altered once storage ihas been allocated.</p>
+<p><b>See also </b><a href="qopengltexture.html#allocateStorage">allocateStorage</a>(), <a href="qopengltexture.html#setSize">setSize</a>(), <a href="qopengltexture.html#setMipLevels">setMipLevels</a>(), <a href="qopengltexture.html#setLayers">setLayers</a>(), and <a href="qopengltexture.html#setFormat">setFormat</a>().</p>
+<!-- @@@isStorageAllocated -->
+<!-- $$$isTextureView[overload1]$$$isTextureView -->
+<h3 class="fn"><a name="isTextureView"></a><span class="type">bool</span> QOpenGLTexture::<span class="name">isTextureView</span>() const</h3>
+<p>Returns <tt>true</tt> if this texture object is actually a view onto another texture object.</p>
+<p><b>See also </b><a href="qopengltexture.html#createTextureView">createTextureView</a>().</p>
+<!-- @@@isTextureView -->
+<!-- $$$layers[overload1]$$$layers -->
+<h3 class="fn"><a name="layers"></a><span class="type">int</span> QOpenGLTexture::<span class="name">layers</span>() const</h3>
+<p>Returns the number of array layers for this texture. If storage has not yet been allocated for this texture then this function returns the requested number of array layers.</p>
+<p>For texture targets that do not support array layers this will return 1.</p>
+<p><b>See also </b><a href="qopengltexture.html#setLayers">setLayers</a>() and <a href="qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p>
+<!-- @@@layers -->
+<!-- $$$levelOfDetailRange[overload1]$$$levelOfDetailRange -->
+<h3 class="fn"><a name="levelOfDetailRange"></a><span class="type"><a href="../qtcore/qpair.html">QPair</a></span>&lt;<span class="type">float</span>, <span class="type">float</span>&gt; QOpenGLTexture::<span class="name">levelOfDetailRange</span>() const</h3>
+<p>Returns the minimum and maximum level of detail parameters.</p>
+<p><b>See also </b><a href="qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a>(), <a href="qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a>(), and <a href="qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a>().</p>
+<!-- @@@levelOfDetailRange -->
+<!-- $$$levelofDetailBias[overload1]$$$levelofDetailBias -->
+<h3 class="fn"><a name="levelofDetailBias"></a><span class="type">float</span> QOpenGLTexture::<span class="name">levelofDetailBias</span>() const</h3>
+<p>Returns the level of detail bias parameter.</p>
+<p><b>See also </b><a href="qopengltexture.html#setLevelofDetailBias">setLevelofDetailBias</a>().</p>
+<!-- @@@levelofDetailBias -->
+<!-- $$$magnificationFilter[overload1]$$$magnificationFilter -->
+<h3 class="fn"><a name="magnificationFilter"></a><span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span> QOpenGLTexture::<span class="name">magnificationFilter</span>() const</h3>
+<p>Returns the magnification filter.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>().</p>
+<!-- @@@magnificationFilter -->
+<!-- $$$maximumAnisotropy[overload1]$$$maximumAnisotropy -->
+<h3 class="fn"><a name="maximumAnisotropy"></a><span class="type">float</span> QOpenGLTexture::<span class="name">maximumAnisotropy</span>() const</h3>
+<p>Returns the maximum level of anisotropy to be accounted for when performing texture lookups. This requires the GL_EXT_texture_filter_anisotropic extension.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMaximumAnisotropy">setMaximumAnisotropy</a>().</p>
+<!-- @@@maximumAnisotropy -->
+<!-- $$$maximumLevelOfDetail[overload1]$$$maximumLevelOfDetail -->
+<h3 class="fn"><a name="maximumLevelOfDetail"></a><span class="type">float</span> QOpenGLTexture::<span class="name">maximumLevelOfDetail</span>() const</h3>
+<p>Returns the maximum level of detail parameter.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a>(), <a href="qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a>(), and <a href="qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a>().</p>
+<!-- @@@maximumLevelOfDetail -->
+<!-- $$$maximumMipLevels[overload1]$$$maximumMipLevels -->
+<h3 class="fn"><a name="maximumMipLevels"></a><span class="type">int</span> QOpenGLTexture::<span class="name">maximumMipLevels</span>() const</h3>
+<p>Returns the maximum number of mipmap levels that this texture can have given the current dimensions.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMipLevels">setMipLevels</a>(), <a href="qopengltexture.html#mipLevels">mipLevels</a>(), and <a href="qopengltexture.html#setSize">setSize</a>().</p>
+<!-- @@@maximumMipLevels -->
+<!-- $$$minMagFilters[overload1]$$$minMagFilters -->
+<h3 class="fn"><a name="minMagFilters"></a><span class="type"><a href="../qtcore/qpair.html">QPair</a></span>&lt;<span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span>, <span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span>&gt; QOpenGLTexture::<span class="name">minMagFilters</span>() const</h3>
+<p>Returns the current minification and magnification filters.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMinMagFilters">setMinMagFilters</a>().</p>
+<!-- @@@minMagFilters -->
+<!-- $$$minificationFilter[overload1]$$$minificationFilter -->
+<h3 class="fn"><a name="minificationFilter"></a><span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span> QOpenGLTexture::<span class="name">minificationFilter</span>() const</h3>
+<p>Returns the minification filter.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMinificationFilter">setMinificationFilter</a>().</p>
+<!-- @@@minificationFilter -->
+<!-- $$$minimumLevelOfDetail[overload1]$$$minimumLevelOfDetail -->
+<h3 class="fn"><a name="minimumLevelOfDetail"></a><span class="type">float</span> QOpenGLTexture::<span class="name">minimumLevelOfDetail</span>() const</h3>
+<p>Returns the minimum level of detail parameter.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a>(), <a href="qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a>(), and <a href="qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a>().</p>
+<!-- @@@minimumLevelOfDetail -->
+<!-- $$$mipBaseLevel[overload1]$$$mipBaseLevel -->
+<h3 class="fn"><a name="mipBaseLevel"></a><span class="type">int</span> QOpenGLTexture::<span class="name">mipBaseLevel</span>() const</h3>
+<p>Returns the mipmap base level used for all texture lookups with this texture. The default is 0.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a>(), <a href="qopengltexture.html#mipMaxLevel">mipMaxLevel</a>(), and <a href="qopengltexture.html#mipLevelRange">mipLevelRange</a>().</p>
+<!-- @@@mipBaseLevel -->
+<!-- $$$mipLevelRange[overload1]$$$mipLevelRange -->
+<h3 class="fn"><a name="mipLevelRange"></a><span class="type"><a href="../qtcore/qpair.html">QPair</a></span>&lt;<span class="type">int</span>, <span class="type">int</span>&gt; QOpenGLTexture::<span class="name">mipLevelRange</span>() const</h3>
+<p>Returns the range of mipmap levels that can be used for texture lookups with this texture.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMipLevelRange">setMipLevelRange</a>(), <a href="qopengltexture.html#mipBaseLevel">mipBaseLevel</a>(), and <a href="qopengltexture.html#mipMaxLevel">mipMaxLevel</a>().</p>
+<!-- @@@mipLevelRange -->
+<!-- $$$mipLevels[overload1]$$$mipLevels -->
+<h3 class="fn"><a name="mipLevels"></a><span class="type">int</span> QOpenGLTexture::<span class="name">mipLevels</span>() const</h3>
+<p>Returns the number of mipmap levels for this texture. If storage has not yet been allocated for this texture it returns the requested number of mipmap levels.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMipLevels">setMipLevels</a>(), <a href="qopengltexture.html#maximumMipLevels">maximumMipLevels</a>(), and <a href="qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p>
+<!-- @@@mipLevels -->
+<!-- $$$mipMaxLevel[overload1]$$$mipMaxLevel -->
+<h3 class="fn"><a name="mipMaxLevel"></a><span class="type">int</span> QOpenGLTexture::<span class="name">mipMaxLevel</span>() const</h3>
+<p>Returns the mipmap maximum level used for all texture lookups with this texture.</p>
+<p><b>See also </b><a href="qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a>(), <a href="qopengltexture.html#mipBaseLevel">mipBaseLevel</a>(), and <a href="qopengltexture.html#mipLevelRange">mipLevelRange</a>().</p>
+<!-- @@@mipMaxLevel -->
+<!-- $$$release[overload1]$$$release -->
+<h3 class="fn"><a name="release"></a><span class="type">void</span> QOpenGLTexture::<span class="name">release</span>()</h3>
+<p>Unbinds this texture from the currently active texture unit.</p>
+<p><b>See also </b><a href="qopengltexture.html#bind">bind</a>().</p>
+<!-- @@@release -->
+<!-- $$$release$$$releaseuintTextureUnitReset -->
+<h3 class="fn"><a name="release-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">release</span>(<span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> unit</i>, <span class="type"><a href="qopengltexture.html#TextureUnitReset-enum">TextureUnitReset</a></span><i> reset</i> = DontResetTextureUnit)</h3>
+<p>Unbinds this texture from texture unit <i>unit</i>.</p>
+<p>If parameter <i>reset</i> is <tt>true</tt> then this function will restore the active unit to the texture unit that was active upon entry.</p>
+<!-- @@@release -->
+<!-- $$$setAutoMipMapGenerationEnabled[overload1]$$$setAutoMipMapGenerationEnabledbool -->
+<h3 class="fn"><a name="setAutoMipMapGenerationEnabled"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setAutoMipMapGenerationEnabled</span>(<span class="type">bool</span><i> enabled</i>)</h3>
+<p>If <i>enabled</i> is <tt>true</tt>, enables automatic mipmap generation for this texture object to occur whenever the level 0 mipmap data is set via <a href="qopengltexture.html#setData">setData</a>().</p>
+<p>The automatic mipmap generation is enabled by default.</p>
+<p><b>See also </b><a href="qopengltexture.html#isAutoMipMapGenerationEnabled">isAutoMipMapGenerationEnabled</a>() and <a href="qopengltexture.html#generateMipMaps">generateMipMaps</a>().</p>
+<!-- @@@setAutoMipMapGenerationEnabled -->
+<!-- $$$setBorderColor[overload1]$$$setBorderColorQColor -->
+<h3 class="fn"><a name="setBorderColor"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setBorderColor</span>(<span class="type"><a href="qcolor.html">QColor</a></span><i> color</i>)</h3>
+<p>Sets the border color of the texture to <i>color</i>.</p>
+<p><b>Note: </b>This function has no effect on Mac and Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#borderColor">borderColor</a>().</p>
+<!-- @@@setBorderColor -->
+<!-- $$$setBorderColor$$$setBorderColorfloatfloatfloatfloat -->
+<h3 class="fn"><a name="setBorderColor-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setBorderColor</span>(<span class="type">float</span><i> r</i>, <span class="type">float</span><i> g</i>, <span class="type">float</span><i> b</i>, <span class="type">float</span><i> a</i>)</h3>
+<p>Sets the color red to <i>r</i>, green to <i>g</i>, blue to <i>b</i>, and <i>a</i> to the alpha value. <p>This is an overloaded function.</p>
+<!-- @@@setBorderColor -->
+<!-- $$$setBorderColor$$$setBorderColorintintintint -->
+<h3 class="fn"><a name="setBorderColor-3"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setBorderColor</span>(<span class="type">int</span><i> r</i>, <span class="type">int</span><i> g</i>, <span class="type">int</span><i> b</i>, <span class="type">int</span><i> a</i>)</h3>
+<p>Sets the color red to <i>r</i>, green to <i>g</i>, blue to <i>b</i>, and the alpha value to <i>a</i>. <p>This is an overloaded function.</p>
+<!-- @@@setBorderColor -->
+<!-- $$$setBorderColor$$$setBorderColoruintuintuintuint -->
+<h3 class="fn"><a name="setBorderColor-4"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setBorderColor</span>(<span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> r</i>, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> g</i>, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> b</i>, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span><i> a</i>)</h3>
+<p>Sets the color red to <i>r</i>, green to <i>g</i>, blue to <i>b</i>, and the alpha value to <i>a</i>. <p>This is an overloaded function.</p>
+<!-- @@@setBorderColor -->
+<!-- $$$setCompressedData[overload1]$$$setCompressedDataintintCubeMapFaceintconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setCompressedData"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setCompressedData</span>(<span class="type">int</span><i> mipLevel</i>, <span class="type">int</span><i> layer</i>, <span class="type"><a href="qopengltexture.html#CubeMapFace-enum">CubeMapFace</a></span><i> cubeFace</i>, <span class="type">int</span><i> dataSize</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>Uploads compressed pixel <i>data</i> to <i>mipLevel</i>, array <i>layer</i>, and <i>cubeFace</i>. The pixel transfer can optionally be controlled with <i>options</i>. The <i>dataSize</i> argument should specify the size of the data pointed to by <i>data</i>.</p>
+<p>If not using a compressed <a href="qopengltexture.html#format">format</a>() then you should use <a href="qopengltexture.html#setData">setData</a>() instead of this function.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<!-- @@@setCompressedData -->
+<!-- $$$setCompressedData$$$setCompressedDataintintintconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setCompressedData-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setCompressedData</span>(<span class="type">int</span><i> mipLevel</i>, <span class="type">int</span><i> layer</i>, <span class="type">int</span><i> dataSize</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>This is an overloaded function.</p>
+<!-- @@@setCompressedData -->
+<!-- $$$setCompressedData$$$setCompressedDataintintconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setCompressedData-3"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setCompressedData</span>(<span class="type">int</span><i> mipLevel</i>, <span class="type">int</span><i> dataSize</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>This is an overloaded function.</p>
+<!-- @@@setCompressedData -->
+<!-- $$$setCompressedData$$$setCompressedDataintconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setCompressedData-4"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setCompressedData</span>(<span class="type">int</span><i> dataSize</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>This is an overloaded function.</p>
+<!-- @@@setCompressedData -->
+<!-- $$$setData[overload1]$$$setDataintintCubeMapFacePixelFormatPixelTypeconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setData"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setData</span>(<span class="type">int</span><i> mipLevel</i>, <span class="type">int</span><i> layer</i>, <span class="type"><a href="qopengltexture.html#CubeMapFace-enum">CubeMapFace</a></span><i> cubeFace</i>, <span class="type"><a href="qopengltexture.html#PixelFormat-enum">PixelFormat</a></span><i> sourceFormat</i>, <span class="type"><a href="qopengltexture.html#PixelType-enum">PixelType</a></span><i> sourceType</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>Uploads pixel <i>data</i> for this texture object <i>mipLevel</i>, array <i>layer</i>, and <i>cubeFace</i>. Storage must have been allocated before uploading pixel data. Some overloads of setData() will set appropriate dimensions, mipmap levels, and array layers and then allocate storage for you if they have enough information to do so. This will be noted in the function documentation.</p>
+<p>The structure of the pixel data pointed to by <i>data</i> is specified by <i>sourceFormat</i> and <i>sourceType</i>. The pixel data upload can optionally be controlled by <i>options</i>.</p>
+<p>If using a compressed <a href="qopengltexture.html#format">format</a>() then you should use <a href="qopengltexture.html#setCompressedData">setCompressedData</a>() instead of this function.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="qopengltexture.html#setCompressedData">setCompressedData</a>().</p>
+<!-- @@@setData -->
+<!-- $$$setData$$$setDataintintPixelFormatPixelTypeconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setData-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setData</span>(<span class="type">int</span><i> mipLevel</i>, <span class="type">int</span><i> layer</i>, <span class="type"><a href="qopengltexture.html#PixelFormat-enum">PixelFormat</a></span><i> sourceFormat</i>, <span class="type"><a href="qopengltexture.html#PixelType-enum">PixelType</a></span><i> sourceType</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<!-- @@@setData -->
+<!-- $$$setData$$$setDataintPixelFormatPixelTypeconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setData-3"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setData</span>(<span class="type">int</span><i> mipLevel</i>, <span class="type"><a href="qopengltexture.html#PixelFormat-enum">PixelFormat</a></span><i> sourceFormat</i>, <span class="type"><a href="qopengltexture.html#PixelType-enum">PixelType</a></span><i> sourceType</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<!-- @@@setData -->
+<!-- $$$setData$$$setDataPixelFormatPixelTypeconstvoid*constQOpenGLPixelTransferOptions*const -->
+<h3 class="fn"><a name="setData-4"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setData</span>(<span class="type"><a href="qopengltexture.html#PixelFormat-enum">PixelFormat</a></span><i> sourceFormat</i>, <span class="type"><a href="qopengltexture.html#PixelType-enum">PixelType</a></span><i> sourceType</i>, const <span class="type">void</span> *<i> data</i>, const <span class="type">QOpenGLPixelTransferOptions</span> * const<i> options</i> = 0)</h3>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<!-- @@@setData -->
+<!-- $$$setData$$$setDataconstQImage&MipMapGeneration -->
+<h3 class="fn"><a name="setData-9"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setData</span>(const <span class="type"><a href="qimage.html">QImage</a></span> &amp;<i> image</i>, <span class="type"><a href="qopengltexture.html#MipMapGeneration-enum">MipMapGeneration</a></span><i> genMipMaps</i> = GenerateMipMaps)</h3>
+<p>This overload of <a href="qopengltexture.html#setData">setData</a>() will allocate storage for you. The pixel data is contained in <i>image</i>. Mipmaps are generated by default. Set <i>genMipMaps</i> to <a href="qopengltexture.html#MipMapGeneration-enum">DontGenerateMipMaps</a> to turn off mipmap generation.</p>
+<p>This is an overloaded function.</p>
+<!-- @@@setData -->
+<!-- $$$setDepthStencilMode[overload1]$$$setDepthStencilModeDepthStencilMode -->
+<h3 class="fn"><a name="setDepthStencilMode"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setDepthStencilMode</span>(<span class="type"><a href="qopengltexture.html#DepthStencilMode-enum">DepthStencilMode</a></span><i> mode</i>)</h3>
+<p>If using a texture that has a combined depth/stencil format this function sets which component of the texture is accessed to <i>mode</i>.</p>
+<p>When the parameter is set to <a href="qopengltexture.html#DepthStencilMode-enum">DepthMode</a>, then accessing it from the shader will access the depth component as a single float, as normal. But when the parameter is set to <a href="qopengltexture.html#DepthStencilMode-enum">StencilMode</a>, the shader will access the stencil component.</p>
+<p><b>Note: </b>This function has no effect on Mac and Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#depthStencilMode">depthStencilMode</a>().</p>
+<!-- @@@setDepthStencilMode -->
+<!-- $$$setFormat[overload1]$$$setFormatTextureFormat -->
+<h3 class="fn"><a name="setFormat"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setFormat</span>(<span class="type"><a href="qopengltexture.html#TextureFormat-enum">TextureFormat</a></span><i> format</i>)</h3>
+<p>Sets the format of this texture object to <i>format</i>. This function must be called before texture storage is allocated.</p>
+<p>Note that all formats may not be supported. The exact set of supported formats is dependent upon your <a href="../qtopengl/opengl-module.html">OpenGL</a> implementation and version.</p>
+<p><b>See also </b><a href="qopengltexture.html#format">format</a>() and <a href="qopengltexture.html#allocateStorage">allocateStorage</a>().</p>
+<!-- @@@setFormat -->
+<!-- $$$setLayers[overload1]$$$setLayersint -->
+<h3 class="fn"><a name="setLayers"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setLayers</span>(<span class="type">int</span><i> layers</i>)</h3>
+<p>Sets the number of array <i>layers</i> to allocate storage for. This function should be called before storage is allocated for the texture.</p>
+<p>For targets that do not support array layers this function has no effect.</p>
+<p><b>See also </b><a href="qopengltexture.html#layers">layers</a>() and <a href="qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p>
+<!-- @@@setLayers -->
+<!-- $$$setLevelOfDetailRange[overload1]$$$setLevelOfDetailRangefloatfloat -->
+<h3 class="fn"><a name="setLevelOfDetailRange"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setLevelOfDetailRange</span>(<span class="type">float</span><i> min</i>, <span class="type">float</span><i> max</i>)</h3>
+<p>Sets the minimum level of detail parameters to <i>min</i> and the maximum level to <i>max</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a>(), <a href="qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a>(), and <a href="qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a>().</p>
+<!-- @@@setLevelOfDetailRange -->
+<!-- $$$setLevelofDetailBias[overload1]$$$setLevelofDetailBiasfloat -->
+<h3 class="fn"><a name="setLevelofDetailBias"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setLevelofDetailBias</span>(<span class="type">float</span><i> bias</i>)</h3>
+<p>Sets the level of detail bias to <i>bias</i>. Level of detail bias affects the point at which mipmapping levels change. Increasing values for level of detail bias makes the overall images blurrier or smoother. Decreasing values make the overall images sharper.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#levelofDetailBias">levelofDetailBias</a>().</p>
+<!-- @@@setLevelofDetailBias -->
+<!-- $$$setMagnificationFilter[overload1]$$$setMagnificationFilterFilter -->
+<h3 class="fn"><a name="setMagnificationFilter"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMagnificationFilter</span>(<span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span><i> filter</i>)</h3>
+<p>Sets the magnification filter to <i>filter</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#magnificationFilter">magnificationFilter</a>(), <a href="qopengltexture.html#setMinificationFilter">setMinificationFilter</a>(), and <a href="qopengltexture.html#setMinMagFilters">setMinMagFilters</a>().</p>
+<!-- @@@setMagnificationFilter -->
+<!-- $$$setMaximumAnisotropy[overload1]$$$setMaximumAnisotropyfloat -->
+<h3 class="fn"><a name="setMaximumAnisotropy"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMaximumAnisotropy</span>(<span class="type">float</span><i> anisotropy</i>)</h3>
+<p>If your <a href="../qtopengl/opengl-module.html">OpenGL</a> implementation supports the GL_EXT_texture_filter_anisotropic extension this function sets the maximum anisotropy level to <i>anisotropy</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#maximumAnisotropy">maximumAnisotropy</a>().</p>
+<!-- @@@setMaximumAnisotropy -->
+<!-- $$$setMaximumLevelOfDetail[overload1]$$$setMaximumLevelOfDetailfloat -->
+<h3 class="fn"><a name="setMaximumLevelOfDetail"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMaximumLevelOfDetail</span>(<span class="type">float</span><i> value</i>)</h3>
+<p>Sets the maximum level of detail to <i>value</i>. This limits the selection of lowest resolution mipmap (highest mipmap level). The default value is 1000.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a>(), <a href="qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a>(), and <a href="qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a>().</p>
+<!-- @@@setMaximumLevelOfDetail -->
+<!-- $$$setMinMagFilters[overload1]$$$setMinMagFiltersFilterFilter -->
+<h3 class="fn"><a name="setMinMagFilters"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMinMagFilters</span>(<span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span><i> minificationFilter</i>, <span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span><i> magnificationFilter</i>)</h3>
+<p>Sets the minification filter to <i>minificationFilter</i> and the magnification filter to <i>magnificationFilter</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#minMagFilters">minMagFilters</a>(), <a href="qopengltexture.html#setMinificationFilter">setMinificationFilter</a>(), and <a href="qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>().</p>
+<!-- @@@setMinMagFilters -->
+<!-- $$$setMinificationFilter[overload1]$$$setMinificationFilterFilter -->
+<h3 class="fn"><a name="setMinificationFilter"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMinificationFilter</span>(<span class="type"><a href="qopengltexture.html#Filter-enum">Filter</a></span><i> filter</i>)</h3>
+<p>Sets the filter used for minification to <i>filter</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#minificationFilter">minificationFilter</a>(), <a href="qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>(), and <a href="qopengltexture.html#setMinMagFilters">setMinMagFilters</a>().</p>
+<!-- @@@setMinificationFilter -->
+<!-- $$$setMinimumLevelOfDetail[overload1]$$$setMinimumLevelOfDetailfloat -->
+<h3 class="fn"><a name="setMinimumLevelOfDetail"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMinimumLevelOfDetail</span>(<span class="type">float</span><i> value</i>)</h3>
+<p>Sets the minimum level of detail to <i>value</i>. This limits the selection of highest resolution mipmap (lowest mipmap level). The default value is -1000.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a>(), <a href="qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a>(), and <a href="qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a>().</p>
+<!-- @@@setMinimumLevelOfDetail -->
+<!-- $$$setMipBaseLevel[overload1]$$$setMipBaseLevelint -->
+<h3 class="fn"><a name="setMipBaseLevel"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMipBaseLevel</span>(<span class="type">int</span><i> baseLevel</i>)</h3>
+<p>Sets the base mipmap level used for all texture lookups with this texture to <i>baseLevel</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#mipBaseLevel">mipBaseLevel</a>(), <a href="qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a>(), and <a href="qopengltexture.html#setMipLevelRange">setMipLevelRange</a>().</p>
+<!-- @@@setMipBaseLevel -->
+<!-- $$$setMipLevelRange[overload1]$$$setMipLevelRangeintint -->
+<h3 class="fn"><a name="setMipLevelRange"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMipLevelRange</span>(<span class="type">int</span><i> baseLevel</i>, <span class="type">int</span><i> maxLevel</i>)</h3>
+<p>Sets the range of mipmap levels that can be used for texture lookups with this texture to range from <i>baseLevel</i> to <i>maxLevel</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a>(), <a href="qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a>(), and <a href="qopengltexture.html#mipLevelRange">mipLevelRange</a>().</p>
+<!-- @@@setMipLevelRange -->
+<!-- $$$setMipLevels[overload1]$$$setMipLevelsint -->
+<h3 class="fn"><a name="setMipLevels"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMipLevels</span>(<span class="type">int</span><i> levels</i>)</h3>
+<p>For texture targets that support mipmaps, this function sets the requested number of mipmap <i>levels</i> to allocate storage for. This function should be called before storage is allocated for the texture.</p>
+<p>If the texture target does not support mipmaps this function has no effect.</p>
+<p><b>See also </b><a href="qopengltexture.html#mipLevels">mipLevels</a>(), <a href="qopengltexture.html#maximumMipLevels">maximumMipLevels</a>(), and <a href="qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p>
+<!-- @@@setMipLevels -->
+<!-- $$$setMipMaxLevel[overload1]$$$setMipMaxLevelint -->
+<h3 class="fn"><a name="setMipMaxLevel"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setMipMaxLevel</span>(<span class="type">int</span><i> maxLevel</i>)</h3>
+<p>Sets the maximum mipmap level used for all texture lookups with this texture to <i>maxLevel</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#mipMaxLevel">mipMaxLevel</a>(), <a href="qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a>(), and <a href="qopengltexture.html#setMipLevelRange">setMipLevelRange</a>().</p>
+<!-- @@@setMipMaxLevel -->
+<!-- $$$setSize[overload1]$$$setSizeintintint -->
+<h3 class="fn"><a name="setSize"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setSize</span>(<span class="type">int</span><i> width</i>, <span class="type">int</span><i> height</i> = 1, <span class="type">int</span><i> depth</i> = 1)</h3>
+<p>Sets the dimensions of this texture object to <i>width</i>, <i>height</i>, and <i>depth</i>. The default for each dimension is 1. The maximum allowable texture size is dependent upon your <a href="../qtopengl/opengl-module.html">OpenGL</a> implementation. Allocating storage for a texture less than the maximum size can still fail if your system is low on resources.</p>
+<p><b>See also </b><a href="qopengltexture.html#width">width</a>(), <a href="qopengltexture.html#height">height</a>(), and <a href="qopengltexture.html#depth">depth</a>().</p>
+<!-- @@@setSize -->
+<!-- $$$setSwizzleMask[overload1]$$$setSwizzleMaskSwizzleComponentSwizzleValue -->
+<h3 class="fn"><a name="setSwizzleMask"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setSwizzleMask</span>(<span class="type"><a href="qopengltexture.html#SwizzleComponent-enum">SwizzleComponent</a></span><i> component</i>, <span class="type"><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></span><i> value</i>)</h3>
+<p>GLSL shaders are able to reorder the components of the vec4 returned by texture functions. It is also desirable to be able to control this reordering from CPU side code. This is made possible by swizzle masks since <a href="../qtopengl/opengl-module.html">OpenGL</a> 3.3&#x2e;</p>
+<p>Each component of the texture can be mapped to one of the <a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a> options.</p>
+<p>This function maps <i>component</i> to the output <i>value</i>.</p>
+<p><b>Note: </b>This function has no effect on Mac and Qt built for <a href="../qtopengl/opengl-module.html">OpenGL</a> ES 2.</p><p><b>See also </b><a href="qopengltexture.html#swizzleMask">swizzleMask</a>().</p>
+<!-- @@@setSwizzleMask -->
+<!-- $$$setSwizzleMask$$$setSwizzleMaskSwizzleValueSwizzleValueSwizzleValueSwizzleValue -->
+<h3 class="fn"><a name="setSwizzleMask-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setSwizzleMask</span>(<span class="type"><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></span><i> r</i>, <span class="type"><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></span><i> g</i>, <span class="type"><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></span><i> b</i>, <span class="type"><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></span><i> a</i>)</h3>
+<p>Parameters <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i> are values used for setting the colors red, green, blue, and the alpha value. <p>This is an overloaded function.</p>
+<!-- @@@setSwizzleMask -->
+<!-- $$$setWrapMode[overload1]$$$setWrapModeWrapMode -->
+<h3 class="fn"><a name="setWrapMode"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setWrapMode</span>(<span class="type"><a href="qopengltexture.html#WrapMode-enum">WrapMode</a></span><i> mode</i>)</h3>
+<p>Sets the wrap (or repeat mode) for all texture dimentions to <i>mode</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#wrapMode">wrapMode</a>().</p>
+<!-- @@@setWrapMode -->
+<!-- $$$setWrapMode$$$setWrapModeCoordinateDirectionWrapMode -->
+<h3 class="fn"><a name="setWrapMode-2"></a><span class="type">void</span> QOpenGLTexture::<span class="name">setWrapMode</span>(<span class="type"><a href="qopengltexture.html#CoordinateDirection-enum">CoordinateDirection</a></span><i> direction</i>, <span class="type"><a href="qopengltexture.html#WrapMode-enum">WrapMode</a></span><i> mode</i>)</h3>
+<p>Holds the texture dimension <i>direction</i>. <p>This is an overloaded function.</p>
+<!-- @@@setWrapMode -->
+<!-- $$$swizzleMask[overload1]$$$swizzleMaskSwizzleComponent -->
+<h3 class="fn"><a name="swizzleMask"></a><span class="type"><a href="qopengltexture.html#SwizzleValue-enum">SwizzleValue</a></span> QOpenGLTexture::<span class="name">swizzleMask</span>(<span class="type"><a href="qopengltexture.html#SwizzleComponent-enum">SwizzleComponent</a></span><i> component</i>) const</h3>
+<p>Returns the swizzle mask for texture <i>component</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#setSwizzleMask">setSwizzleMask</a>().</p>
+<!-- @@@swizzleMask -->
+<!-- $$$textureId[overload1]$$$textureId -->
+<h3 class="fn"><a name="textureId"></a><span class="type">GLuint</span> QOpenGLTexture::<span class="name">textureId</span>() const</h3>
+<p>Returns the name of the underlying <a href="../qtopengl/opengl-module.html">OpenGL</a> texture object or 0 if it has not yet been created.</p>
+<p><b>See also </b><a href="qopengltexture.html#create">create</a>(), <a href="qopengltexture.html#destroy">destroy</a>(), and <a href="qopengltexture.html#isCreated">isCreated</a>().</p>
+<!-- @@@textureId -->
+<!-- $$$width[overload1]$$$width -->
+<h3 class="fn"><a name="width"></a><span class="type">int</span> QOpenGLTexture::<span class="name">width</span>() const</h3>
+<p>Returns the width of a 1D, 2D or 3D texture.</p>
+<p><b>See also </b><a href="qopengltexture.html#height">height</a>(), <a href="qopengltexture.html#depth">depth</a>(), and <a href="qopengltexture.html#setSize">setSize</a>().</p>
+<!-- @@@width -->
+<!-- $$$wrapMode[overload1]$$$wrapModeCoordinateDirection -->
+<h3 class="fn"><a name="wrapMode"></a><span class="type"><a href="qopengltexture.html#WrapMode-enum">WrapMode</a></span> QOpenGLTexture::<span class="name">wrapMode</span>(<span class="type"><a href="qopengltexture.html#CoordinateDirection-enum">CoordinateDirection</a></span><i> direction</i>) const</h3>
+<p>Returns the wrap mode for the texture dimension <i>direction</i>.</p>
+<p><b>See also </b><a href="qopengltexture.html#setWrapMode">setWrapMode</a>().</p>
+<!-- @@@wrapMode -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2014 Digia Plc and/or its
+   subsidiaries. Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Digia, Qt and their respective logos are trademarks of Digia Plc     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
