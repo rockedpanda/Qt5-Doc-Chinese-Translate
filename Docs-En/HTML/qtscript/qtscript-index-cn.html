@@ -41,8 +41,8 @@ Qt 5.3.1 参考文档</li>
 <li class="level3"><a href="#signal-to-member-function-connections">信号到对象方法的连接</a></li>
 <li class="level3"><a href="#signal-to-named-member-function-connections">信号到具名成员方法的连接</a></li>
 <li class="level3"><a href="#error-handling">Error Handling</a></li>
-<li class="level3"><a href="#emitting-signals-from-scripts">Emitting Signals from Scripts</a></li>
-<li class="level3"><a href="#overloaded-signals-and-slots">Overloaded Signals and Slots</a></li>
+<li class="level3"><a href="#emitting-signals-from-scripts">在脚本中触发信号</a></li>
+<li class="level3"><a href="#overloaded-signals-and-slots">重载后的信号和槽</a></li>
 <li class="level2"><a href="#accessing-properties">Accessing Properties</a></li>
 <li class="level2"><a href="#accessing-child-qobjects">Accessing Child QObjects</a></li>
 <li class="level2"><a href="#controlling-qobject-ownership">Controlling QObject Ownership</a></li>
@@ -245,21 +245,28 @@ var <span class="name">fun</span> = <span class="keyword">function</span>() { <s
 <orgp>To disconnect from the signal, pass the same arguments to <tt>disconnect()</tt>:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">disconnect</span>(<span class="name">obj</span>, <span class="string">&quot;fun&quot;</span>);</pre>
 <a name="error-handling"></a>
-<h4>Error Handling</h4>
-<p>When <tt>connect()</tt> or <tt>disconnect()</tt> succeeds, the function will return <tt>undefined</tt>; otherwise, it will throw a script exception. You can obtain an error message from the resulting <tt>Error</tt> object. Example:</p>
+<h4>错误处理</h4>
+<orgh4>Error Handling</orgh4>
+<p>当 <tt>connect()</tt> 或 <tt>disconnect()</tt> 执行成功时，函数返回 <tt>undefined</tt>；否则的话将跑出一个异常。你可以从给出的 <tt>Error</tt> 对象获取到错误描述信息；比如：</p>
+<orgp>When <tt>connect()</tt> or <tt>disconnect()</tt> succeeds, the function will return <tt>undefined</tt>; otherwise, it will throw a script exception. You can obtain an error message from the resulting <tt>Error</tt> object. Example:</orgp>
 <pre class="js"><span class="keyword">try</span> {
     <span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">connect</span>(<span class="name">myQObject</span>, <span class="string">&quot;slotThatDoesntExist&quot;</span>);
 } <span class="keyword">catch</span> (<span class="name">e</span>) {
     print(e);
 }</pre>
 <a name="emitting-signals-from-scripts"></a>
-<h4>Emitting Signals from Scripts</h4>
-<p>To emit a signal from script code, you simply invoke the signal function, passing the relevant arguments:</p>
+<h4>在脚本中触发信号</h4>
+<orgh4>Emitting Signals from Scripts</orgh4>
+<p>想要在脚本代码中触发信号，秩序简单的调用信号函数，并传递相应的参数：</p>
+<orgp>To emit a signal from script code, you simply invoke the signal function, passing the relevant arguments:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">somethingChanged</span>(<span class="string">&quot;hello&quot;</span>);</pre>
-<p>It is currently not possible to define a new signal in a script; i.e&#x2e;, all signals must be defined by C++ classes.</p>
+<p>当前并不支持在脚本中信号的定义,也就是说,所有的信号必须在C++中定义。</p>
+<orgp>It is currently not possible to define a new signal in a script; i.e&#x2e;, all signals must be defined by C++ classes.</orgp>
 <a name="overloaded-signals-and-slots"></a>
-<h4>Overloaded Signals and Slots</h4>
-<p>When a signal or slot is overloaded, Qt Script will attempt to pick the right overload based on the actual types of the <a href="qscriptvalue.html">QScriptValue</a> arguments involved in the function invocation. For example, if your class has slots <tt>myOverloadedSlot(int)</tt> and <tt>myOverloadedSlot(QString)</tt>, the following script code will behave reasonably:</p>
+<h4>重载后的信号和槽</h4>
+<orgh4>Overloaded Signals and Slots</orgh4>
+<p>当一个信号或槽被重载后，Qt Script会尝试根据实际被调用函数的参数中 <a href="qscriptvalue.html">QScriptValue</a> 参数的具体类型来决定选择哪个被重载的信号和槽来使用。 例如，For example, if your class has slots <tt>myOverloadedSlot(int)</tt> and <tt>myOverloadedSlot(QString)</tt>, the following script code will behave reasonably:</p>
+<orgp>When a signal or slot is overloaded, Qt Script will attempt to pick the right overload based on the actual types of the <a href="qscriptvalue.html">QScriptValue</a> arguments involved in the function invocation. For example, if your class has slots <tt>myOverloadedSlot(int)</tt> and <tt>myOverloadedSlot(QString)</tt>, the following script code will behave reasonably:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">myOverloadedSlot</span>(<span class="number">10</span>);   <span class="comment">// will call the int overload</span>
 <span class="name">myQObject</span>.<span class="name">myOverloadedSlot</span>(<span class="string">&quot;10&quot;</span>); <span class="comment">// will call the QString overload</span></pre>
 <p>You can specify a particular overload by using array-style property access with the <a href="../qtcore/qmetaobject.html#normalizedSignature">normalized signature</a> of the C++ function as the property name:</p>
