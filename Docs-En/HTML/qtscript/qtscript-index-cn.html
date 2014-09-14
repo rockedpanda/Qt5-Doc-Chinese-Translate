@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- qt-doc 文档翻译, by RockedPanda@github.com -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN">
 <head>
@@ -6,7 +7,7 @@
 <!-- qtscript-index.qdoc -->
   <title>Qt Script | QtScript </title>
   <style>
-  orgp, orgh2, orgh3, orgli {
+  orgp, orgh2, orgh3, orgli,orgh4 {
   display: none;
   }
   </style>
@@ -36,9 +37,9 @@ Qt 5.3.1 参考文档</li>
 <li class="level1"><a href="#basic-usage">基本用法</a></li>
 <li class="level1"><a href="#making-a-qobject-available-to-the-script-engine">使QObject对象可被脚本引擎使用</a></li>
 <li class="level2"><a href="#using-signals-and-slots">使用信号和槽</a></li>
-<li class="level3"><a href="#signal-to-function-connections">Signal to Function Connections</a></li>
-<li class="level3"><a href="#signal-to-member-function-connections">Signal to Member Function Connections</a></li>
-<li class="level3"><a href="#signal-to-named-member-function-connections">Signal to Named Member Function Connections</a></li>
+<li class="level3"><a href="#signal-to-function-connections">信号到函数的连接</a></li>
+<li class="level3"><a href="#signal-to-member-function-connections">信号到对象方法的连接</a></li>
+<li class="level3"><a href="#signal-to-named-member-function-connections">信号到具名成员方法的连接</a></li>
 <li class="level3"><a href="#error-handling">Error Handling</a></li>
 <li class="level3"><a href="#emitting-signals-from-scripts">Emitting Signals from Scripts</a></li>
 <li class="level3"><a href="#overloaded-signals-and-slots">Overloaded Signals and Slots</a></li>
@@ -177,7 +178,8 @@ engine<span class="operator">.</span>globalObject()<span class="operator">.</spa
 <span class="type">QLineEdit</span> <span class="operator">*</span>edit <span class="operator">=</span> <span class="keyword">new</span> <span class="type">QLineEdit</span>(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);
 <span class="type"><a href="qscriptvalue.html">QScriptValue</a></span> handler <span class="operator">=</span> eng<span class="operator">.</span>evaluate(<span class="string">&quot;(function(text) { print('text was changed to', text); })&quot;</span>);
 <a href="qscriptengine.html#qScriptConnect">qScriptConnect</a>(edit<span class="operator">,</span> SIGNAL(textChanged(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>))<span class="operator">,</span> <span class="type"><a href="qscriptvalue.html">QScriptValue</a></span>()<span class="operator">,</span> handler);</pre>
-<p>The first two arguments to <a href="qscriptengine.html#qScriptConnect">qScriptConnect</a>() are the same as you would pass to <a href="../qtcore/qobject.html#connect">QObject::connect</a>() to establish a normal C++ connection. The third argument is the script object that will act as the <tt>this</tt> object when the signal handler is invoked; in the above example we pass an invalid script value, so the <tt>this</tt> object will be the Global Object. The fourth argument is the script function (&quot;slot&quot;) itself. The following example shows how the <tt>this</tt> argument can be put to use:</p>
+<p>传递给 <a href="qscriptengine.html#qScriptConnect">qScriptConnect</a>() 的头两个参数和普通的C++绑定时传递给 <a href="../qtcore/qobject.html#connect">QObject::connect</a>() 的前两个是相同的。第三个参数将在信号被响应时充当变量this的角色；上例中传递的是一个非法值，此时 <tt>this</tt> 指向全局变量。第四个参数是槽函数本身。下面例子说明了参数 <tt>this</tt> 如何使用：</p>
+<orgp>The first two arguments to <a href="qscriptengine.html#qScriptConnect">qScriptConnect</a>() are the same as you would pass to <a href="../qtcore/qobject.html#connect">QObject::connect</a>() to establish a normal C++ connection. The third argument is the script object that will act as the <tt>this</tt> object when the signal handler is invoked; in the above example we pass an invalid script value, so the <tt>this</tt> object will be the Global Object. The fourth argument is the script function (&quot;slot&quot;) itself. The following example shows how the <tt>this</tt> argument can be put to use:</orgp>
 <pre class="cpp"><span class="type">QLineEdit</span> <span class="operator">*</span>edit1 <span class="operator">=</span> <span class="keyword">new</span> <span class="type">QLineEdit</span>(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);
 <span class="type">QLineEdit</span> <span class="operator">*</span>edit2 <span class="operator">=</span> <span class="keyword">new</span> <span class="type">QLineEdit</span>(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);
 
@@ -189,42 +191,58 @@ obj2<span class="operator">.</span>setProperty(<span class="string">&quot;name&q
 
 <a href="qscriptengine.html#qScriptConnect">qScriptConnect</a>(edit1<span class="operator">,</span> SIGNAL(returnPressed())<span class="operator">,</span> obj1<span class="operator">,</span> handler);
 <a href="qscriptengine.html#qScriptConnect">qScriptConnect</a>(edit2<span class="operator">,</span> SIGNAL(returnPressed())<span class="operator">,</span> obj2<span class="operator">,</span> handler);</pre>
-<p>We create two QLineEdit objects and define a single signal handler function. The connections use the same handler function, but the function will be invoked with a different <tt>this</tt> object depending on which object's signal was triggered, so the output of the print() statement will be different for each.</p>
-<p>In script code, Qt Script uses a different syntax for connecting to and disconnecting from signals than the familiar C++ syntax; i.e&#x2e;, <a href="../qtcore/qobject.html#connect">QObject::connect</a>(). To connect to a signal, you reference the relevant signal as a property of the sender object, and invoke its <tt>connect()</tt> function. There are three overloads of <tt>connect()</tt>, each with a corresponding <tt>disconnect()</tt> overload. The following subsections describe these three forms.</p>
+<p>我们创建了两个 QLineEdit 对象并声明了一个信号响应函数。建立的两个绑定关系使用了相同的槽函数，但这个函数被调用时将根据不同的信号发送方使用不同的 <tt>this</tt> 对象，所以每个 print() 输出状态是不同的。</p>
+<orgp>We create two QLineEdit objects and define a single signal handler function. The connections use the same handler function, but the function will be invoked with a different <tt>this</tt> object depending on which object's signal was triggered, so the output of the print() statement will be different for each.</orgp>
+<p>在脚本代码中，Qt Script 使用了与常见的C++不同的绑定与解绑定的语法，那就是：<a href="../qtcore/qobject.html#connect">QObject::connect</a>()。为了绑定一个信号，需要将这个信号作为发射方的一个属性来使用，并调用信号发射方的 <tt>connect()</tt> 方法。<tt>connect()</tt>有三种重载的形式，分别对应三种 <tt>disconnect()</tt>。下面的小节介绍了这三种形式。</p>
+<orgp>In script code, Qt Script uses a different syntax for connecting to and disconnecting from signals than the familiar C++ syntax; i.e&#x2e;, <a href="../qtcore/qobject.html#connect">QObject::connect</a>(). To connect to a signal, you reference the relevant signal as a property of the sender object, and invoke its <tt>connect()</tt> function. There are three overloads of <tt>connect()</tt>, each with a corresponding <tt>disconnect()</tt> overload. The following subsections describe these three forms.</orgp>
 <a name="signal-to-function-connections"></a>
-<h4>Signal to Function Connections</h4>
+<h4>信号到函数的连接</h4>
+<orgh4>Signal to Function Connections</orgh4>
 <p><tt>connect(function)</tt></p>
-<p>In this form of connection, the argument to <tt>connect()</tt> is the function to connect to the signal.</p>
+<p>在这种形式中，<tt>connect()</tt> 的参数是被关联到信号的函数。</p>
+<orgp>In this form of connection, the argument to <tt>connect()</tt> is the function to connect to the signal.</orgp>
 <pre class="js"><span class="keyword">function</span> <span class="name">myInterestingScriptFunction</span>() {
     <span class="comment">// ...</span>
 }
 <span class="comment">// ...</span>
 <span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">connect</span>(<span class="name">myInterestingScriptFunction</span>);</pre>
-<p>The argument can be a Qt Script function, as in the above example, or it can be a <a href="../qtcore/qobject.html">QObject</a> slot, as in the following example:</p>
+<p>参数可以是一个Qt Script 函数（像上面例子所示），也可以是一个 <a href="../qtcore/qobject.html">QObject</a> 对象的槽函数（像下面例子所示）:</p>
+<orgp>The argument can be a Qt Script function, as in the above example, or it can be a <a href="../qtcore/qobject.html">QObject</a> slot, as in the following example:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">connect</span>(<span class="name">myOtherQObject</span>.<span class="name">doSomething</span>);</pre>
-<p>When the argument is a <a href="../qtcore/qobject.html">QObject</a> slot, the argument types of the signal and slot do not necessarily have to be compatible; Qt Script will, if necessary, perform conversion of the signal arguments to match the argument types of the slot.</p>
-<p>To disconnect from a signal, you invoke the signal's <tt>disconnect()</tt> function, passing the function to disconnect as argument:</p>
+<p>当参数是 <a href="../qtcore/qobject.html">QObject</a> 对象的槽时，信号和槽的参数不必强制要求匹配；Qt Script将在必要时将信号的各参数进行类型转换以匹配槽函数的参数类型。</p>
+<orgp>When the argument is a <a href="../qtcore/qobject.html">QObject</a> slot, the argument types of the signal and slot do not necessarily have to be compatible; Qt Script will, if necessary, perform conversion of the signal arguments to match the argument types of the slot.</orgp>
+<p>在解除连接时，需要调用信号的 <tt>disconnect()</tt> 方法，并传递原来的函数作为参数：</p>
+<orgp>To disconnect from a signal, you invoke the signal's <tt>disconnect()</tt> function, passing the function to disconnect as argument:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">disconnect</span>(<span class="name">myInterestingFunction</span>);
 <span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">disconnect</span>(<span class="name">myOtherQObject</span>.<span class="name">doSomething</span>);</pre>
-<p>When a script function is invoked in response to a signal, the <tt>this</tt> object will be the Global Object.</p>
+<p>当一个脚本函数(译者注:此处应该是常规的EMCASctipt函数而非EMCAScript对象的方法)因信号触发而被调用时， <tt>this</tt> 对象将指向全局对象。</p>
+<orgp>When a script function is invoked in response to a signal, the <tt>this</tt> object will be the Global Object.</orgp>
 <a name="signal-to-member-function-connections"></a>
-<h4>Signal to Member Function Connections</h4>
+<h4>信号到对象方法的连接</h4>
+<orgh4>Signal to Member Function Connections</orgh4>
 <p><tt>connect(thisObject, function)</tt></p>
-<p>In this form of the <tt>connect()</tt> function, the first argument is the object that will be bound to the variable, <tt>this</tt>, when the function specified using the second argument is invoked.</p>
-<p>If you have a push button in a form, you typically want to do something involving the form in response to the button's <tt>clicked</tt> signal; passing the form as the <tt>this</tt> object makes sense in such a case.</p>
+<p>在这种形式的 <tt>connect()</tt> 函数中，第一个参数将在第二个函数被调用时被后者当做 <tt>this</tt> 引用。</p>
+<orgp>In this form of the <tt>connect()</tt> function, the first argument is the object that will be bound to the variable, <tt>this</tt>, when the function specified using the second argument is invoked.</orgp>
+<p>如果你的表单中有一个按钮，你通常会想做一些事情来响应按钮的 <tt>clicked</tt> 信号，在这种场景下，比如可以选择将表单作为 <tt>this</tt>。</p>
+<orgp>If you have a push button in a form, you typically want to do something involving the form in response to the button's <tt>clicked</tt> signal; passing the form as the <tt>this</tt> object makes sense in such a case.</orgp>
 <pre class="js">var <span class="name">obj</span> = { x: <span class="number">123</span> };
 var <span class="name">fun</span> = <span class="keyword">function</span>() { <span class="name">print</span>(this.<span class="name">x</span>); };
 <span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">connect</span>(<span class="name">obj</span>, <span class="name">fun</span>);</pre>
-<p>To disconnect from the signal, pass the same arguments to <tt>disconnect()</tt>:</p>
+<p>要从这个信号断开连接，需要传递同样的参数到 <tt>disconnect()</tt>:</p>
+<orgp>To disconnect from the signal, pass the same arguments to <tt>disconnect()</tt>:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">disconnect</span>(<span class="name">obj</span>, <span class="name">fun</span>);</pre>
 <a name="signal-to-named-member-function-connections"></a>
-<h4>Signal to Named Member Function Connections</h4>
+<h4>信号到具名成员方法的连接</h4>
+<orgh4>Signal to Named Member Function Connections</orgh4>
 <p><tt>connect(thisObject, functionName)</tt></p>
-<p>In this form of the <tt>connect()</tt> function, the first argument is the object that will be bound to the variable, <tt>this</tt>, when a function is invoked in response to the signal. The second argument specifies the name of a function that is connected to the signal, and this refers to a member function of the object passed as the first argument (<tt>thisObject</tt> in the above scheme).</p>
-<p>Note that the function is resolved when the connection is made, not when the signal is emitted.</p>
+<p>在这种形式的 <tt>connect()</tt> 函数中，第一个参数将在某函数被作为信号的响应而调用时作为 <tt>this</tt> 使用。第二个参数指定了连接到信号的函数的名称，这个名称为第一个参数（上文的<tt>thisObject</tt>）的某个成员方法的方法名称。</p>
+<orgp>In this form of the <tt>connect()</tt> function, the first argument is the object that will be bound to the variable, <tt>this</tt>, when a function is invoked in response to the signal. The second argument specifies the name of a function that is connected to the signal, and this refers to a member function of the object passed as the first argument (<tt>thisObject</tt> in the above scheme).</orgp>
+<p>应该注意的是这个函数是在建立连接时确定的，而不是在信号发出时确定。（译者注：ECMAScript的语法支持"函数实现"的动态变更。）</p>
+<orgp>Note that the function is resolved when the connection is made, not when the signal is emitted.</orgp>
 <pre class="js">var <span class="name">obj</span> = { x: <span class="number">123</span>, fun: <span class="keyword">function</span>() { <span class="name">print</span>(this.<span class="name">x</span>); } };
 <span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">connect</span>(<span class="name">obj</span>, <span class="string">&quot;fun&quot;</span>);</pre>
-<p>To disconnect from the signal, pass the same arguments to <tt>disconnect()</tt>:</p>
+<p>需要解除连接时，传递与原来相同的参数给 <tt>disconnect()</tt>:</p>
+<orgp>To disconnect from the signal, pass the same arguments to <tt>disconnect()</tt>:</orgp>
 <pre class="js"><span class="name">myQObject</span>.<span class="name">somethingChanged</span>.<span class="name">disconnect</span>(<span class="name">obj</span>, <span class="string">&quot;fun&quot;</span>);</pre>
 <a name="error-handling"></a>
 <h4>Error Handling</h4>
